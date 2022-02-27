@@ -5,7 +5,7 @@ type Props = {
     children: React.ReactNode
 }
 
-export default function MenuLink({ href, children }: Props) {
+export default function MenuLink({ href, children }: Props): JSX.Element {
     return (
         <a href={href} className={styles.menuLink}>
             {children}
