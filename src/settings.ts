@@ -1,4 +1,4 @@
-const settings = {
+const SETTINGS = {
 
     SOCIAL_LINKS: {
         FACEBOOK: 'https://www.facebook.com/',
@@ -6,4 +6,4 @@ const settings = {
     }
 }
 
-module.exports = settings
+export default SETTINGS

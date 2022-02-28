@@ -1,7 +1,7 @@
 import Icon from "@components/icon/Icon"
-import MenuLink from "./menulink/MenuLink"
+import SETTINGS from "src/settings"
 import styles from "./Menu.module.sass"
-import { SOCIAL_LINKS } from "src/settings"
+import MenuLink from "./menulink/MenuLink"
 
 export default function Menu(): JSX.Element {
     return (
@@ -14,11 +14,11 @@ export default function Menu(): JSX.Element {
                 <MenuLink href="#contact">Contact</MenuLink>
             </nav>
             <nav className={styles.social}>
-                <a href={SOCIAL_LINKS.INSTAGRAM}>
+                <a href={SETTINGS.SOCIAL_LINKS.INSTAGRAM}>
                     <Icon filename="instagram.svg" alt="Follow us on Instagram" size="2x" />
                 </a>
 
-                <a href={SOCIAL_LINKS.FACEBOOK}>
+                <a href={SETTINGS.SOCIAL_LINKS.FACEBOOK}>
                     <Icon filename="facebook.svg" alt="Like us on Facebook" size="2x" />
                 </a>
             </nav>
