@@ -11,6 +11,7 @@ export default function PageSwiper({ className, children }: Props) {
     return (
         <Swiper
             className={className}
+            direction="vertical"
             spaceBetween={0}
             slidesPerView={1}
             tag="main"
