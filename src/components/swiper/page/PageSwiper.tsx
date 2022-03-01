@@ -22,7 +22,7 @@ export default function PageSwiper({ children }: Props) {
                 sensitivity: .1
             }}
             spaceBetween={0}
-            speed={800}
+            speed={1000}
             slidesPerView={1}
             slidesPerColumn={1}
             tag="main"
