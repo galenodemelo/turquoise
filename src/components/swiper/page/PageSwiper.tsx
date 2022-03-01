@@ -1,21 +1,20 @@
 import { Mousewheel, Swiper as SwiperConfig } from 'swiper'
 import { Swiper, SwiperSlide } from "swiper/react"
-import 'swiper/swiper-bundle.min.css'
 import 'swiper/swiper.min.css'
+import styles from "./PageSwiper.module.sass"
 
 type Props = {
-    className: string,
     children: React.ReactNode[]
 }
 
-export default function PageSwiper({ className, children }: Props) {
+export default function PageSwiper({ children }: Props) {
     SwiperConfig.use([
         Mousewheel
     ])
 
     return (
         <Swiper
-            className={className}
+            className={styles.pageSwiper}
             direction="vertical"
             mousewheel={{
                 forceToAxis: true,
@@ -23,7 +22,9 @@ export default function PageSwiper({ className, children }: Props) {
                 sensitivity: .1
             }}
             spaceBetween={0}
+            speed={800}
             slidesPerView={1}
+            slidesPerColumn={1}
             tag="main"
         >
             {children.map((child, index) => {

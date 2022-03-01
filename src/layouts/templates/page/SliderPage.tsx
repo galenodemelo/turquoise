@@ -11,7 +11,7 @@ export default function SliderPage({ children }: Props) {
         <div className={styles.sliderPage}>
             <Header />
 
-            <PageSwiper className={styles.main}>
+            <PageSwiper>
                 {children}
             </PageSwiper>
         </div>
