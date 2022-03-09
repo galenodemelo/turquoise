@@ -17,6 +17,10 @@ export default function GallerySwiper({ children }: Props): JSX.Element {
         <Swiper
             className={styles.gallerySwiper}
             navigation={slideList.length > 1}
+            spaceBetween={0}
+            speed={600}
+            slidesPerView={1}
+            slidesPerColumn={1}
         >
             {slideList.map((slide, index) => {
                 return (
