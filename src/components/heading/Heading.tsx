@@ -13,4 +13,5 @@ type Props = {
 }
 
 export default function Heading({ lineList, tag = "h2", size }: Props): JSX.Element {
+    const Tag: keyof JSX.IntrinsicElements = tag as keyof JSX.IntrinsicElements
 }
