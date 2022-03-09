@@ -3,7 +3,7 @@ import Header from "../header/Header"
 import styles from "./SliderPage.module.sass"
 
 type Props = {
-    children: React.ReactNode[]
+    children: JSX.Element[]
 }
 
 export default function SliderPage({ children }: Props) {

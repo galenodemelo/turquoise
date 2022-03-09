@@ -4,7 +4,7 @@ import 'swiper/swiper.min.css'
 import styles from "./PageSwiper.module.sass"
 
 type Props = {
-    children: React.ReactNode[]
+    children: JSX.Element[]
 }
 
 export default function PageSwiper({ children }: Props) {
