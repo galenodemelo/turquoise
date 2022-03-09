@@ -1,5 +1,5 @@
 import Home from "@layouts/home/Home"
 
-export default (): JSX.Element => {
+export default function Index(): JSX.Element {
     return <Home />
 }
