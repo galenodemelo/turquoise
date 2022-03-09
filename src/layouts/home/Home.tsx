@@ -1,9 +1,10 @@
-import Header from "@layouts/templates/header/Header"
+import SliderPage from "@layouts/templates/page/SliderPage"
+import Luxury from "./luxury/Luxury"
 
 export default function Home(): JSX.Element {
     return (
-        <>
-            <Header />
-        </>
+        <SliderPage>
+            <Luxury />
+        </SliderPage>
     )
 }
