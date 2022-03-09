@@ -22,6 +22,8 @@ export default function Heading({ lineList, tag = "h2", size }: Props): JSX.Elem
         <Tag className={headingClassList.join(" ")}>
             {lineList.map((line, index) => {
                 let lineClassList: string[] = [styles.line]
+                lineClassList.push(styles[`line--${line.color ?? "primary"}`])
+                lineClassList.push(styles[`line--${line.weight ?? "medium"}`])
 
                 return (
                     <span key={index} className={lineClassList.join(" ")}>
