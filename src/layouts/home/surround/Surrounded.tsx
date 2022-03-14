@@ -1,7 +1,9 @@
 import Button from "@components/button/Button"
 import Heading from "@components/heading/Heading"
+import GallerySwiper from "@components/swiper/gallery/GallerySwiper"
 import Textbox from "@layouts/templates/textwithslider/textbox/Textbox"
 import TextWithSlider from "@layouts/templates/textwithslider/TextWithSlider"
+import Image from "next/image"
 
 export default function Surrounded(): JSX.Element {
     return (
@@ -29,6 +31,18 @@ export default function Surrounded(): JSX.Element {
                 </div>
             </Textbox>
 
+            <GallerySwiper>
+                <Image
+                    src="/img/slider/surrounded/1-family-playing-golf.jpg"
+                    layout="fill"
+                    objectFit="cover"
+                />
+                <Image
+                    src="/img/slider/surrounded/1-family-playing-golf.jpg"
+                    layout="fill"
+                    objectFit="cover"
+                />
+            </GallerySwiper>
         </TextWithSlider>
     )
 }
