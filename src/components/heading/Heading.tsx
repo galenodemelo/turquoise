@@ -3,7 +3,7 @@ import styles from "./Heading.module.sass"
 type LineProps = {
     text: string,
     color?: "primary" | "secondary",
-    weight?: "light" | "medium"
+    weight?: "light" | "regular" | "medium"
 }
 
 type Props = {
