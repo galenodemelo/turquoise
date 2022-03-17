@@ -1,5 +1,5 @@
-import Home from "@layouts/home/Home"
+import IndexLayout from "@layouts/index/IndexLayout"
 
 export default function Index(): JSX.Element {
-    return <Home />
+    return <IndexLayout />
 }
