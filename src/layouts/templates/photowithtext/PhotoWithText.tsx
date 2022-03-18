@@ -23,7 +23,7 @@ export default function PhotoWithText({ image, heading, text, variant }: Props):
     )
 }
 
-export function buildPhotoWithTextParams(photo: string, name: string, description: string, position?: string): Props {
+export function buildPhotoWithTextParams(photo: string, name: string, description: string, variant: Props["variant"], position?: string): Props {
     const params: Props = {
         image: `/img/members/${photo}`,
         heading: {
@@ -31,7 +31,7 @@ export function buildPhotoWithTextParams(photo: string, name: string, descriptio
             size: "h3"
         },
         text: description,
-        variant: "vertical"
+        variant: variant
     }
 
     params.heading.lineList.push({ text: name, color: "black", weight: "bold" })

@@ -11,12 +11,10 @@ export default function CreativeTeam(): JSX.Element {
             <ul className={styles.memberList}>
                 {SETTINGS.MEMBER_LIST.map((member, index) => (
                     <li key={index} className={styles.member}>
-                        <PhotoWithText {...buildPhotoWithTextParams(member.photo, member.name, member.description, member.position)} />
+                        <PhotoWithText {...buildPhotoWithTextParams(member.photo, member.name, member.description, "vertical", member.position)} />
                     </li>
                 ))}
             </ul>
         </div>
     )
 }
-
-
