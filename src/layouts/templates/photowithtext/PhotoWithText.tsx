@@ -2,7 +2,7 @@ import Heading, { Props as HeadingProps } from "@components/heading/Heading"
 import Image from "next/image"
 import styles from "./PhotoWithText.module.sass"
 
-export type Props = {
+type Props = {
     image: string
     heading: HeadingProps
     text: string
@@ -21,4 +21,21 @@ export default function PhotoWithText({ image, heading, text, variant }: Props):
             <p className={styles.paragraph}>{text}</p>
         </div>
     )
+}
+
+export function buildPhotoWithTextParams(photo: string, name: string, description: string, position?: string): Props {
+    const params: Props = {
+        image: `/img/members/${photo}`,
+        heading: {
+            lineList: [],
+            size: "h3"
+        },
+        text: description,
+        variant: "vertical"
+    }
+
+    params.heading.lineList.push({ text: name, color: "black", weight: "bold" })
+    if (position) params.heading.lineList.push({ text: position, color: "black", weight: "light" })
+
+    return params
 }
