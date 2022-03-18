@@ -1,14 +1,14 @@
 import styles from "./Heading.module.sass"
 
 type LineProps = {
-    text: string,
-    color?: "primary" | "secondary",
-    weight?: "light" | "regular" | "medium"
+    text: string
+    color?: "primary" | "secondary" | "black"
+    weight?: "light" | "regular" | "medium" | "bold"
 }
 
-type Props = {
-    lineList: LineProps[],
-    tag?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6",
+export type Props = {
+    lineList: LineProps[]
+    tag?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6"
     size?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6"
 }
 
