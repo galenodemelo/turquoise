@@ -12,7 +12,7 @@ export default function Home(): JSX.Element {
 
     return (
         <TextWithSlider>
-            <GallerySwiper setSwiperInstance={setTextboxSwiperInstance} controller={imageSwiperInstance}>
+            <GallerySwiper setSwiperInstance={setTextboxSwiperInstance} controller={imageSwiperInstance} effect="fade">
                 <LuxuryTextbox />
                 <NatureTextbox />
                 <SurroundedTextbox />
