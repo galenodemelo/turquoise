@@ -23,6 +23,7 @@ export default function GallerySwiper({ children, controller, effect = "slide", 
             controller={{ control: controller }}
             effect={effect}
             fadeEffect={{ crossFade: true }}
+            loop={true}
             onSwiper={setSwiperInstance}
             navigation={slideList.length > 1}
             spaceBetween={0}
