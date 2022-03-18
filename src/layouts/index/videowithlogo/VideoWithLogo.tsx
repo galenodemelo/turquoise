@@ -10,7 +10,7 @@ export default function VideoWithLogo(): JSX.Element {
             </video>
 
             <div className={styles.logo}>
-                <Image src="/img/turquoise-logo.gif" layout="fill" />
+                <Image src="/img/turquoise-logo.gif" layout="fill" loading="eager" />
             </div>
         </div>
     )
