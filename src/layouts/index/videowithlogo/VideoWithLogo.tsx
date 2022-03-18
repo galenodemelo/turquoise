@@ -1,3 +1,4 @@
+import Image from "next/image"
 import styles from "./VideoWithLogo.module.sass"
 
 export default function VideoWithLogo(): JSX.Element {
@@ -8,6 +9,9 @@ export default function VideoWithLogo(): JSX.Element {
                 <source src="/video/beach-surfer-visualizer.mp4" type="video/mp4" />
             </video>
 
+            <div className={styles.logo}>
+                <Image src="/img/turquoise-logo.gif" layout="fill" />
+            </div>
         </div>
     )
 }
