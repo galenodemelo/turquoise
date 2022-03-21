@@ -17,8 +17,10 @@ export default function PhotoWithText({ image, heading, text, variant }: Props):
                 <Image src={image} layout="fill" objectFit="cover" />
             </div>
 
-            <Heading {...heading} />
-            <p className={styles.paragraph}>{text}</p>
+            <div className={styles.text}>
+                <Heading {...heading} />
+                <p className={styles.paragraph}>{text}</p>
+            </div>
         </div>
     )
 }

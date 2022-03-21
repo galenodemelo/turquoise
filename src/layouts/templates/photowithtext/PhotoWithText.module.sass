@@ -2,13 +2,29 @@
 
 .photoWithText
     display: inline-flex
-    flex-direction: column
 
-    .photo
-        margin-bottom: 16px
-        position: relative
-        width: 100%
-        height: 16vw
+    &--vertical
+        flex-direction: column
+        row-gap: 24px
+
+        .photo
+            position: relative
+            width: 100%
+            height: 16vw
+
+    &--horizontal
+        flex-direction: row
+        column-gap: 40px
+        align-items: flex-end
+
+        .photo
+            flex: 1
+            position: relative
+            width: 100%
+            height: 16vw
+
+        .text
+            flex: 1
 
     .paragraph
         margin-top: 16px
