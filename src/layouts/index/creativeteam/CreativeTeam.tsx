@@ -9,7 +9,7 @@ export default function CreativeTeam(): JSX.Element {
             <Heading lineList={[{ text: "Creative team", color: "primary", weight: "medium" }]} />
 
             <ul className={styles.memberList}>
-                {SETTINGS.MEMBER_LIST.map((member, index) => (
+                {SETTINGS.CREATIVE_TEAM_LIST.map((member, index) => (
                     <li key={index} className={styles.member}>
                         <PhotoWithText {...buildPhotoWithTextParams(member.photo, member.name, member.description, "vertical", member.position)} />
                     </li>

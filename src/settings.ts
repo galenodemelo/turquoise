@@ -1,5 +1,5 @@
 const SETTINGS = {
-    MEMBER_LIST: [
+    CREATIVE_TEAM_LIST: [
         {
             photo: "ricardo.jpg",
             name: "Ricardo",
