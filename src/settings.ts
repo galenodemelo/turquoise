@@ -1,5 +1,5 @@
 const SETTINGS = {
-    MEMBER_LIST: [
+    CREATIVE_TEAM_LIST: [
         {
             photo: "ricardo.jpg",
             name: "Ricardo",
@@ -23,6 +23,19 @@ const SETTINGS = {
             name: "Patrick",
             position: "Masterplanner",
             description: "Patrick is senior landscape architect and master planner with extensive experience in land development and professional design practice including but not limited to master planning, urban design, site and amenity design, marketing, scheduling, and budgeting for residential communities, mixed-use, resort, commercial, civic, educational and resource-based recreational developments."
+        }
+    ],
+
+    DEVELOPERS_LIST: [
+        {
+            photo: "ricardo.jpg",
+            name: "Marco",
+            description: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in."
+        },
+        {
+            photo: "ricardo.jpg",
+            name: "Luís",
+            description: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in."
         }
     ],
 
