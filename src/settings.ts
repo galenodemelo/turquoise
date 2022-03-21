@@ -26,6 +26,19 @@ const SETTINGS = {
         }
     ],
 
+    DEVELOPERS_LIST: [
+        {
+            photo: "ricardo.jpg",
+            name: "Marco",
+            description: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in."
+        },
+        {
+            photo: "ricardo.jpg",
+            name: "Luís",
+            description: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in."
+        }
+    ],
+
     SOCIAL_LINKS: {
         FACEBOOK: 'https://www.facebook.com/',
         INSTAGRAM: 'https://www.instagram.com/'
