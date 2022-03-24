@@ -15,8 +15,8 @@ export default function IndexLayout(): JSX.Element {
             <YourHome />
             <CreativeTeam />
             <Developers />
-            <Contact />
             <Areas />
+            <Contact />
         </SliderPage>
     )
 }
