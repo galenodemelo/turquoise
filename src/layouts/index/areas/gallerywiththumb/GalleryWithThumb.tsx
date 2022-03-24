@@ -31,6 +31,10 @@ export default function GalleryWithThumb({ imageList }: Props): JSX.Element {
             </ul>
 
             <div className={styles.gallery} data-state-active={galleryActive}>
+                <button className={styles.close} onClick={() => setGalleryActive(false)}>
+                    <Image src="/img/ico/close.svg" alt="Close gallery" layout="fill" />
+                </button>
+
                     {imageList.map((image, index) => (
                         <div key={index} className={styles.galleryItem}>
                             <Image src={image.url} alt={image.description} layout="fill" objectFit="cover" />
