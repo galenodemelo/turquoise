@@ -15,9 +15,11 @@ type Props = {
 
 export default function GalleryWithThumb({ imageList }: Props): JSX.Element {
     const [galleryActive, setGalleryActive] = useState<boolean>(false)
+    const [galleryIndex, setGalleryIndex] = useState<number>(0)
 
     function showGallery(index: number): void {
         setGalleryActive(true)
+        setGalleryIndex(index)
     }
 
     return (
@@ -35,9 +37,10 @@ export default function GalleryWithThumb({ imageList }: Props): JSX.Element {
                     <Image src="/img/ico/close.svg" alt="Close gallery" layout="fill" />
                 </button>
 
+                <GallerySwiper initialSlide={galleryIndex}>
                     {imageList.map((image, index) => (
                         <div key={index} className={styles.galleryItem}>
-                            <Image src={image.url} alt={image.description} layout="fill" objectFit="cover" />
+                            <Image src={image.url} alt={image.description} layout="fill" objectFit="cover" loading="eager" />
 
                             <div className={styles.description}>
                                 {image.description}
