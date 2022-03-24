@@ -2,7 +2,7 @@ import styles from "./Heading.module.sass"
 
 type LineProps = {
     text: string
-    color?: "primary" | "secondary" | "black"
+    color?: "primary" | "secondary" | "black" | "white"
     weight?: "light" | "regular" | "medium" | "bold"
 }
 
