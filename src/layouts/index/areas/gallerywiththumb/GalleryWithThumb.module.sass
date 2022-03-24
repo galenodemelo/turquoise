@@ -28,3 +28,35 @@
             background: url("/img/ico/zoom.svg") center center no-repeat rgba(0, 0, 0, 0.5)
             background-size: 40%
             border-radius: 100%
+
+.gallery
+    position: absolute
+    max-width: $default-container-width
+    height: 85%
+    top: 0
+    bottom: 0
+    margin: auto
+    left: 0
+    right: 0
+    transform: translateY(100vh)
+    transition: .5s transform ease-in-out
+
+    &--active
+        transform: translateY(0)
+
+    .galleryItem
+        .description
+            position: absolute
+            margin: 0 auto
+            left: 0
+            right: 0
+            bottom: 0
+            background-color: $color-primary
+            font-family: $font-aviano-flare
+            font-size: 2rem
+            color: $color-white
+            text-align: center
+            width: 100%
+            max-width: 640px
+            padding: 32px 0
+            text-transform: uppercase
