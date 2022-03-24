@@ -1,0 +1,60 @@
+@import @styles/constants
+
+.form
+    display: flex
+    flex-direction: column
+    row-gap: 24px
+
+    .row
+        display: flex
+        column-gap: 48px
+
+        .group
+            position: relative
+            display: inline-flex
+            flex-direction: column-reverse
+            row-gap: 4px
+            flex: 1 1 0
+
+            *[required] ~ label::after
+                content: "*"
+
+            label
+                width: 100%
+                font-family: $font-arboria
+                font-size: 1.4rem
+
+            input,
+            select,
+            textarea
+                padding: 6px 16px
+                width: 100%
+                box-sizing: border-box
+                font-size: 1rem
+                line-height: 1.2
+                font-family: sans-serif
+
+            textarea
+                padding: 0
+                width: 100%
+                height: 120px
+                resize: none
+
+            .submit
+                position: absolute
+                margin: auto
+                top: 1.4rem
+                bottom: 0
+                right: -80px
+                height: 48px
+                width: 54px
+                background: none
+                border: none
+                box-sizing: border-box
+
+                &:hover
+                    cursor: pointer
+
+        .note
+            font-family: $font-arboria
+            font-size: 1rem
