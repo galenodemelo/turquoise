@@ -4,8 +4,45 @@ import styles from "./Form.module.sass"
 
 export default function Form(): JSX.Element {
     const [isSendingForm, setIsSendingForm] = useState<boolean>(false)
+    const formReference = useRef<HTMLFormElement>(null)
+
+    useEffect(() => {
+        if (!formReference?.current) return
+        formReference.current.onsubmit = async (event: SubmitEvent) => {
+            if (!formReference?.current) return
+
+            try {
+                event.preventDefault()
+                setIsSendingForm(true)
+
+                const formData: FormData = new FormData(formReference.current)
+                const formDataAsJson: string = JSON.stringify(Object.fromEntries(formData))
+                const formAction: string = formReference.current.getAttribute("action") ?? ""
+                const formMethod: string = formReference.current.getAttribute("method") ?? ""
+                const response: Response = await fetch(formAction, {
+                    method: formMethod,
+                    headers: new Headers({"Content-Type": "application/json"}),
+                    body: formDataAsJson
+                })
+                const responseJson: any = await response.json()
+
+                setIsSendingForm(false)
+                if (!responseJson.success) {
+                    alert(responseJson.errorList.join("\n"))
+                    return
+                }
+
+                alert(responseJson.message)
+                formReference.current.reset()
+            } catch (error) {
+                console.error(error)
+                setIsSendingForm(false)
+            }
+        }
+    }, [formReference, isSendingForm])
+
     return (
-        <form action="/api/send-contact-form" method="POST" className={styles.form}>
+        <form action="/api/send-contact-form" className={styles.form} method="POST" ref={formReference}>
             <div className={styles.row}>
                 <div className={styles.group}>
                     <input type="text" name="name" id="name" required />
