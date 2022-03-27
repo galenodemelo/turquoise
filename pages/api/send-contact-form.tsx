@@ -1,4 +1,6 @@
 import { NextApiRequest, NextApiResponse } from "next"
+import DataValidator from "src/libs/DataValidator"
+import SendGridManager from "src/libs/SendGridManager"
 
 export default async function SendContactForm(req: NextApiRequest, res: NextApiResponse) {
     try {
@@ -10,6 +12,17 @@ export default async function SendContactForm(req: NextApiRequest, res: NextApiR
         const formValidation = validateForm(req.body)
         if (!formValidation.success) {
             res.status(400).json(formValidation)
+            return
+        }
+
+        const mailWasSent: boolean = await SendGridManager.send(
+            `Site contact form - ${req.body.name} ${req.body.lastName}`,
+            buildMailHtml(req.body),
+            req.body.email,
+            req.body.email
+        )
+        if (!mailWasSent) {
+            res.status(500).json({success: false, errorList: ["Mail was not sent. Please, try again."]})
             return
         }
 
@@ -35,4 +48,17 @@ function validateForm(requestBody: any): { success: boolean, errorList?: string[
         errorList: errorList
     }
 }
+
+function buildMailHtml({name, lastName, email, phone, origin, message}: { name: string, lastName: string, email: string, phone: string, origin?: string, message: string }) {
+    return `
+        <h1>Contact form</h1>
+        <p>
+            <strong>Name:</strong> ${name}<br />
+            <strong>Last name:</strong> ${lastName}<br />
+            <strong>E-mail:</strong> ${email}<br />
+            <strong>Phone:</strong> ${phone}<br />
+            <strong>Origin:</strong> ${origin}<br />
+            <strong>Message:</strong> ${message}<br />
+        </p>
+    `
 }
