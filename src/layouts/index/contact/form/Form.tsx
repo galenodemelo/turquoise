@@ -1,7 +1,9 @@
 import Image from "next/image"
+import { useEffect, useRef, useState } from "react"
 import styles from "./Form.module.sass"
 
 export default function Form(): JSX.Element {
+    const [isSendingForm, setIsSendingForm] = useState<boolean>(false)
     return (
         <form action="/api/send-contact-form" method="POST" className={styles.form}>
             <div className={styles.row}>
@@ -44,7 +46,7 @@ export default function Form(): JSX.Element {
                     <textarea name="message" id="message" required></textarea>
                     <label htmlFor="message">How can we help you?</label>
 
-                    <button type="submit" className={styles.submit} title="Click to contact us">
+                    <button type="submit" className={styles.submit} title="Click to contact us" disabled={isSendingForm}>
                         <Image src="/img/ico/arrow.svg" alt="Send form" layout="fill" objectFit="contain" />
                     </button>
                 </div>
