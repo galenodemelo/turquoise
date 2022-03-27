@@ -1,4 +1,4 @@
-import { Mousewheel, Swiper as SwiperConfig } from 'swiper'
+import { HashNavigation, Mousewheel, Swiper as SwiperConfig } from 'swiper'
 import { Swiper, SwiperSlide } from "swiper/react"
 import 'swiper/swiper.min.css'
 import styles from "./PageSwiper.module.sass"
@@ -9,6 +9,7 @@ type Props = {
 
 export default function PageSwiper({ children }: Props) {
     SwiperConfig.use([
+        HashNavigation,
         Mousewheel
     ])
 
@@ -16,6 +17,7 @@ export default function PageSwiper({ children }: Props) {
         <Swiper
             className={styles.pageSwiper}
             direction="vertical"
+            hashNavigation={{ watchState: true }}
             mousewheel={{
                 forceToAxis: true,
                 releaseOnEdges: true,
@@ -29,7 +31,7 @@ export default function PageSwiper({ children }: Props) {
         >
             {children.map((child, index) => {
                 return (
-                    <SwiperSlide tag="section" key={index}>
+                    <SwiperSlide tag="section" key={index} data-hash={child.type.name}>
                         {child}
                     </SwiperSlide>
                 )

@@ -4,6 +4,7 @@ import GallerySwiper from "@components/swiper/gallery/GallerySwiper"
 import Textbox from "@layouts/templates/textwithslider/textbox/Textbox"
 import TextWithSlider from "@layouts/templates/textwithslider/TextWithSlider"
 import Image from "next/image"
+import Contact from "../contact/Contact"
 
 export default function YourHome(): JSX.Element {
     return (
@@ -30,7 +31,7 @@ export default function YourHome(): JSX.Element {
                 </p>
 
                 <div>
-                    <Button href="#" variant="secondary">
+                    <Button href={`#${Contact.name}`} variant="secondary">
                         Contact us
                     </Button>
                 </div>

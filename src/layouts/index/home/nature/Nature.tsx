@@ -1,6 +1,7 @@
 import Button from "@components/button/Button"
 import Heading from "@components/heading/Heading"
 import GallerySwiper from "@components/swiper/gallery/GallerySwiper"
+import Contact from "@layouts/index/contact/Contact"
 import Textbox from "@layouts/templates/textwithslider/textbox/Textbox"
 import TextWithSlider from "@layouts/templates/textwithslider/TextWithSlider"
 import Image from "next/image"
@@ -27,7 +28,7 @@ export function NatureTextbox(): JSX.Element {
             </p>
 
             <div>
-                <Button href="#" variant="secondary">
+                <Button href={`#${Contact.name}`} variant="secondary">
                     Contact us
                 </Button>
             </div>
