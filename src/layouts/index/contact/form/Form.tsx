@@ -3,7 +3,7 @@ import styles from "./Form.module.sass"
 
 export default function Form(): JSX.Element {
     return (
-        <form className={styles.form}>
+        <form action="/api/send-contact-form" method="POST" className={styles.form}>
             <div className={styles.row}>
                 <div className={styles.group}>
                     <input type="text" name="name" id="name" required />
