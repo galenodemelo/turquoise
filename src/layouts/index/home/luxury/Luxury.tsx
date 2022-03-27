@@ -15,11 +15,16 @@ export function LuxuryTextbox(): JSX.Element {
                 ]}
             />
             <p>
-                Apis est aut evel et arunt<br />
-                millenihilit pore, volutes<br />
-                totatum nectati<br />
-                umquistiorum ipsam<br />
-                iumquis simus et, quae
+                Toss your troubles away<br />
+                as you float on the bay<br />
+                under the glorious blue<br />
+                sky and over translucent<br />
+                waters. Get away from it<br />
+                all, set anchor, and while<br />
+                away the hours with only<br />
+                your loved ones by your<br />
+                side. Truly heaven on<br />
+                Earth.
             </p>
 
             <div>

@@ -15,11 +15,15 @@ export function NatureTextbox(): JSX.Element {
                 ]}
             />
             <p>
-                Apis est aut evel et arunt<br />
-                millenihilit pore, volutes<br />
-                totatum nectati<br />
-                umquistiorum ipsam<br />
-                iumquis simus et, quae
+                Santa Rosa prides itself<br />
+                on having consistently<br />
+                gorgeous weather,<br />
+                stunning beaches, and<br />
+                crystal clear waters.<br />
+                The fresh air, light<br />
+                breeze, and calming<br />
+                essence promise to<br />
+                rejuvenate your soul.
             </p>
 
             <div>

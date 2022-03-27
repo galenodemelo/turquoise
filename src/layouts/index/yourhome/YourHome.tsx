@@ -16,11 +16,17 @@ export default function YourHome(): JSX.Element {
                     ]}
                 />
                 <p>
-                    Apis est aut evel et arunt<br />
-                    millenihilit pore, volutes<br />
-                    totatum nectati<br />
-                    umquistiorum ipsam<br />
-                    iumquis simus et, quae
+                    Turquoise provides an<br />
+                    enchanting environment<br />
+                    both day and night. Leave<br />
+                    your watch behind<br />
+                    because time stands still in<br />
+                    this opulent paradise. This<br />
+                    world-renowned 30A<br />
+                    corridor attracts<br />
+                    visitors worldwide with<br />
+                    the most opulent beaches<br />
+                    and fair weather.
                 </p>
 
                 <div>
