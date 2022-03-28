@@ -1,4 +1,5 @@
 import Heading from "@components/heading/Heading"
+import Image from "next/image"
 import styles from "./Location.module.sass"
 
 export default function Location(): JSX.Element {
@@ -14,6 +15,9 @@ export default function Location(): JSX.Element {
                     referrerPolicy="no-referrer-when-downgrade"
                 ></iframe>
 
+                <div className={styles.thumb}>
+                    <Image src="/img/map/location-thumb.jpg" layout="fill" objectFit="cover" alt="Overview of Florida location" />
+                </div>
             </div>
         </div>
     )
