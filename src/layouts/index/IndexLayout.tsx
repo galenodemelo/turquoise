@@ -4,6 +4,7 @@ import Contact from "./contact/Contact"
 import CreativeTeam from "./creativeteam/CreativeTeam"
 import Developers from "./developers/Developers"
 import Home from "./home/Home"
+import Location from "./location/Location"
 import VideoWithLogo from "./videowithlogo/VideoWithLogo"
 import YourHome from "./yourhome/YourHome"
 
@@ -16,6 +17,7 @@ export default function IndexLayout(): JSX.Element {
             <CreativeTeam />
             <Developers />
             <Areas />
+            <Location />
             <Contact />
         </SliderPage>
     )

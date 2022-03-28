@@ -3,6 +3,7 @@ import Contact from "@layouts/index/contact/Contact"
 import CreativeTeam from "@layouts/index/creativeteam/CreativeTeam"
 import Developers from "@layouts/index/developers/Developers"
 import Home from "@layouts/index/home/Home"
+import Location from "@layouts/index/location/Location"
 import SETTINGS from "src/settings"
 import styles from "./Menu.module.sass"
 import MenuLink from "./menulink/MenuLink"
@@ -14,7 +15,7 @@ export default function Menu(): JSX.Element {
                 <MenuLink href={`#${Home.name}`}>Home</MenuLink>
                 <MenuLink href={`#${CreativeTeam.name}`}>Team</MenuLink>
                 <MenuLink href={`#${Developers.name}`}>Developers</MenuLink>
-                <MenuLink href="#location">Location</MenuLink>
+                <MenuLink href={`#${Location.name}`}>Location</MenuLink>
                 <MenuLink href={`#${Contact.name}`}>Contact</MenuLink>
             </nav>
             <nav className={styles.social}>
