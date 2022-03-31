@@ -28,14 +28,14 @@ const SETTINGS = {
 
     DEVELOPERS_LIST: [
         {
-            photo: "ricardo.jpg",
+            photo: "marco.jpg",
             name: "Marco",
-            description: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in."
+            description: "To Investors: unparalleled risk reward; To The Neighborhood: setting the standard and raising the bar; To Clients: exclusivity, one of a kind standard of living; Wrap it all , this is \"Turquoise\"."
         },
         {
-            photo: "ricardo.jpg",
+            photo: "luis.jpg",
             name: "Luís",
-            description: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in."
+            description: "The Concept of Turquoise was formed when we first arrived in the 30A.  The great energy and majestic nature of that place were embracing one of the last large parcels available in that area. The uniqueness and exclusivity of our site were something as incredible and precious as a gem."
         }
     ],
 
