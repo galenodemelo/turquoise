@@ -2,6 +2,7 @@ import Button from "@components/button/Button"
 import Heading from "@components/heading/Heading"
 import PhotoWithText, { buildPhotoWithTextParams } from "@layouts/templates/photowithtext/PhotoWithText"
 import styles from "./CreativeTeam.module.sass"
+import { Props as HouseProjectProps } from "./houseproject/HouseProject"
 
 export default function CreativeTeam(): JSX.Element {
     return (
@@ -32,11 +33,7 @@ type CreativeTeamMember = {
     name: string
     description: string
     position: string
-    houseProjectList?: Array<{
-        name: string
-        image: string
-        title?: string
-    }>
+    houseProjectList?: Array<HouseProjectProps>
 }
 
 function getCreativeTeamList(): Array<CreativeTeamMember> {
