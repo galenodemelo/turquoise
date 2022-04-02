@@ -33,7 +33,7 @@ export default function HouseProjectGallery({ houseProjectList }: Props): JSX.El
 
                 <GallerySwiper>
                     {houseProjectList.map((houseProject, index) => (
-                        <div key={index}>
+                        <>
                             {houseProject.title &&
                                 <div className={styles.title}>
                                     {houseProject.title}
@@ -47,7 +47,7 @@ export default function HouseProjectGallery({ houseProjectList }: Props): JSX.El
                             <div className={styles.description}>
                                 {houseProject.name}
                             </div>
-                        </div>
+                        </>
                     ))}
                 </GallerySwiper>
             </div>
