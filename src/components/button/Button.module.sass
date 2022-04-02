@@ -5,14 +5,23 @@
     text-decoration: none
     font-family: $font-aviano-flare
     font-weight: 300
-    font-size: 1.4rem
+    font-size: 1.2rem
     line-height: 1
-    padding: 24px 40px
+    white-space: nowrap
+    padding: 24px 32px
+    border: 0
+    cursor: pointer
 
     &--primary
         background-color: $color-primary
         color: $color-white
 
+        &:hover
+            background-color: $color-secondary
+
     &--secondary
         background-color: $color-secondary
         color: $color-white
+
+        &:hover
+            background-color: $color-primary

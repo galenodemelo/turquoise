@@ -9,10 +9,11 @@ type Props = {
     controller?: any
     effect?: "slide" | "fade"
     initialSlide?: number
+    loop?: boolean
     setSwiperInstance?: (swiper: any) => void
 }
 
-export default function GallerySwiper({ initialSlide = 0, children, controller, effect = "slide", setSwiperInstance }: Props): JSX.Element {
+export default function GallerySwiper({ initialSlide = 0, children, controller, effect = "slide", loop = true, setSwiperInstance }: Props): JSX.Element {
     SwiperConfig.use([Controller, Navigation])
     if (effect == "fade") SwiperConfig.use([EffectFade])
 
@@ -26,7 +27,7 @@ export default function GallerySwiper({ initialSlide = 0, children, controller, 
             fadeEffect={{ crossFade: true }}
             initialSlide={initialSlide}
             key={initialSlide}
-            loop={true}
+            loop={loop}
             onSwiper={setSwiperInstance}
             navigation={slideList.length > 1}
             spaceBetween={0}
