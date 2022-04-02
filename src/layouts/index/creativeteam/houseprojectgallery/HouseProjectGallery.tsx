@@ -31,7 +31,7 @@ export default function HouseProjectGallery({ houseProjectList }: Props): JSX.El
                     <Image src="/img/ico/close.green.svg" alt="Close gallery" layout="fill" />
                 </button>
 
-                <GallerySwiper>
+                <GallerySwiper loop={false}>
                     {houseProjectList.map((houseProject, index) => (
                         <>
                             {houseProject.title &&
