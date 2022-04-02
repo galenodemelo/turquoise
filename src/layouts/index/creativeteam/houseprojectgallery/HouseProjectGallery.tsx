@@ -19,14 +19,14 @@ export default function HouseProjectGallery({ houseProjectList }: Props): JSX.El
     const [galleryActive, setGalleryActive] = useState<boolean>(false)
 
     return (
-        <div className={styles.houseProjectGallery} data-state-active={galleryActive}>
+        <div className={styles.houseProjectGallery}>
             <div className={styles.button}>
-                <Button variant="secondary">
+                <Button variant="secondary" onClick={() => setGalleryActive(true)}>
                     House project
                 </Button>
             </div>
 
-            <div className={styles.gallery}>
+            <div className={styles.gallery} data-state-active={galleryActive}>
                 <button className={styles.close} onClick={() => setGalleryActive(false)}>
                     <Image src="/img/ico/close.green.svg" alt="Close gallery" layout="fill" />
                 </button>
