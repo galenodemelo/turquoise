@@ -28,7 +28,7 @@ export default function HouseProjectGallery({ houseProjectList }: Props): JSX.El
 
             <div className={styles.gallery}>
                 <button className={styles.close} onClick={() => setGalleryActive(false)}>
-                    <Image src="/img/ico/close.svg" alt="Close gallery" layout="fill" />
+                    <Image src="/img/ico/close.green.svg" alt="Close gallery" layout="fill" />
                 </button>
 
                 <GallerySwiper>
