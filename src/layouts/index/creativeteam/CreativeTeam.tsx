@@ -1,3 +1,4 @@
+import Button from "@components/button/Button"
 import Heading from "@components/heading/Heading"
 import PhotoWithText, { buildPhotoWithTextParams } from "@layouts/templates/photowithtext/PhotoWithText"
 import SETTINGS from "src/settings"
@@ -12,6 +13,14 @@ export default function CreativeTeam(): JSX.Element {
                 {SETTINGS.CREATIVE_TEAM_LIST.map((member, index) => (
                     <li key={index} className={styles.member}>
                         <PhotoWithText {...buildPhotoWithTextParams(member.photo, member.name, member.description, "vertical", member.position)} />
+
+                        {member.houseProjectList &&
+                            <div className={styles.button}>
+                                <Button variant="secondary">
+                                    House project
+                                </Button>
+                            </div>
+                        }
                     </li>
                 ))}
             </ul>

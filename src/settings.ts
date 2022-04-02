@@ -4,19 +4,50 @@ const SETTINGS = {
             photo: "ricardo.jpg",
             name: "Ricardo",
             position: "Architect",
-            description: "By design nature calmly flows from the exterior into the modern interior. The wooden roof overhang feels warm and inviting, and the cathedral ceilings pull in natural light. The floating wood stairs and glass railing feel earthy yet free, and the summer kitchen outside completes the fusion of interior with exterior living."
+            description: "By design nature calmly flows from the exterior into the modern interior. The wooden roof overhang feels warm and inviting, and the cathedral ceilings pull in natural light. The floating wood stairs and glass railing feel earthy yet free, and the summer kitchen outside completes the fusion of interior with exterior living.",
+            houseProjectList: [
+                {
+                    name: "Ricardo Rodrigues",
+                    image: "ricardo-rodrigues-1.jpg"
+                },
+                {
+                    name: "Ricardo Rodrigues",
+                    image: "ricardo-rodrigues-2.jpg"
+                },
+                {
+                    name: "Ricardo Rodrigues",
+                    image: "ricardo-rodrigues-3.jpg",
+                    title: "Club House"
+                }
+            ]
         },
         {
             photo: "taney.jpg",
             name: "Taney",
             position: "Architect",
-            description: "I am really excited about the vision of Turquoise. Starting with Seaside, virtually all of the neighborhoods along 30A have have been conceived with a look back at traditional architecture. Turquoise finally offers me the opportunity to introduce a modern, unique aesthetic on a neighborhood scale along the Gulf Coast."
+            description: "I am really excited about the vision of Turquoise. Starting with Seaside, virtually all of the neighborhoods along 30A have have been conceived with a look back at traditional architecture. Turquoise finally offers me the opportunity to introduce a modern, unique aesthetic on a neighborhood scale along the Gulf Coast.",
+            houseProjectList: [
+                {
+                    name: "Mark Taney",
+                    image: "mark-taney-1.jpg"
+                }
+            ]
         },
         {
             photo: "russel-johnson.jpg",
             name: "Russel Johnson",
             position: "Architect",
-            description: "Most exciting to be working on a project of this magnitude located within one of the most iconic beach locations in the world. Working with this development team is especially rewarding with their forward-looking ideas and design concepts."
+            description: "Most exciting to be working on a project of this magnitude located within one of the most iconic beach locations in the world. Working with this development team is especially rewarding with their forward-looking ideas and design concepts.",
+            houseProjectList: [
+                {
+                    name: "Russel Johnson",
+                    image: "russel-johnson-1.jpg"
+                },
+                {
+                    name: "Russel Johnson",
+                    image: "russel-johnson-2.jpg"
+                }
+            ]
         },
         {
             photo: "patrick.jpg",
