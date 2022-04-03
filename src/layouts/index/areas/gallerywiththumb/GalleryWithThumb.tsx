@@ -26,7 +26,7 @@ export default function GalleryWithThumb({ imageList }: Props): JSX.Element {
         <>
             <ul className={styles.thumbList}>
                 {imageList.map((image, index) => (
-                    <li key={index} className={styles.item} onClick={() => showGallery(index)}>
+                    <li key={index} className={[styles.item, "thumbnail"].join(" ")} onClick={() => showGallery(index)}>
                         <Image src={image.thumbUrl} alt={image.description} layout="fill" objectFit="cover" />
                     </li>
                 ))}
