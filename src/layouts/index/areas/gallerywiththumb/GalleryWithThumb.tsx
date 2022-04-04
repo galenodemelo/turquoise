@@ -26,13 +26,13 @@ export default function GalleryWithThumb({ imageList }: Props): JSX.Element {
         <>
             <ul className={styles.thumbList}>
                 {imageList.map((image, index) => (
-                    <li key={index} className={styles.item} onClick={() => showGallery(index)}>
+                    <li key={index} className={[styles.item, "thumbnail"].join(" ")} onClick={() => showGallery(index)}>
                         <Image src={image.thumbUrl} alt={image.description} layout="fill" objectFit="cover" />
                     </li>
                 ))}
             </ul>
 
-            <div className={styles.gallery} data-state-active={galleryActive}>
+            <div className={[styles.gallery, "slide-in-bottom"].join(" ")} data-state-active={galleryActive}>
                 <button className={styles.close} onClick={() => setGalleryActive(false)}>
                     <Image src="/img/ico/close.svg" alt="Close gallery" layout="fill" />
                 </button>

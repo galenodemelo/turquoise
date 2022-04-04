@@ -1,4 +1,5 @@
 import SliderPage from "@layouts/templates/page/SliderPage"
+import Amenities from "./amenities/Amenities"
 import Areas from "./areas/Areas"
 import Contact from "./contact/Contact"
 import CreativeTeam from "./creativeteam/CreativeTeam"
@@ -16,6 +17,7 @@ export default function IndexLayout(): JSX.Element {
             <YourHome />
             <CreativeTeam />
             <Developers />
+            <Amenities />
             <Areas />
             <Location />
             <Contact />
