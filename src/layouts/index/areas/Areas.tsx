@@ -1,11 +1,11 @@
-import GalleryWithThumb, { ThumbProps } from "./gallerywiththumb/GalleryWithThumb"
 import Heading from "@components/heading/Heading"
 import styles from "./Areas.module.sass"
+import GalleryWithThumb, { ThumbProps } from "./gallerywiththumb/GalleryWithThumb"
 
 export default function Areas(): JSX.Element {
     return (
         <div className={styles.areas}>
-            <Heading lineList={[ { text: "Areas", color: "white" } ]} />
+            <Heading lineList={[ { text: "Attractions", color: "white" } ]} />
 
             <div className={styles.content}>
                 <GalleryWithThumb imageList={getImageList()} />
