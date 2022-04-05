@@ -17,17 +17,7 @@ export default function YourHome(): JSX.Element {
                     ]}
                 />
                 <p>
-                    Turquoise provides an<br />
-                    enchanting environment<br />
-                    both day and night. Leave<br />
-                    your watch behind<br />
-                    because time stands still in<br />
-                    this opulent paradise. This<br />
-                    world-renowned 30A<br />
-                    corridor attracts<br />
-                    visitors worldwide with<br />
-                    the most opulent beaches<br />
-                    and fair weather.
+                    Turquoise provides an enchanting environment both day and night. Leave your watch behind because time stands still in this opulent paradise. This worldrenowned 30A corridor attracts visitors worldwide with the most gorgeous beaches and fair weather.
                 </p>
 
                 <div>
