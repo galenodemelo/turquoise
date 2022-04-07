@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from "react"
 import styles from "./Form.module.sass"
 
 export default function Form(): JSX.Element {
+    const originList: Array<string> = ["A friend", "Realtor", "Instagram", "Facebook", "Other"]
     const [isSendingForm, setIsSendingForm] = useState<boolean>(false)
     const formReference = useRef<HTMLFormElement>(null)
 
@@ -72,7 +73,9 @@ export default function Form(): JSX.Element {
                 <div className={styles.group}>
                     <select name="origin" id="origin">
                         <option></option>
-                        <option value="friend">Friend's referral</option>
+                        {originList.map((origin, index) => (
+                            <option key={index} value={origin}>{origin}</option>
+                        ))}
                     </select>
                     <label htmlFor="origin">How did you meet us?</label>
                 </div>
