@@ -57,4 +57,17 @@ export default class AnimationLib {
             })
             .build()
     }
+
+    public static slideInBottom(target: Target, options?: Options): anime.AnimeInstance | null {
+        if (!target) return null
+
+        return new AnimationBuilder(target)
+            .setOptions(options)
+            .setDuration(1400)
+            .setAnimation({
+                translateY: ["200%", "0%"],
+                easing: "easeInOutQuad"
+            })
+            .build()
+    }
 }
