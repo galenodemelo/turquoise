@@ -1,9 +1,12 @@
 import Image from "next/image"
-import { useEffect, useRef, useState } from "react"
+import { ChangeEvent, useEffect, useRef, useState } from "react"
 import styles from "./Form.module.sass"
 
 export default function Form(): JSX.Element {
+    const [origin, setOrigin] = useState<string>("")
     const originList: Array<string> = ["A friend", "Realtor", "Instagram", "Facebook", "Other"]
+    const needToSpecifyList: Array<string> = ["Other"]
+
     const [isSendingForm, setIsSendingForm] = useState<boolean>(false)
     const formReference = useRef<HTMLFormElement>(null)
 
@@ -71,7 +74,7 @@ export default function Form(): JSX.Element {
 
             <div className={styles.row}>
                 <div className={styles.group}>
-                    <select name="origin" id="origin">
+                    <select name="origin" id="origin" value={origin} onChange={(event: ChangeEvent<HTMLSelectElement>) => setOrigin(event.target.value)}>
                         <option></option>
                         {originList.map((origin, index) => (
                             <option key={index} value={origin}>{origin}</option>
@@ -79,6 +82,13 @@ export default function Form(): JSX.Element {
                     </select>
                     <label htmlFor="origin">How did you meet us?</label>
                 </div>
+
+                {needToSpecifyList.includes(origin) &&
+                    <div className={styles.group}>
+                        <input type="text" name="specify" id="specify" required autoFocus />
+                        <label htmlFor="specify">Specify</label>
+                    </div>
+                }
             </div>
 
             <div className={styles.row}>
