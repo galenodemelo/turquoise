@@ -1,15 +1,48 @@
 import Heading from "@components/heading/Heading"
+import headingStyles from "@components/heading/Heading.module.sass"
 import PhotoWithText, { buildPhotoWithTextParams } from "@layouts/templates/photowithtext/PhotoWithText"
+import { RefObject, useEffect, useRef } from "react"
+import AnimationLib from "src/libs/animation/AnimationLib"
+import AnimationTriggerBuilder from "src/libs/animation/AnimationTriggerBuilder"
 import styles from "./CreativeTeam.module.sass"
 import HouseProjectGallery, { HouseProjectProps } from "./houseprojectgallery/HouseProjectGallery"
 
 export default function CreativeTeam(): JSX.Element {
+    const slideElement: RefObject<HTMLDivElement> = useRef<HTMLDivElement>(null)
+    const creativeTeamList: Array<CreativeTeamMember> = listCreativeTeam()
+
+    useEffect(() => {
+        let animationList: anime.AnimeInstance[] = []
+        animationList = animationList.concat(
+            AnimationLib.fadeInLetters(slideElement.current?.querySelectorAll(`.${styles.creativeTeam} > .${headingStyles.heading} > *`)) ?? [],
+        )
+        for (let i = 1; i <= creativeTeamList.length; i++) {
+            const delay: number = (i - 1) * 1600
+            console.log(`.${styles.member}:nth-of-type(${i}) .${headingStyles.heading} > *`)
+            animationList = animationList.concat(
+                AnimationLib.slideInBottom(slideElement.current?.querySelectorAll(`.${styles.member}:nth-of-type(${i}) img`), { delay }) ?? [],
+                AnimationLib.fadeIn(slideElement.current?.querySelectorAll(`.${styles.member}:nth-of-type(${i}) .${headingStyles.heading} > *`), { delay: delay + 1200 }) ?? [],
+                AnimationLib.fadeIn(slideElement.current?.querySelectorAll(`.${styles.member}:nth-of-type(${i}) p`), { delay: delay + 1800 }) ?? [],
+                AnimationLib.fadeIn(slideElement.current?.querySelectorAll(`.${styles.member}:nth-of-type(${i}) button`), { delay: delay + 2200 }) ?? [],
+            )
+        }
+
+        new AnimationTriggerBuilder()
+            .setElementToBeObserved(slideElement)
+            .addAnimationFunction(() => {
+                setTimeout(() => {
+                    animationList.forEach((animation: anime.AnimeInstance) => animation.play())
+                }, 800)
+            })
+            .build()
+    }, [slideElement])
+
     return (
-        <div className={[styles.creativeTeam, "centered-slide"].join(" ")}>
+        <div className={[styles.creativeTeam, "centered-slide"].join(" ")} ref={slideElement}>
             <Heading lineList={[{ text: "Creative team", color: "primary", weight: "medium" }]} />
 
             <ul className={styles.memberList}>
-                {getCreativeTeamList().map((member, index) => (
+                {creativeTeamList.map((member, index) => (
                     <li key={index} className={styles.member}>
                         <PhotoWithText {...buildPhotoWithTextParams(member.photo, member.name, member.description, "vertical", member.position)} />
 
@@ -31,7 +64,7 @@ type CreativeTeamMember = {
     houseProjectList?: Array<HouseProjectProps>
 }
 
-function getCreativeTeamList(): Array<CreativeTeamMember> {
+function listCreativeTeam(): Array<CreativeTeamMember> {
     return [
         {
             photo: "ricardo.jpg",
