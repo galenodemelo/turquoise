@@ -22,6 +22,7 @@ export default function Home(): JSX.Element {
             AnimationLib.fadeInLetters(slideElement.current?.querySelectorAll(`.swiper-slide-active .${headingStyles.heading} > *`)) ?? [],
             AnimationLib.fadeIn(slideElement.current?.querySelectorAll(`.swiper-slide-active .${textboxStyles.textbox} > p`), { delay: 1200 }) ?? [],
             AnimationLib.fadeIn(slideElement.current?.querySelectorAll(`.swiper-slide-active .${buttonStyles.button}`), { delay: 1600 }) ?? [],
+            AnimationLib.scaleIn(slideElement.current?.querySelectorAll(`.swiper-slide-active img`), { delay: 1600 }) ?? []
         )
 
         new AnimationTriggerBuilder()
