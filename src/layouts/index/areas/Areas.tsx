@@ -18,7 +18,6 @@ export default function Areas(): JSX.Element {
         )
         for (let i = 1; i <= imagesList.length; i++) {
             const delay: number = (i - 1) * 200
-            console.log(`.${styles.member}:nth-of-type(${i}) .${headingStyles.heading} > *`)
             animationList = animationList.concat(
                 AnimationLib.scaleIn(slideElement.current?.querySelectorAll(`.${galleryWithThumbStyle.item}:nth-of-type(${i}) img`), { delay }) ?? [],
                 AnimationLib.fadeIn(slideElement.current?.querySelectorAll(`.${galleryWithThumbStyle.item}:nth-of-type(${i})`), { delay: delay + 600 }) ?? []

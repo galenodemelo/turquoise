@@ -18,7 +18,7 @@ export default function Developers(): JSX.Element {
         )
         for (let i = 1; i <= developerDataList.length; i++) {
             const delay: number = (i - 1) * 1400
-            console.log(`.${styles.member}:nth-of-type(${i}) .${headingStyles.heading} > *`)
+            :nth-of-type(${i}) .${headingStyles.heading} > *`)
             animationList = animationList.concat(
                 AnimationLib.slideInBottom(slideElement.current?.querySelectorAll(`.${styles.member}:nth-of-type(${i}) img`), { delay }) ?? [],
                 AnimationLib.fadeIn(slideElement.current?.querySelectorAll(`.${styles.member}:nth-of-type(${i}) .${headingStyles.heading} > *`), { delay: delay + 1200 }) ?? [],

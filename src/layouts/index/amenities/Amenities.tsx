@@ -18,7 +18,6 @@ export default function Amenities(): JSX.Element {
         )
         for (let i = 1; i <= amenitiesList.length; i++) {
             const delay: number = (i - 1) * 400
-            console.log(`.${styles.member}:nth-of-type(${i}) .${headingStyles.heading} > *`)
             animationList = animationList.concat(
                 AnimationLib.scaleIn(slideElement.current?.querySelectorAll(`.${detailWithThumbStyles.item}:nth-of-type(${i}) img`), { delay }) ?? [],
                 AnimationLib.fadeIn(slideElement.current?.querySelectorAll(`.${detailWithThumbStyles.item}:nth-of-type(${i})`), { delay: delay + 600 }) ?? []
