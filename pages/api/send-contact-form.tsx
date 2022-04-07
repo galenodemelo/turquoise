@@ -49,16 +49,29 @@ function validateForm(requestBody: any): { success: boolean, errorList?: string[
     }
 }
 
-function buildMailHtml({name, lastName, email, phone, origin, message}: { name: string, lastName: string, email: string, phone: string, origin?: string, message: string }) {
-    return `
-        <h1>Contact form</h1>
-        <p>
-            <strong>Name:</strong> ${name}<br />
-            <strong>Last name:</strong> ${lastName}<br />
-            <strong>E-mail:</strong> ${email}<br />
-            <strong>Phone:</strong> ${phone}<br />
-            <strong>Origin:</strong> ${origin}<br />
-            <strong>Message:</strong> ${message}<br />
-        </p>
-    `
+type MailProps = {
+    name: string,
+    lastName: string,
+    email: string,
+    phone: string,
+    origin?: string,
+    specify?: string,
+    message: string
+}
+function buildMailHtml({name, lastName, email, phone, origin, specify, message}: MailProps): string {
+    let mailHtml: string = `<h1>Contact form</h1>`
+
+    let fieldList: Array<string> = []
+    fieldList.push(`<strong>Last name:</strong> ${lastName}`)
+    fieldList.push(`<strong>E-mail:</strong> ${email}`)
+    fieldList.push(`<strong>Phone:</strong> ${phone}`)
+
+    if (origin) fieldList.push(`<strong>How did you meet us:</strong> ${origin}`)
+    if (specify) fieldList.push(`<strong>Please, specify:</strong> ${specify}`)
+
+    fieldList.push(`<strong>Message:</strong> <br />${message.split("\n").join("<br />")}`)
+
+    mailHtml += `<p>${fieldList.join("<br />")}</p>`
+
+    return mailHtml
 }

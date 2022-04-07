@@ -85,8 +85,8 @@ export default function Form(): JSX.Element {
 
                 {needToSpecifyList.includes(origin) &&
                     <div className={styles.group}>
-                        <input type="text" name="specify" id="specify" required autoFocus />
-                        <label htmlFor="specify">Specify</label>
+                        <input type="text" name="specify" id="specify" autoFocus />
+                        <label htmlFor="specify">Please, specify...</label>
                     </div>
                 }
             </div>
