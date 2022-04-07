@@ -23,6 +23,17 @@ export default function PageSwiper({ children }: Props) {
                 releaseOnEdges: true,
                 sensitivity: .1
             }}
+            onSlideChangeTransitionStart={(swiper) => {
+                swiper.slides.map((slide, index) => {
+                    const isActive: boolean = index == swiper.activeIndex
+                    const firstChild: HTMLElement = slide.firstElementChild as HTMLElement
+                    if (isActive) {
+                        firstChild.setAttribute("data-state-active", "true")
+                    } else {
+                        firstChild.setAttribute("data-state-active", "false")
+                    }
+                })
+            }}
             spaceBetween={0}
             speed={1000}
             slidesPerView={1}
