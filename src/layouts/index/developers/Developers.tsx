@@ -1,14 +1,47 @@
 import Heading from "@components/heading/Heading"
+import headingStyles from "@components/heading/Heading.module.sass"
 import PhotoWithText, { buildPhotoWithTextParams } from "@layouts/templates/photowithtext/PhotoWithText"
+import anime from "animejs"
+import { RefObject, useEffect, useRef } from "react"
+import AnimationLib from "src/libs/animation/AnimationLib"
+import AnimationTriggerBuilder from "src/libs/animation/AnimationTriggerBuilder"
 import styles from "./Developers.module.sass"
 
 export default function Developers(): JSX.Element {
+    const slideElement: RefObject<HTMLDivElement> = useRef<HTMLDivElement>(null)
+    const developerDataList: Array<DeveloperData> = listDevelopers()
+
+    useEffect(() => {
+        let animationList: anime.AnimeInstance[] = []
+        animationList = animationList.concat(
+            AnimationLib.fadeInLetters(slideElement.current?.querySelectorAll(`.${styles.developers} > .${headingStyles.heading} > *`)) ?? [],
+        )
+        for (let i = 1; i <= developerDataList.length; i++) {
+            const delay: number = (i - 1) * 1400
+            console.log(`.${styles.member}:nth-of-type(${i}) .${headingStyles.heading} > *`)
+            animationList = animationList.concat(
+                AnimationLib.slideInBottom(slideElement.current?.querySelectorAll(`.${styles.member}:nth-of-type(${i}) img`), { delay }) ?? [],
+                AnimationLib.fadeIn(slideElement.current?.querySelectorAll(`.${styles.member}:nth-of-type(${i}) .${headingStyles.heading} > *`), { delay: delay + 1200 }) ?? [],
+                AnimationLib.fadeIn(slideElement.current?.querySelectorAll(`.${styles.member}:nth-of-type(${i}) p`), { delay: delay + 1800 }) ?? [],
+            )
+        }
+
+        new AnimationTriggerBuilder()
+            .setElementToBeObserved(slideElement)
+            .addAnimationFunction(() => {
+                setTimeout(() => {
+                    animationList.forEach((animation: anime.AnimeInstance) => animation.play())
+                }, 800)
+            })
+            .build()
+    }, [slideElement])
+
     return (
-        <div className={[styles.developers, "centered-slide"].join(" ")}>
+        <div className={[styles.developers, "centered-slide"].join(" ")} ref={slideElement}>
             <Heading lineList={[{ text: "Developers", color: "primary", weight: "medium" }]} />
 
             <ul className={styles.memberList}>
-                {listDevelopers().map((member, index) => (
+                {developerDataList.map((member, index) => (
                     <li key={index} className={styles.member}>
                         <PhotoWithText {...buildPhotoWithTextParams(member.photo, member.name, member.description, "horizontal", member.position)} />
                     </li>
