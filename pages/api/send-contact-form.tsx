@@ -62,6 +62,7 @@ function buildMailHtml({name, lastName, email, phone, origin, specify, message}:
     let mailHtml: string = `<h1>Contact form</h1>`
 
     let fieldList: Array<string> = []
+    fieldList.push(`<strong>Name:</strong> ${name}`)
     fieldList.push(`<strong>Last name:</strong> ${lastName}`)
     fieldList.push(`<strong>E-mail:</strong> ${email}`)
     fieldList.push(`<strong>Phone:</strong> ${phone}`)
