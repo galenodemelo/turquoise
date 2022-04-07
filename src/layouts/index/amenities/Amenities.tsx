@@ -70,6 +70,16 @@ function listAmenities(): Array<DetailProps> {
             title: "Fire pits",
             image: `${amenitiesImagePath}/fire-pits.jpg`,
             description: "There's nothing quite as relaxing as winding down your day in front of one of our three community fire pits. The stars above and the warm glow from the flickering flames are the perfect way to wrap up your day. So, what's your plan for tomorrow?"
+        },
+        {
+            title: "Club house",
+            image: `${amenitiesImagePath}/club-house.jpg`,
+            description: "Lavish yourself and your family with a place surrounded by such beauty.  Privacity and fresh air to enjoy a little bubbly with a loved one while overlooking the ocean. Paradise indeed."
+        },
+        {
+            title: "Observation tower",
+            image: `${amenitiesImagePath}/observation-tower.jpg`,
+            description: "Sometime in between, be sure to climb the 5 floors of our observatory tower to enjoy a panoramic Santa Rosa. You may have to pinch yourself."
         }
     ]
 }
