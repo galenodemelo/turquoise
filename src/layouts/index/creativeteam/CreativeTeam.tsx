@@ -1,3 +1,4 @@
+import Button, { type Props as ButtonProps } from "@components/button/Button"
 import Heading from "@components/heading/Heading"
 import headingStyles from "@components/heading/Heading.module.sass"
 import PhotoWithText, { buildPhotoWithTextParams } from "@layouts/templates/photowithtext/PhotoWithText"
@@ -22,7 +23,7 @@ export default function CreativeTeam(): JSX.Element {
                 AnimationLib.slideInBottom(slideElement.current?.querySelectorAll(`.${styles.member}:nth-of-type(${i}) img`), { delay }) ?? [],
                 AnimationLib.fadeIn(slideElement.current?.querySelectorAll(`.${styles.member}:nth-of-type(${i}) .${headingStyles.heading} > *`), { delay: delay + 1200 }) ?? [],
                 AnimationLib.fadeIn(slideElement.current?.querySelectorAll(`.${styles.member}:nth-of-type(${i}) p`), { delay: delay + 1800 }) ?? [],
-                AnimationLib.fadeIn(slideElement.current?.querySelectorAll(`.${styles.member}:nth-of-type(${i}) button`), { delay: delay + 2200 }) ?? [],
+                AnimationLib.fadeIn(slideElement.current?.querySelectorAll(`.${styles.member}:nth-of-type(${i}) button, .${styles.member}:nth-of-type(${i}) a`), { delay: delay + 2200 }) ?? [],
             )
         }
 
@@ -38,7 +39,7 @@ export default function CreativeTeam(): JSX.Element {
 
     return (
         <div className={[styles.creativeTeam, "centered-slide"].join(" ")} ref={slideElement}>
-            <Heading lineList={[{ text: "Creative team", color: "primary", weight: "medium" }]} />
+            <Heading lineList={[{ text: "Designers", color: "primary", weight: "medium" }]} />
 
             <ul className={styles.memberList}>
                 {creativeTeamList.map((member, index) => (
@@ -47,6 +48,10 @@ export default function CreativeTeam(): JSX.Element {
 
                         {member.houseProjectList &&
                             <HouseProjectGallery houseProjectList={member.houseProjectList} />
+                        }
+
+                        {member.button &&
+                            <Button {...member.button} />
                         }
                     </li>
                 ))}
@@ -61,6 +66,7 @@ type CreativeTeamMember = {
     description: string
     position: string
     houseProjectList?: Array<HouseProjectProps>
+    button?: ButtonProps
 }
 
 function listCreativeTeam(): Array<CreativeTeamMember> {
@@ -118,7 +124,12 @@ function listCreativeTeam(): Array<CreativeTeamMember> {
             photo: "patrick.jpg",
             name: "Patrick",
             position: "Masterplanner",
-            description: "Patrick is senior landscape architect and master planner with extensive experience in land development and professional design practice including but not limited to master planning, urban design, site and amenity design, marketing, scheduling, and budgeting for residential communities, mixed-use, resort, commercial, civic, educational and resource-based recreational developments."
+            description: "Patrick is senior landscape architect and master planner with extensive experience in land development and professional design practice including but not limited to master planning, urban design, site and amenity design, marketing, scheduling, and budgeting for residential communities, mixed-use, resort, commercial, civic, educational and resource-based recreational developments.",
+            button: {
+                href: "https://player.theviewvr.com/?locationId=1298",
+                target: "_blank",
+                children: "Masterplan"
+            }
         }
     ]
 }

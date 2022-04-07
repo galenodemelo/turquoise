@@ -20,11 +20,9 @@ export default function HouseProjectGallery({ houseProjectList }: Props): JSX.El
 
     return (
         <div className={styles.houseProjectGallery}>
-            <div className={styles.button}>
-                <Button variant="secondary" onClick={() => setGalleryActive(true)}>
-                    House project
-                </Button>
-            </div>
+            <Button variant="secondary" onClick={() => setGalleryActive(true)}>
+                House project
+            </Button>
 
             <div className={[styles.gallery, "slide-in-bottom"].join(" ")} data-state-active={galleryActive}>
                 <button className={styles.close} onClick={() => setGalleryActive(false)}>
