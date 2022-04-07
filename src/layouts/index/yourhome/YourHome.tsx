@@ -3,6 +3,7 @@ import Heading from "@components/heading/Heading"
 import headingStyles from "@components/heading/Heading.module.sass"
 import GallerySwiper from "@components/swiper/gallery/GallerySwiper"
 import Textbox from "@layouts/templates/textwithslider/textbox/Textbox"
+import textboxStyles from "@layouts/templates/textwithslider/textbox/Textbox.module.sass"
 import TextWithSlider from "@layouts/templates/textwithslider/TextWithSlider"
 import Image from "next/image"
 import { RefObject, useEffect, useRef } from "react"
@@ -17,6 +18,7 @@ export default function YourHome(): JSX.Element {
         animationList = animationList.concat(
             AnimationLib.scaleIn(slideElement.current?.querySelectorAll(`.swiper-slide-active img`)) ?? [],
             AnimationLib.fadeInLetters(slideElement.current?.querySelectorAll(`.${headingStyles.heading} > *`), { delay: 800 }) ?? [],
+            AnimationLib.fadeIn(slideElement.current?.querySelectorAll(`.${textboxStyles.textbox} > p`), { delay: 1200 }) ?? [],
         )
 
         new AnimationTriggerBuilder()
