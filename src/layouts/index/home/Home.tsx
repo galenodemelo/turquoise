@@ -1,5 +1,7 @@
+import buttonStyles from "@components/button/Button.module.sass"
 import headingStyles from "@components/heading/Heading.module.sass"
 import GallerySwiper from "@components/swiper/gallery/GallerySwiper"
+import textboxStyles from "@layouts/templates/textwithslider/textbox/Textbox.module.sass"
 import TextWithSlider from "@layouts/templates/textwithslider/TextWithSlider"
 import { RefObject, useEffect, useRef, useState } from "react"
 import AnimationLib from "src/libs/animation/AnimationLib"
@@ -18,6 +20,8 @@ export default function Home(): JSX.Element {
         let animationList: anime.AnimeInstance[] = []
         animationList = animationList.concat(
             AnimationLib.fadeInLetters(slideElement.current?.querySelectorAll(`.swiper-slide-active .${headingStyles.heading} > *`)) ?? [],
+            AnimationLib.fadeIn(slideElement.current?.querySelectorAll(`.swiper-slide-active .${textboxStyles.textbox} > p`), { delay: 1200 }) ?? [],
+            AnimationLib.fadeIn(slideElement.current?.querySelectorAll(`.swiper-slide-active .${buttonStyles.button}`), { delay: 1600 }) ?? [],
         )
 
         new AnimationTriggerBuilder()

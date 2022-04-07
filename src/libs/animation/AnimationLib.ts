@@ -4,6 +4,19 @@ import AnimationBuilder from "./AnimationBuilder"
 
 export default class AnimationLib {
 
+    public static fadeIn(target: Target, options?: Options): anime.AnimeInstance | null {
+        if (!target) return null
+
+        return new AnimationBuilder(target)
+            .setOptions(options)
+            .setDuration(600)
+            .setAnimation({
+                opacity: [0, 1],
+                easing: "easeInOutQuad"
+            })
+            .build()
+    }
+
     public static fadeInLetters(target: Target, options?: Options): anime.AnimeInstance[] | null {
         if (!target) return null
 
