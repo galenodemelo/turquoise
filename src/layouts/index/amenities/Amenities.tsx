@@ -1,15 +1,46 @@
 import Heading from "@components/heading/Heading"
-import Image from "next/image"
+import headingStyles from "@components/heading/Heading.module.sass"
+import { RefObject, useEffect, useRef } from "react"
+import AnimationLib from "src/libs/animation/AnimationLib"
+import AnimationTriggerBuilder from "src/libs/animation/AnimationTriggerBuilder"
 import styles from "./Amenities.module.sass"
 import DetailWithThumb, { Props as DetailProps } from "./detailwiththumb/DetailWithThumb"
+import detailWithThumbStyles from "./detailwiththumb/DetailWithThumb.module.sass"
 
 export default function Amenities(): JSX.Element {
+    const slideElement: RefObject<HTMLDivElement> = useRef<HTMLDivElement>(null)
+    const amenitiesList: Array<DetailProps> = listAmenities()
+
+    useEffect(() => {
+        let animationList: anime.AnimeInstance[] = []
+        animationList = animationList.concat(
+            AnimationLib.fadeInLetters(slideElement.current?.querySelectorAll(`.${styles.amenities} > .${headingStyles.heading} > *`)) ?? [],
+        )
+        for (let i = 1; i <= amenitiesList.length; i++) {
+            const delay: number = (i - 1) * 400
+            console.log(`.${styles.member}:nth-of-type(${i}) .${headingStyles.heading} > *`)
+            animationList = animationList.concat(
+                AnimationLib.scaleIn(slideElement.current?.querySelectorAll(`.${detailWithThumbStyles.item}:nth-of-type(${i}) img`), { delay }) ?? [],
+                AnimationLib.fadeIn(slideElement.current?.querySelectorAll(`.${detailWithThumbStyles.item}:nth-of-type(${i})`), { delay: delay + 600 }) ?? []
+            )
+        }
+
+        new AnimationTriggerBuilder()
+            .setElementToBeObserved(slideElement)
+            .addAnimationFunction(() => {
+                setTimeout(() => {
+                    animationList.forEach((animation: anime.AnimeInstance) => animation.play())
+                }, 800)
+            })
+            .build()
+    }, [slideElement])
+
     return (
-        <div className={[styles.amenities, "centered-slide"].join(" ")}>
+        <div className={[styles.amenities, "centered-slide"].join(" ")} ref={slideElement}>
             <Heading lineList={[{ text: "Amenities", color: "primary", weight: "bold" }]} />
 
             <ul className={styles.gallery}>
-                {listAmenities().map((amenity, index) => (
+                {amenitiesList.map((amenity, index) => (
                     <DetailWithThumb key={index} {...amenity} />
                 ))}
             </ul>
