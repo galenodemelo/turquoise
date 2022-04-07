@@ -17,6 +17,19 @@ export default class AnimationLib {
             .build()
     }
 
+    public static fadeInBottom(target: Target, options?: Options): anime.AnimeInstance | null {
+        if (!target) return null
+
+        return new AnimationBuilder(target)
+            .setOptions(options)
+            .setDuration(800)
+            .setAnimation({
+                translateY: ["50%", "0%"],
+                opacity: [0, 1],
+                easing: "easeInOutQuad"
+            })
+            .build()
+    }
     public static fadeInLetters(target: Target, options?: Options): anime.AnimeInstance[] | null {
         if (!target) return null
 
