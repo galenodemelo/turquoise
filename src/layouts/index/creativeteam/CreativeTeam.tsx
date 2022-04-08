@@ -124,7 +124,7 @@ function listCreativeTeam(): Array<CreativeTeamMember> {
             photo: "patrick.jpg",
             name: "Patrick",
             position: "Masterplanner",
-            description: "Patrick is senior landscape architect and master planner with extensive experience in land development and professional design practice including but not limited to master planning, urban design, site and amenity design, marketing, scheduling, and budgeting for residential communities, mixed-use, resort, commercial, civic, educational and resource-based recreational developments.",
+            description: "I\'m very excited to be a member of the design team for the Turquoise project. Turquoise will be the first master planned coastal community of its kind in the 30A market. Its distinctive and exclusive because it offers home buyers a community which emphasizes clean, modern architectural design in beautiful natural setting as well as generally larger homesites than are currently available in the luxury home echelon.",
             button: {
                 href: "https://player.theviewvr.com/?locationId=1298",
                 target: "_blank",
