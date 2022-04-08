@@ -51,7 +51,7 @@ export default function CreativeTeam(): JSX.Element {
                         }
 
                         {member.button &&
-                            <Button {...member.button} />
+                            <Button variant="secondary" {...member.button} />
                         }
                     </li>
                 ))}
