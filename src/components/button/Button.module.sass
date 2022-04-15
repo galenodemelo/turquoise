@@ -1,4 +1,5 @@
 @import @styles/constants
+@import @styles/mixins
 
 .button
     display: inline-block
@@ -8,9 +9,14 @@
     font-size: 1.2rem
     line-height: 1
     white-space: nowrap
-    padding: 24px 32px
     border: 0
     cursor: pointer
+
+    @include laptop-only
+        padding: 16px 24px
+
+    @include monitor-only
+        padding: 24px 32px
 
     &--primary
         background-color: $color-primary

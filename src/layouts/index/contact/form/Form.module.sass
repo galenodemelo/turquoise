@@ -1,9 +1,15 @@
 @import @styles/constants
+@import @styles/mixins
 
 .form
     display: flex
     flex-direction: column
-    row-gap: 24px
+
+    @include laptop-only
+        row-gap: 16px
+
+    @include monitor-only
+        row-gap: 24px
 
     .row
         display: flex
@@ -22,7 +28,12 @@
             label
                 width: 100%
                 font-family: $font-arboria
-                font-size: 1.4rem
+
+                @include laptop-only
+                    font-size: 1.2rem
+
+                @include monitor-only
+                    font-size: 1.4rem
 
             input,
             select,

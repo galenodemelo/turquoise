@@ -1,9 +1,16 @@
 @import @styles/constants
+@import @styles/mixins
 
 .header
     width: 100%
-    padding: 28px 0
     background-color: $color-white
+
+    @include laptop-only
+        padding: 14px 0
+
+    @include monitor-only
+        padding: 28px 0
+
 
     .container
         display: flex
