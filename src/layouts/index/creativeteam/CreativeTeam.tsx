@@ -93,14 +93,14 @@ function listCreativeTeam(): Array<CreativeTeamMember> {
             ]
         },
         {
-            photo: "taney.jpg",
-            name: "Taney",
+            photo: "tanney.jpg",
+            name: "Tanney",
             position: "Architect",
             description: "I am really excited about the vision of Turquoise. Starting with Seaside, virtually all of the neighborhoods along 30A have have been conceived with a look back at traditional architecture. Turquoise finally offers me the opportunity to introduce a modern, unique aesthetic on a neighborhood scale along the Gulf Coast.",
             houseProjectList: [
                 {
-                    name: "Mark Taney",
-                    image: "mark-taney-1.jpg"
+                    name: "Mark Tanney",
+                    image: "mark-tanney-1.jpg"
                 }
             ]
         },
