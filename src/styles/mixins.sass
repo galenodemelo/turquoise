@@ -1,0 +1,13 @@
+@import @styles/constants
+
+@mixin mobile-only
+    @media screen and (max-width: $mobile-breakpoint-width)
+        @content
+
+@mixin laptop-only
+    @media screen and (min-width: $mobile-breakpoint-width) and (max-width: $laptop-breakpoint-width)
+        @content
+
+@mixin monitor-only
+    @media screen and (min-width: $laptop-breakpoint-width)
+        @content
