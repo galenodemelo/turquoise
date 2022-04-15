@@ -74,7 +74,7 @@ function listAmenities(): Array<DetailProps> {
         {
             title: "Club house",
             image: `${amenitiesImagePath}/club-house.jpg`,
-            description: "Lavish yourself and your family with a place surrounded by such beauty. A wide space to share all our moments with someone who made our days better."
+            description: "Lavish yourself and your family with a place surrounded by such beauty. A wide space to share all our moments with someone who makes our days better."
         },
         {
             title: "Observation tower",
