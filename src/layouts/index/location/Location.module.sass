@@ -1,4 +1,5 @@
 @import @styles/constants
+@import @styles/mixins
 
 .location
     height: 100%
@@ -23,3 +24,6 @@
             border: $color-primary solid 6px
             border-bottom: none
             border-right: none
+
+            @include mobile-only
+                display: none
