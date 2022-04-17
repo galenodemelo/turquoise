@@ -14,7 +14,7 @@ export default function VideoWithLogo(): JSX.Element {
 
             {!isVideoLoading &&
                 <div className={styles.logo}>
-                    <Image src="/img/turquoise-logo.gif" layout="fill" loading="eager" alt="Turquoise logo animated" />
+                    <Image src="/img/turquoise-logo.gif" layout="fill" loading="eager" alt="Turquoise logo animated" sizes="60vw" />
                 </div>
             }
         </div>

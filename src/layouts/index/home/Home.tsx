@@ -43,7 +43,7 @@ export default function Home(): JSX.Element {
                 <SurroundedTextbox />
             </GallerySwiper>
 
-            <GallerySwiper setSwiperInstance={setImageSwiperInstance} controller={textboxSwiperInstance}>
+            <GallerySwiper setSwiperInstance={setImageSwiperInstance} controller={textboxSwiperInstance} effect="fade">
                 <LuxuryImage />
                 <NatureImage />
                 <SurroundedImage />

@@ -18,7 +18,7 @@ export default function DetailWithThumb({ title, image, description }: Props): J
     return (
         <li className={styles.item}>
             <div className={[styles.thumb, "thumbnail"].join(" ")} onClick={() => setLightboxActive(true)}>
-                <Image src={image} alt={title} layout="fill" objectFit="cover" />
+                <Image src={image} alt={title} layout="fill" objectFit="cover" sizes="40vw" loading="eager" />
             </div>
 
             <div className={[styles.lightbox, "slide-in-bottom"].join(" ")} data-state-active={lightboxActive}>
@@ -31,7 +31,7 @@ export default function DetailWithThumb({ title, image, description }: Props): J
                     </Textbox>
 
                     <GallerySwiper loop={false}>
-                        <Image src={image} alt={title} layout="fill" objectFit="cover" />
+                        <Image src={image} alt={title} layout="fill" objectFit="cover" sizes="30vw" loading="eager" />
                     </GallerySwiper>
                 </TextWithSlider>
             </div>

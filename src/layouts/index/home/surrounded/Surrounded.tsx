@@ -42,6 +42,7 @@ export function SurroundedImage(): JSX.Element {
             src="/img/slider/surrounded/1-family-playing-golf.jpg"
             layout="fill"
             objectFit="cover"
+            sizes="60vw"
         />
     )
 }

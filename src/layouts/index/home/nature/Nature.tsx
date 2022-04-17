@@ -42,6 +42,7 @@ export function NatureImage(): JSX.Element {
             src="/img/slider/nature/1-couple-walking-on-beach.jpg"
             layout="fill"
             objectFit="cover"
+            sizes="60vw"
         />
     )
 }

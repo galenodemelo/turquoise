@@ -9,6 +9,7 @@ export default function Logo(): JSX.Element {
                 src="/img/turquoise-logo.svg"
                 layout="fill"
                 priority={true}
+                sizes="300px"
                 alt="Turquoise green logo" />
         </a>
     )

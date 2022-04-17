@@ -13,6 +13,7 @@ export default function Icon({ alt, filename, size = "1x" }: Props): JSX.Element
             <Image
                 src={`/img/ico/${filename}`}
                 layout="fill"
+                sizes="120px"
                 alt={alt} />
         </div>
     )

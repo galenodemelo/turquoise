@@ -43,6 +43,7 @@ export function LuxuryImage(): JSX.Element {
             src="/img/slider/luxury/1-diamond-on-fabric.jpg"
             layout="fill"
             objectFit="cover"
+            sizes="60vw"
         />
     )
 }

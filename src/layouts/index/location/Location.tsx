@@ -35,7 +35,7 @@ export default function Location(): JSX.Element {
                 <Map />
 
                 <div className={styles.thumb}>
-                    <Image src="/img/map/location-thumb.jpg" layout="fill" objectFit="cover" alt="Overview of Florida location" />
+                    <Image src="/img/map/location-thumb.jpg" layout="fill" objectFit="cover" alt="Overview of Florida location" sizes="30vw" />
                 </div>
             </div>
         </div>

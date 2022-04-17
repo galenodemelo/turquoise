@@ -27,7 +27,7 @@ export default function GalleryWithThumb({ imageList }: Props): JSX.Element {
             <ul className={styles.thumbList}>
                 {imageList.map((image, index) => (
                     <li key={index} className={[styles.item, "thumbnail"].join(" ")} onClick={() => showGallery(index)}>
-                        <Image src={image.thumbUrl} alt={image.description} layout="fill" objectFit="cover" />
+                        <Image src={image.thumbUrl} alt={image.description} layout="fill" objectFit="cover" sizes="50vw" loading="eager" />
                     </li>
                 ))}
             </ul>
@@ -40,7 +40,7 @@ export default function GalleryWithThumb({ imageList }: Props): JSX.Element {
                 <GallerySwiper initialSlide={galleryIndex}>
                     {imageList.map((image, index) => (
                         <div key={index} className={styles.galleryItem}>
-                            <Image src={image.url} alt={image.description} layout="fill" objectFit="cover" loading="eager" />
+                            <Image src={image.url} alt={image.description} layout="fill" objectFit="cover" loading="eager" sizes="1440px" />
 
                             <div className={styles.description}>
                                 {image.description}

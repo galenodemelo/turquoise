@@ -39,7 +39,7 @@ export default function HouseProjectGallery({ houseProjectList }: Props): JSX.El
                             }
 
                             <div className={styles.image}>
-                                <Image src={`${imagePath}/${houseProject.image}`} alt={`${houseProject.name} project`} layout="fill" objectFit="contain" />
+                                <Image src={`${imagePath}/${houseProject.image}`} alt={`${houseProject.name} project`} layout="fill" objectFit="contain" sizes="1920px" />
                             </div>
 
                             <div className={styles.description}>
