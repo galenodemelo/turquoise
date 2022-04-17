@@ -5,6 +5,9 @@
     display: flex
     flex-direction: column
 
+    @include mobile-only
+        row-gap: 8px
+
     @include laptop-only
         row-gap: 16px
 
@@ -12,11 +15,11 @@
         row-gap: 24px
 
     .row
+        position: relative
         display: flex
         column-gap: 48px
 
         .group
-            position: relative
             display: inline-flex
             flex-direction: column-reverse
             row-gap: 4px
@@ -51,32 +54,35 @@
                 height: 120px
                 resize: none
 
-            .submit
-                display: block
-                position: absolute
-                margin: auto
-                top: 1.4rem
-                bottom: 0
-                right: -80px
-                height: 48px
-                width: 54px
-                background: none
-                border: none
-                box-sizing: border-box
+        .submit
+            display: block
+            position: absolute
+            margin: auto
+            top: calc(-48px + -120px / 2)
+            right: -80px
+            height: 48px
+            width: 54px
+            background: none
+            border: none
+            box-sizing: border-box
 
-                &[disabled]
-                    opacity: .5
+            @include mobile-only
+                right: 0
+                top: 32px
 
-                    &:after
-                        position: absolute
-                        content: "Sending..."
-                        bottom: -1.2rem
-                        left: 0
-                        font-size: .9rem
-                        color: $color-black
+            &[disabled]
+                opacity: .5
 
-                &:not([disabled]):hover
-                    cursor: pointer
+                &:after
+                    position: absolute
+                    content: "Sending..."
+                    bottom: -1.2rem
+                    left: 0
+                    font-size: .9rem
+                    color: $color-black
+
+            &:not([disabled]):hover
+                cursor: pointer
 
         .note
             font-family: $font-arboria

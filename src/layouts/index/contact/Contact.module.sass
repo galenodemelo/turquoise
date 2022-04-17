@@ -11,6 +11,9 @@
     width: $default-container-width
     max-width: $default-container-width
 
+    @include mobile-only
+        row-gap: 32px
+
     @include laptop-only
         row-gap: 32px
 
@@ -31,3 +34,6 @@
             position: relative
             top: -32px
             height: 80px
+
+            @include mobile-only
+                display: none
