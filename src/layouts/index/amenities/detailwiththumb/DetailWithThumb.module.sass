@@ -1,7 +1,11 @@
 @import @styles/constants
+@import @styles/mixins
 
 .item
     height: 250px
+
+    @include mobile-only
+        height: 40vw
 
     .thumb
         position: relative
@@ -28,6 +32,13 @@
             font-family: $font-aviano-flare
             font-weight: bold
             color: $color-primary
+
+            @include mobile-only
+                bottom: -32px
+                left: 0
+                right: 0
+                text-align: right
+                font-size: .8rem
 
             &::before
                 content: "< "
