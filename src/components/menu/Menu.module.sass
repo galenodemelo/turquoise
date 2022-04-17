@@ -1,7 +1,12 @@
+@import @styles/mixins
+    
 .menu
     display: flex
     column-gap: 56px
     align-items: center
+
+    @include mobile-only
+        display: none
 
     .link,
     .social
