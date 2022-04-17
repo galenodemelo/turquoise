@@ -1,4 +1,5 @@
 @import @styles/constants
+@import @styles/mixins
 
 .textbox
     display: flex
@@ -6,9 +7,23 @@
     row-gap: 32px
     padding: 0 48px
 
+    @include mobile-only
+        padding: 0
+
+        a,
+        button
+            display: none
+
     > p
         font-size: 1rem
         font-family: $font-aviano-flare
         font-weight: 300
         line-height: 1.8
         color: $color-primary
+
+        @include mobile-only
+            font-size: 1rem
+            line-height: 1.2
+
+            > br
+                display: none

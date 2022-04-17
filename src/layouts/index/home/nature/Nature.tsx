@@ -16,14 +16,14 @@ export function NatureTextbox(): JSX.Element {
                 ]}
             />
             <p>
-                Santa Rosa prides itself<br />
-                on having consistently<br />
-                gorgeous weather,<br />
-                stunning beaches, and<br />
-                crystal clear waters.<br />
-                The fresh air, light<br />
-                breeze, and calming<br />
-                essence promise to<br />
+                Santa Rosa prides itself <br />
+                on having consistently <br />
+                gorgeous weather, <br />
+                stunning beaches, and <br />
+                crystal clear waters. <br />
+                The fresh air, light <br />
+                breeze, and calming <br />
+                essence promise to <br />
                 rejuvenate your soul.
             </p>
 
