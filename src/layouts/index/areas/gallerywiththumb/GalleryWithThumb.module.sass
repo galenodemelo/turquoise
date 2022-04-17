@@ -6,7 +6,12 @@
     grid-template-columns: 1fr 1fr 1fr
     gap: 24px
     width: 100%
+    max-width: $default-container-width
     margin: auto
+
+    @include mobile-only
+        grid-template-columns: 1fr 1fr
+        grid-auto-rows: 40vw
 
     @include laptop-only
         grid-auto-rows: 200px
@@ -30,6 +35,9 @@
     margin: auto
     left: 0
     right: 0
+
+    @include mobile-only
+        max-width: 100%
 
     .close
         position: absolute
@@ -58,3 +66,8 @@
             max-width: 640px
             padding: 32px 0
             text-transform: uppercase
+
+            @include mobile-only
+                font-size: 1rem
+                padding: 16px 0
+                width: 90%
