@@ -53,11 +53,12 @@ export default function YourHome(): JSX.Element {
                 </div>
             </Textbox>
 
-            <GallerySwiper>
+            <GallerySwiper loop={false}>
                 <Image
                     src="/img/slider/yourhome/1-key-inside-box.jpg"
                     layout="fill"
                     objectFit="cover"
+                    sizes="60vw"
                 />
             </GallerySwiper>
         </TextWithSlider>
