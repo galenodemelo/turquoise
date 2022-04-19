@@ -21,8 +21,11 @@
         color: $color-primary
 
         @include mobile-only
-            font-size: 1rem
             line-height: 1.2
 
             > br
                 display: none
+
+        @include tablet-only
+            line-height: 1.4
+
