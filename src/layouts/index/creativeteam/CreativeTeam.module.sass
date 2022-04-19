@@ -10,6 +10,11 @@
     width: $default-container-width
     row-gap: 1.6vw
 
+    @include mobile-only
+        width: 100%
+        row-gap: 16px
+        padding-left: 5%
+
     @include tablet-only
         width: 98%
         row-gap: 16px
@@ -20,6 +25,11 @@
         column-gap: 3vw
         box-sizing: border-box
         width: 100%
+        padding-right: 16vw
+        overflow-x: scroll
+
+        @include mobile-only
+            column-gap: 10vw
 
         @include tablet-only
             column-gap: 1vw
@@ -29,9 +39,15 @@
             flex-shrink: 1
             flex-basis: 0
 
+            @include mobile-only
+                width: 90vw
+
             a,
             button
                 margin-top: 24px
+
+                @include mobile-only
+                    margin-top: 16px
 
                 @include tablet-only
                     margin-top: 16px
