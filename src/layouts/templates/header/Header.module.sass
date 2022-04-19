@@ -18,8 +18,10 @@
         display: flex
         justify-content: space-between
         width: $default-container-width
-        max-width: $default-container-width
         margin: 0 auto
 
         @include mobile-only
             justify-content: center
+
+        @include tablet-only
+            width: 98%

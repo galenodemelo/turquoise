@@ -13,6 +13,10 @@
         grid-template-columns: 1fr 1fr
         grid-auto-rows: 40vw
 
+    @include tablet-only
+        grid-auto-rows: 160px
+        max-width: 900px
+
     @include laptop-only
         grid-auto-rows: 200px
         max-width: 900px

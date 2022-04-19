@@ -1,4 +1,5 @@
 @import @styles/constants
+@import @styles/mixins
 
 .creativeTeam
     width: 100%
@@ -7,8 +8,11 @@
     flex-direction: column
     justify-content: center
     width: $default-container-width
-    max-width: $default-container-width
     row-gap: 1.6vw
+
+    @include tablet-only
+        width: 98%
+        row-gap: 16px
 
     .memberList
         display: flex
@@ -16,6 +20,9 @@
         column-gap: 3vw
         box-sizing: border-box
         width: 100%
+
+        @include tablet-only
+            column-gap: 1vw
 
         .member
             flex-grow: 1
@@ -25,3 +32,6 @@
             a,
             button
                 margin-top: 24px
+
+                @include tablet-only
+                    margin-top: 16px

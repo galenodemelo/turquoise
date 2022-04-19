@@ -1,3 +1,5 @@
+@import @styles/mixins
+
 .icon
     position: relative
     display: inline-block
@@ -9,3 +11,7 @@
     &-2x
         width: 32px
         height: 32px
+
+        @include tablet-only
+            width: 24px
+            height: 24px

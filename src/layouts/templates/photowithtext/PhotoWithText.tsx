@@ -14,7 +14,7 @@ export default function PhotoWithText({ image, heading, text, variant }: Props):
     return (
         <div className={[styles.photoWithText, styles[`photoWithText--${variant}`]].join(" ")}>
             <div className={styles.photo}>
-                <Image src={image} layout="fill" objectFit="cover" loading="eager" objectPosition="center 10%" sizes="25vw" />
+                <Image src={image} layout="fill" objectFit="cover" loading="eager" sizes="25vw" />
             </div>
 
             <div className={styles.text}>
