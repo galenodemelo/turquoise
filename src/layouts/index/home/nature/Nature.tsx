@@ -16,7 +16,7 @@ export function NatureTextbox(): JSX.Element {
                 ]}
             />
             <p>
-                Santa Rosa prides itself <br />
+                Santa Rosa Beach prides itself <br />
                 on having consistently <br />
                 gorgeous weather, <br />
                 stunning beaches, and <br />

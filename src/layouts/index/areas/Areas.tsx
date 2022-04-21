@@ -62,7 +62,7 @@ function listImages(): Array<ThumbProps> {
         {
             url: `${sliderPath}/golf-club.jpg`,
             thumbUrl: `${sliderPath}/golf-club-thumb.jpg`,
-            description: "Golf Club"
+            description: "Golf"
         },
         {
             url: `${sliderPath}/dunes.jpg`,

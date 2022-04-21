@@ -52,7 +52,7 @@ function listAmenities(): Array<DetailProps> {
 
     return [
         {
-            title: "Beach",
+            title: "Santa Rosa Beach",
             image: `${amenitiesImagePath}/beach.jpg`,
             description: "Santa Rosa boasts some of the most iconic and breathtaking beaches in the world. The translucent waters sweep over white powdery sand under a clear blue sky. The temperature is ideal as a slight breeze comes in off the water. You have found your home at last."
         },
@@ -74,7 +74,7 @@ function listAmenities(): Array<DetailProps> {
         {
             title: "Club house",
             image: `${amenitiesImagePath}/club-house.jpg`,
-            description: "Lavish yourself and your family with a place surrounded by such beauty. A wide space to share all our moments with someone who makes our days better."
+            description: "A wide space surrounded by a unique beauty, to share all our moments with someone who makes our days better."
         },
         {
             title: "Observation tower",
