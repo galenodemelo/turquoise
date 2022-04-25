@@ -29,7 +29,7 @@ export default function Location(): JSX.Element {
 
     return (
         <div className={styles.location} ref={slideElement}>
-            <Heading lineList={[{ text: "Local", color: "primary" }]} />
+            <Heading lineList={[{ text: "Location", color: "primary" }]} />
 
             <div className={styles.mapContainer}>
                 <Map />
