@@ -1,9 +1,7 @@
 import Button from "@components/button/Button"
 import Heading from "@components/heading/Heading"
-import GallerySwiper from "@components/swiper/gallery/GallerySwiper"
 import Contact from "@layouts/index/contact/Contact"
 import Textbox from "@layouts/templates/textwithslider/textbox/Textbox"
-import TextWithSlider from "@layouts/templates/textwithslider/TextWithSlider"
 import Image from "next/image"
 
 export function NatureTextbox(): JSX.Element {
@@ -16,15 +14,7 @@ export function NatureTextbox(): JSX.Element {
                 ]}
             />
             <p>
-                Santa Rosa Beach prides itself <br />
-                on having consistently <br />
-                gorgeous weather, <br />
-                stunning beaches, and <br />
-                crystal clear waters. <br />
-                The fresh air, light <br />
-                breeze, and calming <br />
-                essence promise to <br />
-                rejuvenate your soul.
+                Santa Rosa Beach prides itself on having consistently gorgeous weather, stunning beaches, and crystal clear waters. The fresh air, light breeze, and calming essence promise to rejuvenate your soul.
             </p>
 
             <div>

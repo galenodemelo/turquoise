@@ -16,16 +16,7 @@ export function LuxuryTextbox(): JSX.Element {
                 ]}
             />
             <p>
-                Toss your troubles away <br />
-                as you float on the bay <br />
-                under the glorious blue <br />
-                sky and over translucent <br />
-                waters. Get away from it <br />
-                all, set anchor, and while <br />
-                away the hours with only <br />
-                your loved ones by your <br />
-                side. Truly heaven on <br />
-                Earth.
+                Toss your troubles away as you float on the gulf under the glorious blue sky and over translucent waters. Get away from it all, set anchor, and while away the hours with only your loved ones by your side. Truly heaven on Earth.
             </p>
 
             <div>

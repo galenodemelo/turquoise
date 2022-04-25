@@ -15,16 +15,7 @@ export function SurroundedTextbox(): JSX.Element {
                 ]}
             />
             <p>
-                Allow yourself to dream. <br />
-                Now live that dream, as <br />
-                our elegant serenity <br />
-                awaits you. Escape the <br />
-                turmoil of a busy life to a <br />
-                land of pristine simplicity. <br />
-                Take your putter to the <br />
-                green or spend your <br />
-                afternoon out in the <br />
-                blue...
+                Allow yourself to dream. Now live that dream, as our elegant serenity awaits you. Escape the turmoil of a busy life to a land of pristine simplicity. Take your putter to the green or spend your afternoon out in the blue...
             </p>
 
             <div>

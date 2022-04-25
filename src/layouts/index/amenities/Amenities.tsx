@@ -54,17 +54,17 @@ function listAmenities(): Array<DetailProps> {
         {
             title: "Santa Rosa Beach",
             image: `${amenitiesImagePath}/beach.jpg`,
-            description: "Santa Rosa boasts some of the most iconic and breathtaking beaches in the world. The translucent waters sweep over white powdery sand under a clear blue sky. The temperature is ideal as a slight breeze comes in off the water. You have found your home at last."
+            description: "Santa Rosa beach boasts some of the most iconic and breathtaking beaches in the world. The translucent waters sweep over white powdery sand under a clear blue sky. The temperature is ideal as a slight breeze comes in off the water. You have found your home at last."
         },
         {
             title: "Pickleball",
             image: `${amenitiesImagePath}/pickleball.jpg`,
-            description: "If you're feeling active, how about grabbing some friends and hitting up one of our two community pickleball courts? It's a fantastic way to stay in shape while soaking up those rays. Of course, there's no better feeling than working up a sweat and then taking a dip in the ocean."
+            description: "If you're feeling active, how about grabbing some friends and hitting up one of our two community Pickleball courts? It's a fantastic way to stay in shape while soaking up those rays. Of course, there's no better feeling than working up a sweat and then taking a dip in the Gulf."
         },
         {
             title: "Walking trails",
             image: `${amenitiesImagePath}/walking-trails.jpg`,
-            description: "How about a stroll through the luscious greens on our walking trails? Breathe in the country fresh air, while the tree canopies provide plenty of shade from the sun. Our path stretches across around 50,000 sq.ft., giving plenty of distance for a casual outing or a more lengthy exercise routine."
+            description: "How about a stroll through the luscious greens on our planked Walking Trails? Breathe in the country fresh air, while the tree canopies provide plenty of shade from the sun. Our path stretches across around 50,000 sq.ft., giving plenty of distance for a casual outing or a more lengthy exercise routine."
         },
         {
             title: "Fire pits",
@@ -74,12 +74,12 @@ function listAmenities(): Array<DetailProps> {
         {
             title: "Club house",
             image: `${amenitiesImagePath}/club-house.jpg`,
-            description: "A wide space surrounded by a unique beauty, to share all our moments with someone who makes our days better."
+            description: "Lavish yourself with a place surrounded by such beauty. A wide space to gather, relax and enjoy wonderful moments with those we hold most dear."
         },
         {
             title: "Observation tower",
             image: `${amenitiesImagePath}/observation-tower.jpg`,
-            description: "Sometime in between, be sure to climb the 5 floors of our observatory tower to enjoy a panoramic Santa Rosa. You may have to pinch yourself."
+            description: "Sometime in between, be sure to climb the 5 floors of our observatory tower to enjoy a panoramic view of Santa Rosa Beach. You may have to pinch yourself."
         }
     ]
 }
