@@ -39,7 +39,7 @@ export default function CreativeTeam(): JSX.Element {
 
     return (
         <div className={[styles.creativeTeam, "centered-slide"].join(" ")} ref={slideElement}>
-            <Heading lineList={[{ text: "Designers", color: "primary", weight: "medium" }]} />
+            <Heading lineList={[{ text: "House Projects", color: "primary", weight: "medium" }]} />
 
             <ul className={styles.memberList}>
                 {creativeTeamList.map((member, index) => (

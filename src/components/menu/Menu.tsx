@@ -13,7 +13,7 @@ export default function Menu(): JSX.Element {
         <div className={styles.menu}>
             <nav className={styles.link}>
                 <MenuLink href={`#${Home.name}`}>Home</MenuLink>
-                <MenuLink href={`#${CreativeTeam.name}`}>Designers</MenuLink>
+                <MenuLink href={`#${CreativeTeam.name}`}>House Projects</MenuLink>
                 <MenuLink href={`#${Amenities.name}`}>Amenities</MenuLink>
                 <MenuLink href={`#${Location.name}`}>Location</MenuLink>
                 <MenuLink href={`#${Contact.name}`}>Contact</MenuLink>
