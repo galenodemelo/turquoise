@@ -16,10 +16,10 @@ export default function IndexLayout(): JSX.Element {
             <Home />
             <YourHome />
             <CreativeTeam />
-            <Developers />
             <Amenities />
             <Areas />
             <Location />
+            <Developers />
             <Contact />
         </SliderPage>
     )

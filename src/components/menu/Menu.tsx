@@ -2,6 +2,7 @@ import Icon from "@components/icon/Icon"
 import Amenities from "@layouts/index/amenities/Amenities"
 import Contact from "@layouts/index/contact/Contact"
 import CreativeTeam from "@layouts/index/creativeteam/CreativeTeam"
+import Developers from "@layouts/index/developers/Developers"
 import Home from "@layouts/index/home/Home"
 import Location from "@layouts/index/location/Location"
 import SETTINGS from "src/settings"
@@ -16,6 +17,7 @@ export default function Menu(): JSX.Element {
                 <MenuLink href={`#${CreativeTeam.name}`}>House Projects</MenuLink>
                 <MenuLink href={`#${Amenities.name}`}>Amenities</MenuLink>
                 <MenuLink href={`#${Location.name}`}>Location</MenuLink>
+                <MenuLink href={`#${Developers.name}`}>Developers</MenuLink>
                 <MenuLink href={`#${Contact.name}`}>Contact</MenuLink>
             </nav>
             <nav className={styles.social}>
