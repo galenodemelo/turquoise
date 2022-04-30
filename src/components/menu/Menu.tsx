@@ -1,10 +1,6 @@
 import Icon from "@components/icon/Icon"
-import Amenities from "@layouts/index/amenities/Amenities"
 import Contact from "@layouts/index/contact/Contact"
-import CreativeTeam from "@layouts/index/creativeteam/CreativeTeam"
-import Developers from "@layouts/index/developers/Developers"
-import Home from "@layouts/index/home/Home"
-import Location from "@layouts/index/location/Location"
+import VideoWithLogo from "@layouts/index/videowithlogo/VideoWithLogo"
 import SETTINGS from "src/settings"
 import styles from "./Menu.module.sass"
 import MenuLink from "./menulink/MenuLink"
@@ -13,11 +9,7 @@ export default function Menu(): JSX.Element {
     return (
         <div className={styles.menu}>
             <nav className={styles.link}>
-                <MenuLink href={`#${Home.name}`}>Home</MenuLink>
-                <MenuLink href={`#${CreativeTeam.name}`}>House Projects</MenuLink>
-                <MenuLink href={`#${Amenities.name}`}>Amenities</MenuLink>
-                <MenuLink href={`#${Location.name}`}>Location</MenuLink>
-                <MenuLink href={`#${Developers.name}`}>Developers</MenuLink>
+                <MenuLink href={`#${VideoWithLogo.name}`}>Home</MenuLink>
                 <MenuLink href={`#${Contact.name}`}>Contact</MenuLink>
             </nav>
             <nav className={styles.social}>
