@@ -1,5 +1,6 @@
 import Icon from "@components/icon/Icon"
 import Contact from "@layouts/index/contact/Contact"
+import Masterplan from "@layouts/index/masterplan/Masterplan"
 import VideoWithLogo from "@layouts/index/videowithlogo/VideoWithLogo"
 import SETTINGS from "src/settings"
 import styles from "./Menu.module.sass"
@@ -10,6 +11,7 @@ export default function Menu(): JSX.Element {
         <div className={styles.menu}>
             <nav className={styles.link}>
                 <MenuLink href={`#${VideoWithLogo.name}`}>Home</MenuLink>
+                <MenuLink href={`#${Masterplan.name}`}>Masterplan</MenuLink>
                 <MenuLink href={`#${Contact.name}`}>Contact</MenuLink>
             </nav>
             <nav className={styles.social}>
