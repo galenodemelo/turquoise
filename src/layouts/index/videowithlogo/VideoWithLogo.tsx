@@ -1,22 +1,14 @@
-import Image from "next/image"
-import { useState } from "react"
 import styles from "./VideoWithLogo.module.sass"
 
 export default function VideoWithLogo(): JSX.Element {
-    const [isVideoLoading, setIsVideoLoading] = useState<boolean>(true)
-
     return (
         <div className={styles.videoWithLogo}>
-            <video autoPlay loop muted playsInline className={styles.background} preload="true" onPlay={() => setIsVideoLoading(false)}>
-                <source src="/video/beach-surfer-visualizer.webm" type="video/webm" />
-                <source src="/video/beach-surfer-visualizer.mp4" type="video/mp4" />
-            </video>
+            <video autoPlay loop muted playsInline className={styles.background} preload="true">
+                <source src="/video/people-on-kayak-intro.webm" type="video/webm" />
+                <source src="/video/people-on-kayak-intro.mp4" type="video/mp4" />
 
-            {!isVideoLoading &&
-                <div className={styles.logo}>
-                    <Image src="/img/turquoise-logo.gif" objectFit="contain" layout="fill" loading="eager" alt="Turquoise logo animated" sizes="90vw" />
-                </div>
-            }
+                Your browser does not support the video tag.
+            </video>
         </div>
     )
 }
