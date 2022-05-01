@@ -16,7 +16,7 @@ export default function Button({ children, href, icon, onClick, variant = "prima
 
     return (
         <Tag href={href} className={buttonClassList.join(" ")} onClick={onClick} target={target}>
-            {children && <span>{children}</span>}
+            {children && <span data-content-type="text">{children}</span>}
             {icon &&
                 <span className={styles.icon}>
                     <Image src={`/img/ico/${icon}.svg`} className={styles.icon} width="20px" height="20px" />

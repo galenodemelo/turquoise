@@ -12,8 +12,12 @@
         position: relative
         width: $default-container-width
         flex: 1 1 0
-
+        overflow: hidden
 
     .navigation
         display: inline-flex
         column-gap: 24px
+
+        > *:first-child
+            position: relative
+            z-index: 10

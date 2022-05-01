@@ -1,6 +1,6 @@
 import anime from "animejs"
 
-export type Target = NodeListOf<HTMLElement> | undefined | null
+export type Target = NodeListOf<HTMLElement> | HTMLElement | undefined | null
 export type Options = anime.AnimeParams
 
 export default class AnimationBuilder {
