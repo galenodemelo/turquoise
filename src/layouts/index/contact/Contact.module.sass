@@ -36,14 +36,14 @@
             align-items: center
             row-gap: 24px
 
+            @include mobile-only
+                display: none
+
             .logo
                 position: relative
                 top: -32px
                 height: 80px
                 width: 100%
-
-                @include mobile-only
-                    display: none
 
             .downloadLink
                 display: inline-flex
