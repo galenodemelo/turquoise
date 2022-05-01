@@ -104,7 +104,7 @@ export default function Form(): JSX.Element {
                 </p>
 
                 <button type="submit" className={styles.submit} title="Click to contact us" disabled={isSendingForm}>
-                    <Image src="/img/ico/arrow.svg" alt="Send form" layout="fill" objectFit="contain" />
+                    <Image src="/img/ico/send.svg" alt="Send form" layout="fill" objectFit="contain" />
                 </button>
             </div>
         </form>
