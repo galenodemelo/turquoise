@@ -14,7 +14,7 @@
     white-space: nowrap
     border: 0
     cursor: pointer
-    transition: .1s transform ease-in-out
+    transition: .1s transform ease, 1s opacity ease
     overflow: hidden
 
     &[disabled]
@@ -36,7 +36,7 @@
         padding: 16px 24px
 
     @include monitor-only
-        padding: 16px 28px
+        padding: 20px 28px
 
     &--primary
         background-color: $color-primary

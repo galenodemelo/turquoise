@@ -2,7 +2,11 @@ import Image from "next/image"
 import { ChangeEvent, useEffect, useRef, useState } from "react"
 import styles from "./Form.module.sass"
 
-export default function Form(): JSX.Element {
+type Props = {
+    setIsFormValid: (isFormValid: boolean) => void
+}
+
+export default function Form({ setIsFormValid }: Props): JSX.Element {
     const [origin, setOrigin] = useState<string>("")
     const originList: Array<string> = ["A friend", "Realtor", "Instagram", "Facebook", "Other"]
     const needToSpecifyList: Array<string> = ["Other"]
@@ -38,6 +42,7 @@ export default function Form(): JSX.Element {
 
                 alert(responseJson.message)
                 formReference.current.reset()
+                setIsFormValid(true)
             } catch (error) {
                 console.error(error)
                 setIsSendingForm(false)

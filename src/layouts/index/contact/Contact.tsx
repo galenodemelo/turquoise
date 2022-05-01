@@ -2,13 +2,14 @@ import Button from "@components/button/Button"
 import Heading from "@components/heading/Heading"
 import headingStyles from "@components/heading/Heading.module.sass"
 import Image from "next/image"
-import { RefObject, useEffect, useRef } from "react"
+import { RefObject, useEffect, useRef, useState } from "react"
 import AnimationLib from "src/libs/animation/AnimationLib"
 import AnimationTriggerBuilder from "src/libs/animation/AnimationTriggerBuilder"
 import styles from "./Contact.module.sass"
 import Form from "./form/Form"
 
 export default function Contact(): JSX.Element {
+    const [isFormValid, setIsFormValid] = useState<boolean>(false)
     const slideElement: RefObject<HTMLDivElement> = useRef<HTMLDivElement>(null)
 
     useEffect(() => {
@@ -39,7 +40,7 @@ export default function Contact(): JSX.Element {
             />
 
             <div className={styles.content}>
-                <Form />
+                <Form setIsFormValid={setIsFormValid} />
 
                 <div className={styles.download}>
                     <div className={styles.logo}>
@@ -48,7 +49,7 @@ export default function Contact(): JSX.Element {
 
                     <div className={styles.downloadLink}>
                         <p>Fill in the form to download our material.</p>
-                        <Button href="javascript: alert('Dummy alert. Awaiting PDF final version')" disabled={true}>
+                        <Button href="javascript: alert('Dummy alert. Awaiting PDF final version')" disabled={!isFormValid}>
                             Download
                         </Button>
                     </div>
