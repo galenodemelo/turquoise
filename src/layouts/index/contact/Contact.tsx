@@ -1,3 +1,4 @@
+import Button from "@components/button/Button"
 import Heading from "@components/heading/Heading"
 import headingStyles from "@components/heading/Heading.module.sass"
 import Image from "next/image"
@@ -14,8 +15,9 @@ export default function Contact(): JSX.Element {
         let animationList: anime.AnimeInstance[] = []
         animationList = animationList.concat(
             AnimationLib.fadeInLetters(slideElement.current?.querySelectorAll(`.${headingStyles.heading} > *`)) ?? [],
-            AnimationLib.fadeInBottom(slideElement.current?.querySelectorAll(`.${styles.content} > form`), { delay: 600 }) ?? [],
-            AnimationLib.fadeIn(slideElement.current?.querySelectorAll(`.${styles.logo}`), { delay: 1400 }) ?? [],
+            AnimationLib.fadeInBottom(slideElement.current?.querySelectorAll(`.${styles.content} > form`), { delay: 200 }) ?? [],
+            AnimationLib.fadeIn(slideElement.current?.querySelectorAll(`.${styles.logo}`), { delay: 800 }) ?? [],
+            AnimationLib.fadeIn(slideElement.current?.querySelectorAll(`.${styles.downloadLink}`), { delay: 1000 }) ?? [],
         )
 
         new AnimationTriggerBuilder()
@@ -39,8 +41,17 @@ export default function Contact(): JSX.Element {
             <div className={styles.content}>
                 <Form />
 
-                <div className={styles.logo}>
-                    <Image src="/img/turquoise-texturized-logo.png" layout="fill" objectFit="contain" />
+                <div className={styles.download}>
+                    <div className={styles.logo}>
+                        <Image src="/img/turquoise-texturized-logo.png" layout="fill" objectFit="contain" />
+                    </div>
+
+                    <div className={styles.downloadLink}>
+                        <p>Fill in the form to download our material.</p>
+                        <Button href="javascript: alert('Dummy alert. Awaiting PDF final version')" disabled={true}>
+                            Download
+                        </Button>
+                    </div>
                 </div>
             </div>
         </div>
