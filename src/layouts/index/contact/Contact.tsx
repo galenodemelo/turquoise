@@ -49,9 +49,15 @@ export default function Contact(): JSX.Element {
 
                     <div className={styles.downloadLink}>
                         <p>Fill in the form to download our material.</p>
-                        <Button href="javascript: alert('Dummy alert. Awaiting PDF final version')" disabled={!isFormValid}>
-                            Download
-                        </Button>
+                        {!isFormValid ?
+                            <Button disabled={true}>
+                                Download
+                            </Button>
+                            :
+                            <Button href="/docs/turquoise.homes-material.pdf" download={true} target="_blank">
+                                Download
+                            </Button>
+                        }
                     </div>
                 </div>
             </div>
