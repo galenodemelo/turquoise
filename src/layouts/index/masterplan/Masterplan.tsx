@@ -50,7 +50,12 @@ export default function Masterplan(): JSX.Element {
                 <Button icon="arrow" href="https://player.theviewvr.com/?locationId=1298" target="_blank">
                     Start tour
                 </Button>
-                <Button icon="pdf-download" href="javascript: alert('Dummy alert. Awaiting PDF final version')"></Button>
+                <Button
+                    download={true}
+                    href="/docs/turquoise.homes-masterplan.pdf"
+                    icon="pdf-download"
+                    target="_blank"
+                />
             </nav>
         </div>
     )
