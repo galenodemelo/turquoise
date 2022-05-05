@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import { HashNavigation, Mousewheel, Swiper as SwiperConfig } from 'swiper'
 import { Swiper, SwiperSlide } from "swiper/react"
 import 'swiper/swiper.min.css'
@@ -12,6 +13,18 @@ export default function PageSwiper({ children }: Props) {
         HashNavigation,
         Mousewheel
     ])
+
+    useEffect(() => {
+        window.addEventListener("load", () => {
+            const hash: string = window.location.hash.replace("#", "")
+            if (!hash) return
+
+            const slideContent: HTMLElement = document.querySelector(`section[data-hash="${hash}"] > *`) as HTMLElement
+            if (!slideContent) return
+
+            slideContent.dataset.stateActive = "true"
+        })
+    }, [])
 
     return (
         <Swiper
