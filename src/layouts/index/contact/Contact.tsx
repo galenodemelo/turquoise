@@ -1,10 +1,12 @@
 import Button from "@components/button/Button"
 import Heading from "@components/heading/Heading"
 import headingStyles from "@components/heading/Heading.module.sass"
+import Icon from "@components/icon/Icon"
 import Image from "next/image"
 import { RefObject, useEffect, useRef, useState } from "react"
 import AnimationLib from "src/libs/animation/AnimationLib"
 import AnimationTriggerBuilder from "src/libs/animation/AnimationTriggerBuilder"
+import SETTINGS from "src/settings"
 import styles from "./Contact.module.sass"
 import Form from "./form/Form"
 
@@ -58,6 +60,13 @@ export default function Contact(): JSX.Element {
                                 Download
                             </Button>
                         }
+                    </div>
+
+                    <div className={styles.phone}>
+                        <Icon alt="Phone" filename="phone.svg" size="2x" />
+                        <span className={styles.number}>
+                            {SETTINGS.PHONE_NUMBER}
+                        </span>
                     </div>
                 </div>
             </div>
