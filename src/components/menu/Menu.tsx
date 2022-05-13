@@ -18,6 +18,10 @@ export default function Menu(): JSX.Element {
                 <a href={SETTINGS.SOCIAL_LINKS.INSTAGRAM} rel="noopener noreferrer" target="_blank">
                     <Icon filename="instagram.svg" alt="Follow us on Instagram" size="2x" />
                 </a>
+
+                <a href={SETTINGS.SOCIAL_LINKS.FACEBOOK} rel="noopener noreferrer" target="_blank">
+                    <Icon filename="facebook.svg" alt="Like us on Facebook" size="2x" />
+                </a>
             </nav>
         </div>
     )
