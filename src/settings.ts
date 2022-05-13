@@ -1,7 +1,7 @@
 const SETTINGS = {
     SOCIAL_LINKS: {
-        FACEBOOK: 'https://www.facebook.com/',
-        INSTAGRAM: 'https://www.instagram.com/lana_development/'
+        FACEBOOK: 'https://www.facebook.com/turquoise.fl/',
+        INSTAGRAM: 'https://www.instagram.com/turquoise.homes/'
     }
 }
 
