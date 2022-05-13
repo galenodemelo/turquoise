@@ -21,6 +21,7 @@ export default function Contact(): JSX.Element {
             AnimationLib.fadeInBottom(slideElement.current?.querySelectorAll(`.${styles.content} > form`), { delay: 200 }) ?? [],
             AnimationLib.fadeIn(slideElement.current?.querySelectorAll(`.${styles.logo}`), { delay: 800 }) ?? [],
             AnimationLib.fadeIn(slideElement.current?.querySelectorAll(`.${styles.downloadLink}`), { delay: 1000 }) ?? [],
+            AnimationLib.fadeIn(slideElement.current?.querySelectorAll(`.${styles.phone}`), { delay: 1400 }) ?? [],
         )
 
         new AnimationTriggerBuilder()
