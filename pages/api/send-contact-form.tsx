@@ -1,4 +1,5 @@
 import { NextApiRequest, NextApiResponse } from "next"
+import db from "src/database/connection"
 import DataValidator from "src/libs/DataValidator"
 import SendGridManager from "src/libs/SendGridManager"
 
@@ -14,6 +15,8 @@ export default async function SendContactForm(req: NextApiRequest, res: NextApiR
             res.status(400).json(formValidation)
             return
         }
+
+        storeInDatabase(req.body)
 
         const mailWasSent: boolean = await SendGridManager.send(
             `Site contact form - ${req.body.name} ${req.body.lastName}`,
@@ -58,6 +61,7 @@ type MailProps = {
     specify?: string,
     message: string
 }
+
 function buildMailHtml({name, lastName, email, phone, origin, specify, message}: MailProps): string {
     let mailHtml: string = `<h1>Contact form</h1>`
 
@@ -75,4 +79,16 @@ function buildMailHtml({name, lastName, email, phone, origin, specify, message}:
     mailHtml += `<p>${fieldList.join("<br />")}</p>`
 
     return mailHtml
+}
+
+function storeInDatabase({name, lastName, email, phone, origin, specify, message}: MailProps): void {
+    db.run(`INSERT INTO contact (first_name, last_name, email, phone, message, origin, created_at) VALUES (?, ?, ?, ?, ?, ?, ?)`, [
+        name,
+        lastName,
+        email,
+        phone,
+        message,
+        specify ?? origin,
+        new Date()
+    ]);
 }
