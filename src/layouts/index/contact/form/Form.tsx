@@ -1,7 +1,8 @@
 import Image from "next/image"
 import { ChangeEvent, useEffect, useRef, useState } from "react"
-import ReCAPTCHA from "react-google-recaptcha"
 import styles from "./Form.module.sass"
+// @ts-ignore
+import ReCAPTCHA from "react-google-recaptcha"
 
 type Props = {
     setIsFormValid: (isFormValid: boolean) => void
