@@ -11,6 +11,12 @@ export default async function SendContactForm(req: NextApiRequest, res: NextApiR
             return
         }
 
+        const isRecaptchaValid = await validateRecaptcha(req.body)
+        if (!isRecaptchaValid) {
+            res.status(400).json({success: false, errorList: ["Recaptcha invalid"]})
+            return
+        }
+
         const formValidation = validateForm(req.body)
         if (!formValidation.success) {
             res.status(400).json(formValidation)
@@ -40,6 +46,24 @@ export default async function SendContactForm(req: NextApiRequest, res: NextApiR
         res.status(500).json({success: false, errorList: ["Internal server error"]})
     }
 }
+
+async function validateRecaptcha({ recaptchaToken }: { recaptchaToken: string }): Promise<boolean> {
+    const response = await fetch(SETTINGS.GOOGLE_RECAPTCHA_URL, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/x-www-form-urlencoded",
+        },
+        body: new URLSearchParams({
+            secret: process.env.GOOGLE_RECAPTCHA_SECRET ?? "",
+            response: recaptchaToken
+        })
+    })
+    const responseJson = await response.json()
+    if (!responseJson.success) console.error(`validateRecaptcha >> responseJson: ${JSON.stringify(responseJson)}`)
+
+    return responseJson.success
+}
+
 
 function validateForm(requestBody: any): { success: boolean, errorList?: string[] } {
     let errorList: string[] = []

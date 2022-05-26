@@ -1,5 +1,6 @@
 import Image from "next/image"
 import { ChangeEvent, useEffect, useRef, useState } from "react"
+import ReCAPTCHA from "react-google-recaptcha"
 import styles from "./Form.module.sass"
 
 type Props = {
@@ -14,6 +15,8 @@ export default function Form({ setIsFormValid }: Props): JSX.Element {
     const [isSendingForm, setIsSendingForm] = useState<boolean>(false)
     const formReference = useRef<HTMLFormElement>(null)
 
+    const recaptchaReference = useRef<ReCAPTCHA>(null)
+
     useEffect(() => {
         if (!formReference?.current) return
         formReference.current.onsubmit = async (event: SubmitEvent) => {
@@ -22,8 +25,14 @@ export default function Form({ setIsFormValid }: Props): JSX.Element {
             try {
                 event.preventDefault()
                 setIsSendingForm(true)
+                const recaptchaToken = await recaptchaReference.current?.executeAsync()
+                if (!recaptchaToken) {
+                    alert("Failed to verify captcha")
+                    return
+                }
 
                 const formData: FormData = new FormData(formReference.current)
+                formData.append("recaptchaToken", recaptchaToken)
                 const formDataAsJson: string = JSON.stringify(Object.fromEntries(formData))
                 const formAction: string = formReference.current.getAttribute("action") ?? ""
                 const formMethod: string = formReference.current.getAttribute("method") ?? ""
@@ -35,20 +44,20 @@ export default function Form({ setIsFormValid }: Props): JSX.Element {
                 const responseJson: any = await response.json()
 
                 setIsSendingForm(false)
+                recaptchaReference.current?.reset()
                 if (!responseJson.success) {
                     alert(responseJson.errorList.join("\n"))
                     return
                 }
 
                 alert(responseJson.message)
-                formReference.current.reset()
                 setIsFormValid(true)
             } catch (error) {
                 console.error(error)
                 setIsSendingForm(false)
             }
         }
-    }, [formReference, isSendingForm])
+    }, [formReference, isSendingForm, recaptchaReference])
 
     return (
         <form action="/api/send-contact-form" className={styles.form} method="POST" ref={formReference}>
@@ -112,6 +121,11 @@ export default function Form({ setIsFormValid }: Props): JSX.Element {
                     <Image src="/img/ico/send.svg" alt="Send form" layout="fill" objectFit="contain" />
                 </button>
             </div>
+
+            <ReCAPTCHA
+                ref={recaptchaReference}
+                size="invisible"
+                sitekey={process.env.NEXT_PUBLIC_GOOGLE_RECAPTCHA_SITEKEY ?? ""} />
         </form>
     )
 }
