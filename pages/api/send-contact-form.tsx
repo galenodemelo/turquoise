@@ -1,6 +1,8 @@
+import { createClient } from "@supabase/supabase-js"
 import { NextApiRequest, NextApiResponse } from "next"
 import DataValidator from "src/libs/DataValidator"
 import SendGridManager from "src/libs/SendGridManager"
+import SETTINGS from "src/settings"
 
 export default async function SendContactForm(req: NextApiRequest, res: NextApiResponse) {
     try {
@@ -12,6 +14,12 @@ export default async function SendContactForm(req: NextApiRequest, res: NextApiR
         const formValidation = validateForm(req.body)
         if (!formValidation.success) {
             res.status(400).json(formValidation)
+            return
+        }
+
+        const contactWasStoredOnDatabase = await storeInDatabase(req.body)
+        if (!contactWasStoredOnDatabase) {
+            res.status(500).json({success: false, errorList: ["An unexpected error occurred. Please, try again later"]})
             return
         }
 
@@ -76,4 +84,21 @@ function buildMailHtml({name, lastName, email, phone, origin, specify, message}:
     mailHtml += `<p>${fieldList.join("<br />")}</p>`
 
     return mailHtml
+}
+
+async function storeInDatabase({ name, lastName, email, phone, origin, specify, message }: MailProps): Promise<boolean> {
+    const supabase = createClient(SETTINGS.SUPABASE_URL, process.env.SUPABASE_API_KEY ?? "")
+    const { data, error } = await supabase
+        .from("contact_form")
+        .insert([
+            { client: "turquoise.homes", payload: { name, lastName, email, phone, origin, specify, message } }
+        ])
+
+
+    if (error) {
+        console.error(`storeInDatabase >> RequestBody: ${JSON.stringify({ name, lastName, email, phone, origin, specify, message })}`, error)
+        return false
+    }
+
+    return true
 }
