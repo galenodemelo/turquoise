@@ -152,8 +152,11 @@ async function sendToCms({ name, lastName, email, phone, origin, specify, messag
         LastName: lastName,
         Email: email,
         Phone: phone,
-        Source: [origin, specify].filter(Boolean).join(" - "),
-        Comments: message
+        Comments: `
+            How did you met us?
+            \n${[origin, specify].filter(Boolean).join(" - ")}
+            \n\nMessage sent
+            \n${message}`
     }
 
     return new BuilderCmsManager().saveProspect(parsedData)

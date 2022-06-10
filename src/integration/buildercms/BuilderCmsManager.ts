@@ -2,7 +2,6 @@ export interface SaveProspectParams {
     FirstName: string
     LastName: string
     FollowupCode?: FollowupCodeLevels
-    Source?: string
     Email?: string
     Phone?: string
     StreetAddress?: string
@@ -13,8 +12,9 @@ export interface SaveProspectParams {
 }
 
 interface SaveProspectRequest extends SaveProspectParams {
-    CommunityNumber: string
     AdminEmail?: string
+    CommunityNumber: string
+    Source?: string
 }
 
 export type CmsResponse = {
@@ -35,6 +35,7 @@ export default class BuilderCmsManager {
 
     baseUrl: string = "https://www.buildercms.com/cms/custom/ProspectImport.aspx"
     communityNumber?: string = process.env.BUILDERCMS_COMMUNITY_ID
+    defaultSource: string = "Turquoise Homes Landing Page"
     defaulFollowupCode: FollowupCodeLevels = FollowupCodeLevels.A
 
     keyValueSeparator: string = ":"
@@ -47,6 +48,7 @@ export default class BuilderCmsManager {
             ...data,
             AdminEmail: process.env.CONTACT_FORM_RECEIVER,
             CommunityNumber: this.communityNumber,
+            Source: this.defaultSource,
             FollowupCode: data.FollowupCode ?? this.defaulFollowupCode
         }
 
