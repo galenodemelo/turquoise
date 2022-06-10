@@ -4,6 +4,17 @@ import DataValidator from "src/libs/DataValidator"
 import SendGridManager from "src/libs/SendGridManager"
 import SETTINGS from "src/settings"
 
+type SendContactRequestData = {
+    name: string,
+    lastName: string,
+    email: string,
+    phone: string,
+    origin?: string,
+    specify?: string,
+    message: string,
+    recaptchaToken: string
+}
+
 export default async function SendContactForm(req: NextApiRequest, res: NextApiResponse) {
     try {
         if (req.method !== "POST") {
@@ -11,29 +22,31 @@ export default async function SendContactForm(req: NextApiRequest, res: NextApiR
             return
         }
 
-        const isRecaptchaValid = await validateRecaptcha(req.body)
+        const requestData: SendContactRequestData = clearRequestData(req.body)
+
+        const isRecaptchaValid: boolean = await validateRecaptcha(requestData.recaptchaToken)
         if (!isRecaptchaValid) {
             res.status(400).json({success: false, errorList: ["Recaptcha invalid"]})
             return
         }
 
-        const formValidation = validateForm(req.body)
+        const formValidation = validateForm(requestData)
         if (!formValidation.success) {
             res.status(400).json(formValidation)
             return
         }
 
-        const contactWasStoredOnDatabase = await storeInDatabase(req.body)
+        const contactWasStoredOnDatabase: boolean = await storeInDatabase(requestData)
         if (!contactWasStoredOnDatabase) {
             res.status(500).json({success: false, errorList: ["An unexpected error occurred. Please, try again later"]})
             return
         }
 
         const mailWasSent: boolean = await SendGridManager.send(
-            `Site contact form - ${req.body.name} ${req.body.lastName}`,
-            buildMailHtml(req.body),
-            req.body.email,
-            req.body.email
+            `Site contact form - ${requestData.name} ${requestData.lastName}`,
+            buildMailHtml(requestData),
+            requestData.email,
+            requestData.email
         )
         if (!mailWasSent) {
             res.status(500).json({success: false, errorList: ["Mail was not sent. Please, try again."]})
@@ -47,7 +60,20 @@ export default async function SendContactForm(req: NextApiRequest, res: NextApiR
     }
 }
 
-async function validateRecaptcha({ recaptchaToken }: { recaptchaToken: string }): Promise<boolean> {
+function clearRequestData(requestBody: any): SendContactRequestData {
+    return {
+        name: requestBody.name,
+        lastName: requestBody.lastName,
+        email: requestBody.email,
+        phone: requestBody.phone.replace(/\D/g, ""),
+        origin: requestBody.origin,
+        specify: requestBody.specify,
+        message: requestBody.message,
+        recaptchaToken: requestBody.recaptchaToken
+    }
+}
+
+async function validateRecaptcha(recaptchaToken: string): Promise<boolean> {
     const response = await fetch(SETTINGS.GOOGLE_RECAPTCHA_URL, {
         method: "POST",
         headers: {
@@ -65,15 +91,16 @@ async function validateRecaptcha({ recaptchaToken }: { recaptchaToken: string })
 }
 
 
-function validateForm(requestBody: any): { success: boolean, errorList?: string[] } {
+function validateForm(requestData: SendContactRequestData): { success: boolean, errorList?: string[] } {
     let errorList: string[] = []
 
-    if (!requestBody.name) errorList.push("Name is required")
-    if (!requestBody.lastName) errorList.push("Last name is required")
-    if (!requestBody.email) errorList.push("E-mail is required")
-    if (!DataValidator.email(requestBody.email)) errorList.push("E-mail invalid format")
-    if (!requestBody.phone) errorList.push("Phone is required")
-    if (!requestBody.message) errorList.push("Please, inform how we can help you")
+    if (!requestData.name) errorList.push("Name is required")
+    if (!requestData.lastName) errorList.push("Last name is required")
+    if (requestData.name == requestData.lastName) errorList.push("Name and last name must be different")
+    if (!requestData.email) errorList.push("E-mail is required")
+    if (!DataValidator.email(requestData.email)) errorList.push("E-mail invalid format")
+    if (!requestData.phone) errorList.push("Phone is required")
+    if (!requestData.message) errorList.push("Please, inform how we can help you")
 
     return {
         success: errorList.length === 0,
@@ -81,17 +108,7 @@ function validateForm(requestBody: any): { success: boolean, errorList?: string[
     }
 }
 
-type MailProps = {
-    name: string,
-    lastName: string,
-    email: string,
-    phone: string,
-    origin?: string,
-    specify?: string,
-    message: string
-}
-
-function buildMailHtml({name, lastName, email, phone, origin, specify, message}: MailProps): string {
+function buildMailHtml({name, lastName, email, phone, origin, specify, message}: SendContactRequestData): string {
     let mailHtml: string = `<h1>Contact form</h1>`
 
     let fieldList: Array<string> = []
@@ -110,7 +127,7 @@ function buildMailHtml({name, lastName, email, phone, origin, specify, message}:
     return mailHtml
 }
 
-async function storeInDatabase({ name, lastName, email, phone, origin, specify, message }: MailProps): Promise<boolean> {
+async function storeInDatabase({ name, lastName, email, phone, origin, specify, message }: SendContactRequestData): Promise<boolean> {
     const supabase = createClient(SETTINGS.SUPABASE_URL, process.env.SUPABASE_API_KEY ?? "")
     const { data, error } = await supabase
         .from("contact_form")
