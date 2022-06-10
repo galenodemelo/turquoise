@@ -1,5 +1,6 @@
 import { createClient } from "@supabase/supabase-js"
 import { NextApiRequest, NextApiResponse } from "next"
+import BuilderCmsManager, { CmsResponse, SaveProspectParams } from "src/integration/buildercms/BuilderCmsManager"
 import DataValidator from "src/libs/DataValidator"
 import SendGridManager from "src/libs/SendGridManager"
 import SETTINGS from "src/settings"
@@ -36,7 +37,8 @@ export default async function SendContactForm(req: NextApiRequest, res: NextApiR
             return
         }
 
-        const contactWasStoredOnDatabase: boolean = await storeInDatabase(requestData)
+        const cmsResponse: CmsResponse = await sendToCms(requestData)
+        const contactWasStoredOnDatabase: boolean = await storeInDatabase(requestData, cmsResponse)
         if (!contactWasStoredOnDatabase) {
             res.status(500).json({success: false, errorList: ["An unexpected error occurred. Please, try again later"]})
             return
@@ -127,12 +129,12 @@ function buildMailHtml({name, lastName, email, phone, origin, specify, message}:
     return mailHtml
 }
 
-async function storeInDatabase({ name, lastName, email, phone, origin, specify, message }: SendContactRequestData): Promise<boolean> {
+async function storeInDatabase({ name, lastName, email, phone, origin, specify, message }: SendContactRequestData, cmsResponse?: CmsResponse): Promise<boolean> {
     const supabase = createClient(SETTINGS.SUPABASE_URL, process.env.SUPABASE_API_KEY ?? "")
     const { data, error } = await supabase
         .from("contact_form")
         .insert([
-            { client: "turquoise.homes", payload: { name, lastName, email, phone, origin, specify, message } }
+            { client: "turquoise.homes", payload: { name, lastName, email, phone, origin, specify, message, cmsResponse: JSON.stringify(cmsResponse) } }
         ])
 
 
@@ -142,4 +144,17 @@ async function storeInDatabase({ name, lastName, email, phone, origin, specify, 
     }
 
     return true
+}
+
+async function sendToCms({ name, lastName, email, phone, origin, specify, message }: SendContactRequestData): Promise<CmsResponse> {
+    const parsedData: SaveProspectParams = {
+        FirstName: name,
+        LastName: lastName,
+        Email: email,
+        Phone: phone,
+        Source: [origin, specify].filter(Boolean).join(" - "),
+        Comments: message
+    }
+
+    return new BuilderCmsManager().saveProspect(parsedData)
 }
