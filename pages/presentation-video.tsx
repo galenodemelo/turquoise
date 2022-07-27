@@ -1,4 +1,4 @@
-export default () => {
+export default function PresentationVideo() {
     return (
         <iframe
             src="https://player.vimeo.com/video/733044311?h=ed0ebae5dc"
