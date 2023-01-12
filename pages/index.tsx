@@ -1,5 +1,6 @@
 import { BackdropVideo } from "@components/Backdrop/BackdropVideo"
 import PageMetadata from "@components/PageMetadata"
+import FloatingMenu from "@layouts/FloatingMenu"
 import VerticalSwipePage from "@layouts/VerticalSwipePage"
 import React from "react"
 
@@ -9,6 +10,8 @@ export default class Index extends React.Component {
         return (
             <>
                 <PageMetadata />
+
+                <FloatingMenu />
 
                 <VerticalSwipePage>
                     <BackdropVideo autoPlay={true} muted={true} controls={false} loop={true} playsInline={true}>
