@@ -10,10 +10,14 @@ export const Section = css`
     max-height: 100%;
 `
 
+export const SectionPadded = css`
+    ${Section}
+    padding-top: 8%;
+    padding-left: 8%;
+    box-sizing: border-box;
+`
+
 export const SectionHeading = styled.div`
-    position: absolute;
-    top: 14%;
-    left: 8%;
 	font-size: 1.6rem;
     font-weight: bold;
     line-height: 1;

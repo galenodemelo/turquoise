@@ -8,7 +8,7 @@ export default class Location extends React.Component {
         return (
             <LocationWrapper>
                 <SectionHeading as="h2">Location</SectionHeading>
-                <Minimap src="/img/location-florida.jpg" alt="Minimap with Florida pinpointed" />
+                <Minimap src="/img/location-minimap.svg" alt="Minimap with Florida pinpointed" />
             </LocationWrapper>
         )
     }
