@@ -8,6 +8,7 @@ export const COLORS = {
 export const SETTINGS = {
     swiper: {
         speedInSeconds: 1,
+        speedInMilliseconds: 1 * 1000
     }
 }
 

@@ -1,3 +1,4 @@
+import { SETTINGS } from "@styles/globals"
 import React from "react"
 import { Mousewheel, Swiper as SwiperConfig } from 'swiper'
 import { Swiper, SwiperSlide } from "swiper/react"
@@ -27,7 +28,7 @@ export default class VerticalSwipePage extends React.Component<Props, {}> {
                     sensitivity: .1
                 }}
                 spaceBetween={0}
-                speed={1000}
+                speed={SETTINGS.swiper.speedInMilliseconds}
                 slidesPerView={1}
                 slidesPerColumn={1}
                 tag="main"
