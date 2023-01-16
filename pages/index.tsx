@@ -4,6 +4,7 @@ import FloatingMenu from "@layouts/FloatingMenu"
 import IconOfLuxuryAndExclusivity from "@layouts/IconOfLuxuryAndExclusivity"
 import ScrollTip from "@layouts/Scroll"
 import VerticalSwipePage from "@layouts/VerticalSwipePage"
+import Image from "next/image"
 import React from "react"
 
 interface State {
@@ -34,6 +35,11 @@ export default class Index extends React.Component<{}, State> {
         this.setState({ scrollTipIsVisible: !isPanelWithScrollTipHidden })
     }
 
+    toggleScrollTipWhiteIfNecessary(index: number): void {
+        const isPanelWithWhiteScrollTip = [0].includes(index)
+        this.setState({ scrollTipWhite: isPanelWithWhiteScrollTip })
+    }
+
     render(): JSX.Element {
         return (
             <>
@@ -45,6 +51,7 @@ export default class Index extends React.Component<{}, State> {
                 <VerticalSwipePage onStartSliding={(index: number) => {
                     this.toggleMenuIfNecessary(index)
                     this.toggleScrollTipIfNecessary(index)
+                    this.toggleScrollTipWhiteIfNecessary(index)
                 }}>
                     <BackdropVideo autoPlay={true} muted={true} controls={false} loop={true} playsInline={true}>
                         <source src="/video/people-on-kayak-intro.webm" type="video/webm" />
