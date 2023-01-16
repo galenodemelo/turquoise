@@ -2,9 +2,9 @@ import { BackdropVideo } from "@components/Backdrop/BackdropVideo"
 import PageMetadata from "@components/PageMetadata"
 import FloatingMenu from "@layouts/FloatingMenu"
 import IconOfLuxuryAndExclusivity from "@layouts/IconOfLuxuryAndExclusivity"
+import Location from "@layouts/Location"
 import ScrollTip from "@layouts/Scroll"
 import VerticalSwipePage from "@layouts/VerticalSwipePage"
-import Image from "next/image"
 import React from "react"
 
 interface State {
@@ -69,7 +69,7 @@ export default class Index extends React.Component<{}, State> {
 
                     <IconOfLuxuryAndExclusivity />
 
-                    <Image src="/img/location.jpg" layout="fill" objectFit="cover" objectPosition="center center" />
+                    <Location />
                 </VerticalSwipePage>
             </>
         )

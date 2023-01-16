@@ -1,4 +1,5 @@
-import { css } from "styled-components";
+import { COLORS } from "@styles/globals";
+import styled, { css } from "styled-components";
 
 export const Section = css`
     position: absolute;
@@ -7,4 +8,14 @@ export const Section = css`
     width: 100%;
     min-height: 100vh;
     max-height: 100%;
+`
+
+export const SectionHeading = styled.div`
+    position: absolute;
+    top: 14%;
+    left: 8%;
+	font-size: 1.6rem;
+    font-weight: bold;
+    line-height: 1;
+    color: ${COLORS.darkGreen};
 `
