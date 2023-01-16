@@ -26,6 +26,20 @@ export const NavButtonIcon = styled.span`
         border: 0;
         background: ${COLORS.darkGreen};
         line-height: 1;
+
+        &:nth-of-type(1),
+        &:nth-of-type(5) {
+            width: 100%;
+        }
+
+        &:nth-of-type(2),
+        &:nth-of-type(4) {
+            width: 80%;
+        }
+
+        &:nth-of-type(3) {
+            width: 60%;
+        }
     }
 `;
 
