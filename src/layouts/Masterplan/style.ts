@@ -1,4 +1,4 @@
-import { SectionPadded } from "@layouts/VerticalSwipePage/Section";
+import { sectionHeadingExtraMargin, SectionPadded } from "@layouts/VerticalSwipePage/Section";
 import { COLORS } from "@styles/globals";
 import styled from "styled-components";
 
@@ -15,13 +15,13 @@ export const MapWrapper = styled.div`
 `;
 
 export const Map = styled.img`
-    margin-left: -40px;
-    width: 70%
+    margin-left: calc(${sectionHeadingExtraMargin} - 32px);
+    width: 65%;
 `;
 
 export const Legend = styled.ul`
     margin-bottom: 64px;
-    width: 30%;
+    width: 35%;
     counter-reset: legend-item;
 `;
 

@@ -1,3 +1,4 @@
+import { horizontalMargin } from "@layouts/FloatingMenu/style";
 import { COLORS } from "@styles/globals";
 import styled, { css } from "styled-components";
 
@@ -12,14 +13,16 @@ export const Section = css`
 
 export const SectionPadded = css`
     ${Section}
-    padding-top: 8%;
-    padding-left: 8%;
+    padding: 8% ${horizontalMargin};
     box-sizing: border-box;
 `
+
+export const sectionHeadingExtraMargin = "96px"
 
 export const SectionHeading = styled.div`
 	font-size: 1.6rem;
     font-weight: bold;
     line-height: 1;
     color: ${COLORS.darkGreen};
+    margin-left: ${sectionHeadingExtraMargin};
 `
