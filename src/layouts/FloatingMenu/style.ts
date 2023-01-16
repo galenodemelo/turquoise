@@ -22,7 +22,7 @@ export const Header = styled.header<FloatingMenuProps>`
     left: 0;
     width: 100%;
     display: flex;
-    z-index: 100;
+    z-index: 1000;
     box-sizing: border-box;
     opacity: ${(props) => (props.visible ? 1 : 0)};
     transition: opacity ${SETTINGS.swiper.speedInSeconds}s ease;
