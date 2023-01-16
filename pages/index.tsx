@@ -52,6 +52,8 @@ export default class Index extends React.Component<{}, State> {
                     </BackdropVideo>
 
                     <IconOfLuxuryAndExclusivity />
+
+                    <Image src="/img/location.jpg" layout="fill" objectFit="cover" objectPosition="center center" />
                 </VerticalSwipePage>
             </>
         )
