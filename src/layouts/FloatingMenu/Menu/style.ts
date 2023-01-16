@@ -1,3 +1,4 @@
+import { COLORS } from "@styles/globals";
 import styled from "styled-components";
 
 export const NavButtonWrapper = styled.button`
@@ -23,14 +24,14 @@ export const NavButtonIcon = styled.span`
         width: 100%;
         height: 1px;
         border: 0;
-        background: #ffffff;
+        background: ${COLORS.darkGreen};
         line-height: 1;
     }
 `;
 
 export const NavButtonLabel = styled.span`
     text-transform: uppercase;
-    color: #ffffff;
+    color: ${COLORS.darkGreen};
     font-size: 1.2rem;
     margin-bottom: -4px;
 `;

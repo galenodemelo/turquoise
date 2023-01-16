@@ -1,4 +1,4 @@
-import { ExternalLink } from "@styles/globals";
+import { COLORS, ExternalLink } from "@styles/globals";
 import styled from "styled-components";
 
 export const ExtraWrapper = styled.div`
@@ -12,7 +12,7 @@ export const AerialView = styled.a`
     display: inline-flex;
     align-items: center;
     column-gap: 8px;
-    color: #ffffff;
+    color: ${COLORS.darkGreen};
     line-height: 1;
     font-size: 1.2rem;
 
