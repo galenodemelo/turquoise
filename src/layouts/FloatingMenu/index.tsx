@@ -3,11 +3,18 @@ import Extra from "./Extra";
 import Menu from "./Menu";
 import { Header, Logo, LogoWrapper } from "./style";
 
-export default class FloatingMenu extends React.Component {
+interface Props {
+    visible: boolean
+}
+export default class FloatingMenu extends React.Component<Props, {}> {
+
+    constructor(props: Props) {
+        super(props);
+    }
 
     render(): JSX.Element {
         return (
-            <Header>
+            <Header visible={this.props.visible}>
                 <Menu />
                 <LogoWrapper>
                     <Logo src="/img/turquoise-logo.svg" alt="Turquoise Logo" white={true} />

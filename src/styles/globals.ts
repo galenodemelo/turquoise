@@ -5,6 +5,12 @@ export const COLORS = {
     darkGreen: "#287e8c"
 }
 
+export const SETTINGS = {
+    swiper: {
+        speedInSeconds: 1,
+    }
+}
+
 export const ExternalLink = styled.a.attrs({
     target: "_blank",
     rel: "noopener noreferrer"

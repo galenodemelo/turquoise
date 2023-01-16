@@ -5,16 +5,34 @@ import IconOfLuxuryAndExclusivity from "@layouts/IconOfLuxuryAndExclusivity"
 import VerticalSwipePage from "@layouts/VerticalSwipePage"
 import React from "react"
 
-export default class Index extends React.Component {
+interface State {
+    menuIsVisible: boolean
+}
+
+export default class Index extends React.Component<{}, State> {
+
+    constructor(props: {}) {
+        super(props);
+        this.state = {
+            menuIsVisible: true,
+        };
+    }
+
+    toggleMenuIfNecessary(index: number): void {
+        const isPanelWithMenuHidden = [1].includes(index)
+        this.setState({ menuIsVisible: !isPanelWithMenuHidden })
+    }
 
     render(): JSX.Element {
         return (
             <>
                 <PageMetadata />
 
-                <FloatingMenu />
+                <FloatingMenu visible={this.state.menuIsVisible} />
 
-                <VerticalSwipePage>
+                <VerticalSwipePage onStartSliding={(index: number) => {
+                    this.toggleMenuIfNecessary(index)
+                }}>
                     <BackdropVideo autoPlay={true} muted={true} controls={false} loop={true} playsInline={true}>
                         <source src="/video/people-on-kayak-intro.webm" type="video/webm" />
                         <source src="/video/people-on-kayak-intro.mp4" type="video/mp4" />

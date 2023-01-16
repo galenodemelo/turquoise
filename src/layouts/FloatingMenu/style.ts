@@ -1,14 +1,24 @@
+import { SETTINGS } from "@styles/globals";
 import styled from "styled-components";
 
-export const Header = styled.header`
+export const horizontalMargin = "64px"
+export const verticalMargin = "32px"
+
+interface HeaderProps {
+    visible: boolean;
+}
+
+export const Header = styled.header<HeaderProps>`
     position: fixed;
-    padding: 32px 64px;
+    padding: ${verticalMargin} ${horizontalMargin};
     top: 0;
     left: 0;
     width: 100%;
     display: flex;
     z-index: 100;
     box-sizing: border-box;
+    opacity: ${(props) => (props.visible ? 1 : 0)};
+    transition: opacity ${SETTINGS.swiper.speedInSeconds}s ease;
 
     > * {
         flex: 1;
