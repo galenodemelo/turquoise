@@ -10,7 +10,7 @@ interface State {
     menuIsVisible: boolean
 
     scrollTipIsVisible: boolean
-    scrollTipeWhite: boolean
+    scrollTipWhite: boolean
 }
 
 export default class Index extends React.Component<{}, State> {
@@ -20,7 +20,7 @@ export default class Index extends React.Component<{}, State> {
         this.state = {
             menuIsVisible: true,
             scrollTipIsVisible: true,
-            scrollTipeWhite: true
+            scrollTipWhite: true
         };
     }
 
@@ -40,7 +40,7 @@ export default class Index extends React.Component<{}, State> {
                 <PageMetadata />
 
                 <FloatingMenu visible={this.state.menuIsVisible} />
-                <ScrollTip visible={this.state.menuIsVisible} white={this.state.scrollTipeWhite} />
+                <ScrollTip visible={this.state.menuIsVisible} white={this.state.scrollTipWhite} />
 
                 <VerticalSwipePage onStartSliding={(index: number) => {
                     this.toggleMenuIfNecessary(index)
