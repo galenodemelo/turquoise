@@ -5,6 +5,7 @@ export const ExtraWrapper = styled.div`
     display: inline-flex;
     align-items: center;
     column-gap: 40px;
+    justify-content: flex-end;
 `;
 
 export const AerialView = styled.a`

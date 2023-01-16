@@ -1,7 +1,7 @@
 import React from "react";
 import Extra from "./Extra";
 import Menu from "./Menu";
-import { Header, Logo } from "./style";
+import { Header, Logo, LogoWrapper } from "./style";
 
 export default class FloatingMenu extends React.Component {
 
@@ -9,7 +9,9 @@ export default class FloatingMenu extends React.Component {
         return (
             <Header>
                 <Menu />
-                <Logo src="/img/turquoise-logo.svg" alt="Turquoise Logo" white={true} />
+                <LogoWrapper>
+                    <Logo src="/img/turquoise-logo.svg" alt="Turquoise Logo" white={true} />
+                </LogoWrapper>
                 <Extra />
             </Header>
         )

@@ -7,9 +7,16 @@ export const Header = styled.header`
     left: 0;
     width: 100%;
     display: flex;
-    justify-content: space-between;
     z-index: 100;
     box-sizing: border-box;
+
+    > * {
+        flex: 1;
+    }
+`;
+
+export const LogoWrapper = styled.div`
+    text-align: center;
 `;
 
 interface LogoProps {
