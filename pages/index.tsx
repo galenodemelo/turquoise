@@ -2,11 +2,15 @@ import { BackdropVideo } from "@components/Backdrop/BackdropVideo"
 import PageMetadata from "@components/PageMetadata"
 import FloatingMenu from "@layouts/FloatingMenu"
 import IconOfLuxuryAndExclusivity from "@layouts/IconOfLuxuryAndExclusivity"
+import ScrollTip from "@layouts/Scroll"
 import VerticalSwipePage from "@layouts/VerticalSwipePage"
 import React from "react"
 
 interface State {
     menuIsVisible: boolean
+
+    scrollTipIsVisible: boolean
+    scrollTipeWhite: boolean
 }
 
 export default class Index extends React.Component<{}, State> {
@@ -15,6 +19,8 @@ export default class Index extends React.Component<{}, State> {
         super(props);
         this.state = {
             menuIsVisible: true,
+            scrollTipIsVisible: true,
+            scrollTipeWhite: true
         };
     }
 
@@ -23,15 +29,22 @@ export default class Index extends React.Component<{}, State> {
         this.setState({ menuIsVisible: !isPanelWithMenuHidden })
     }
 
+    toggleScrollTipIfNecessary(index: number): void {
+        const isPanelWithScrollTipHidden = [1].includes(index)
+        this.setState({ scrollTipIsVisible: !isPanelWithScrollTipHidden })
+    }
+
     render(): JSX.Element {
         return (
             <>
                 <PageMetadata />
 
                 <FloatingMenu visible={this.state.menuIsVisible} />
+                <ScrollTip visible={this.state.menuIsVisible} white={this.state.scrollTipeWhite} />
 
                 <VerticalSwipePage onStartSliding={(index: number) => {
                     this.toggleMenuIfNecessary(index)
+                    this.toggleScrollTipIfNecessary(index)
                 }}>
                     <BackdropVideo autoPlay={true} muted={true} controls={false} loop={true} playsInline={true}>
                         <source src="/video/people-on-kayak-intro.webm" type="video/webm" />
