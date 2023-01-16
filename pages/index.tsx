@@ -3,6 +3,7 @@ import PageMetadata from "@components/PageMetadata"
 import FloatingMenu from "@layouts/FloatingMenu"
 import IconOfLuxuryAndExclusivity from "@layouts/IconOfLuxuryAndExclusivity"
 import Location from "@layouts/Location"
+import Masterplan from "@layouts/Masterplan"
 import ScrollTip from "@layouts/Scroll"
 import VerticalSwipePage from "@layouts/VerticalSwipePage"
 import React from "react"
@@ -70,6 +71,8 @@ export default class Index extends React.Component<{}, State> {
                     <IconOfLuxuryAndExclusivity />
 
                     <Location />
+
+                    <Masterplan />
                 </VerticalSwipePage>
             </>
         )
