@@ -1,14 +1,21 @@
 import { SETTINGS } from "@styles/globals";
 import styled from "styled-components";
+import { FloatingMenuProps } from ".";
+import { ExtraWrapper } from "./Extra/style";
+import { NavButtonWrapper } from "./Menu/style";
 
 export const horizontalMargin = "64px"
 export const verticalMargin = "32px"
 
-interface HeaderProps {
-    visible: boolean;
-}
+export const LogoWrapper = styled.div`
+    text-align: center;
+`;
 
-export const Header = styled.header<HeaderProps>`
+export const Logo = styled.img`
+    width: 240px;
+`;
+
+export const Header = styled.header<FloatingMenuProps>`
     position: fixed;
     padding: ${verticalMargin} ${horizontalMargin};
     top: 0;
@@ -23,17 +30,11 @@ export const Header = styled.header<HeaderProps>`
     > * {
         flex: 1;
     }
-`;
 
-export const LogoWrapper = styled.div`
-    text-align: center;
-`;
-
-interface LogoProps {
-    white?: boolean;
-}
-
-export const Logo = styled.img<LogoProps>`
-    width: 240px;
-    filter: ${(props) => (props.white ? "brightness(0) invert(1)" : "brightness(1) invert(0)")};
+    ${Logo},
+    ${NavButtonWrapper},
+    ${ExtraWrapper} {
+        filter: ${(props) => (props.white ? "brightness(0) invert(1)" : "brightness(1) invert(0)")};
+        transition: filter ${SETTINGS.swiper.speedInSeconds}s ease;
+    }
 `;
