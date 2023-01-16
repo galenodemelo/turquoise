@@ -6,6 +6,7 @@ import Location from "@layouts/Location"
 import Masterplan from "@layouts/Masterplan"
 import ScrollTip from "@layouts/Scroll"
 import VerticalSwipePage from "@layouts/VerticalSwipePage"
+import Image from "next/image"
 import React from "react"
 
 interface State {
@@ -34,7 +35,7 @@ export default class Index extends React.Component<{}, State> {
     }
 
     toggleMenuWhiteIfNecessary(index: number): void {
-        const isPanelWithWhiteMenu = [0].includes(index)
+        const isPanelWithWhiteMenu = [0, 5, 6].includes(index)
         this.setState({ menuWhite: isPanelWithWhiteMenu })
     }
 
@@ -44,7 +45,7 @@ export default class Index extends React.Component<{}, State> {
     }
 
     toggleScrollTipWhiteIfNecessary(index: number): void {
-        const isPanelWithWhiteScrollTip = [0].includes(index)
+        const isPanelWithWhiteScrollTip = [0, 7].includes(index)
         this.setState({ scrollTipWhite: isPanelWithWhiteScrollTip })
     }
 
@@ -73,6 +74,11 @@ export default class Index extends React.Component<{}, State> {
                     <Location />
 
                     <Masterplan />
+
+                    <Image layout="fill" objectFit="cover" objectPosition="center center" src="/img/carousel/concept/concept-map.jpg" />
+                    <Image layout="fill" objectFit="cover" objectPosition="center center" src="/img/carousel/concept/feel-the-nature.jpg" alt="Couple walking along the beach with the title 'Feel the Nature'" />
+                    <Image layout="fill" objectFit="cover" objectPosition="center center" src="/img/carousel/concept/our-gift-for-you.jpg" alt="Home facade with a parked golf car and the title 'Our gift for you'" />
+                    <Image layout="fill" objectFit="cover" objectPosition="center center" src="/img/carousel/concept/surrounded-by-green-and-blue.jpg" alt="Father, mother and daughter playing golf at the sundown and the title 'Surrounded by green and blue'" />
                 </VerticalSwipePage>
             </>
         )
