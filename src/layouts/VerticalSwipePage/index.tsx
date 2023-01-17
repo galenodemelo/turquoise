@@ -27,6 +27,7 @@ export default class VerticalSwipePage extends React.Component<Props, {}> {
                     releaseOnEdges: true,
                     sensitivity: .1
                 }}
+                simulateTouch={false}
                 spaceBetween={0}
                 speed={SETTINGS.swiper.speedInMilliseconds}
                 slidesPerView={1}
