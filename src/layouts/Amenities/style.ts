@@ -65,6 +65,13 @@ export const AccordionContent = styled.p`
     line-height: 1.6;
 `;
 
+export const DetailsFooter = styled.div`
+    display: inline-flex;
+    justify-content: space-between;
+    color: ${COLORS.darkGreen};
+    font-size: 0.8rem;
+`;
+
 export const ImageWrapper = styled.div`
     position: relative;
     width: 100%;

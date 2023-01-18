@@ -80,6 +80,11 @@ export default class Amenities extends React.Component<{}, State> {
                                 )
                             })}
                         </AccordionList>
+
+                        <DetailsFooter>
+                            <span>No short term rentals</span>
+                            <span>Handicapped accessible</span>
+                        </DetailsFooter>
                     </Details>
 
                     <ImageWrapper>
