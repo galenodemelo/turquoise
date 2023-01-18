@@ -69,6 +69,7 @@ export default class Amenities extends React.Component<{}, State> {
                                     <Accordion key={index} open={this.state.activeIndex === index}>
                                         <AccordionHeader onClick={(event) => {
                                             event.preventDefault()
+                                            this.setState({ activeIndex: index })
                                         }}>
                                             {item.header}
                                         </AccordionHeader>
