@@ -15,6 +15,15 @@ export default class Amenities extends React.Component<{}, State> {
     render(): JSX.Element {
         return (
             <AmenitiesWrapper>
+                <Carousel>
+                    <Details>
+                        <DetailsHeading>Amenities</DetailsHeading>
+                    </Details>
+
+                    <ImageWrapper>
+                    </ImageWrapper>
+                </Carousel>
+
             </AmenitiesWrapper>
         )
     }
