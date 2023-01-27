@@ -4,12 +4,13 @@ import styled from "styled-components";
 
 export const LocationWrapper = styled.div`
     ${SectionPadded}
-    background: url("/img/location.jpg") center center no-repeat #ffffff;
+    background: url("/img/location.svg") center center no-repeat #ffffff;
     background-size: cover;
 `;
 
 export const Minimap = styled.img`
     position: absolute;
-    right: 0;
-    bottom: 0;
+    right: ${horizontalMargin};
+    bottom: ${verticalMargin};
+    width: 225px;
 `;
