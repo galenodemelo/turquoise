@@ -4,6 +4,7 @@ import Amenities from "@layouts/Amenities"
 import FloatingMenu from "@layouts/FloatingMenu"
 import IconOfLuxuryAndExclusivity from "@layouts/IconOfLuxuryAndExclusivity"
 import Location from "@layouts/Location"
+import LocationGallery from "@layouts/LocationGallery"
 import Masterplan from "@layouts/Masterplan"
 import ScrollTip from "@layouts/Scroll"
 import VerticalSwipePage from "@layouts/VerticalSwipePage"
@@ -82,6 +83,7 @@ export default class Index extends React.Component<{}, State> {
                     <Image layout="fill" objectFit="cover" objectPosition="center center" src="/img/carousel/concept/surrounded-by-green-and-blue.jpg" alt="Father, mother and daughter playing golf at the sundown and the title 'Surrounded by green and blue'" />
 
                     <Amenities />
+                    <LocationGallery />
                 </VerticalSwipePage>
             </>
         )
