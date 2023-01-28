@@ -3,6 +3,7 @@ import styled from "styled-components";
 
 export const CreativeTeamWrapper = styled.div`
     ${SectionPadded}
+    max-height: fit-content;
 `;
 
 export const CreativeTeamList = styled.ul`

@@ -37,10 +37,31 @@ export default class VerticalSwipePage extends React.Component<Props, {}> {
                     if (!this.props.onStartSliding) return;
                     this.props.onStartSliding(swiper.realIndex)
                 }}
+                onSlideChangeTransitionEnd={(swiper: SwiperConfig) => {
+                    const activeSlide: any | null = swiper.slides[swiper.activeIndex]
+                    if (!activeSlide) return;
+
+                    const hasVerticalScrollbar = activeSlide.scrollHeight > activeSlide.clientHeight;
+                    if (hasVerticalScrollbar) {
+                        const scrollDifferenceTop = activeSlide.scrollHeight - activeSlide.swiperSlideSize;
+
+                        if (activeSlide.scrollTop === 0) activeSlide.scrollTop += 1;
+                        if (activeSlide.scrollTop === scrollDifferenceTop) activeSlide.scrollTop -= 2;
+                        swiper.mousewheel.disable();
+                        swiper.allowTouchMove = false;
+
+                        activeSlide.addEventListener("scroll", () => {
+                            if (activeSlide.scrollTop <= 0 || scrollDifferenceTop - activeSlide.scrollTop <= 1) {
+                                swiper.mousewheel.enable();
+                                swiper.allowTouchMove = true;
+                            }
+                        });
+                    }
+                }}
             >
                 {this.props.children.map((child: JSX.Element, index: number) => {
                     return (
-                        <SwiperSlide key={index} tag="section">
+                        <SwiperSlide key={index} tag="section" style={{ overflow: "auto" }}>
                             {child}
                         </SwiperSlide>
                     )
