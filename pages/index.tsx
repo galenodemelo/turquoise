@@ -1,6 +1,7 @@
 import { BackdropVideo } from "@components/Backdrop/BackdropVideo"
 import PageMetadata from "@components/PageMetadata"
 import Amenities from "@layouts/Amenities"
+import CreativeTeam from "@layouts/CreativeTeam"
 import FloatingMenu from "@layouts/FloatingMenu"
 import IconOfLuxuryAndExclusivity from "@layouts/IconOfLuxuryAndExclusivity"
 import Location from "@layouts/Location"
@@ -84,6 +85,7 @@ export default class Index extends React.Component<{}, State> {
 
                     <Amenities />
                     <LocationGallery />
+                    <CreativeTeam />
                 </VerticalSwipePage>
             </>
         )
