@@ -8,8 +8,8 @@ interface State {
 
 export default class LocationGallery extends React.Component<{}, State> {
 
-    constructor() {
-        super({})
+    constructor(props: {}) {
+        super(props)
         this.state = {
             expandedItemIndex: null
         }
