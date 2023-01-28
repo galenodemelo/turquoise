@@ -2,6 +2,7 @@ import { BackdropVideo } from "@components/Backdrop/BackdropVideo"
 import PageMetadata from "@components/PageMetadata"
 import Amenities from "@layouts/Amenities"
 import CreativeTeam from "@layouts/CreativeTeam"
+import Developers from "@layouts/Developers"
 import FloatingMenu from "@layouts/FloatingMenu"
 import IconOfLuxuryAndExclusivity from "@layouts/IconOfLuxuryAndExclusivity"
 import Location from "@layouts/Location"
@@ -67,6 +68,7 @@ export default class Index extends React.Component<{}, State> {
                     this.toggleScrollTipIfNecessary(index)
                     this.toggleScrollTipWhiteIfNecessary(index)
                 }}>
+                    <Developers />
                     <BackdropVideo autoPlay={true} muted={true} controls={false} loop={true} playsInline={true}>
                         <source src="/video/people-on-kayak-intro.webm" type="video/webm" />
                         <source src="/video/people-on-kayak-intro.mp4" type="video/mp4" />
