@@ -61,7 +61,7 @@ export default class Index extends React.Component<{}, State> {
                 <PageMetadata />
 
                 <FloatingMenu visible={this.state.menuIsVisible} white={this.state.menuWhite} />
-                <ScrollTip visible={this.state.menuIsVisible} white={this.state.scrollTipWhite} />
+                <ScrollTip visible={this.state.scrollTipIsVisible} white={this.state.scrollTipWhite} />
 
                 <VerticalSwipePage onStartSliding={(index: number) => {
                     this.toggleMenuIfNecessary(index)
