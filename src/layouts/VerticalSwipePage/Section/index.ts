@@ -23,6 +23,6 @@ export const SectionHeading = styled.div`
     font-size: 1.6rem;
     font-weight: bold;
     line-height: 1;
-    color: ${COLORS.green};
+    color: ${COLORS.darkGreen};
     margin-left: ${sectionHeadingExtraMargin};
 `;
