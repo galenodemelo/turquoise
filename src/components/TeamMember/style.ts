@@ -38,7 +38,7 @@ export const Position = styled.h6`
 export const Description = styled.p`
     margin-top: 12px;
     width: 100%;
-    font-family: 'Arboria';
+    font-family: "Arboria";
     font-weight: 300;
     font-size: 1.2rem;
     line-height: 1.4;
