@@ -1,4 +1,5 @@
 import { sectionHeadingExtraMargin, SectionPadded } from "@layouts/VerticalSwipePage/Section";
+import { COLORS } from "@styles/globals";
 import styled from "styled-components";
 
 export const ContactWrapper = styled.div`
@@ -14,7 +15,7 @@ export const ContactContent = styled.div`
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr auto;
     padding: 0 ${sectionHeadingExtraMargin};
-    column-gap: 10%;
+    column-gap: 12%;
     row-gap: 10%;
 `;
 
@@ -84,7 +85,89 @@ export const FormSubmit = styled.button`
     margin-bottom: 2rem;
 `;
 
-export const ContactInfo = styled.div``;
+const gapBetweenContactInfoItems = "48px"
+
+export const ContactInfo = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    row-gap: ${gapBetweenContactInfoItems};
+`;
+
+export const CTA = styled.div`
+    display: inline-flex;
+    align-items: center;
+    column-gap: 16px;
+`;
+
+export const CTAHeader = styled.span`
+    font-family: "Arboria";
+    font-size: 1.2rem;
+`;
+
+export const CTAButton = styled.a`
+    position: relative;
+    background-color: ${COLORS.green};
+    color: #ffffff;
+    font-size: 1rem;
+    padding: 14px 16px 13px;
+    transition: background-color 0.2s ease;
+
+    &:hover {
+        background-color: ${COLORS.darkGreen};
+    }
+
+    &::after {
+        display: block;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: calc(-32px + -5px);
+        height: 70%;
+        width: 32px;
+        margin: auto 0;
+        content: "";
+        background: url("/img/ico/pdf.svg") center center no-repeat;
+        background-size: contain;
+    }
+`;
+
+export const Info = styled.address`
+    display: inline-flex;
+    flex-direction: column;
+    font-style: normal;
+    row-gap: 12px;
+`
+
+export const InfoHeader = styled.h6`
+    color: ${COLORS.green};
+    font-weight: 500;
+    font-size: 1.2rem;
+`
+
+export const InfoItem = styled.div`
+    display: inline-flex;
+    align-items: center;
+    column-gap: 12px;
+`
+
+export const InfoItemIcon = styled.span``
+
+export const InfoItemData = styled.span`
+    font-size: 1rem;
+    color: ${COLORS.gray};
+`
+
+export const InfoFooter = styled.div`
+    margin-top: ${gapBetweenContactInfoItems};
+    font-size: 1rem;
+    color: ${COLORS.gray};
+
+    > b {
+        font-weight: 700;
+    }
+`
 
 export const BrandList = styled.div`
     position: relative;

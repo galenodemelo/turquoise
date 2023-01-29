@@ -1,7 +1,7 @@
 import { SectionHeading } from "@layouts/VerticalSwipePage/Section";
 import Image from "next/image";
 import React from "react";
-import { ContactContent, ContactInfo, ContactWrapper, Form, FormField, FormFieldList, FormFootNote, FormRow, FormSubmit, LogoList } from "./style";
+import { BrandList, ContactContent, ContactInfo, ContactWrapper, CTA, CTAButton, CTAHeader, Form, FormField, FormFieldList, FormFootNote, FormRow, FormSubmit, Info, InfoFooter, InfoHeader, InfoItem, InfoItemData, InfoItemIcon } from "./style";
 
 export default class Contact extends React.Component {
 
@@ -62,7 +62,45 @@ export default class Contact extends React.Component {
                     </Form>
 
                     <ContactInfo>
-                        Contact info
+                        <Image src="/img/turquoise-logo-texturized.png" height={80} width={460} objectFit="contain" alt="Turquoise logo with sea texture" />
+                        <CTA>
+                            <CTAHeader>
+                                Fill in the form to download our material.
+                            </CTAHeader>
+                            <CTAButton href="#" target="_blank">
+                                Download
+                            </CTAButton>
+                        </CTA>
+                        <Info>
+                            <InfoHeader>More info:</InfoHeader>
+                            <InfoItem>
+                                <InfoItemIcon>
+                                    <Image src="/img/ico/mail.svg" width={20} height={20} />
+                                </InfoItemIcon>
+                                <InfoItemData>
+                                    sales@turquoise.homes
+                                </InfoItemData>
+                            </InfoItem>
+                            <InfoItem>
+                                <InfoItemIcon>
+                                    <Image src="/img/ico/phone.svg" width={20} height={20} />
+                                </InfoItemIcon>
+                                <InfoItemData>
+                                    +1 (850) 738-1551
+                                </InfoItemData>
+                            </InfoItem>
+                            <InfoItem>
+                                <InfoItemIcon>
+                                    <Image src="/img/ico/instagram-logo.svg" width={20} height={20} />
+                                </InfoItemIcon>
+                                <InfoItemData>
+                                    turquoise.homes
+                                </InfoItemData>
+                            </InfoItem>
+                            <InfoFooter>
+                                <b>Santa Rosa Beach,</b> Florida
+                            </InfoFooter>
+                        </Info>
                     </ContactInfo>
 
                     <BrandList>

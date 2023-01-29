@@ -1,6 +1,7 @@
 import styled from "styled-components"
 
 export const COLORS = {
+    gray: "#858585",
     green: "#1ca798",
     darkGreen: "#287e8c"
 }
