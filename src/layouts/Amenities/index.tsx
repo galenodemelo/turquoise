@@ -14,7 +14,7 @@ export default class Amenities extends React.Component<{}, State> {
     accordionList: Array<{ header: string, content?: string, imagePath: string }> = [
         {
             header: "Entrance",
-            imagePath: "/img/carousel/amenities/clubhouse.jpg"
+            imagePath: "/img/carousel/amenities/entrance.jpg"
         },
         {
             header: "Club House",
@@ -64,9 +64,9 @@ export default class Amenities extends React.Component<{}, State> {
                                         <AccordionHeader
                                             data-state-active={this.state.activeIndex == index}
                                             onClick={(event) => {
-                                            event.preventDefault()
-                                            this.setState({ activeIndex: index })
-                                        }}>
+                                                event.preventDefault()
+                                                this.setState({ activeIndex: index })
+                                            }}>
                                             {item.header}
                                         </AccordionHeader>
                                         <AccordionContent>
