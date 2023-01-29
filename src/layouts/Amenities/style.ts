@@ -52,7 +52,7 @@ export const Accordion = styled.details`
 `;
 
 export const AccordionHeader = styled.summary`
-    color: ${COLORS.darkGreen};
+    color: ${COLORS.green};
     font-size: 1.2rem;
     cursor: pointer;
     font-weight: 500;
@@ -60,13 +60,13 @@ export const AccordionHeader = styled.summary`
 
     &:hover,
     &[data-state-active="true"] {
-        color: ${COLORS.green};
+        color: ${COLORS.darkGreen};
     }
 `;
 
 export const AccordionContent = styled.p`
     margin-top: 16px;
-    color: ${COLORS.darkGreen};
+    color: ${COLORS.green};
     font-size: 0.8rem;
     line-height: 1.6;
 `;
