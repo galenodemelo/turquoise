@@ -5,6 +5,7 @@ import Contact from "@layouts/Contact"
 import CreativeTeam from "@layouts/CreativeTeam"
 import Developers from "@layouts/Developers"
 import FloatingMenu from "@layouts/FloatingMenu"
+import Houses from "@layouts/Houses"
 import IconOfLuxuryAndExclusivity from "@layouts/IconOfLuxuryAndExclusivity"
 import Location from "@layouts/Location"
 import LocationGallery from "@layouts/LocationGallery"
@@ -85,6 +86,7 @@ export default class Index extends React.Component<{}, State> {
                     <Image layout="fill" objectFit="cover" objectPosition="center center" src="/img/carousel/concept/our-gift-for-you.jpg" alt="Home facade with a parked golf car and the title 'Our gift for you'" />
                     <Image layout="fill" objectFit="cover" objectPosition="center center" src="/img/carousel/concept/surrounded-by-green-and-blue.jpg" alt="Father, mother and daughter playing golf at the sundown and the title 'Surrounded by green and blue'" />
 
+                    <Houses />
                     <Amenities />
                     <LocationGallery />
                     <CreativeTeam />
