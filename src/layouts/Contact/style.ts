@@ -86,6 +86,8 @@ export const FormSubmit = styled.button`
 
 export const ContactInfo = styled.div``;
 
-export const LogoList = styled.ul`
+export const BrandList = styled.div`
+    position: relative;
     grid-column: span 2;
+    text-align: center;
 `;

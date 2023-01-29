@@ -65,9 +65,9 @@ export default class Contact extends React.Component {
                         Contact info
                     </ContactInfo>
 
-                    <LogoList>
-                        Logo list
-                    </LogoList>
+                    <BrandList>
+                        <Image src="/img/brands.png" height={76} width={565} objectFit="contain" />
+                    </BrandList>
                 </ContactContent>
             </ContactWrapper>
         )
