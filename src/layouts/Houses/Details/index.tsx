@@ -28,7 +28,7 @@ export default class HousesDetails extends React.Component<Props, {}> {
                     style={{ height: "100vh", width: "100%" }}
                 >
                     <SwiperSlide>
-                        <Image src="/img/carousel/houses/tanneys-design-1.jpg" layout="fill" alt="Model house by Tanney facade" />
+                        <Image src="/img/carousel/houses/tanneys-design-1.jpg" layout="fill" alt="Model house by Tanney facade" priority={true} />
 
                         <TopHeader>
                             <HeaderText>{`Model House - Tanney's design`}</HeaderText>
@@ -39,7 +39,7 @@ export default class HousesDetails extends React.Component<Props, {}> {
                     <SwiperSlide>
                         <SplittedSlide>
                             <div>
-                                <Image src="/img/carousel/houses/tanneys-design-2.jpg" layout="fill" alt="Model house by Tanney pool" objectFit="cover" />
+                                <Image src="/img/carousel/houses/tanneys-design-2.jpg" layout="fill" alt="Model house by Tanney pool" objectFit="cover" priority={true} />
                             </div>
                             <RightHeader>
                                 <HeaderText>{`Model House - Tanney's design`}</HeaderText>
@@ -47,7 +47,7 @@ export default class HousesDetails extends React.Component<Props, {}> {
                         </SplittedSlide>
                     </SwiperSlide>
                     <SwiperSlide>
-                        <Image src="/img/carousel/houses/russells-design-1.jpg" layout="fill" alt="Model house by Russell facade" />
+                        <Image src="/img/carousel/houses/russells-design-1.jpg" layout="fill" alt="Model house by Russell facade" priority={true} />
 
                         <TopHeader>
                             <HeaderText>{`Model House - Russell's design`}</HeaderText>
@@ -58,7 +58,7 @@ export default class HousesDetails extends React.Component<Props, {}> {
                     <SwiperSlide>
                         <SplittedSlide>
                             <div>
-                                <Image src="/img/carousel/houses/russells-design-2.jpg" layout="fill" alt="Model house by Russell backyard" objectFit="cover" />
+                                <Image src="/img/carousel/houses/russells-design-2.jpg" layout="fill" alt="Model house by Russell backyard" objectFit="cover" priority={true} />
                             </div>
                             <RightHeader>
                                 <HeaderText>{`Model House - Russell's design`}</HeaderText>
@@ -66,7 +66,7 @@ export default class HousesDetails extends React.Component<Props, {}> {
                         </SplittedSlide>
                     </SwiperSlide>
                     <SwiperSlide>
-                        <Image src="/img/carousel/houses/ricardos-design-1.jpg" layout="fill" alt="Model house by Ricardo facade" />
+                        <Image src="/img/carousel/houses/ricardos-design-1.jpg" layout="fill" alt="Model house by Ricardo facade" priority={true} />
 
                         <TopHeader>
                             <HeaderText>{`Model House - Ricardo's design`}</HeaderText>
@@ -75,7 +75,7 @@ export default class HousesDetails extends React.Component<Props, {}> {
                         <FloorPlan />
                     </SwiperSlide>
                     <SwiperSlide>
-                        <Image src="/img/carousel/houses/ricardos-design-2.jpg" layout="fill" alt="Model house by Ricardo pool" />
+                        <Image src="/img/carousel/houses/ricardos-design-2.jpg" layout="fill" alt="Model house by Ricardo pool" priority={true} />
 
                         <TopHeader>
                             <HeaderText>{`Model House - Ricardo's design`}</HeaderText>
@@ -86,7 +86,7 @@ export default class HousesDetails extends React.Component<Props, {}> {
                     <SwiperSlide>
                         <SplittedSlide>
                             <div>
-                                <Image src="/img/carousel/houses/ricardos-design-3.jpg" layout="fill" alt="Model house's living room by Ricardo" objectFit="cover" />
+                                <Image src="/img/carousel/houses/ricardos-design-3.jpg" layout="fill" alt="Model house's living room by Ricardo" objectFit="cover" priority={true} />
                             </div>
                             <RightHeader>
                                 <HeaderText>
@@ -97,7 +97,7 @@ export default class HousesDetails extends React.Component<Props, {}> {
                         </SplittedSlide>
                     </SwiperSlide>
                     <SwiperSlide>
-                        <Image src="/img/carousel/houses/ricardos-design-4.jpg" layout="fill" alt="Model house's bathroom suite by Ricardo" />
+                        <Image src="/img/carousel/houses/ricardos-design-4.jpg" layout="fill" alt="Model house's bathroom suite by Ricardo" priority={true} />
 
                         <TopHeader>
                             <HeaderText>
@@ -111,7 +111,7 @@ export default class HousesDetails extends React.Component<Props, {}> {
                     <SwiperSlide>
                         <SplittedSlide>
                             <div>
-                                <Image src="/img/carousel/houses/ricardos-design-5.jpg" layout="fill" alt="Model house's hall room by Ricardo" objectFit="cover" />
+                                <Image src="/img/carousel/houses/ricardos-design-5.jpg" layout="fill" alt="Model house's hall room by Ricardo" objectFit="cover" priority={true} />
                             </div>
                             <RightHeader>
                                 <HeaderText>
@@ -122,7 +122,7 @@ export default class HousesDetails extends React.Component<Props, {}> {
                         </SplittedSlide>
                     </SwiperSlide>
                     <SwiperSlide>
-                        <Image src="/img/carousel/houses/ricardos-design-6.jpg" layout="fill" alt="Model house's suite by Ricardo" />
+                        <Image src="/img/carousel/houses/ricardos-design-6.jpg" layout="fill" alt="Model house's suite by Ricardo" priority={true} />
 
                         <TopHeader>
                             <HeaderText>
