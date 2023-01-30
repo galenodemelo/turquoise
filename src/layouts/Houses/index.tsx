@@ -9,7 +9,7 @@ export default class Houses extends React.Component {
         return (
             <>
                 <HousesBackground>
-                    <Image src="/img/background-houses.jpg" layout="fill" objectFit="contain" objectPosition="left center" />
+                    <Image src="/img/background-houses.jpg" layout="fill" objectFit="contain" objectPosition="left center" alt="Golden key on a gift box" />
                 </HousesBackground>
                 <HousesWrapper>
                     <HousesContent>

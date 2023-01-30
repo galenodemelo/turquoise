@@ -75,7 +75,7 @@ export default class Contact extends React.Component {
                             <InfoHeader>More info:</InfoHeader>
                             <InfoItem>
                                 <InfoItemIcon>
-                                    <Image src="/img/ico/mail.svg" width={20} height={20} />
+                                    <Image src="/img/ico/mail.svg" width={20} height={20} alt="Mail icon" />
                                 </InfoItemIcon>
                                 <InfoItemData>
                                     sales@turquoise.homes
@@ -83,7 +83,7 @@ export default class Contact extends React.Component {
                             </InfoItem>
                             <InfoItem>
                                 <InfoItemIcon>
-                                    <Image src="/img/ico/phone.svg" width={20} height={20} />
+                                    <Image src="/img/ico/phone.svg" width={20} height={20} alt="Phone icon" />
                                 </InfoItemIcon>
                                 <InfoItemData>
                                     +1 (850) 738-1551
@@ -91,7 +91,7 @@ export default class Contact extends React.Component {
                             </InfoItem>
                             <InfoItem>
                                 <InfoItemIcon>
-                                    <Image src="/img/ico/instagram-logo.svg" width={20} height={20} />
+                                    <Image src="/img/ico/instagram-logo.svg" width={20} height={20} alt="Instagram logo" />
                                 </InfoItemIcon>
                                 <InfoItemData>
                                     turquoise.homes
@@ -104,7 +104,7 @@ export default class Contact extends React.Component {
                     </ContactInfo>
 
                     <BrandList>
-                        <Image src="/img/brands.png" height={76} width={565} objectFit="contain" />
+                        <Image src="/img/brands.png" height={76} width={565} objectFit="contain" alt="Bravo America Company, Coldwell Banker Realty, Lana Development and Sunbelt logos" />
                     </BrandList>
                 </ContactContent>
             </ContactWrapper>
