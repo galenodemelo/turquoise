@@ -13,7 +13,24 @@ export interface State {
     open: boolean
 }
 
+export interface LinkItemData {
+    href: string
+    label: string
+}
+
 export default class Links extends React.Component<{}, State> {
+
+    linkItemList: Array<LinkItemData> = [
+        { href: Home.name, label: "Home" },
+        { href: Location.name, label: "Location" },
+        { href: Masterplan.name, label: "Masterplan" },
+        { href: Houses.name, label: "Houses" },
+        { href: Amenities.name, label: "Amenities" },
+        { href: Attraction.name, label: "Attraction" },
+        { href: CreativeTeam.name, label: "CreativeTeam" },
+        { href: Developers.name, label: "Developers" },
+        { href: Contact.name, label: "Contact" }
+    ]
 
     constructor(props: {}) {
         super(props);
@@ -32,15 +49,13 @@ export default class Links extends React.Component<{}, State> {
                 <LinksClose onClick={() => this.setOpen(false)} />
 
                 <LinkList>
-                    <LinkItem href={`#${Home.name}`}>Home</LinkItem>
-                    <LinkItem href={`#${Location.name}`}>Location</LinkItem>
-                    <LinkItem href={`#${Masterplan.name}`}>Masterplan</LinkItem>
-                    <LinkItem href={`#${Houses.name}`}>Houses</LinkItem>
-                    <LinkItem href={`#${Amenities.name}`}>Amenities</LinkItem>
-                    <LinkItem href={`#${Attraction.name}`}>Attraction</LinkItem>
-                    <LinkItem href={`#${CreativeTeam.name}`}>Creative team</LinkItem>
-                    <LinkItem href={`#${Developers.name}`}>Developers</LinkItem>
-                    <LinkItem href={`#${Contact.name}`}>Contact</LinkItem>
+                    {this.linkItemList.map((linkItem: LinkItemData) => {
+                        return (
+                            <LinkItem href={`#${linkItem.href}`} onClick={() => this.setOpen(false)}>
+                                {linkItem.label}
+                            </LinkItem>
+                        )
+                    })}
                 </LinkList>
             </LinksWrapper>
         )
