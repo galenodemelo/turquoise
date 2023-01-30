@@ -1,9 +1,10 @@
 import { SETTINGS } from "@styles/globals";
 import Image from "next/image";
 import React from "react";
+import { Navigation, Swiper as SwiperConfig } from 'swiper';
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper.min.css";
-import { ButtonClose, FloorPlan, HeaderText, HousesDetailsWrapper, RightHeader, SplittedSlide, TopHeader } from "./style";
+import { ButtonClose, FloorPlan, HeaderText, HousesDetailsWrapper, RightHeader, SlideControlNext, SlideControlPrevious, SplittedSlide, TopHeader } from "./style";
 
 interface Props {
     isActive: boolean
@@ -12,14 +13,22 @@ interface Props {
 
 export default class HousesDetails extends React.Component<Props, {}> {
 
+    controlPrevRef = React.createRef<HTMLButtonElement>()
+    controlNextRef = React.createRef<HTMLButtonElement>()
+
     constructor(props: Props) {
         super(props)
+        SwiperConfig.use([Navigation])
     }
 
     render(): JSX.Element {
         return (
             <HousesDetailsWrapper data-state-active={this.props.isActive}>
                 <Swiper
+                    navigation={{
+                        prevEl: this.controlPrevRef.current,
+                        nextEl: this.controlNextRef.current
+                    }}
                     simulateTouch={true}
                     slidesPerView={1}
                     slidesPerColumn={1}
@@ -134,6 +143,9 @@ export default class HousesDetails extends React.Component<Props, {}> {
                         <FloorPlan />
                     </SwiperSlide>
                 </Swiper>
+
+                <SlideControlPrevious ref={this.controlPrevRef} />
+                <SlideControlNext ref={this.controlNextRef} />
 
                 <ButtonClose onClick={() => this.props.setIsActive(false)} />
             </HousesDetailsWrapper>

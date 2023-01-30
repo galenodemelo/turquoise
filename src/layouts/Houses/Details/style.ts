@@ -80,6 +80,40 @@ export const FloorPlan = styled.a`
     }
 `;
 
+const SlideControl = styled.button`
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto 0;
+    height: 64px;
+    width: 32px;
+    background: url("/img/ico/arrow-right.svg") center center no-repeat;
+    background-size: 80%;
+    z-index: 10;
+    cursor: pointer;
+
+    &[disabled] {
+        opacity: .5;
+        pointer-events: none;
+        cursor: default;
+    }
+
+    &:hover {
+        background-color: rgba(255, 255, 255, 0.2);
+    }
+`;
+
+const controlMargin = "16px";
+
+export const SlideControlPrevious = styled(SlideControl)`
+    left: ${controlMargin};
+    transform: rotate(180deg);
+`;
+
+export const SlideControlNext = styled(SlideControl)`
+    right: ${controlMargin};
+`;
+
 export const ButtonClose = styled.button`
     position: absolute;
     top: 30px;
