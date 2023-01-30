@@ -5,6 +5,7 @@ import CreativeTeam from "@layouts/CreativeTeam";
 import Developers from "@layouts/Developers";
 import Home from "@layouts/Home";
 import Houses from "@layouts/Houses";
+import Location from "@layouts/Location";
 import Masterplan from "@layouts/Masterplan";
 import React from "react";
 import { LinkItem, LinkList, LinksClose, LinksWrapper } from "./style";
@@ -49,9 +50,9 @@ export default class Links extends React.Component<{}, State> {
                 <LinksClose onClick={() => this.setOpen(false)} />
 
                 <LinkList>
-                    {this.linkItemList.map((linkItem: LinkItemData) => {
+                    {this.linkItemList.map((linkItem: LinkItemData, index: number) => {
                         return (
-                            <LinkItem href={`#${linkItem.href}`} onClick={() => this.setOpen(false)}>
+                            <LinkItem href={`#${linkItem.href}`} onClick={() => this.setOpen(false)} key={index}>
                                 {linkItem.label}
                             </LinkItem>
                         )
