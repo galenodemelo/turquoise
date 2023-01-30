@@ -12,10 +12,10 @@ export default class Extra extends React.Component {
                 </AerialView>
 
                 <SocialLinkWrapper>
-                    <SocialLink href="#">
+                    <SocialLink href="https://www.instagram.com/turquoise.homes/">
                         <Image src="/img/ico/instagram-logo.svg" alt="Instagram logo" title="Follow us on Instagram" width={24} height={24} />
                     </SocialLink>
-                    <SocialLink href="#">
+                    <SocialLink href="https://www.facebook.com/turquoise.fl/">
                         <Image src="/img/ico/facebook-logo.svg" alt="Facebook logo" title="Like us on Facebook" width={24} height={24} />
                     </SocialLink>
                 </SocialLinkWrapper>
