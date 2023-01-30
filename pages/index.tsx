@@ -14,6 +14,7 @@ import FloatingMenu from "@layouts/FloatingMenu"
 import Home from "@layouts/Home"
 import { HomeWrapper } from "@layouts/Home/style"
 import Houses from "@layouts/Houses"
+import HousesDetails from "@layouts/Houses/Details"
 import IconOfLuxuryAndExclusivity from "@layouts/IconOfLuxuryAndExclusivity"
 import { IconOfLuxuryAndExclusivityWrapper } from "@layouts/IconOfLuxuryAndExclusivity/style"
 import Location from "@layouts/Location"
@@ -34,6 +35,8 @@ interface State {
 
     scrollTipIsVisible: boolean
     scrollTipWhite: boolean
+
+    isHouseDetailsActive: boolean
 }
 
 export default class Index extends React.Component<{}, State> {
@@ -44,7 +47,8 @@ export default class Index extends React.Component<{}, State> {
             menuIsVisible: true,
             menuWhite: true,
             scrollTipIsVisible: true,
-            scrollTipWhite: true
+            scrollTipWhite: true,
+            isHouseDetailsActive: false
         };
     }
 
@@ -108,13 +112,15 @@ export default class Index extends React.Component<{}, State> {
                     <OurGiftForYou />
                     <SurroundedByGreenAndBlue />
 
-                    <Houses />
+                    <Houses onCtaClick={() => this.setState({ isHouseDetailsActive: true })} />
                     <Amenities />
                     <Attraction />
                     <CreativeTeam />
                     <Developers />
                     <Contact />
                 </VerticalSwipePage>
+
+                <HousesDetails isActive={this.state.isHouseDetailsActive} setIsActive={(active: boolean) => this.setState({ isHouseDetailsActive: active })} />
             </>
         )
     }
