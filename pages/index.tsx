@@ -1,7 +1,8 @@
-import { BackdropVideo } from "@components/Backdrop/BackdropVideo"
 import PageMetadata from "@components/PageMetadata"
 import Amenities from "@layouts/Amenities"
 import { AmenitiesWrapper } from "@layouts/Amenities/style"
+import Attraction from "@layouts/Attraction"
+import { AttractionWrapper } from "@layouts/Attraction/style"
 import ConceptMap from "@layouts/ConceptMap"
 import Contact from "@layouts/Contact"
 import { ContactWrapper } from "@layouts/Contact/style"
@@ -16,8 +17,6 @@ import { IconOfLuxuryAndExclusivityWrapper } from "@layouts/IconOfLuxuryAndExclu
 import Intro from "@layouts/Intro"
 import { IntroWrapper } from "@layouts/Intro/style"
 import Location from "@layouts/Location"
-import LocationGallery from "@layouts/LocationGallery"
-import { LocationGalleryWrapper } from "@layouts/LocationGallery/style"
 import Masterplan from "@layouts/Masterplan"
 import { MasterplanWrapper } from "@layouts/Masterplan/style"
 import OurGiftForYou from "@layouts/OurGiftForYou"
@@ -57,14 +56,14 @@ export default class Index extends React.Component<{}, State> {
     }
 
     toggleMenuWhiteIfNecessary(activeSlideClassName: DOMTokenList): void {
-        const componentsToSetMenuWhite = [IntroWrapper, IconOfLuxuryAndExclusivityWrapper, FellTheNatureWrapper, OurGiftForYouWrapper, LocationGalleryWrapper]
+        const componentsToSetMenuWhite = [IntroWrapper, IconOfLuxuryAndExclusivityWrapper, FellTheNatureWrapper, OurGiftForYouWrapper, AttractionWrapper]
 
         const isPanelWithWhiteMenu = this.matchClassWithActiveClassName(componentsToSetMenuWhite, activeSlideClassName)
         this.setState({ menuWhite: isPanelWithWhiteMenu })
     }
 
     toggleScrollTipIfNecessary(activeSlideClassName: DOMTokenList): void {
-        const componentsToHideScrollTip = [IconOfLuxuryAndExclusivityWrapper, MasterplanWrapper, AmenitiesWrapper, LocationGalleryWrapper, ContactWrapper]
+        const componentsToHideScrollTip = [IconOfLuxuryAndExclusivityWrapper, MasterplanWrapper, AmenitiesWrapper, AttractionWrapper, ContactWrapper]
 
         const isPanelWithScrollTipHidden = this.matchClassWithActiveClassName(componentsToHideScrollTip, activeSlideClassName)
         this.setState({ scrollTipIsVisible: !isPanelWithScrollTipHidden })
@@ -115,7 +114,7 @@ export default class Index extends React.Component<{}, State> {
 
                     <Houses />
                     <Amenities />
-                    <LocationGallery />
+                    <Attraction />
                     <CreativeTeam />
                     <Developers />
                     <Contact />
