@@ -1,3 +1,11 @@
+import Amenities from "@layouts/Amenities";
+import Attraction from "@layouts/Attraction";
+import Contact from "@layouts/Contact";
+import CreativeTeam from "@layouts/CreativeTeam";
+import Developers from "@layouts/Developers";
+import Houses from "@layouts/Houses";
+import Intro from "@layouts/Intro";
+import Masterplan from "@layouts/Masterplan";
 import React from "react";
 import { LinkItem, LinkList, LinksClose, LinksWrapper } from "./style";
 
@@ -24,15 +32,15 @@ export default class Links extends React.Component<{}, State> {
                 <LinksClose onClick={() => this.setOpen(false)} />
 
                 <LinkList>
-                    <LinkItem>Home</LinkItem>
-                    <LinkItem>Location</LinkItem>
-                    <LinkItem>Masterplan</LinkItem>
-                    <LinkItem>Houses</LinkItem>
-                    <LinkItem>Amenities</LinkItem>
-                    <LinkItem>Attraction</LinkItem>
-                    <LinkItem>Creative team</LinkItem>
-                    <LinkItem>Developers</LinkItem>
-                    <LinkItem>Contact</LinkItem>
+                    <LinkItem href={`#${Intro.name}`}>Home</LinkItem>
+                    <LinkItem href={`#${Location.name}`}>Location</LinkItem>
+                    <LinkItem href={`#${Masterplan.name}`}>Masterplan</LinkItem>
+                    <LinkItem href={`#${Houses.name}`}>Houses</LinkItem>
+                    <LinkItem href={`#${Amenities.name}`}>Amenities</LinkItem>
+                    <LinkItem href={`#${Attraction.name}`}>Attraction</LinkItem>
+                    <LinkItem href={`#${CreativeTeam.name}`}>Creative team</LinkItem>
+                    <LinkItem href={`#${Developers.name}`}>Developers</LinkItem>
+                    <LinkItem href={`#${Contact.name}`}>Contact</LinkItem>
                 </LinkList>
             </LinksWrapper>
         )

@@ -1,6 +1,6 @@
 import { SETTINGS } from "@styles/globals"
 import React from "react"
-import { Mousewheel, Swiper as SwiperConfig } from 'swiper'
+import { HashNavigation, Mousewheel, Swiper as SwiperConfig } from 'swiper'
 import { Swiper, SwiperSlide } from "swiper/react"
 import "swiper/swiper.min.css"
 import styles from "./style.module.sass"
@@ -14,7 +14,7 @@ export default class VerticalSwipePage extends React.Component<Props, {}> {
 
     constructor(props: Props) {
         super(props)
-        SwiperConfig.use([Mousewheel])
+        SwiperConfig.use([HashNavigation, Mousewheel])
     }
 
     render(): JSX.Element {
@@ -22,6 +22,7 @@ export default class VerticalSwipePage extends React.Component<Props, {}> {
             <Swiper
                 className={styles.verticalSwipePage}
                 direction="vertical"
+                hashNavigation={{ watchState: true }}
                 mousewheel={{
                     forceToAxis: true,
                     releaseOnEdges: true,
