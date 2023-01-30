@@ -24,8 +24,8 @@ export default class CreativeTeam extends React.Component {
                         description="I am really excited about the vision of Turquoise. Starting with Seaside, virtually all of the neighborhoods along 30A have been conceived with a look back at traditional architecture. Turquoise finally offers me the opportunity to introduce a modern, unique aesthetic on a neighborhood scale along the Gulf Coast."
                     />
                     <TeamMember
-                        imagePath="/img/team/russel-johnson.jpg"
-                        name="Russel Johnson"
+                        imagePath="/img/team/russell-johnson.jpg"
+                        name="Russell Johnson"
                         position="Architect"
                         description="Most exciting to be working on a project of this magnitude located within one of the most iconic beach locations in the world. Working with this development team is especially rewarding with their forward-looking ideas and design concepts."
                     />
