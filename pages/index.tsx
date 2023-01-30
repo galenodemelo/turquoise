@@ -11,11 +11,11 @@ import Developers from "@layouts/Developers"
 import FeelTheNature from "@layouts/FeelTheNature"
 import { FellTheNatureWrapper } from "@layouts/FeelTheNature/style"
 import FloatingMenu from "@layouts/FloatingMenu"
+import Home from "@layouts/Home"
+import { HomeWrapper } from "@layouts/Home/style"
 import Houses from "@layouts/Houses"
 import IconOfLuxuryAndExclusivity from "@layouts/IconOfLuxuryAndExclusivity"
 import { IconOfLuxuryAndExclusivityWrapper } from "@layouts/IconOfLuxuryAndExclusivity/style"
-import Intro from "@layouts/Intro"
-import { IntroWrapper } from "@layouts/Intro/style"
 import Location from "@layouts/Location"
 import Masterplan from "@layouts/Masterplan"
 import { MasterplanWrapper } from "@layouts/Masterplan/style"
@@ -56,7 +56,7 @@ export default class Index extends React.Component<{}, State> {
     }
 
     toggleMenuWhiteIfNecessary(activeSlideClassName: DOMTokenList): void {
-        const componentsToSetMenuWhite = [IntroWrapper, IconOfLuxuryAndExclusivityWrapper, FellTheNatureWrapper, OurGiftForYouWrapper, AttractionWrapper]
+        const componentsToSetMenuWhite = [HomeWrapper, IconOfLuxuryAndExclusivityWrapper, FellTheNatureWrapper, OurGiftForYouWrapper, AttractionWrapper]
 
         const isPanelWithWhiteMenu = this.matchClassWithActiveClassName(componentsToSetMenuWhite, activeSlideClassName)
         this.setState({ menuWhite: isPanelWithWhiteMenu })
@@ -70,7 +70,7 @@ export default class Index extends React.Component<{}, State> {
     }
 
     toggleScrollTipWhiteIfNecessary(activeSlideClassName: DOMTokenList): void {
-        const componentToSetScrollTipWhite = [IntroWrapper, IconOfLuxuryAndExclusivityWrapper, SurroundedByGreenAndBlueWrapper]
+        const componentToSetScrollTipWhite = [HomeWrapper, IconOfLuxuryAndExclusivityWrapper, SurroundedByGreenAndBlueWrapper]
 
         const isPanelWithWhiteScrollTip = this.matchClassWithActiveClassName(componentToSetScrollTipWhite, activeSlideClassName)
         this.setState({ scrollTipWhite: isPanelWithWhiteScrollTip })
@@ -99,7 +99,7 @@ export default class Index extends React.Component<{}, State> {
                     this.toggleScrollTipIfNecessary(activeSlideClassName)
                     this.toggleScrollTipWhiteIfNecessary(activeSlideClassName)
                 }}>
-                    <Intro />
+                    <Home />
 
                     <IconOfLuxuryAndExclusivity />
 

@@ -1,4 +1,4 @@
-import Intro from "@layouts/Intro";
+import Home from "@layouts/Home";
 import React from "react";
 import Extra from "./Extra";
 import Menu from "./Menu";
@@ -19,7 +19,7 @@ export default class FloatingMenu extends React.Component<FloatingMenuProps, {}>
             <Header visible={this.props.visible} white={this.props.white}>
                 <Menu />
                 <LogoWrapper>
-                    <a href={`#${Intro.name}`}>
+                    <a href={`#${Home.name}`}>
                         <Logo src="/img/turquoise-logo.svg" alt="Turquoise Logo" />
                     </a>
                 </LogoWrapper>

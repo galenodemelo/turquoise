@@ -3,8 +3,8 @@ import Attraction from "@layouts/Attraction";
 import Contact from "@layouts/Contact";
 import CreativeTeam from "@layouts/CreativeTeam";
 import Developers from "@layouts/Developers";
+import Home from "@layouts/Home";
 import Houses from "@layouts/Houses";
-import Intro from "@layouts/Intro";
 import Masterplan from "@layouts/Masterplan";
 import React from "react";
 import { LinkItem, LinkList, LinksClose, LinksWrapper } from "./style";
@@ -32,7 +32,7 @@ export default class Links extends React.Component<{}, State> {
                 <LinksClose onClick={() => this.setOpen(false)} />
 
                 <LinkList>
-                    <LinkItem href={`#${Intro.name}`}>Home</LinkItem>
+                    <LinkItem href={`#${Home.name}`}>Home</LinkItem>
                     <LinkItem href={`#${Location.name}`}>Location</LinkItem>
                     <LinkItem href={`#${Masterplan.name}`}>Masterplan</LinkItem>
                     <LinkItem href={`#${Houses.name}`}>Houses</LinkItem>
