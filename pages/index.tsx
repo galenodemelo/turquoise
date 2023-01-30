@@ -1,8 +1,10 @@
 import { BackdropVideo } from "@components/Backdrop/BackdropVideo"
 import PageMetadata from "@components/PageMetadata"
 import Amenities from "@layouts/Amenities"
+import { AmenitiesWrapper } from "@layouts/Amenities/style"
 import ConceptMap from "@layouts/ConceptMap"
 import Contact from "@layouts/Contact"
+import { ContactWrapper } from "@layouts/Contact/style"
 import CreativeTeam from "@layouts/CreativeTeam"
 import Developers from "@layouts/Developers"
 import FeelTheNature from "@layouts/FeelTheNature"
@@ -13,6 +15,7 @@ import IconOfLuxuryAndExclusivity from "@layouts/IconOfLuxuryAndExclusivity"
 import { IconOfLuxuryAndExclusivityWrapper } from "@layouts/IconOfLuxuryAndExclusivity/style"
 import Location from "@layouts/Location"
 import LocationGallery from "@layouts/LocationGallery"
+import { LocationGalleryWrapper } from "@layouts/LocationGallery/style"
 import Masterplan from "@layouts/Masterplan"
 import { MasterplanWrapper } from "@layouts/Masterplan/style"
 import OurGiftForYou from "@layouts/OurGiftForYou"
@@ -52,14 +55,14 @@ export default class Index extends React.Component<{}, State> {
     }
 
     toggleMenuWhiteIfNecessary(activeSlideClassName: DOMTokenList): void {
-        const componentsToSetMenuWhite = [IconOfLuxuryAndExclusivityWrapper, FellTheNatureWrapper, OurGiftForYouWrapper]
+        const componentsToSetMenuWhite = [IconOfLuxuryAndExclusivityWrapper, FellTheNatureWrapper, OurGiftForYouWrapper, LocationGalleryWrapper]
 
         const isPanelWithWhiteMenu = this.matchClassWithActiveClassName(componentsToSetMenuWhite, activeSlideClassName)
         this.setState({ menuWhite: isPanelWithWhiteMenu })
     }
 
     toggleScrollTipIfNecessary(activeSlideClassName: DOMTokenList): void {
-        const componentsToHideScrollTip = [IconOfLuxuryAndExclusivityWrapper, MasterplanWrapper]
+        const componentsToHideScrollTip = [IconOfLuxuryAndExclusivityWrapper, MasterplanWrapper, AmenitiesWrapper, LocationGalleryWrapper, ContactWrapper]
 
         const isPanelWithScrollTipHidden = this.matchClassWithActiveClassName(componentsToHideScrollTip, activeSlideClassName)
         this.setState({ scrollTipIsVisible: !isPanelWithScrollTipHidden })
