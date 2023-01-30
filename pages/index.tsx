@@ -77,11 +77,7 @@ export default class Index extends React.Component<{}, State> {
     }
 
     matchClassWithActiveClassName(componentList: StyledComponent<any, any, any>[], activeSlideClassName: DOMTokenList): boolean {
-        return componentList.some(component => {
-            const valueToBeReturned = activeSlideClassName.value.includes(component.styledComponentId)
-            console.log(activeSlideClassName.value, "|", component.styledComponentId, "|", valueToBeReturned)
-            return valueToBeReturned
-        })
+        return componentList.some(component => activeSlideClassName.value.includes(component.styledComponentId))
     }
 
     render(): JSX.Element {
