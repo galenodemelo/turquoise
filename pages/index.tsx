@@ -6,18 +6,23 @@ import Contact from "@layouts/Contact"
 import CreativeTeam from "@layouts/CreativeTeam"
 import Developers from "@layouts/Developers"
 import FeelTheNature from "@layouts/FeelTheNature"
+import { FellTheNatureWrapper } from "@layouts/FeelTheNature/style"
 import FloatingMenu from "@layouts/FloatingMenu"
 import Houses from "@layouts/Houses"
 import IconOfLuxuryAndExclusivity from "@layouts/IconOfLuxuryAndExclusivity"
+import { IconOfLuxuryAndExclusivityWrapper } from "@layouts/IconOfLuxuryAndExclusivity/style"
 import Location from "@layouts/Location"
 import LocationGallery from "@layouts/LocationGallery"
 import Masterplan from "@layouts/Masterplan"
+import { MasterplanWrapper } from "@layouts/Masterplan/style"
 import OurGiftForYou from "@layouts/OurGiftForYou"
+import { OurGiftForYouWrapper } from "@layouts/OurGiftForYou/style"
 import ScrollTip from "@layouts/Scroll"
 import SurroundedByGreenAndBlue from "@layouts/SurroundedByGreenAndBlue"
+import { SurroundedByGreenAndBlueWrapper } from "@layouts/SurroundedByGreenAndBlue/style"
 import VerticalSwipePage from "@layouts/VerticalSwipePage"
-import Image from "next/image"
 import React from "react"
+import { StyledComponent } from "styled-components"
 
 interface State {
     menuIsVisible: boolean
@@ -39,24 +44,40 @@ export default class Index extends React.Component<{}, State> {
         };
     }
 
-    toggleMenuIfNecessary(index: number): void {
-        const isPanelWithMenuHidden = [1].includes(index)
-        this.setState({ menuIsVisible: !isPanelWithMenuHidden })
+    toggleMenuIfNecessary(activeSlideClassName: DOMTokenList): void {
+        const componentsToHideMenu = [IconOfLuxuryAndExclusivityWrapper]
+        const mustHideMenu = this.matchClassWithActiveClassName(componentsToHideMenu, activeSlideClassName)
+
+        this.setState({ menuIsVisible: !mustHideMenu })
     }
 
-    toggleMenuWhiteIfNecessary(index: number): void {
-        const isPanelWithWhiteMenu = [0, 5, 6].includes(index)
+    toggleMenuWhiteIfNecessary(activeSlideClassName: DOMTokenList): void {
+        const componentsToSetMenuWhite = [IconOfLuxuryAndExclusivityWrapper, FellTheNatureWrapper, OurGiftForYouWrapper]
+
+        const isPanelWithWhiteMenu = this.matchClassWithActiveClassName(componentsToSetMenuWhite, activeSlideClassName)
         this.setState({ menuWhite: isPanelWithWhiteMenu })
     }
 
-    toggleScrollTipIfNecessary(index: number): void {
-        const isPanelWithScrollTipHidden = [1].includes(index)
+    toggleScrollTipIfNecessary(activeSlideClassName: DOMTokenList): void {
+        const componentsToHideScrollTip = [IconOfLuxuryAndExclusivityWrapper, MasterplanWrapper]
+
+        const isPanelWithScrollTipHidden = this.matchClassWithActiveClassName(componentsToHideScrollTip, activeSlideClassName)
         this.setState({ scrollTipIsVisible: !isPanelWithScrollTipHidden })
     }
 
-    toggleScrollTipWhiteIfNecessary(index: number): void {
-        const isPanelWithWhiteScrollTip = [0, 7].includes(index)
+    toggleScrollTipWhiteIfNecessary(activeSlideClassName: DOMTokenList): void {
+        const componentToSetScrollTipWhite = [IconOfLuxuryAndExclusivityWrapper, SurroundedByGreenAndBlueWrapper]
+
+        const isPanelWithWhiteScrollTip = this.matchClassWithActiveClassName(componentToSetScrollTipWhite, activeSlideClassName)
         this.setState({ scrollTipWhite: isPanelWithWhiteScrollTip })
+    }
+
+    matchClassWithActiveClassName(componentList: StyledComponent<any, any, any>[], activeSlideClassName: DOMTokenList): boolean {
+        return componentList.some(component => {
+            const valueToBeReturned = activeSlideClassName.value.includes(component.styledComponentId)
+            console.log(activeSlideClassName.value, "|", component.styledComponentId, "|", valueToBeReturned)
+            return valueToBeReturned
+        })
     }
 
     render(): JSX.Element {
@@ -67,12 +88,12 @@ export default class Index extends React.Component<{}, State> {
                 <FloatingMenu visible={this.state.menuIsVisible} white={this.state.menuWhite} />
                 <ScrollTip visible={this.state.scrollTipIsVisible} white={this.state.scrollTipWhite} />
 
-                <VerticalSwipePage onStartSliding={(index: number) => {
-                    this.toggleMenuIfNecessary(index)
-                    this.toggleMenuWhiteIfNecessary(index)
+                <VerticalSwipePage onStartSliding={(activeSlideClassName: DOMTokenList) => {
+                    this.toggleMenuIfNecessary(activeSlideClassName)
+                    this.toggleMenuWhiteIfNecessary(activeSlideClassName)
 
-                    this.toggleScrollTipIfNecessary(index)
-                    this.toggleScrollTipWhiteIfNecessary(index)
+                    this.toggleScrollTipIfNecessary(activeSlideClassName)
+                    this.toggleScrollTipWhiteIfNecessary(activeSlideClassName)
                 }}>
                     <BackdropVideo autoPlay={true} muted={true} controls={false} loop={true} playsInline={true}>
                         <source src="/video/people-on-kayak-intro.webm" type="video/webm" />

@@ -7,7 +7,7 @@ import styles from "./style.module.sass"
 
 interface Props {
     children: JSX.Element[]
-    onStartSliding?: (index: number) => void
+    onStartSliding?: (activeSlideClassName: DOMTokenList) => void
 }
 
 export default class VerticalSwipePage extends React.Component<Props, {}> {
@@ -35,7 +35,8 @@ export default class VerticalSwipePage extends React.Component<Props, {}> {
                 tag="main"
                 onSlideChangeTransitionStart={(swiper) => {
                     if (!this.props.onStartSliding) return;
-                    this.props.onStartSliding(swiper.realIndex)
+                    const activeSlideClassName = swiper.slides[swiper.realIndex].firstElementChild!.classList
+                    this.props.onStartSliding(activeSlideClassName)
                 }}
                 onSlideChangeTransitionEnd={(swiper: SwiperConfig) => {
                     const activeSlide: any | null = swiper.slides[swiper.activeIndex]
