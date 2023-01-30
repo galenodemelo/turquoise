@@ -13,6 +13,8 @@ import FloatingMenu from "@layouts/FloatingMenu"
 import Houses from "@layouts/Houses"
 import IconOfLuxuryAndExclusivity from "@layouts/IconOfLuxuryAndExclusivity"
 import { IconOfLuxuryAndExclusivityWrapper } from "@layouts/IconOfLuxuryAndExclusivity/style"
+import Intro from "@layouts/Intro"
+import { IntroWrapper } from "@layouts/Intro/style"
 import Location from "@layouts/Location"
 import LocationGallery from "@layouts/LocationGallery"
 import { LocationGalleryWrapper } from "@layouts/LocationGallery/style"
@@ -55,7 +57,7 @@ export default class Index extends React.Component<{}, State> {
     }
 
     toggleMenuWhiteIfNecessary(activeSlideClassName: DOMTokenList): void {
-        const componentsToSetMenuWhite = [IconOfLuxuryAndExclusivityWrapper, FellTheNatureWrapper, OurGiftForYouWrapper, LocationGalleryWrapper]
+        const componentsToSetMenuWhite = [IntroWrapper, IconOfLuxuryAndExclusivityWrapper, FellTheNatureWrapper, OurGiftForYouWrapper, LocationGalleryWrapper]
 
         const isPanelWithWhiteMenu = this.matchClassWithActiveClassName(componentsToSetMenuWhite, activeSlideClassName)
         this.setState({ menuWhite: isPanelWithWhiteMenu })
@@ -69,7 +71,7 @@ export default class Index extends React.Component<{}, State> {
     }
 
     toggleScrollTipWhiteIfNecessary(activeSlideClassName: DOMTokenList): void {
-        const componentToSetScrollTipWhite = [IconOfLuxuryAndExclusivityWrapper, SurroundedByGreenAndBlueWrapper]
+        const componentToSetScrollTipWhite = [IntroWrapper, IconOfLuxuryAndExclusivityWrapper, SurroundedByGreenAndBlueWrapper]
 
         const isPanelWithWhiteScrollTip = this.matchClassWithActiveClassName(componentToSetScrollTipWhite, activeSlideClassName)
         this.setState({ scrollTipWhite: isPanelWithWhiteScrollTip })
@@ -98,10 +100,7 @@ export default class Index extends React.Component<{}, State> {
                     this.toggleScrollTipIfNecessary(activeSlideClassName)
                     this.toggleScrollTipWhiteIfNecessary(activeSlideClassName)
                 }}>
-                    <BackdropVideo autoPlay={true} muted={true} controls={false} loop={true} playsInline={true}>
-                        <source src="/video/people-on-kayak-intro.webm" type="video/webm" />
-                        <source src="/video/people-on-kayak-intro.mp4" type="video/mp4" />
-                    </BackdropVideo>
+                    <Intro />
 
                     <IconOfLuxuryAndExclusivity />
 

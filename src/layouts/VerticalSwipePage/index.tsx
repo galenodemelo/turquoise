@@ -62,7 +62,7 @@ export default class VerticalSwipePage extends React.Component<Props, {}> {
             >
                 {this.props.children.map((child: JSX.Element, index: number) => {
                     return (
-                        <SwiperSlide key={index} tag="section" style={{ overflow: "auto" }}>
+                        <SwiperSlide key={index} tag="section" style={{ overflow: "auto" }} data-hash={child.type.name}>
                             {child}
                         </SwiperSlide>
                     )
