@@ -76,6 +76,9 @@ function buildMailHtml({ name, lastName, email, phone, origin, specify, message 
 
 async function sendToCms({ name, lastName, email, phone, origin, specify, message }: ContactPayload): Promise<CmsResponse> {
     try {
+        const isDevelopment = process.env.NODE_ENV === 'development'
+        if (isDevelopment) return { success: true, rawResponse: "Sample response" }
+
         const parsedData: SaveProspectParams = {
             FirstName: name,
             LastName: lastName,
