@@ -1,6 +1,7 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import ApiResponse from "src/libs/ApiResponse";
 import ContactFormModel from "src/libs/database/ContactFormModel";
+import BuilderCmsManager, { CmsResponse, SaveProspectParams } from "src/libs/integration/BuilderCmsManager";
 import SendGridManager from "src/libs/mail/SendGridManager";
 
 export interface ContactPayload {
@@ -36,6 +37,11 @@ export default async function ApiContact(req: NextApiRequest, res: NextApiRespon
         ).then((success: boolean) => mailWasSent = success)
         promiseList.push(mailSendPromise)
 
+        const sentToCmsPromise = sendToCms(payload).then((response: CmsResponse) => {
+            if (!response.success) console.error("ApiContact.sendToCms >>", response.rawResponse)
+        })
+        promiseList.push(sentToCmsPromise)
+
         await Promise.all(promiseList)
         if (!mailWasSent) {
             res.status(500).json(ApiResponse.error("Mail was not sent. Please, try again."))
@@ -66,4 +72,25 @@ function buildMailHtml({ name, lastName, email, phone, origin, specify, message 
     mailHtml += `<p>${fieldList.join("<br />")}</p>`
 
     return mailHtml
+}
+
+async function sendToCms({ name, lastName, email, phone, origin, specify, message }: ContactPayload): Promise<CmsResponse> {
+    try {
+        const parsedData: SaveProspectParams = {
+            FirstName: name,
+            LastName: lastName,
+            Email: email,
+            Phone: phone,
+            Comments: `
+                How did you met us?
+                \n${[origin, specify].filter(Boolean).join(" - ")}
+                \n\nMessage sent
+                \n${message}`
+        }
+
+        return new BuilderCmsManager().saveProspect(parsedData)
+    } catch (error) {
+        console.error("ApiContact.sendToCms >> Unknown error", `Data: [${JSON.stringify(error)}]`, error);
+        return { success: false, rawResponse: "No response" }
+    }
 }
