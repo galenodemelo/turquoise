@@ -21,6 +21,11 @@ export default class Contact extends React.Component<{}, State> {
         this.sendContactForm = this.sendContactForm.bind(this)
     }
 
+    componentDidMount(): void {
+        const formFilledLocalStorage = window.localStorage.getItem("formFilled")
+        if (formFilledLocalStorage) this.setState({ formFilled: formFilledLocalStorage === "true" })
+    }
+
     sendContactForm(event: React.FormEvent<HTMLFormElement>): void {
         event.preventDefault()
         const formElement = event.target as HTMLFormElement
@@ -42,6 +47,7 @@ export default class Contact extends React.Component<{}, State> {
             .then(response => response.json())
             .then((response: ApiResponse) => {
                 this.setState({ formFilled: response.success })
+                window.localStorage.setItem("formFilled", response.success.toString())
                 alert(response.message)
             })
             .catch(error => {
