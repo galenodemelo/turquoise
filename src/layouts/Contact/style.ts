@@ -50,7 +50,8 @@ export const FormField = styled.div`
 
     > input,
     > textarea,
-    > select {
+    > select,
+    > select > option {
         font-family: "Arboria";
         padding: 8px 16px;
         border: #000000 solid 1px;
