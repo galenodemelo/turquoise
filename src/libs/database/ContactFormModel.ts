@@ -4,11 +4,11 @@ import Database from "./Database";
 export default class ContactFormModel {
     public readonly website: string = "turquoise.homes";
 
-    constructor(public createdAt: Date, public payload: string) {}
+    constructor(public createdAt: Date, public payload: object) {}
 
     public static async save(payload: object): Promise<void> {
         try {
-            const contactForm = new ContactFormModel(new Date(), JSON.stringify(payload));
+            const contactForm = new ContactFormModel(new Date(), payload);
 
             const collection: Collection = await this.getCollection();
             await collection.insertOne(contactForm);
