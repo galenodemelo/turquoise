@@ -1,6 +1,7 @@
 import { SectionHeading } from "@layouts/VerticalSwipePage/Section";
 import Image from "next/image";
 import React from "react";
+import ApiResponse from "src/libs/ApiResponse";
 import { BrandList, ContactContent, ContactInfo, ContactWrapper, CTA, CTAButton, CTAHeader, Form, FormField, FormFieldList, FormFootNote, FormRow, FormSubmit, Info, InfoFooter, InfoHeader, InfoItem, InfoItemData, InfoItemIcon } from "./style";
 
 interface State {
@@ -16,13 +17,41 @@ export default class Contact extends React.Component<{}, State> {
         }
     }
 
+    sendContactForm(event: React.FormEvent<HTMLFormElement>): void {
+        event.preventDefault()
+        const formElement = event.target as HTMLFormElement
+        const formData: FormData = new FormData(formElement);
+
+        const action: string | null = formElement.getAttribute("action")
+        const method: string | null = formElement.getAttribute("method")
+        if (!action || !method) throw new Error("Form missing action and/or method")
+
+        const formDataAsJson: string = JSON.stringify(Object.fromEntries(formData.entries()))
+        fetch(action, {
+            method: method,
+            headers: {
+                "Content-Type": "application/json",
+                "Accept": "application/json"
+            },
+            body: formDataAsJson
+        })
+            .then(response => response.json())
+            .then((response: ApiResponse) => {
+                alert(response.message)
+            })
+            .catch(error => {
+                const message = `An unexpected error ocurred. Error: ${error.message}`
+                alert(message)
+            })
+    }
+
     render(): JSX.Element {
         return (
             <ContactWrapper>
                 <SectionHeading>Contact us</SectionHeading>
 
                 <ContactContent>
-                    <Form>
+                    <Form action="/api/contact" method="POST" onSubmit={this.sendContactForm}>
                         <FormFieldList>
                             <FormRow>
                                 <FormField>
