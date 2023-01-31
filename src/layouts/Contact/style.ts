@@ -86,7 +86,7 @@ export const FormSubmit = styled.button`
     margin-bottom: 2rem;
 `;
 
-const gapBetweenContactInfoItems = "48px"
+const gapBetweenContactInfoItems = "48px";
 
 export const ContactInfo = styled.div`
     display: flex;
@@ -107,17 +107,34 @@ export const CTAHeader = styled.span`
     font-size: 1.2rem;
 `;
 
-export const CTAButton = styled.a`
+interface CTAButton {
+    enabled: boolean;
+}
+
+export const CTAButton = styled.a<CTAButton>`
     position: relative;
-    background-color: ${COLORS.green};
     color: #ffffff;
     font-size: 1rem;
     padding: 14px 16px 13px;
     transition: background-color 0.2s ease;
+    ${(props) => {
+        if (!props.enabled) {
+            return `
+                pointer-events: none;
+                background-color: ${COLORS.green}60;
+                cursor: not-allowed;
+            `
+        }
 
-    &:hover {
-        background-color: ${COLORS.darkGreen};
-    }
+        return `
+            background-color: ${COLORS.green};
+            cursor: pointer;
+
+            &:hover {
+                background-color: ${COLORS.darkGreen};
+            }
+        `
+    }}
 
     &::after {
         display: block;
@@ -139,26 +156,26 @@ export const Info = styled.address`
     flex-direction: column;
     font-style: normal;
     row-gap: 12px;
-`
+`;
 
 export const InfoHeader = styled.h6`
     color: ${COLORS.green};
     font-weight: 500;
     font-size: 1.2rem;
-`
+`;
 
 export const InfoItem = styled.div`
     display: inline-flex;
     align-items: center;
     column-gap: 12px;
-`
+`;
 
-export const InfoItemIcon = styled.span``
+export const InfoItemIcon = styled.span``;
 
 export const InfoItemData = styled.span`
     font-size: 1rem;
     color: ${COLORS.gray};
-`
+`;
 
 export const InfoFooter = styled.div`
     margin-top: ${gapBetweenContactInfoItems};
@@ -168,7 +185,7 @@ export const InfoFooter = styled.div`
     > b {
         font-weight: 700;
     }
-`
+`;
 
 export const BrandList = styled.div`
     position: relative;

@@ -6,6 +6,7 @@ import { BrandList, ContactContent, ContactInfo, ContactWrapper, CTA, CTAButton,
 
 interface State {
     origin: string | null
+    formFilled: boolean
 }
 
 export default class Contact extends React.Component<{}, State> {
@@ -13,8 +14,11 @@ export default class Contact extends React.Component<{}, State> {
     constructor(props: {}) {
         super(props);
         this.state = {
-            origin: null
+            origin: null,
+            formFilled: false
         }
+
+        this.sendContactForm = this.sendContactForm.bind(this)
     }
 
     sendContactForm(event: React.FormEvent<HTMLFormElement>): void {
@@ -37,6 +41,7 @@ export default class Contact extends React.Component<{}, State> {
         })
             .then(response => response.json())
             .then((response: ApiResponse) => {
+                this.setState({ formFilled: response.success })
                 alert(response.message)
             })
             .catch(error => {
@@ -117,7 +122,11 @@ export default class Contact extends React.Component<{}, State> {
                             <CTAHeader>
                                 Fill in the form to download our material.
                             </CTAHeader>
-                            <CTAButton href="#" target="_blank">
+                            <CTAButton
+                                href={`${this.state.formFilled ? "/docs/turquoise.homes-material.pdf" : ""}`}
+                                target="_blank"
+                                enabled={this.state.formFilled}
+                            >
                                 Download
                             </CTAButton>
                         </CTA>
