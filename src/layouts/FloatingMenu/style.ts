@@ -2,10 +2,10 @@ import { SETTINGS } from "@styles/globals";
 import styled from "styled-components";
 import { FloatingMenuProps } from ".";
 import { ExtraWrapper } from "./Extra/style";
-import { NavButtonWrapper } from "./Menu/style";
+import { NavButtonIcon, NavButtonLabel } from "./Menu/style";
 
-export const horizontalMargin = "64px"
-export const verticalMargin = "32px"
+export const horizontalMargin = "64px";
+export const verticalMargin = "32px";
 
 export const LogoWrapper = styled.div`
     text-align: center;
@@ -32,7 +32,8 @@ export const Header = styled.header<FloatingMenuProps>`
     }
 
     ${Logo},
-    ${NavButtonWrapper},
+    ${NavButtonIcon},
+    ${NavButtonLabel},
     ${ExtraWrapper} {
         filter: ${(props) => (props.white ? "brightness(0) invert(1)" : "brightness(1) invert(0)")};
         transition: filter ${SETTINGS.swiper.speedInSeconds}s ease;
