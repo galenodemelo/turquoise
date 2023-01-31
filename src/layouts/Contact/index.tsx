@@ -49,9 +49,10 @@ export default class Contact extends React.Component<{}, State> {
                 this.setState({ formFilled: response.success })
                 window.localStorage.setItem("formFilled", response.success.toString())
                 alert(response.message)
+                if (response.success) formElement.reset()
             })
             .catch(error => {
-                const message = `An unexpected error ocurred. Error: ${error.message}`
+                const message = `An unexpected error ocurred. Please, contact support.\nError: ${error.message}`
                 alert(message)
             })
     }
