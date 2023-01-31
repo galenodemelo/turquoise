@@ -3,7 +3,18 @@ import Image from "next/image";
 import React from "react";
 import { BrandList, ContactContent, ContactInfo, ContactWrapper, CTA, CTAButton, CTAHeader, Form, FormField, FormFieldList, FormFootNote, FormRow, FormSubmit, Info, InfoFooter, InfoHeader, InfoItem, InfoItemData, InfoItemIcon } from "./style";
 
-export default class Contact extends React.Component {
+interface State {
+    origin: string | null
+}
+
+export default class Contact extends React.Component<{}, State> {
+
+    constructor(props: {}) {
+        super(props);
+        this.state = {
+            origin: null
+        }
+    }
 
     render(): JSX.Element {
         return (
@@ -38,11 +49,21 @@ export default class Contact extends React.Component {
                             </FormRow>
                             <FormRow>
                                 <FormField>
-                                    <select name="origin" id="origin">
+                                    <select name="origin" id="origin" onChange={(event: React.ChangeEvent<HTMLSelectElement>) => this.setState({ origin: event.target.value })}>
                                         <option value=""></option>
+                                        {["A friend", "Realtor", "Instagram", "Facebook", "Other"].map((option: string, index: number) => {
+                                            return <option value={option} key={index}>{option}</option>
+                                        })}
                                     </select>
                                     <label htmlFor="origin">How did you meet us?</label>
                                 </FormField>
+
+                                {this.state.origin == "Other" && (
+                                    <FormField>
+                                        <input type="text" name="specify" id="specify" autoFocus={true} />
+                                        <label htmlFor="specify">Please, specify...</label>
+                                    </FormField>
+                                )}
                             </FormRow>
                             <FormRow>
                                 <FormField>
