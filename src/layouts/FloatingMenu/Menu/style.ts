@@ -1,3 +1,4 @@
+import { horizontalGrowShrink } from "@styles/animations";
 import { COLORS } from "@styles/globals";
 import styled from "styled-components";
 
@@ -26,6 +27,10 @@ export const NavButtonIcon = styled.span`
         border: 0;
         background: ${COLORS.darkGreen};
         line-height: 1;
+        animation-name: ${horizontalGrowShrink};
+        animation-duration: 0.8s;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
 
         &:nth-of-type(1),
         &:nth-of-type(5) {
@@ -35,10 +40,12 @@ export const NavButtonIcon = styled.span`
         &:nth-of-type(2),
         &:nth-of-type(4) {
             width: 80%;
+            animation-delay: 0.4s;
         }
 
         &:nth-of-type(3) {
             width: 60%;
+            animation-delay: 0.8s;
         }
     }
 `;
