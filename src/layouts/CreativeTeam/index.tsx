@@ -1,13 +1,17 @@
 import TeamMember from "@components/TeamMember";
+import AnimateOnActiveComponent from "@layouts/AnimateOnActiveComponent";
 import { SectionHeading } from "@layouts/VerticalSwipePage/Section";
-import React from "react";
 import { CreativeTeamList, CreativeTeamWrapper } from "./style";
 
-export default class CreativeTeam extends React.Component {
+export default class CreativeTeam extends AnimateOnActiveComponent {
 
-    render(): JSX.Element {
+    constructor(props: {}) {
+        super(props, CreativeTeam.name);
+    }
+
+    componentJsx(): JSX.Element {
         return (
-            <CreativeTeamWrapper>
+            <CreativeTeamWrapper triggeredAnimation={this.wasAnimatedAlready}>
                 <SectionHeading>Creative team</SectionHeading>
 
                 <CreativeTeamList>
