@@ -1,13 +1,17 @@
 import TeamMember from "@components/TeamMember";
+import AnimateOnActiveComponent from "@layouts/AnimateOnActiveComponent";
 import { SectionHeading } from "@layouts/VerticalSwipePage/Section";
-import React from "react";
 import { DevelopersList, DevelopersWrapper } from "./style";
 
-export default class Developers extends React.Component {
+export default class Developers extends AnimateOnActiveComponent {
 
-    render(): JSX.Element {
+    constructor(props: {}) {
+        super(props, Developers.name);
+    }
+
+    componentJsx(): JSX.Element {
         return (
-            <DevelopersWrapper>
+            <DevelopersWrapper triggeredAnimation={this.wasAnimatedAlready}>
                 <SectionHeading>Developers</SectionHeading>
 
                 <DevelopersList>
