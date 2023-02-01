@@ -6,7 +6,7 @@ import { CreativeTeamList, CreativeTeamWrapper } from "./style";
 export default class CreativeTeam extends AnimateOnActiveComponent {
 
     constructor(props: {}) {
-        super(props, CreativeTeam.name);
+        super(props, "CreativeTeam");
     }
 
     componentJsx(): JSX.Element {

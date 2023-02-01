@@ -5,7 +5,7 @@ import { Bar, Icon, IconOfLuxuryAndExclusivityWrapper, Text } from "./style";
 export default class IconOfLuxuryAndExclusivity extends AnimateOnActiveComponent {
 
     constructor(props: {}) {
-        super(props, IconOfLuxuryAndExclusivity.name);
+        super(props, "IconOfLuxuryAndExclusivity");
     }
 
     componentJsx(): JSX.Element {

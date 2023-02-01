@@ -11,7 +11,7 @@ interface Props {
 export default class Houses extends AnimateOnActiveComponent<Props, {}> {
 
     constructor(props: Props) {
-        super(props, Houses.name);
+        super(props, "Houses");
     }
 
     componentJsx(): JSX.Element {

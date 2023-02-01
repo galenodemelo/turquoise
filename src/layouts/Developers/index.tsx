@@ -6,7 +6,7 @@ import { DevelopersList, DevelopersWrapper } from "./style";
 export default class Developers extends AnimateOnActiveComponent {
 
     constructor(props: {}) {
-        super(props, Developers.name);
+        super(props, "Developers");
     }
 
     componentJsx(): JSX.Element {
