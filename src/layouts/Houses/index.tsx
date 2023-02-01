@@ -1,3 +1,4 @@
+import AnimateOnActiveComponent from "@layouts/AnimateOnActiveComponent";
 import { SectionHeading } from "@layouts/VerticalSwipePage/Section";
 import Image from "next/image";
 import React from "react";
@@ -7,20 +8,20 @@ interface Props {
     onCtaClick?: () => void
 }
 
-export default class Houses extends React.Component<Props, {}> {
+export default class Houses extends AnimateOnActiveComponent<Props, {}> {
 
     constructor(props: Props) {
-        super(props);
+        super(props, Houses.name);
     }
 
-    render(): JSX.Element {
+    componentJsx(): JSX.Element {
         return (
             <>
-                <HousesBackground>
+                <HousesBackground triggeredAnimation={this.wasAnimatedAlready}>
                     <Image src="/img/background-houses.jpg" layout="fill" objectFit="contain" objectPosition="left center" alt="Golden key on a gift box" />
                 </HousesBackground>
                 <HousesWrapper>
-                    <HousesContent>
+                    <HousesContent triggeredAnimation={this.wasAnimatedAlready}>
                         <SectionHeading extraMargin={false}>Houses</SectionHeading>
                         <p>7 different models designed by renowned architects.</p>
                         <p>Exclusive models available upon request.</p>
