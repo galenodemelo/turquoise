@@ -27,6 +27,7 @@ import SurroundedByGreenAndBlue from "@layouts/SurroundedByGreenAndBlue"
 import { SurroundedByGreenAndBlueWrapper } from "@layouts/SurroundedByGreenAndBlue/style"
 import VerticalSwipePage from "@layouts/VerticalSwipePage"
 import React from "react"
+import VerticalSwipePageContext from "src/libs/VerticalSwipePageContext"
 import { StyledComponent } from "styled-components"
 
 interface State {
@@ -37,6 +38,7 @@ interface State {
     scrollTipWhite: boolean
 
     isHouseDetailsActive: boolean
+    currentSlideName: string
 }
 
 export default class Index extends React.Component<{}, State> {
@@ -48,7 +50,8 @@ export default class Index extends React.Component<{}, State> {
             menuWhite: true,
             scrollTipIsVisible: true,
             scrollTipWhite: true,
-            isHouseDetailsActive: false
+            isHouseDetailsActive: false,
+            currentSlideName: Home.name
         };
     }
 
@@ -86,19 +89,23 @@ export default class Index extends React.Component<{}, State> {
 
     render(): JSX.Element {
         return (
-            <>
+            <VerticalSwipePageContext.Provider value={{ slideName: this.state.currentSlideName }}>
                 <PageMetadata />
 
                 <FloatingMenu visible={this.state.menuIsVisible} white={this.state.menuWhite} />
                 <ScrollTip visible={this.state.scrollTipIsVisible} white={this.state.scrollTipWhite} />
 
-                <VerticalSwipePage onStartSliding={(activeSlideClassName: DOMTokenList) => {
-                    this.toggleMenuIfNecessary(activeSlideClassName)
-                    this.toggleMenuWhiteIfNecessary(activeSlideClassName)
+                <VerticalSwipePage
+                    onStartSliding={(activeSlideClassName: DOMTokenList, activeSlideName: string) => {
+                        this.toggleMenuIfNecessary(activeSlideClassName)
+                        this.toggleMenuWhiteIfNecessary(activeSlideClassName)
 
-                    this.toggleScrollTipIfNecessary(activeSlideClassName)
-                    this.toggleScrollTipWhiteIfNecessary(activeSlideClassName)
-                }}>
+                        this.toggleScrollTipIfNecessary(activeSlideClassName)
+                        this.toggleScrollTipWhiteIfNecessary(activeSlideClassName)
+
+                        this.setState({ currentSlideName: activeSlideName })
+                    }}
+                >
                     <Home />
 
                     <IconOfLuxuryAndExclusivity />
@@ -121,7 +128,7 @@ export default class Index extends React.Component<{}, State> {
                 </VerticalSwipePage>
 
                 <HousesDetails isActive={this.state.isHouseDetailsActive} setIsActive={(active: boolean) => this.setState({ isHouseDetailsActive: active })} />
-            </>
+            </VerticalSwipePageContext.Provider>
         )
     }
 }

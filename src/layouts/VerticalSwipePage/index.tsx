@@ -7,7 +7,7 @@ import styles from "./style.module.sass"
 
 interface Props {
     children: JSX.Element[]
-    onStartSliding?: (activeSlideClassName: DOMTokenList) => void
+    onStartSliding?: (activeSlideClassName: DOMTokenList, activeSlideDataHash: string) => void
 }
 
 export default class VerticalSwipePage extends React.Component<Props, {}> {
@@ -22,7 +22,7 @@ export default class VerticalSwipePage extends React.Component<Props, {}> {
             <Swiper
                 className={styles.verticalSwipePage}
                 direction="vertical"
-                hashNavigation={{ watchState: true }}
+                hashNavigation={{ replaceState: true, watchState: true }}
                 mousewheel={{
                     forceToAxis: true,
                     releaseOnEdges: true,
@@ -36,8 +36,9 @@ export default class VerticalSwipePage extends React.Component<Props, {}> {
                 tag="main"
                 onSlideChangeTransitionStart={(swiper) => {
                     if (!this.props.onStartSliding) return;
-                    const activeSlideClassName = swiper.slides[swiper.realIndex].firstElementChild!.classList
-                    this.props.onStartSliding(activeSlideClassName)
+                    const activeSlide = swiper.slides[swiper.realIndex]
+                    const activeSlideClassName = activeSlide.firstElementChild!.classList
+                    this.props.onStartSliding(activeSlideClassName, activeSlide.getAttribute("data-hash") ?? "Home")
                 }}
                 onSlideChangeTransitionEnd={(swiper: SwiperConfig) => {
                     const activeSlide: any | null = swiper.slides[swiper.activeIndex]
