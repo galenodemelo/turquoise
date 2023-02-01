@@ -1,12 +1,16 @@
+import AnimateOnActiveComponent from "@layouts/AnimateOnActiveComponent";
 import Image from "next/image";
-import React from "react";
 import { Bar, Icon, IconOfLuxuryAndExclusivityWrapper, Text } from "./style";
 
-export default class IconOfLuxuryAndExclusivity extends React.Component {
+export default class IconOfLuxuryAndExclusivity extends AnimateOnActiveComponent {
 
-    render(): JSX.Element {
+    constructor(props: {}) {
+        super(props, IconOfLuxuryAndExclusivity.name);
+    }
+
+    componentJsx(): JSX.Element {
         return (
-            <IconOfLuxuryAndExclusivityWrapper>
+            <IconOfLuxuryAndExclusivityWrapper triggeredAnimation={this.wasAnimatedAlready}>
                 <Bar />
 
                 <Text>

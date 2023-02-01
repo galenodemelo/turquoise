@@ -1,12 +1,29 @@
+import React from "react";
 import VerticalSwipePageContext from "src/libs/VerticalSwipePageContext";
 
-export default class AnimateOnActiveComponentDecorator {
+export interface AnimateOnActiveComponentProps {
+    triggeredAnimation: boolean
+}
 
-    public static decorate(componentName: string, callback: (isActive: boolean) => JSX.Element): JSX.Element {
+export default abstract class AnimateOnActiveComponent<P = {}, S = {}> extends React.Component<P, S> {
+
+    protected wasAnimatedAlready = false
+
+    constructor(props: P, readonly componentName: string) {
+        super(props)
+    }
+
+    render(): JSX.Element {
         return (
             <VerticalSwipePageContext.Consumer>
-                {({ slideName }) => callback(componentName === slideName)}
+                {({ slideName }) => {
+                    if (!this.wasAnimatedAlready && slideName === this.componentName) this.wasAnimatedAlready = true
+
+                    return this.componentJsx()
+                }}
             </VerticalSwipePageContext.Consumer>
         )
     }
+
+    abstract componentJsx(): JSX.Element
 }

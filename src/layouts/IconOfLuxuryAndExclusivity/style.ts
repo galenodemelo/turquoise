@@ -1,3 +1,4 @@
+import { AnimateOnActiveComponentProps } from "@layouts/AnimateOnActiveComponent";
 import { Section } from "@layouts/VerticalSwipePage/Section";
 import { COLORS } from "@styles/globals";
 import styled from "styled-components";
