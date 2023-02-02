@@ -1,4 +1,4 @@
-import { horizontalMargin } from "@layouts/FloatingMenu/style";
+import { horizontalMargin, horizontalMobileMargin } from "@layouts/FloatingMenu/style";
 import { BREAKPOINTS, COLORS } from "@styles/globals";
 import styled, { css } from "styled-components";
 
@@ -15,6 +15,10 @@ export const SectionPadded = css`
     ${Section}
     padding: 8% ${horizontalMargin};
     box-sizing: border-box;
+
+    ${BREAKPOINTS.upToTablet} {
+        padding: 8% ${horizontalMobileMargin};
+    }
 `;
 
 export const sectionHeadingExtraMargin = "96px";
