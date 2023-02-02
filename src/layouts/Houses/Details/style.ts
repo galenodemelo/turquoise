@@ -36,6 +36,8 @@ export const RightHeader = styled.div`
     height: 100%;
     width: 100%;
     background-color: ${COLORS.green};
+    padding: 0 48px;
+    box-sizing: border-box;
 `;
 
 export const SplittedSlide = styled.div`
