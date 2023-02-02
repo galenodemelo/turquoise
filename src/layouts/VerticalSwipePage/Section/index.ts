@@ -28,5 +28,11 @@ export const SectionHeading = styled.div<{ extraMargin?: boolean }>`
 
     ${BREAKPOINTS.upToNotebook} {
         margin-left: 0;
+        width: 100%;
+        text-align: center;
+    }
+
+    ${BREAKPOINTS.upToTablet} {
+        margin-top: 32px;
     }
 `;
