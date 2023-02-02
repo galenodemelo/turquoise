@@ -8,7 +8,7 @@ export const ExtraWrapper = styled.div`
     justify-content: flex-end;
 `;
 
-export const AerialView = styled.a`
+export const AerialView = styled(ExternalLink)`
     display: inline-flex;
     align-items: center;
     column-gap: 8px;
