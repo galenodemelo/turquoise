@@ -28,7 +28,7 @@ export default class Links extends React.Component<{}, State> {
         { href: Houses.name, label: "Houses" },
         { href: Amenities.name, label: "Amenities" },
         { href: Attraction.name, label: "Attraction" },
-        { href: CreativeTeam.name, label: "CreativeTeam" },
+        { href: CreativeTeam.name, label: "Creative Team" },
         { href: Developers.name, label: "Developers" },
         { href: Contact.name, label: "Contact" }
     ]
