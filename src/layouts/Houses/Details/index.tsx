@@ -90,8 +90,6 @@ export default class HousesDetails extends React.Component<Props, {}> {
                         <TopHeader>
                             <HeaderText>{`Model House - Ricardo's design`}</HeaderText>
                         </TopHeader>
-
-                        <FloorPlan href="https://www.dropbox.com/s/twd1uidxqlqx1ke/RICARDO%20-%2001%20MODEL%2001%20OPTION%2001-2.pdf?dl=0" />
                     </SwiperSlide>
                     <SwiperSlide>
                         <SplittedSlide>
@@ -115,8 +113,6 @@ export default class HousesDetails extends React.Component<Props, {}> {
                                 {`Model House - Ricardo's design`}
                             </HeaderText>
                         </TopHeader>
-
-                        <FloorPlan href="https://www.dropbox.com/s/twd1uidxqlqx1ke/RICARDO%20-%2001%20MODEL%2001%20OPTION%2001-2.pdf?dl=0" />
                     </SwiperSlide>
                     <SwiperSlide>
                         <SplittedSlide>
@@ -140,8 +136,6 @@ export default class HousesDetails extends React.Component<Props, {}> {
                                 {`Model House - Ricardo's design`}
                             </HeaderText>
                         </TopHeader>
-
-                        <FloorPlan href="https://www.dropbox.com/s/twd1uidxqlqx1ke/RICARDO%20-%2001%20MODEL%2001%20OPTION%2001-2.pdf?dl=0" />
                     </SwiperSlide>
                 </Swiper>
 
