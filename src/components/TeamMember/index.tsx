@@ -19,7 +19,7 @@ export default class TeamMember extends React.Component<Props, {}> {
         return (
             <TeamMemberWrapper>
                 <PhotoContainer>
-                    <Image src={this.props.imagePath} layout="fill" alt={`${this.props.name} picture`} />
+                    <Image src={this.props.imagePath} layout="fill" alt={`${this.props.name} picture`} objectFit="cover" />
                 </PhotoContainer>
                 <InfoContainer>
                     <Name>{this.props.name}</Name>

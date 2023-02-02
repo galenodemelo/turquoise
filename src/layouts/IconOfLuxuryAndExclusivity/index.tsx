@@ -26,7 +26,7 @@ export default class IconOfLuxuryAndExclusivity extends AnimateOnActiveComponent
                 </Text>
 
                 <Icon>
-                    <Image src="/img/turquoise-picto.svg" width={124} height={124} alt="Turquoise Q pictogram" />
+                    <Image src="/img/turquoise-picto.svg" width={124} height={124} alt="Turquoise Q pictogram" objectFit="contain" />
                 </Icon>
             </IconOfLuxuryAndExclusivityWrapper>
         )

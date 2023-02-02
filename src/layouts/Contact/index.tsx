@@ -119,7 +119,7 @@ export default class Contact extends React.Component<{}, State> {
                         </FormFieldList>
 
                         <FormSubmit>
-                            <Image src="/img/ico/send.svg" layout="fill" alt="Click to send the form" />
+                            <Image src="/img/ico/send.svg" layout="fill" alt="Click to send the form" objectFit="contain" />
                         </FormSubmit>
                     </Form>
 
@@ -141,7 +141,7 @@ export default class Contact extends React.Component<{}, State> {
                             <InfoHeader>More info:</InfoHeader>
                             <InfoItem>
                                 <InfoItemIcon>
-                                    <Image src="/img/ico/mail.svg" width={20} height={20} alt="Mail icon" />
+                                    <Image src="/img/ico/mail.svg" width={20} height={20} alt="Mail icon" objectFit="contain" />
                                 </InfoItemIcon>
                                 <InfoItemData>
                                     sales@turquoise.homes
@@ -149,7 +149,7 @@ export default class Contact extends React.Component<{}, State> {
                             </InfoItem>
                             <InfoItem>
                                 <InfoItemIcon>
-                                    <Image src="/img/ico/phone.svg" width={20} height={20} alt="Phone icon" />
+                                    <Image src="/img/ico/phone.svg" width={20} height={20} alt="Phone icon" objectFit="contain" />
                                 </InfoItemIcon>
                                 <InfoItemData>
                                     +1 (850) 738-1551
@@ -157,7 +157,7 @@ export default class Contact extends React.Component<{}, State> {
                             </InfoItem>
                             <InfoItem>
                                 <InfoItemIcon>
-                                    <Image src="/img/ico/instagram-logo.svg" width={20} height={20} alt="Instagram logo" />
+                                    <Image src="/img/ico/instagram-logo.svg" width={20} height={20} alt="Instagram logo" objectFit="contain" />
                                 </InfoItemIcon>
                                 <InfoItemData>
                                     turquoise.homes
