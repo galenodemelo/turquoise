@@ -92,4 +92,6 @@ export const ImageItem = styled.img<ImageItemWraperProps>`
     height: 100%;
     opacity: ${(props) => (props.visible ? 1 : 0)};
     transition: opacity 0.6s ease;
+    object-fit: cover;
+    object-position: center center;
 `;
