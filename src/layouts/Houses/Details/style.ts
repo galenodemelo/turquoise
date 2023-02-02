@@ -1,5 +1,5 @@
 import { Section } from "@layouts/VerticalSwipePage/Section";
-import { COLORS } from "@styles/globals";
+import { COLORS, ExternalLink } from "@styles/globals";
 import styled from "styled-components";
 
 export const HousesDetailsWrapper = styled.div`
@@ -53,7 +53,7 @@ export const SplittedSlide = styled.div`
     }
 `;
 
-export const FloorPlan = styled.a`
+export const FloorPlan = styled(ExternalLink)`
     position: absolute;
     right: 0;
     bottom: 64px;
@@ -64,6 +64,7 @@ export const FloorPlan = styled.a`
     padding-right: 120px;
     padding-bottom: 16px;
     column-gap: 40px;
+    transition: border-bottom-color 0.2s ease;
 
     &::before {
         content: "";
@@ -77,6 +78,10 @@ export const FloorPlan = styled.a`
         content: "Floor plan";
         color: #ffffff;
         font-size: 1.2rem;
+    }
+
+    &:hover {
+        border-bottom-color: #ffffff;
     }
 `;
 
@@ -93,7 +98,7 @@ const SlideControl = styled.button`
     cursor: pointer;
 
     &[disabled] {
-        opacity: .5;
+        opacity: 0.5;
         pointer-events: none;
         cursor: default;
     }

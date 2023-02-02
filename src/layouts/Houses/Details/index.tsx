@@ -44,7 +44,7 @@ export default class HousesDetails extends React.Component<Props, {}> {
                             <HeaderText>{`Model House - Tanney's design`}</HeaderText>
                         </TopHeader>
 
-                        <FloorPlan />
+                        <FloorPlan href="https://www.dropbox.com/s/7bgchy35w5coldr/MARK%20-%20TURQUOISE_MODEL3200A_4-26-22.pdf?dl=0" />
                     </SwiperSlide>
                     <SwiperSlide>
                         <SplittedSlide>
@@ -63,7 +63,7 @@ export default class HousesDetails extends React.Component<Props, {}> {
                             <HeaderText>{`Model House - Russell's design`}</HeaderText>
                         </TopHeader>
 
-                        <FloorPlan />
+                        <FloorPlan href="https://www.dropbox.com/s/lhxujuhqae3fsf6/RUSSELL%20-%20PROTOTYPE%201%204%20BED%20TOWER%2005.17.22.pdf?dl=0" />
                     </SwiperSlide>
                     <SwiperSlide>
                         <SplittedSlide>
@@ -82,7 +82,7 @@ export default class HousesDetails extends React.Component<Props, {}> {
                             <HeaderText>{`Model House - Ricardo's design`}</HeaderText>
                         </TopHeader>
 
-                        <FloorPlan />
+                        <FloorPlan href="https://www.dropbox.com/s/twd1uidxqlqx1ke/RICARDO%20-%2001%20MODEL%2001%20OPTION%2001-2.pdf?dl=0" />
                     </SwiperSlide>
                     <SwiperSlide>
                         <Image src="/img/carousel/houses/ricardos-design-2.jpg" layout="fill" alt="Model house by Ricardo pool" priority={true} />
@@ -91,7 +91,7 @@ export default class HousesDetails extends React.Component<Props, {}> {
                             <HeaderText>{`Model House - Ricardo's design`}</HeaderText>
                         </TopHeader>
 
-                        <FloorPlan />
+                        <FloorPlan href="https://www.dropbox.com/s/twd1uidxqlqx1ke/RICARDO%20-%2001%20MODEL%2001%20OPTION%2001-2.pdf?dl=0" />
                     </SwiperSlide>
                     <SwiperSlide>
                         <SplittedSlide>
@@ -116,7 +116,7 @@ export default class HousesDetails extends React.Component<Props, {}> {
                             </HeaderText>
                         </TopHeader>
 
-                        <FloorPlan />
+                        <FloorPlan href="https://www.dropbox.com/s/twd1uidxqlqx1ke/RICARDO%20-%2001%20MODEL%2001%20OPTION%2001-2.pdf?dl=0" />
                     </SwiperSlide>
                     <SwiperSlide>
                         <SplittedSlide>
@@ -141,7 +141,7 @@ export default class HousesDetails extends React.Component<Props, {}> {
                             </HeaderText>
                         </TopHeader>
 
-                        <FloorPlan />
+                        <FloorPlan href="https://www.dropbox.com/s/twd1uidxqlqx1ke/RICARDO%20-%2001%20MODEL%2001%20OPTION%2001-2.pdf?dl=0" />
                     </SwiperSlide>
                 </Swiper>
 
