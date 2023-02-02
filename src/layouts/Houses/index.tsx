@@ -1,5 +1,6 @@
 import AnimateOnActiveComponent from "@layouts/AnimateOnActiveComponent";
 import { SectionHeading } from "@layouts/VerticalSwipePage/Section";
+import { BREAKPOINTS } from "@styles/globals";
 import Image from "next/image";
 import { HousesBackground, HousesContent, HousesCTA, HousesWrapper } from "./style";
 

@@ -1,7 +1,7 @@
 import { AnimateOnActiveComponentProps } from "@layouts/AnimateOnActiveComponent";
 import { Section, SectionHeading, SectionPadded } from "@layouts/VerticalSwipePage/Section";
 import { dissolveDefaultAnimation } from "@styles/animations";
-import { COLORS } from "@styles/globals";
+import { BREAKPOINTS, COLORS } from "@styles/globals";
 import styled from "styled-components";
 
 export const HousesBackground = styled.div<AnimateOnActiveComponentProps>`
@@ -17,6 +17,16 @@ export const HousesBackground = styled.div<AnimateOnActiveComponentProps>`
             animation-play-state: running;
         `;
     }}
+
+    ${BREAKPOINTS.upToTablet} {
+        overflow-x: hidden;
+
+        > * {
+            width: 150% !important;
+            height: 50% !important;
+            inset: auto auto 0 auto !important;
+        }
+    }
 `;
 
 export const HousesWrapper = styled.div`
@@ -24,6 +34,14 @@ export const HousesWrapper = styled.div`
     display: flex;
     justify-content: flex-end;
     align-items: center;
+
+    ${BREAKPOINTS.upToTablet} {
+        align-items: flex-start;
+
+        ${SectionHeading} {
+            text-align: left;
+        }
+    }
 `;
 
 export const HousesCTA = styled.a`
@@ -48,10 +66,22 @@ export const HousesContent = styled.div<AnimateOnActiveComponentProps>`
     width: 275px;
     margin-right: 20%;
 
+    ${BREAKPOINTS.upToTablet} {
+        font-size: .8rem;
+        width: 100%;
+        margin-right: 0;
+        row-gap: 24px;
+        padding: 8%;
+    }
+
     > p {
         font-size: 1rem;
         line-height: 1.6;
         color: ${COLORS.darkGreen};
+
+        ${BREAKPOINTS.upToTablet} {
+            font-size: .8rem;
+        }
     }
 
     ${SectionHeading} {
