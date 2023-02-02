@@ -1,6 +1,11 @@
 import { AnimateOnActiveComponentProps } from "@layouts/AnimateOnActiveComponent";
-import { SectionHeading, sectionHeadingExtraMargin, SectionPadded } from "@layouts/VerticalSwipePage/Section";
+import {
+    SectionHeading,
+    sectionHeadingExtraMargin,
+    SectionPadded,
+} from "@layouts/VerticalSwipePage/Section";
 import { dissolveDefaultAnimation } from "@styles/animations";
+import { BREAKPOINTS } from "@styles/globals";
 import styled from "styled-components";
 
 export const DevelopersList = styled.ul`
@@ -12,12 +17,15 @@ export const DevelopersList = styled.ul`
     padding: 0 ${sectionHeadingExtraMargin};
     box-sizing: border-box;
 
-
     > li {
         ${dissolveDefaultAnimation}
         max-width: 45%;
     }
-`
+
+    ${BREAKPOINTS.upToNotebook} {
+        padding: 0;
+    }
+`;
 
 export const DevelopersWrapper = styled.div<AnimateOnActiveComponentProps>`
     ${SectionPadded}
@@ -44,4 +52,4 @@ export const DevelopersWrapper = styled.div<AnimateOnActiveComponentProps>`
             }
         `;
     }}
-`
+`;

@@ -5,6 +5,7 @@ import {
     SectionPadded,
 } from "@layouts/VerticalSwipePage/Section";
 import { dissolveDefaultAnimation } from "@styles/animations";
+import { BREAKPOINTS } from "@styles/globals";
 import styled from "styled-components";
 
 export const CreativeTeamList = styled.ul`
@@ -14,10 +15,18 @@ export const CreativeTeamList = styled.ul`
     margin-top: 72px;
     padding: 0 ${sectionHeadingExtraMargin};
 
+    ${BREAKPOINTS.upToNotebook} {
+        row-gap: 24px;
+    }
+
     > li {
         ${dissolveDefaultAnimation}
         width: 90%;
         max-width: 980px;
+
+        ${BREAKPOINTS.upToNotebook} {
+            max-width: 800px;
+        }
 
         &:nth-child(even) {
             align-self: flex-end;

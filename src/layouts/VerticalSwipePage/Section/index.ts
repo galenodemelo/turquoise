@@ -1,5 +1,5 @@
 import { horizontalMargin } from "@layouts/FloatingMenu/style";
-import { COLORS } from "@styles/globals";
+import { BREAKPOINTS, COLORS } from "@styles/globals";
 import styled, { css } from "styled-components";
 
 export const Section = css`
@@ -19,10 +19,14 @@ export const SectionPadded = css`
 
 export const sectionHeadingExtraMargin = "96px";
 
-export const SectionHeading = styled.div<{extraMargin?: boolean}>`
+export const SectionHeading = styled.div<{ extraMargin?: boolean }>`
     font-size: 1.6rem;
     font-weight: bold;
     line-height: 1;
     color: ${COLORS.darkGreen};
-    ${props => props.extraMargin === false ? "" : `margin-left: ${sectionHeadingExtraMargin};`}
+    ${(props) => (props.extraMargin === false ? "" : `margin-left: ${sectionHeadingExtraMargin};`)}
+
+    ${BREAKPOINTS.upToNotebook} {
+        margin-left: 0;
+    }
 `;

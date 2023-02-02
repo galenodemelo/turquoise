@@ -1,3 +1,4 @@
+import { BREAKPOINTS } from "@styles/globals";
 import styled from "styled-components";
 
 export const TeamMemberWrapper = styled.li`
@@ -12,6 +13,11 @@ export const PhotoContainer = styled.div`
     width: 275px;
     height: 275px;
     overflow: hidden;
+
+    ${BREAKPOINTS.upToNotebook} {
+        width: 150px;
+        height: 150px;
+    }
 `;
 
 export const InfoContainer = styled.div`
@@ -26,6 +32,10 @@ export const Name = styled.h5`
     font-weight: 500;
     font-size: 1.4rem;
     text-transform: uppercase;
+
+    ${BREAKPOINTS.upToNotebook} {
+        font-size: 1.2rem;
+    }
 `;
 
 export const Position = styled.h6`
@@ -33,6 +43,10 @@ export const Position = styled.h6`
     width: 100%;
     font-size: 1.2rem;
     text-transform: uppercase;
+
+    ${BREAKPOINTS.upToNotebook} {
+        font-size: 1rem;
+    }
 `;
 
 export const Description = styled.p`
@@ -42,4 +56,8 @@ export const Description = styled.p`
     font-weight: 300;
     font-size: 1.2rem;
     line-height: 1.4;
+
+    ${BREAKPOINTS.upToNotebook} {
+        font-size: 1rem;
+    }
 `;

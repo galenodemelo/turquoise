@@ -1,5 +1,5 @@
 import { sectionHeadingExtraMargin, SectionPadded } from "@layouts/VerticalSwipePage/Section";
-import { COLORS } from "@styles/globals";
+import { BREAKPOINTS, COLORS } from "@styles/globals";
 import styled from "styled-components";
 
 export const ContactWrapper = styled.div`
@@ -8,6 +8,10 @@ export const ContactWrapper = styled.div`
     flex-direction: column;
     justify-content: space-evenly;
     row-gap: 80px;
+
+    ${BREAKPOINTS.upToNotebook} {
+        row-gap: 0;
+    }
 `;
 
 export const ContactContent = styled.div`
@@ -17,6 +21,10 @@ export const ContactContent = styled.div`
     padding: 0 ${sectionHeadingExtraMargin};
     column-gap: 12%;
     row-gap: 10%;
+
+    ${BREAKPOINTS.upToNotebook} {
+        padding: 0;
+    }
 `;
 
 export const Form = styled.form`
@@ -30,6 +38,10 @@ export const FormFieldList = styled.div`
     flex-direction: column;
     row-gap: 32px;
     flex: 1 1 0;
+
+    ${BREAKPOINTS.upToNotebook} {
+        row-gap: 16px;
+    }
 `;
 
 export const FormField = styled.div`
@@ -42,6 +54,10 @@ export const FormField = styled.div`
         font-family: "Arboria";
         font-weight: 300;
         font-size: 1.4rem;
+
+        ${BREAKPOINTS.upToNotebook} {
+            font-size: 1rem;
+        }
     }
 
     > *[required] + label::after {
@@ -59,6 +75,11 @@ export const FormField = styled.div`
         font-size: 1.2rem;
         width: 100%;
         box-sizing: border-box;
+
+        ${BREAKPOINTS.upToNotebook} {
+            padding: 4px 8px;
+            font-size: 1rem;
+        }
     }
 `;
 
@@ -123,7 +144,7 @@ export const CTAButton = styled.a<CTAButton>`
                 pointer-events: none;
                 background-color: ${COLORS.green}60;
                 cursor: not-allowed;
-            `
+            `;
         }
 
         return `
@@ -133,7 +154,7 @@ export const CTAButton = styled.a<CTAButton>`
             &:hover {
                 background-color: ${COLORS.darkGreen};
             }
-        `
+        `;
     }}
 
     &::after {

@@ -1,5 +1,5 @@
 import { horizontalMargin, verticalMargin } from "@layouts/FloatingMenu/style";
-import { COLORS, SETTINGS } from "@styles/globals";
+import { BREAKPOINTS, COLORS, SETTINGS } from "@styles/globals";
 import styled from "styled-components";
 import { ScrollTipProps } from "./";
 
@@ -16,6 +16,10 @@ export const ScrollTipWrapper = styled.div<ScrollTipProps>`
     opacity: ${(props) => (props.visible ? 1 : 0)};
     transition: filter ${SETTINGS.swiper.speedInSeconds}s ease,
         opacity ${SETTINGS.swiper.speedInSeconds}s ease;
+
+    ${BREAKPOINTS.upToNotebook} {
+        display: none;
+    }
 `;
 
 export const Icon = styled.img`
