@@ -1,7 +1,7 @@
 import { SETTINGS } from "@styles/globals";
 import Image from "next/image";
 import React from "react";
-import { Navigation, Swiper as SwiperConfig } from 'swiper';
+import { Keyboard, Navigation, Swiper as SwiperConfig } from 'swiper';
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper.min.css";
 import { ButtonClose, FloorPlan, HeaderText, HousesDetailsWrapper, RightHeader, SlideControlNext, SlideControlPrevious, SplittedSlide, TopHeader } from "./style";
@@ -18,18 +18,19 @@ export default class HousesDetails extends React.Component<Props, {}> {
 
     constructor(props: Props) {
         super(props)
-        SwiperConfig.use([Navigation])
+        SwiperConfig.use([Keyboard, Navigation])
     }
 
     render(): JSX.Element {
         return (
             <HousesDetailsWrapper data-state-active={this.props.isActive}>
                 <Swiper
+                    keyboard={true}
                     navigation={{
                         prevEl: this.controlPrevRef.current,
                         nextEl: this.controlNextRef.current
                     }}
-                    simulateTouch={true}
+                    simulateTouch={false}
                     slidesPerView={1}
                     slidesPerColumn={1}
                     spaceBetween={0}
