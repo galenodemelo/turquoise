@@ -26,12 +26,8 @@ export default class Amenities extends React.Component<{}, State> {
             imagePath: "/img/carousel/amenities/clubhouse-pool.jpg"
         },
         {
-            header: "5-Story Observation Tower",
+            header: "5-Story Observation Tower<br />+ 3.000 ft. of trails",
             imagePath: "/img/carousel/amenities/5-story-observation-tower.jpg"
-        },
-        {
-            header: "+ 3.000 ft. of trails",
-            imagePath: "/img/carousel/amenities/clubhouse.jpg"
         },
         {
             header: "Fire pits",
@@ -66,9 +62,9 @@ export default class Amenities extends React.Component<{}, State> {
                                             onClick={(event) => {
                                                 event.preventDefault()
                                                 this.setState({ activeIndex: index })
-                                            }}>
-                                            {item.header}
-                                        </AccordionHeader>
+                                            }}
+                                            dangerouslySetInnerHTML={{__html: item.header}}
+                                        />
                                         <AccordionContent>
                                             {item.content}
                                         </AccordionContent>
