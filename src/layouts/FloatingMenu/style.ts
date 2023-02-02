@@ -1,4 +1,4 @@
-import { SETTINGS } from "@styles/globals";
+import { BREAKPOINTS, SETTINGS } from "@styles/globals";
 import styled from "styled-components";
 import { FloatingMenuProps } from ".";
 import { ExtraWrapper } from "./Extra/style";
@@ -13,6 +13,11 @@ export const LogoWrapper = styled.div`
 
 export const Logo = styled.img`
     width: 240px;
+
+    ${BREAKPOINTS.upToTablet} {
+        width: 160px;
+        height: 100%;
+    }
 `;
 
 export const Header = styled.header<FloatingMenuProps>`
@@ -26,6 +31,10 @@ export const Header = styled.header<FloatingMenuProps>`
     box-sizing: border-box;
     opacity: ${(props) => (props.visible ? 1 : 0)};
     transition: opacity ${SETTINGS.swiper.speedInSeconds}s ease;
+
+    ${BREAKPOINTS.upToTablet} {
+        padding: 12px 2%;
+    }
 
     > * {
         flex: 1;

@@ -1,5 +1,5 @@
 import { horizontalGrowShrink } from "@styles/animations";
-import { COLORS } from "@styles/globals";
+import { BREAKPOINTS, COLORS } from "@styles/globals";
 import styled from "styled-components";
 
 export const NavButtonWrapper = styled.button`
@@ -55,4 +55,8 @@ export const NavButtonLabel = styled.span`
     color: ${COLORS.darkGreen};
     font-size: 1.2rem;
     margin-bottom: -4px;
+
+    ${BREAKPOINTS.upToTablet} {
+        display: none;
+    }
 `;

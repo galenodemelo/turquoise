@@ -1,4 +1,4 @@
-import { COLORS, ExternalLink } from "@styles/globals";
+import { BREAKPOINTS, COLORS, ExternalLink } from "@styles/globals";
 import styled from "styled-components";
 
 export const ExtraWrapper = styled.div`
@@ -15,6 +15,10 @@ export const AerialView = styled(ExternalLink)`
     color: ${COLORS.darkGreen};
     line-height: 1;
     font-size: 1.2rem;
+
+    ${BREAKPOINTS.upToTablet} {
+        display: none;
+    }
 
     &::after {
         position: relative;
@@ -34,4 +38,13 @@ export const SocialLinkWrapper = styled.div`
     column-gap: 16px;
 `;
 
-export const SocialLink = styled(ExternalLink)``;
+export const SocialLink = styled(ExternalLink)`
+    position: relative;
+    width: 24px;
+    height: 24px;
+
+    ${BREAKPOINTS.upToTablet} {
+        width: 20px;
+        height: 20px;
+    }
+`;

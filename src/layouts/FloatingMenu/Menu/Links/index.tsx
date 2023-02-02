@@ -36,7 +36,7 @@ export default class Links extends React.Component<{}, State> {
     constructor(props: {}) {
         super(props);
         this.state = {
-            open: false
+            open: true
         }
     }
 
