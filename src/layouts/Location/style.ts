@@ -13,4 +13,5 @@ export const Minimap = styled.img`
     right: ${horizontalMargin};
     bottom: ${verticalMargin};
     width: 225px;
+    width: 10%;
 `;
