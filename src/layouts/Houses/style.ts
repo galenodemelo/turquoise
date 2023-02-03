@@ -49,7 +49,7 @@ export const HousesCTA = styled.a`
     background-color: ${COLORS.green};
     color: #ffffff;
     font-size: 1rem;
-    padding: 14px 16px 13px;
+    padding: 14px 16px;
     transition: background-color 0.2s ease;
     cursor: pointer;
 
@@ -67,7 +67,7 @@ export const HousesContent = styled.div<AnimateOnActiveComponentProps>`
     margin-right: 20%;
 
     ${BREAKPOINTS.upToTablet} {
-        font-size: .8rem;
+        font-size: 0.8rem;
         width: 100%;
         margin-right: 0;
         row-gap: 24px;
@@ -80,7 +80,7 @@ export const HousesContent = styled.div<AnimateOnActiveComponentProps>`
         color: ${COLORS.darkGreen};
 
         ${BREAKPOINTS.upToTablet} {
-            font-size: .8rem;
+            font-size: 0.8rem;
         }
     }
 
