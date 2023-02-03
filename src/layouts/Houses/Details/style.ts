@@ -5,12 +5,15 @@ import styled from "styled-components";
 export const HousesDetailsWrapper = styled.div`
     ${Section}
     z-index: 1000;
-    width: 0%;
-    transition: width 1s ease;
+    width: 100%;
+    transition: transform 1s ease, opacity 1s ease;
     overflow-x: hidden;
+    transform: scale(0);
+    opacity: 0;
 
     &[data-state-active="true"] {
-        width: 100%;
+        transform: scale(1);
+        opacity: 1;
     }
 `;
 
