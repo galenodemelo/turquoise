@@ -49,7 +49,7 @@ export default class HousesDetails extends React.Component<Props, {}> {
                     <SwiperSlide>
                         <SplittedSlide>
                             <div>
-                                <Image src="/img/carousel/houses/tanneys-design-2.jpg" layout="fill" alt="Model house by Tanney pool" objectFit="cover" priority={true} objectFit="cover" objectPosition="center center" />
+                                <Image src="/img/carousel/houses/tanneys-design-2.jpg" layout="fill" alt="Model house by Tanney pool" priority={true} objectFit="cover" objectPosition="center center" />
                             </div>
                             <RightHeader>
                                 <HeaderText>{`Model House - Tanney's design`}</HeaderText>
@@ -68,7 +68,7 @@ export default class HousesDetails extends React.Component<Props, {}> {
                     <SwiperSlide>
                         <SplittedSlide>
                             <div>
-                                <Image src="/img/carousel/houses/russells-design-2.jpg" layout="fill" alt="Model house by Russell backyard" objectFit="cover" priority={true} objectFit="cover" objectPosition="center center" />
+                                <Image src="/img/carousel/houses/russells-design-2.jpg" layout="fill" alt="Model house by Russell backyard" priority={true} objectFit="cover" objectPosition="center center" />
                             </div>
                             <RightHeader>
                                 <HeaderText>{`Model House - Russell's design`}</HeaderText>
@@ -94,7 +94,7 @@ export default class HousesDetails extends React.Component<Props, {}> {
                     <SwiperSlide>
                         <SplittedSlide>
                             <div>
-                                <Image src="/img/carousel/houses/ricardos-design-3.jpg" layout="fill" alt="Model house's living room by Ricardo" objectFit="cover" priority={true} objectFit="cover" objectPosition="center center" />
+                                <Image src="/img/carousel/houses/ricardos-design-3.jpg" layout="fill" alt="Model house's living room by Ricardo" priority={true} objectFit="cover" objectPosition="center center" />
                             </div>
                             <RightHeader>
                                 <HeaderText>
@@ -117,7 +117,7 @@ export default class HousesDetails extends React.Component<Props, {}> {
                     <SwiperSlide>
                         <SplittedSlide>
                             <div>
-                                <Image src="/img/carousel/houses/ricardos-design-5.jpg" layout="fill" alt="Model house's hall room by Ricardo" objectFit="cover" priority={true} objectFit="cover" objectPosition="center center" />
+                                <Image src="/img/carousel/houses/ricardos-design-5.jpg" layout="fill" alt="Model house's hall room by Ricardo" priority={true} objectFit="cover" objectPosition="center center" />
                             </div>
                             <RightHeader>
                                 <HeaderText>
