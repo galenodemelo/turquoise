@@ -23,7 +23,7 @@ export const ScrollTipWrapper = styled.div<ScrollTipProps>`
 `;
 
 export const Icon = styled.img`
-    height: 64px;
+    height: 40px;
     position: relative;
     left: -2px;
 `;
@@ -32,6 +32,6 @@ export const Text = styled.div`
     writing-mode: tb-rl;
     transform: rotate(-180deg);
     color: ${COLORS.darkGreen};
-    font-size: 1rem;
+    font-size: .8rem;
     font-weight: bold;
 `;
