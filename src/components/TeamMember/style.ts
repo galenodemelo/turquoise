@@ -5,6 +5,11 @@ export const TeamMemberWrapper = styled.li`
     display: inline-flex;
     align-items: center;
     column-gap: 32px;
+
+    ${BREAKPOINTS.upToTablet} {
+        column-gap: 16px;
+        align-items: start;
+    }
 `;
 
 export const PhotoContainer = styled.div`
@@ -17,6 +22,11 @@ export const PhotoContainer = styled.div`
     ${BREAKPOINTS.upToNotebook} {
         width: 150px;
         height: 150px;
+    }
+
+    ${BREAKPOINTS.upToTablet} {
+        width: 64px;
+        height: 64px;
     }
 `;
 
@@ -36,6 +46,10 @@ export const Name = styled.h5`
     ${BREAKPOINTS.upToNotebook} {
         font-size: 1.2rem;
     }
+
+    ${BREAKPOINTS.upToTablet} {
+        font-size: 0.8rem;
+    }
 `;
 
 export const Position = styled.h6`
@@ -46,6 +60,10 @@ export const Position = styled.h6`
 
     ${BREAKPOINTS.upToNotebook} {
         font-size: 1rem;
+    }
+
+    ${BREAKPOINTS.upToTablet} {
+        font-size: 0.7rem;
     }
 `;
 
@@ -59,5 +77,9 @@ export const Description = styled.p`
 
     ${BREAKPOINTS.upToNotebook} {
         font-size: 1rem;
+    }
+
+    ${BREAKPOINTS.upToTablet} {
+        font-size: .8rem;
     }
 `;

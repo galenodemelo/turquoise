@@ -1,4 +1,5 @@
 import { AnimateOnActiveComponentProps } from "@layouts/AnimateOnActiveComponent";
+import { horizontalMobileMargin } from "@layouts/FloatingMenu/style";
 import {
     SectionHeading,
     sectionHeadingExtraMargin,
@@ -17,6 +18,12 @@ export const CreativeTeamList = styled.ul`
 
     ${BREAKPOINTS.upToNotebook} {
         row-gap: 24px;
+    }
+
+    ${BREAKPOINTS.upToTablet} {
+        padding: 0 ${horizontalMobileMargin};
+        row-gap: 24px;
+        margin-top: 40px;
     }
 
     > li {

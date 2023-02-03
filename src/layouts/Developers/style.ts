@@ -20,10 +20,21 @@ export const DevelopersList = styled.ul`
     > li {
         ${dissolveDefaultAnimation}
         max-width: 45%;
+
+        ${BREAKPOINTS.upToTablet} {
+            max-width: 100%;
+        }
     }
 
     ${BREAKPOINTS.upToNotebook} {
         padding: 0;
+    }
+
+    ${BREAKPOINTS.upToTablet} {
+        padding: 0;
+        flex-direction: column;
+        justify-content: center;
+        row-gap: 40px;
     }
 `;
 
