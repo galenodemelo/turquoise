@@ -6,7 +6,7 @@ import { BREAKPOINTS, COLORS } from "@styles/globals";
 import styled from "styled-components";
 
 export const Bar = styled.div`
-    transition: flex 3s ease;
+    transition: flex 2s ease;
     flex: 0;
     width: 3px;
     background-color: #ffffff;
@@ -22,7 +22,7 @@ export const Text = styled.div`
     text-align: center;
 
     ${dissolveDefaultAnimation};
-    animation-delay: 3s;
+    animation-delay: 1.5s;
 
     h2 {
         font-size: 1.8rem;
@@ -51,7 +51,7 @@ export const Icon = styled.div`
     flex: 1;
 
     ${dissolveDefaultAnimation};
-    animation-delay: 3.5s;
+    animation-delay: 2s;
 `;
 
 export const IconOfLuxuryAndExclusivityWrapper = styled.div<AnimateOnActiveComponentProps>`
