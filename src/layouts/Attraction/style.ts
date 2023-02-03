@@ -1,18 +1,22 @@
 import { Section } from "@layouts/VerticalSwipePage/Section";
-import { COLORS } from "@styles/globals";
+import { BREAKPOINTS, COLORS } from "@styles/globals";
 import styled from "styled-components";
 
 export const AttractionWrapper = styled.ul`
     ${Section}
     display: flex;
     align-items: stretch;
+
+    ${BREAKPOINTS.upToTablet} {
+        flex-direction: column;
+    }
 `;
 
 export const LocationGalleryItem = styled.li<{ state: "expanded" | "collapsed" }>`
     position: relative;
     overflow: hidden;
-    flex: ${(props) => (props.state == "expanded" ? "1 1 100%" : "1 1 0")};
-    transition: flex-basis 0.8s ease;
+    flex: ${(props) => (props.state == "expanded" ? "10 1 100%" : "1 1 0")};
+    transition: flex 0.8s ease;
 
     &::after {
         display: block;
@@ -47,4 +51,10 @@ export const ImageCaption = styled.div`
     width: 90%;
     max-width: 450px;
     border-bottom: ${COLORS.darkGreen} solid 4px;
+
+    ${BREAKPOINTS.upToTablet} {
+        font-size: 0.8rem;
+        width: 60%;
+        bottom: 16px;
+    }
 `;

@@ -31,7 +31,7 @@ export default class Attraction extends React.Component<{}, State> {
                         <LocationGalleryItem
                             key={index}
                             state={index == this.state.expandedItemIndex ? "expanded" : "collapsed"}
-                            onClick={() => this.setState({ expandedItemIndex: this.state.expandedItemIndex === null ? index : null })
+                            onClick={() => this.setState({ expandedItemIndex: this.state.expandedItemIndex === index ? null : index })
                             }>
                             <Image src={item.imagePath} alt={item.alt} layout="fill" objectFit="cover" objectPosition="left top" />
                             <ImageCaption>{item.caption}</ImageCaption>
