@@ -130,15 +130,12 @@ const SlideControl = styled.button`
     background-size: 80%;
     z-index: 10;
     cursor: pointer;
+    transition: background-position .2s ease;
 
     &[disabled] {
         opacity: 0.5;
         pointer-events: none;
         cursor: default;
-    }
-
-    &:hover {
-        background-color: rgba(255, 255, 255, 0.2);
     }
 `;
 
@@ -147,10 +144,20 @@ const controlMargin = "16px";
 export const SlideControlPrevious = styled(SlideControl)`
     left: ${controlMargin};
     transform: rotate(180deg);
+    background-position: left center;
+
+    &:hover {
+        background-position: right center;
+    }
 `;
 
 export const SlideControlNext = styled(SlideControl)`
     right: ${controlMargin};
+    background-position: right center;
+
+    &:hover {
+        background-position: left center;
+    }
 `;
 
 export const ButtonClose = styled.button`
@@ -161,6 +168,7 @@ export const ButtonClose = styled.button`
     padding: 10px 10px 7px;
     border-radius: 100%;
     cursor: pointer;
+    transition: transform 0.2s ease;
 
     &::after {
         content: "X";
@@ -170,6 +178,6 @@ export const ButtonClose = styled.button`
     }
 
     &:hover {
-        background-color: rgba(255, 255, 255, 0.2);
+        transform: scale(1.3);
     }
 `;
