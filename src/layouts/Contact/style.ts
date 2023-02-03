@@ -10,7 +10,8 @@ export const ContactWrapper = styled.div`
     row-gap: 80px;
 
     ${BREAKPOINTS.upToNotebook} {
-        row-gap: 0;
+        row-gap: 40px;
+        max-height: fit-content;
     }
 `;
 
@@ -25,12 +26,23 @@ export const ContactContent = styled.div`
     ${BREAKPOINTS.upToNotebook} {
         padding: 0;
     }
+
+    ${BREAKPOINTS.upToTablet} {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        row-gap: 0px;
+    }
 `;
 
 export const Form = styled.form`
     display: inline-flex;
     align-items: flex-end;
     column-gap: 32px;
+
+    ${BREAKPOINTS.upToTablet} {
+        flex-direction: column;
+        row-gap: 24px;
+    }
 `;
 
 export const FormFieldList = styled.div`
@@ -121,6 +133,12 @@ export const CTA = styled.div`
     display: inline-flex;
     align-items: center;
     column-gap: 16px;
+
+    ${BREAKPOINTS.upToTablet} {
+        flex-direction: column;
+        align-items: start;
+        row-gap: 24px;
+    }
 `;
 
 export const CTAHeader = styled.span`
@@ -212,4 +230,9 @@ export const BrandList = styled.div`
     position: relative;
     grid-column: span 2;
     text-align: center;
+
+    ${BREAKPOINTS.upToTablet} {
+        grid-column: initial;
+        padding-top: 32px;
+    }
 `;
