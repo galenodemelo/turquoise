@@ -1,5 +1,5 @@
 import { Section } from "@layouts/VerticalSwipePage/Section";
-import { COLORS, ExternalLink } from "@styles/globals";
+import { BREAKPOINTS, COLORS, ExternalLink } from "@styles/globals";
 import styled from "styled-components";
 
 export const HousesDetailsWrapper = styled.div`
@@ -18,6 +18,10 @@ export const HeaderText = styled.h6`
     color: #ffffff;
     font-size: 1.6rem;
     font-weight: 500;
+
+    ${BREAKPOINTS.upToTablet} {
+        font-size: 1rem;
+    }
 `;
 
 export const TopHeader = styled.div`
@@ -27,6 +31,11 @@ export const TopHeader = styled.div`
     width: 100%;
     padding-top: 40px;
     text-align: center;
+
+    ${BREAKPOINTS.upToTablet} {
+        padding: 80px 8% 0;
+        box-sizing: border-box;
+    }
 `;
 
 export const RightHeader = styled.div`
@@ -45,6 +54,10 @@ export const SplittedSlide = styled.div`
     display: flex;
     align-items: stretch;
     height: 100%;
+
+    ${BREAKPOINTS.upToTablet} {
+        flex-direction: column;
+    }
 
     > *:nth-child(1) {
         flex: 3;
@@ -69,18 +82,33 @@ export const FloorPlan = styled(ExternalLink)`
     column-gap: 40px;
     transition: border-bottom-color 0.2s ease;
 
+    ${BREAKPOINTS.upToTablet} {
+        column-gap: 18px;
+        padding-right: 60px;
+    }
+
     &::before {
         content: "";
         width: 56px;
         height: 56px;
         background: url("/img/ico/floor-plan.svg") center center no-repeat transparent;
         background-size: contain;
+
+        ${BREAKPOINTS.upToTablet} {
+            font-size: 1rem;
+            width: 40px;
+            height: 40px;
+        }
     }
 
     &::after {
         content: "Floor plan";
         color: #ffffff;
         font-size: 1.2rem;
+
+        ${BREAKPOINTS.upToTablet} {
+            font-size: 1rem;
+        }
     }
 
     &:hover {
