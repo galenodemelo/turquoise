@@ -1,7 +1,8 @@
 import { AnimateOnActiveComponentProps } from "@layouts/AnimateOnActiveComponent";
+import { horizontalMobileMargin } from "@layouts/FloatingMenu/style";
 import { Section } from "@layouts/VerticalSwipePage/Section";
 import { dissolveDefaultAnimation } from "@styles/animations";
-import { COLORS } from "@styles/globals";
+import { BREAKPOINTS, COLORS } from "@styles/globals";
 import styled from "styled-components";
 
 export const Bar = styled.div`
@@ -32,6 +33,16 @@ export const Text = styled.div`
         font-size: 1.2rem;
         font-weight: 300;
         line-height: 1.8;
+
+        ${BREAKPOINTS.upToTablet} {
+            font-size: 0.8rem;
+            text-align: left;
+            padding: 0 ${horizontalMobileMargin};
+
+            > br {
+                display: none;
+            }
+        }
     }
 `;
 
