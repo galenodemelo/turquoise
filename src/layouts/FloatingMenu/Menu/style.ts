@@ -2,15 +2,6 @@ import { horizontalGrowShrink } from "@styles/animations";
 import { BREAKPOINTS, COLORS } from "@styles/globals";
 import styled from "styled-components";
 
-export const NavButtonWrapper = styled.button`
-    display: flex;
-    align-items: center;
-    column-gap: 12px;
-    background: none;
-    border: 0;
-    cursor: pointer;
-`;
-
 export const NavButtonIcon = styled.span`
     display: inline-flex;
     flex-direction: column;
@@ -27,10 +18,6 @@ export const NavButtonIcon = styled.span`
         border: 0;
         background: ${COLORS.darkGreen};
         line-height: 1;
-        animation-name: ${horizontalGrowShrink};
-        animation-duration: 0.8s;
-        animation-iteration-count: infinite;
-        animation-direction: alternate;
 
         &:nth-of-type(1),
         &:nth-of-type(5) {
@@ -58,5 +45,21 @@ export const NavButtonLabel = styled.span`
 
     ${BREAKPOINTS.upToTablet} {
         display: none;
+    }
+`;
+
+export const NavButtonWrapper = styled.button`
+    display: flex;
+    align-items: center;
+    column-gap: 12px;
+    background: none;
+    border: 0;
+    cursor: pointer;
+
+    &:hover ${NavButtonIcon} > hr {
+        animation-name: ${horizontalGrowShrink};
+        animation-duration: 0.6s;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
     }
 `;
