@@ -19,7 +19,7 @@ export const HousesDetailsWrapper = styled.div`
 
 export const HeaderText = styled.h6`
     color: #ffffff;
-    font-size: 1.6rem;
+    font-size: 1.2rem;
     font-weight: 500;
 
     ${BREAKPOINTS.upToTablet} {
@@ -80,7 +80,7 @@ export const FloorPlan = styled(ExternalLink)`
     align-items: center;
     z-index: 10;
     border-bottom: ${COLORS.green} solid 3px;
-    padding-right: 120px;
+    padding-right: 80px;
     padding-bottom: 16px;
     column-gap: 40px;
     transition: border-bottom-color 0.2s ease;
@@ -92,8 +92,8 @@ export const FloorPlan = styled(ExternalLink)`
 
     &::before {
         content: "";
-        width: 56px;
-        height: 56px;
+        width: 48px;
+        height: 48px;
         background: url("/img/ico/floor-plan.svg") center center no-repeat transparent;
         background-size: contain;
 
@@ -107,11 +107,8 @@ export const FloorPlan = styled(ExternalLink)`
     &::after {
         content: "Floor plan";
         color: #ffffff;
-        font-size: 1.2rem;
-
-        ${BREAKPOINTS.upToTablet} {
-            font-size: 1rem;
-        }
+        font-size: 1rem;
+        font-weight: 500;
     }
 
     &:hover {
