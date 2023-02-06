@@ -7,7 +7,7 @@ export const ContactWrapper = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    row-gap: 80px;
+    row-gap: 120px;
 
     ${BREAKPOINTS.upToNotebook} {
         row-gap: 40px;
@@ -20,7 +20,7 @@ export const ContactContent = styled.div`
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr auto;
     padding: 0 ${sectionHeadingExtraMargin};
-    column-gap: 12%;
+    column-gap: 20%;
     row-gap: 10%;
 
     ${BREAKPOINTS.upToNotebook} {
@@ -48,7 +48,7 @@ export const Form = styled.form`
 export const FormFieldList = styled.div`
     display: inline-flex;
     flex-direction: column;
-    row-gap: 32px;
+    row-gap: 16px;
     flex: 1 1 0;
 
     ${BREAKPOINTS.upToNotebook} {
@@ -65,11 +65,7 @@ export const FormField = styled.div`
     > label {
         font-family: "Arboria";
         font-weight: 300;
-        font-size: 1.4rem;
-
-        ${BREAKPOINTS.upToNotebook} {
-            font-size: 1rem;
-        }
+        font-size: 1rem;
     }
 
     > *[required] + label::after {
@@ -84,7 +80,7 @@ export const FormField = styled.div`
         padding: 8px 16px;
         border: #000000 solid 1px;
         resize: none;
-        font-size: 1.2rem;
+        font-size: 1rem;
         width: 100%;
         box-sizing: border-box;
 
@@ -107,16 +103,16 @@ export const FormRow = styled.div`
 `;
 
 export const FormFootNote = styled.p`
-    margin: -1rem 0;
+    margin: -0.5rem 0;
     font-family: "Arboria";
-    font-size: 1rem;
+    font-size: 0.9rem;
 `;
 
 export const FormSubmit = styled.button`
     position: relative;
-    width: 64px;
-    height: 64px;
-    margin-bottom: 2rem;
+    width: 48px;
+    height: 48px;
+    margin-bottom: 2.2rem;
 `;
 
 const gapBetweenContactInfoItems = "48px";
@@ -143,7 +139,7 @@ export const CTA = styled.div`
 
 export const CTAHeader = styled.span`
     font-family: "Arboria";
-    font-size: 1.2rem;
+    font-size: 1rem;
 `;
 
 interface CTAButton {
@@ -194,25 +190,25 @@ export const Info = styled.address`
     display: inline-flex;
     flex-direction: column;
     font-style: normal;
-    row-gap: 12px;
+    row-gap: 8px;
 `;
 
 export const InfoHeader = styled.h6`
     color: ${COLORS.green};
     font-weight: 500;
-    font-size: 1.2rem;
+    font-size: 0.9rem;
 `;
 
 export const InfoItem = styled.div`
     display: inline-flex;
     align-items: center;
-    column-gap: 12px;
+    column-gap: 6px;
 `;
 
 export const InfoItemIcon = styled.span``;
 
 export const InfoItemData = styled.span`
-    font-size: 1rem;
+    font-size: 0.9rem;
     color: ${COLORS.gray};
 `;
 
@@ -230,6 +226,7 @@ export const BrandList = styled.div`
     position: relative;
     grid-column: span 2;
     text-align: center;
+    padding-top: 2%;
 
     ${BREAKPOINTS.upToTablet} {
         grid-column: initial;
