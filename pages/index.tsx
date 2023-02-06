@@ -3,13 +3,13 @@ import Amenities from "@layouts/Amenities"
 import { AmenitiesWrapper } from "@layouts/Amenities/style"
 import Attraction from "@layouts/Attraction"
 import { AttractionWrapper } from "@layouts/Attraction/style"
+import ConceptCarousel from "@layouts/ConceptCarousel"
+import { ConceptCarouselWrapper } from "@layouts/ConceptCarousel/style"
 import ConceptMap from "@layouts/ConceptMap"
 import Contact from "@layouts/Contact"
 import { ContactWrapper } from "@layouts/Contact/style"
 import CreativeTeam from "@layouts/CreativeTeam"
 import Developers from "@layouts/Developers"
-import FeelTheNature from "@layouts/FeelTheNature"
-import { FellTheNatureWrapper } from "@layouts/FeelTheNature/style"
 import FloatingMenu from "@layouts/FloatingMenu"
 import Home from "@layouts/Home"
 import { HomeWrapper } from "@layouts/Home/style"
@@ -20,11 +20,7 @@ import { IconOfLuxuryAndExclusivityWrapper } from "@layouts/IconOfLuxuryAndExclu
 import Location from "@layouts/Location"
 import Masterplan from "@layouts/Masterplan"
 import { MasterplanWrapper } from "@layouts/Masterplan/style"
-import OurGiftForYou from "@layouts/OurGiftForYou"
-import { OurGiftForYouWrapper } from "@layouts/OurGiftForYou/style"
 import ScrollTip from "@layouts/Scroll"
-import SurroundedByGreenAndBlue from "@layouts/SurroundedByGreenAndBlue"
-import { SurroundedByGreenAndBlueWrapper } from "@layouts/SurroundedByGreenAndBlue/style"
 import VerticalSwipePage from "@layouts/VerticalSwipePage"
 import React from "react"
 import VerticalSwipePageContext from "src/libs/VerticalSwipePageContext"
@@ -63,7 +59,7 @@ export default class Index extends React.Component<{}, State> {
     }
 
     toggleMenuWhiteIfNecessary(activeSlideClassName: DOMTokenList): void {
-        const componentsToSetMenuWhite = [HomeWrapper, IconOfLuxuryAndExclusivityWrapper, FellTheNatureWrapper, OurGiftForYouWrapper, AttractionWrapper]
+        const componentsToSetMenuWhite = [HomeWrapper, IconOfLuxuryAndExclusivityWrapper, ConceptCarouselWrapper]
 
         const isPanelWithWhiteMenu = this.matchClassWithActiveClassName(componentsToSetMenuWhite, activeSlideClassName)
         this.setState({ menuWhite: isPanelWithWhiteMenu })
@@ -77,7 +73,7 @@ export default class Index extends React.Component<{}, State> {
     }
 
     toggleScrollTipWhiteIfNecessary(activeSlideClassName: DOMTokenList): void {
-        const componentToSetScrollTipWhite = [HomeWrapper, IconOfLuxuryAndExclusivityWrapper, SurroundedByGreenAndBlueWrapper]
+        const componentToSetScrollTipWhite = [HomeWrapper, IconOfLuxuryAndExclusivityWrapper]
 
         const isPanelWithWhiteScrollTip = this.matchClassWithActiveClassName(componentToSetScrollTipWhite, activeSlideClassName)
         this.setState({ scrollTipWhite: isPanelWithWhiteScrollTip })
@@ -115,9 +111,8 @@ export default class Index extends React.Component<{}, State> {
                     <Masterplan />
 
                     <ConceptMap />
-                    <FeelTheNature />
-                    <OurGiftForYou />
-                    <SurroundedByGreenAndBlue />
+
+                    <ConceptCarousel />
 
                     <Houses onCtaClick={() => this.setState({ isHouseDetailsActive: true })} />
                     <Amenities />
