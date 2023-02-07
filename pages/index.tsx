@@ -5,7 +5,6 @@ import Attraction from "@layouts/Attraction"
 import { AttractionWrapper } from "@layouts/Attraction/style"
 import ConceptCarousel from "@layouts/ConceptCarousel"
 import { ConceptCarouselWrapper } from "@layouts/ConceptCarousel/style"
-import ConceptMap from "@layouts/ConceptMap"
 import Contact from "@layouts/Contact"
 import { ContactWrapper } from "@layouts/Contact/style"
 import CreativeTeam from "@layouts/CreativeTeam"
@@ -109,8 +108,6 @@ export default class Index extends React.Component<{}, State> {
                     <Location />
 
                     <Masterplan />
-
-                    <ConceptMap />
 
                     <ConceptCarousel />
 

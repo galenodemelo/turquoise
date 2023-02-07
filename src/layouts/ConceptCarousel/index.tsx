@@ -29,13 +29,16 @@ export default class ConceptCarousel extends React.Component {
                     style={{ height: "100vh" }}
                 >
                     <SwiperSlide>
-                        <Image layout="fill" objectFit="cover" objectPosition="center center" src="/img/carousel/concept/feel-the-nature.jpg" alt="Couple walking along the beach with the title 'Feel the Nature'" />
+                        <Image layout="fill" objectFit="cover" objectPosition="center center" src="/img/carousel/concept/feel-the-nature.jpg" alt="Couple walking along the beach with the title 'Feel the Nature'" quality={100} />
                     </SwiperSlide>
                     <SwiperSlide>
-                        <Image layout="fill" objectFit="cover" objectPosition="center center" src="/img/carousel/concept/our-gift-for-you.jpg" alt="Home facade with a parked golf car and the title 'Our gift for you'" />
+                        <Image layout="fill" objectFit="cover" objectPosition="center center" src="/img/carousel/concept/our-gift-for-you.jpg" alt="Home facade with a parked golf car and the title 'Our gift for you'" quality={100} />
                     </SwiperSlide>
                     <SwiperSlide>
-                        <Image layout="fill" objectFit="cover" objectPosition="center center" src="/img/carousel/concept/surrounded-by-green-and-blue.jpg" alt="Father, mother and daughter playing golf at the sundown and the title 'Surrounded by green and blue'" />
+                        <Image layout="fill" objectFit="cover" objectPosition="center center" src="/img/carousel/concept/surrounded-by-green-and-blue.jpg" alt="Father, mother and daughter playing golf at the sundown and the title 'Surrounded by green and blue'" quality={100} />
+                    </SwiperSlide>
+                    <SwiperSlide>
+                        <Image layout="fill" objectFit="cover" objectPosition="center center" src="/img/carousel/concept/concept-map.jpg" alt="Conceptual map of Turquoise surroundings" quality={100} />
                     </SwiperSlide>
                 </Swiper>
             </ConceptCarouselWrapper>
