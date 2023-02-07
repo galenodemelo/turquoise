@@ -6,14 +6,12 @@ export const HousesDetailsWrapper = styled.div`
     ${Section}
     z-index: 1000;
     width: 100%;
-    transition: transform 1s ease, opacity 1s ease;
+    transition: transform 1s ease;
     overflow-x: hidden;
-    transform: scale(0);
-    opacity: 0;
+    transform: translateY(100vh);
 
     &[data-state-active="true"] {
-        transform: scale(1);
-        opacity: 1;
+        transform: translateY(0%);
     }
 `;
 
