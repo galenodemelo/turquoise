@@ -28,9 +28,11 @@ export default class ConceptCarousel extends React.Component {
                     }}
                     style={{ height: "100vh" }}
                 >
-                    <SwiperSlide>
-                        <Image layout="fill" objectFit="cover" objectPosition="center center" src="/img/carousel/concept/concept-map.jpg" alt="Conceptual map of Turquoise surroundings" quality={100} />
-                    </SwiperSlide>
+                    {isDesktop &&
+                        <SwiperSlide>
+                            <Image layout="fill" objectFit="cover" objectPosition="center center" src="/img/carousel/concept/concept-map.jpg" alt="Conceptual map of Turquoise surroundings" quality={100} />
+                        </SwiperSlide>
+                    }
                     <SwiperSlide>
                         <Image layout="fill" objectFit="cover" objectPosition="center center" src="/img/carousel/concept/feel-the-nature.jpg" alt="Couple walking along the beach with the title 'Feel the Nature'" quality={100} />
                     </SwiperSlide>
