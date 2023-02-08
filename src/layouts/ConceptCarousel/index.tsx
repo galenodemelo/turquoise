@@ -1,5 +1,6 @@
 import Image from "next/image";
 import React from "react";
+import { isDesktop } from "react-device-detect";
 import { Pagination, Swiper as SwiperConfig } from 'swiper';
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper.min.css";
@@ -18,7 +19,7 @@ export default class ConceptCarousel extends React.Component {
                 <BulletPaginationWrapper />
 
                 <Swiper
-                    direction="vertical"
+                    direction={isDesktop ? "vertical" : "horizontal"}
                     pagination={{
                         bulletActiveClass: "active",
                         bulletClass: BulletPaginationItem.styledComponentId,

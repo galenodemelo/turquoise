@@ -1,4 +1,5 @@
 import { Section } from "@layouts/VerticalSwipePage/Section";
+import { BREAKPOINTS } from "@styles/globals";
 import styled from "styled-components";
 
 export const ConceptCarouselWrapper = styled.div`
@@ -18,7 +19,15 @@ export const BulletPaginationWrapper = styled.nav`
     flex-direction: column;
     justify-content: center;
     z-index: 100;
-    row-gap: 16px;
+    gap: 16px;
+
+    ${BREAKPOINTS.upToTablet} {
+        bottom: 0;
+        top: auto;
+        flex-direction: row;
+        width: 100%;
+        height: 32px;
+    }
 
     ${BulletPaginationItem} {
         width: 12px;
