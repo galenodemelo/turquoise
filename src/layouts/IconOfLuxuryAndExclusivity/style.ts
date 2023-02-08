@@ -27,6 +27,10 @@ export const Text = styled.div`
     h2 {
         font-size: 1.8rem;
         font-weight: 500;
+
+        ${BREAKPOINTS.upToTablet} {
+            padding: 0 ${horizontalMobileMargin};
+        }
     }
 
     p {
