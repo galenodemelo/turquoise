@@ -5,7 +5,6 @@ import styled from "styled-components";
 
 export const LocationWrapper = styled.div`
     ${SectionPadded}
-    background: url("/img/location.svg") center center no-repeat #ffffff;
     background-size: cover;
 `;
 
