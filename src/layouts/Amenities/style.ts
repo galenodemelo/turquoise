@@ -1,21 +1,23 @@
 import { horizontalMobileMargin } from "@layouts/FloatingMenu/style";
 import {
-    Section,
     SectionHeading,
     sectionHeadingExtraMargin,
     SectionPadded,
 } from "@layouts/VerticalSwipePage/Section";
 import { BREAKPOINTS, COLORS } from "@styles/globals";
-import { isDesktop } from "react-device-detect";
 import styled from "styled-components";
 import { ImageItemWraperProps } from ".";
 
 export const AmenitiesWrapper = styled.div`
-    ${isDesktop ? SectionPadded : Section}
+    ${SectionPadded}
     padding-right: 0;
     padding-bottom: 0;
     display: flex;
     align-items: stretch;
+
+    ${BREAKPOINTS.upToTablet} {
+        padding: 0;
+    }
 `;
 
 export const Carousel = styled.div`
@@ -47,7 +49,9 @@ export const Details = styled.div`
 export const DetailsHeading = styled(SectionHeading)`
     margin-left: 0;
 
-    ${!isDesktop ? "padding-top: 8%;" : ""}
+    ${BREAKPOINTS.upToTablet} {
+        padding-top: 8%;
+    }
 `;
 
 export const AccordionList = styled.div`

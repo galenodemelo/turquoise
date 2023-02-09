@@ -1,5 +1,4 @@
 import { AnimateOnActiveComponentProps } from "@layouts/AnimateOnActiveComponent";
-import { horizontalMobileMargin } from "@layouts/FloatingMenu/style";
 import {
     SectionHeading,
     sectionHeadingExtraMargin,
@@ -7,7 +6,6 @@ import {
 } from "@layouts/VerticalSwipePage/Section";
 import { dissolveDefaultAnimation } from "@styles/animations";
 import { BREAKPOINTS } from "@styles/globals";
-import { isDesktop } from "react-device-detect";
 import styled from "styled-components";
 
 export const CreativeTeamList = styled.ul`
@@ -29,11 +27,15 @@ export const CreativeTeamList = styled.ul`
 
     > li {
         ${dissolveDefaultAnimation}
-        width: ${isDesktop ? "90%" : "100%"};
+        width: 90%;
         max-width: 980px;
 
         ${BREAKPOINTS.upToNotebook} {
             max-width: 800px;
+        }
+
+        ${BREAKPOINTS.upToTablet} {
+            width: 100%;
         }
 
         &:nth-child(even) {
