@@ -16,8 +16,7 @@ export default class IconOfLuxuryAndExclusivity extends AnimateOnActiveComponent
 
                 <Text>
                     <h2>
-                        Icon of luxury
-                        {!isDesktop && <br />}
+                        Icon of luxury {!isDesktop && <br />}
                         and exclusivity
                     </h2>
                     <p>
