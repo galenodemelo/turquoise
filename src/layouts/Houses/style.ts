@@ -23,7 +23,7 @@ export const HousesBackground = styled.div<AnimateOnActiveComponentProps>`
 
         > * {
             width: 150% !important;
-            height: 50% !important;
+            height: 45% !important;
             inset: auto auto 0 auto !important;
         }
     }
@@ -56,6 +56,11 @@ export const HousesCTA = styled.a`
     &:hover {
         background-color: ${COLORS.darkGreen};
     }
+
+    ${BREAKPOINTS.upToTablet} {
+        font-size: .8rem;
+        padding: 10px 12px 9px;
+    }
 `;
 
 export const HousesContent = styled.div<AnimateOnActiveComponentProps>`
@@ -67,21 +72,10 @@ export const HousesContent = styled.div<AnimateOnActiveComponentProps>`
     margin-right: 20%;
 
     ${BREAKPOINTS.upToTablet} {
-        font-size: 0.8rem;
         width: 100%;
         margin-right: 0;
         row-gap: 24px;
         padding: 8%;
-    }
-
-    > p {
-        font-size: 1rem;
-        line-height: 1.6;
-        color: ${COLORS.darkGreen};
-
-        ${BREAKPOINTS.upToTablet} {
-            font-size: 0.8rem;
-        }
     }
 
     ${SectionHeading} {
@@ -91,6 +85,13 @@ export const HousesContent = styled.div<AnimateOnActiveComponentProps>`
 
     > p {
         ${dissolveDefaultAnimation}
+        font-size: 1rem;
+        line-height: 1.6;
+        color: ${COLORS.darkGreen};
+
+        ${BREAKPOINTS.upToTablet} {
+            font-size: 0.7rem;
+        }
 
         &:nth-of-type(1) {
             animation-delay: 2s;
