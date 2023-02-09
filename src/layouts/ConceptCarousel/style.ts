@@ -6,7 +6,9 @@ export const ConceptCarouselWrapper = styled.div`
     ${Section}
 `;
 
-export const BulletPaginationItem = styled.span``;
+export const BulletPaginationItem = styled.span`
+    cursor: pointer;
+`;
 
 export const BulletPaginationWrapper = styled.nav`
     position: absolute;
