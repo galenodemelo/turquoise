@@ -1,6 +1,7 @@
 import { horizontalMobileMargin } from "@layouts/FloatingMenu/style";
 import { Section } from "@layouts/VerticalSwipePage/Section";
 import { BREAKPOINTS, COLORS, ExternalLink } from "@styles/globals";
+import { ImgHTMLAttributes } from "react";
 import styled from "styled-components";
 
 export const HousesDetailsWrapper = styled.div`
@@ -25,16 +26,36 @@ export const ImageWrapper = styled.div`
     ${Section}
 `;
 
-export const ImageContent = styled.img`
+export interface ImageContentProps extends ImgHTMLAttributes<HTMLImageElement> {
+    align?: "right"
+}
+
+export const ImageContent = styled.img<ImageContentProps>`
     position: absolute;
     top: 0;
     bottom: 0;
-    left: -100vw;
-    right: -100vw;
+
+    ${(props) => {
+        switch (props.align) {
+            case "right":
+                return `
+                    right: 0;
+                `
+
+            default:
+                return `
+                    left: -100vw;
+                    right: -100vw;
+                `;
+        }
+    }}
+
     height: 100%;
     width: 100%;
     margin: auto;
     object-fit: cover;
+
+    object-position: ${(props) => (props.align?.length ? props.align : "center center")};
 
     ${BREAKPOINTS.upToTablet} {
         height: 60vh;
