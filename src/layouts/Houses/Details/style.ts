@@ -1,3 +1,4 @@
+import { horizontalMobileMargin } from "@layouts/FloatingMenu/style";
 import { Section } from "@layouts/VerticalSwipePage/Section";
 import { BREAKPOINTS, COLORS, ExternalLink } from "@styles/globals";
 import styled from "styled-components";
@@ -9,9 +10,35 @@ export const HousesDetailsWrapper = styled.div`
     transition: transform 1s ease;
     overflow-x: hidden;
     transform: translateY(100vh);
+    background-color: ${COLORS.green};
 
     &[data-state-active="true"] {
         transform: translateY(0%);
+    }
+
+    .swiper-slide {
+        overflow: hidden;
+    }
+`;
+
+export const ImageWrapper = styled.div`
+    ${Section}
+`;
+
+export const ImageContent = styled.img`
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: -100vw;
+    right: -100vw;
+    height: 100%;
+    width: 100%;
+    margin: auto;
+    object-fit: cover;
+
+    ${BREAKPOINTS.upToTablet} {
+        height: 60vh;
+        width: auto;
     }
 `;
 
@@ -21,7 +48,7 @@ export const HeaderText = styled.h6`
     font-weight: 500;
 
     ${BREAKPOINTS.upToTablet} {
-        font-size: 1rem;
+        font-size: 0.9rem;
     }
 `;
 
@@ -34,7 +61,7 @@ export const TopHeader = styled.div`
     text-align: center;
 
     ${BREAKPOINTS.upToTablet} {
-        padding: 80px 8% 0;
+        padding: 60px ${horizontalMobileMargin} 0;
         box-sizing: border-box;
     }
 `;
@@ -48,6 +75,13 @@ export const RightHeader = styled.div`
     background-color: ${COLORS.green};
     padding: 0 48px;
     box-sizing: border-box;
+
+    ${BREAKPOINTS.upToTablet} {
+        position: relative;
+        text-align: center;
+        top: 90px;
+        background: transparent;
+    }
 `;
 
 export const SplittedSlide = styled.div`
@@ -57,15 +91,15 @@ export const SplittedSlide = styled.div`
     height: 100%;
 
     ${BREAKPOINTS.upToTablet} {
-        flex-direction: column;
+        flex-direction: column-reverse;
     }
 
-    > *:nth-child(1) {
+    ${ImageWrapper} {
         flex: 3;
         position: relative;
     }
 
-    > *:nth-child(2) {
+    ${RightHeader} {
         flex: 2;
     }
 `;
@@ -86,6 +120,8 @@ export const FloorPlan = styled(ExternalLink)`
     ${BREAKPOINTS.upToTablet} {
         column-gap: 18px;
         padding-right: 60px;
+        bottom: 24px;
+        border-bottom-color: #ffffff;
     }
 
     &::before {
@@ -125,7 +161,7 @@ const SlideControl = styled.button`
     background-size: 80%;
     z-index: 10;
     cursor: pointer;
-    transition: background-position .2s ease;
+    transition: background-position 0.2s ease;
 
     &[disabled] {
         opacity: 0.5;
@@ -165,11 +201,20 @@ export const ButtonClose = styled.button`
     cursor: pointer;
     transition: transform 0.2s ease;
 
+    ${BREAKPOINTS.upToTablet} {
+        top: 16px;
+        right: 16px;
+    }
+
     &::after {
         content: "X";
         color: #ffffff;
         font-size: 1.4rem;
         font-weight: bold;
+
+        ${BREAKPOINTS.upToTablet} {
+            font-size: 1rem;
+        }
     }
 
     &:hover {

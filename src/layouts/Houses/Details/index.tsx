@@ -1,10 +1,9 @@
 import { SETTINGS } from "@styles/globals";
-import Image from "next/image";
 import React from "react";
-import { Keyboard, Navigation, Swiper as SwiperConfig } from 'swiper';
+import { Keyboard, Navigation, Swiper as SwiperConfig, Zoom } from 'swiper';
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper.min.css";
-import { ButtonClose, FloorPlan, HeaderText, HousesDetailsWrapper, RightHeader, SlideControlNext, SlideControlPrevious, SplittedSlide, TopHeader } from "./style";
+import { ButtonClose, FloorPlan, HeaderText, HousesDetailsWrapper, ImageContent, ImageWrapper, RightHeader, SlideControlNext, SlideControlPrevious, SplittedSlide, TopHeader } from "./style";
 
 interface Props {
     isActive: boolean
@@ -18,7 +17,7 @@ export default class HousesDetails extends React.Component<Props, {}> {
 
     constructor(props: Props) {
         super(props)
-        SwiperConfig.use([Keyboard, Navigation])
+        SwiperConfig.use([Keyboard, Navigation, Zoom])
     }
 
     render(): JSX.Element {
@@ -36,9 +35,10 @@ export default class HousesDetails extends React.Component<Props, {}> {
                     spaceBetween={0}
                     speed={SETTINGS.swiper.speedInMilliseconds}
                     style={{ height: "100vh", width: "100%" }}
+                    zoom={true}
                 >
                     <SwiperSlide>
-                        <Image src="/img/carousel/houses/tanneys-design-1.jpg" layout="fill" alt="Model house by Tanney facade" priority={true} objectFit="cover" objectPosition="center center" />
+                        {this.buildZoomableImage("/img/carousel/houses/tanneys-design-1.jpg", "Model house by Tanney facade")}
 
                         <TopHeader>
                             <HeaderText>{`Model House - Tanney's design`}</HeaderText>
@@ -46,18 +46,19 @@ export default class HousesDetails extends React.Component<Props, {}> {
 
                         <FloorPlan href="https://www.dropbox.com/s/7bgchy35w5coldr/MARK%20-%20TURQUOISE_MODEL3200A_4-26-22.pdf?dl=0" />
                     </SwiperSlide>
+
                     <SwiperSlide>
                         <SplittedSlide>
-                            <div>
-                                <Image src="/img/carousel/houses/tanneys-design-2.jpg" layout="fill" alt="Model house by Tanney pool" priority={true} objectFit="cover" objectPosition="center center" />
-                            </div>
+                            {this.buildZoomableImage("/img/carousel/houses/tanneys-design-2.jpg", "Model house by Tanney pool")}
+
                             <RightHeader>
                                 <HeaderText>{`Model House - Tanney's design`}</HeaderText>
                             </RightHeader>
                         </SplittedSlide>
                     </SwiperSlide>
+
                     <SwiperSlide>
-                        <Image src="/img/carousel/houses/russells-design-1.jpg" layout="fill" alt="Model house by Russell facade" priority={true} objectFit="cover" objectPosition="center center" />
+                        {this.buildZoomableImage("/img/carousel/houses/russells-design-1.jpg", "Model house by Russell facade")}
 
                         <TopHeader>
                             <HeaderText>{`Model House - Russell's design`}</HeaderText>
@@ -65,18 +66,19 @@ export default class HousesDetails extends React.Component<Props, {}> {
 
                         <FloorPlan href="https://www.dropbox.com/s/lhxujuhqae3fsf6/RUSSELL%20-%20PROTOTYPE%201%204%20BED%20TOWER%2005.17.22.pdf?dl=0" />
                     </SwiperSlide>
+
                     <SwiperSlide>
                         <SplittedSlide>
-                            <div>
-                                <Image src="/img/carousel/houses/russells-design-2.jpg" layout="fill" alt="Model house by Russell backyard" priority={true} objectFit="cover" objectPosition="center center" />
-                            </div>
+                            {this.buildZoomableImage("/img/carousel/houses/russells-design-2.jpg", "Model house by Russell backyard")}
+
                             <RightHeader>
                                 <HeaderText>{`Model House - Russell's design`}</HeaderText>
                             </RightHeader>
                         </SplittedSlide>
                     </SwiperSlide>
+
                     <SwiperSlide>
-                        <Image src="/img/carousel/houses/ricardos-design-1.jpg" layout="fill" alt="Model house by Ricardo facade" priority={true} objectFit="cover" objectPosition="center center" />
+                        {this.buildZoomableImage("/img/carousel/houses/ricardos-design-1.jpg", "Model house by Ricardo facade")}
 
                         <TopHeader>
                             <HeaderText>{`Model House - Ricardo's design`}</HeaderText>
@@ -84,18 +86,19 @@ export default class HousesDetails extends React.Component<Props, {}> {
 
                         <FloorPlan href="https://www.dropbox.com/s/twd1uidxqlqx1ke/RICARDO%20-%2001%20MODEL%2001%20OPTION%2001-2.pdf?dl=0" />
                     </SwiperSlide>
+
                     <SwiperSlide>
-                        <Image src="/img/carousel/houses/ricardos-design-2.jpg" layout="fill" alt="Model house by Ricardo pool" priority={true} objectFit="cover" objectPosition="center center" />
+                        {this.buildZoomableImage("/img/carousel/houses/ricardos-design-2.jpg", "Model house by Ricardo pool")}
 
                         <TopHeader>
                             <HeaderText>{`Model House - Ricardo's design`}</HeaderText>
                         </TopHeader>
                     </SwiperSlide>
+
                     <SwiperSlide>
                         <SplittedSlide>
-                            <div>
-                                <Image src="/img/carousel/houses/ricardos-design-3.jpg" layout="fill" alt="Model house's living room by Ricardo" priority={true} objectFit="cover" objectPosition="center center" />
-                            </div>
+                            {this.buildZoomableImage("/img/carousel/houses/ricardos-design-3.jpg", "Model house's living room by Ricardo")}
+
                             <RightHeader>
                                 <HeaderText>
                                     Living<br />
@@ -104,8 +107,9 @@ export default class HousesDetails extends React.Component<Props, {}> {
                             </RightHeader>
                         </SplittedSlide>
                     </SwiperSlide>
+
                     <SwiperSlide>
-                        <Image src="/img/carousel/houses/ricardos-design-4.jpg" layout="fill" alt="Model house's bathroom suite by Ricardo" priority={true} objectFit="cover" objectPosition="center center" />
+                        {this.buildZoomableImage("/img/carousel/houses/ricardos-design-4.jpg", "Model house's bathroom suite by Ricardo")}
 
                         <TopHeader>
                             <HeaderText>
@@ -114,11 +118,11 @@ export default class HousesDetails extends React.Component<Props, {}> {
                             </HeaderText>
                         </TopHeader>
                     </SwiperSlide>
+
                     <SwiperSlide>
                         <SplittedSlide>
-                            <div>
-                                <Image src="/img/carousel/houses/ricardos-design-5.jpg" layout="fill" alt="Model house's hall room by Ricardo" priority={true} objectFit="cover" objectPosition="center center" />
-                            </div>
+                            {this.buildZoomableImage("/img/carousel/houses/ricardos-design-5.jpg", "Model house's hall room by Ricardo")}
+
                             <RightHeader>
                                 <HeaderText>
                                     Hall<br />
@@ -127,8 +131,9 @@ export default class HousesDetails extends React.Component<Props, {}> {
                             </RightHeader>
                         </SplittedSlide>
                     </SwiperSlide>
+
                     <SwiperSlide>
-                        <Image src="/img/carousel/houses/ricardos-design-6.jpg" layout="fill" alt="Model house's suite by Ricardo" priority={true} objectFit="cover" objectPosition="center center" />
+                        {this.buildZoomableImage("/img/carousel/houses/ricardos-design-6.jpg", "Model house's suite by Ricardo")}
 
                         <TopHeader>
                             <HeaderText>
@@ -144,6 +149,14 @@ export default class HousesDetails extends React.Component<Props, {}> {
 
                 <ButtonClose onClick={() => this.props.setIsActive(false)} />
             </HousesDetailsWrapper>
+        )
+    }
+
+    private buildZoomableImage(path: string, alt: string): JSX.Element {
+        return (
+            <ImageWrapper className="swiper-zoom-container">
+                <ImageContent src={path} alt={alt} />
+            </ImageWrapper>
         )
     }
 }
