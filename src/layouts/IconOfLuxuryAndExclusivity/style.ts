@@ -29,7 +29,7 @@ export const Text = styled.div`
         font-weight: 500;
 
         ${BREAKPOINTS.upToTablet} {
-            padding: 0 ${horizontalMobileMargin};
+            font-size: 1.4rem;
         }
     }
 
