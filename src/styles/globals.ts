@@ -7,8 +7,8 @@ export const COLORS = {
 };
 
 export const BREAKPOINTS = {
-    upToTablet: "@media screen and (max-width: 1279px)",
-    upToNotebook: "@media screen and (max-width: 1439px)",
+    upToTablet: "@media screen and (max-width: 1200px)",
+    upToNotebook: "@media screen and (max-width: 1400px)",
 };
 
 export const SETTINGS = {
