@@ -36,6 +36,10 @@ export const SocialLinkWrapper = styled.div`
     display: inline-flex;
     align-items: center;
     column-gap: 16px;
+
+    ${BREAKPOINTS.upToTablet} {
+        column-gap: 8px;
+    }
 `;
 
 export const SocialLink = styled(ExternalLink)`

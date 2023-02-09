@@ -17,8 +17,10 @@ export const Logo = styled.img`
     width: 240px;
 
     ${BREAKPOINTS.upToTablet} {
-        width: 160px;
-        height: 100%;
+        position: relative;
+        top: 3px;
+        width: 130px;
+        height: 22px;
     }
 `;
 
