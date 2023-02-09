@@ -1,5 +1,6 @@
 import Image from "next/image";
 import React from "react";
+import { isDesktop } from "react-device-detect";
 import { AttractionWrapper, ImageCaption, LocationGalleryItem } from "./style";
 
 interface State {
@@ -16,12 +17,12 @@ export default class Attraction extends React.Component<{}, State> {
     }
 
     render(): JSX.Element {
-        const itemList: Array<{ caption: string, imagePath: string, alt: string }> = [
-            { caption: "Dunes", imagePath: "/img/carousel/attraction/dunes.jpg", alt: "View of dunes with a little wood bridge" },
-            { caption: "Santa Rosa Beach", imagePath: "/img/carousel/attraction/santa-rosa-beach.jpg", alt: "Aerial view of Santa Rosa Beach" },
-            { caption: "Highway 30A", imagePath: "/img/carousel/attraction/highway-30a.jpg", alt: "Aerial view of Highway 30A" },
-            { caption: "Golf Club", imagePath: "/img/carousel/attraction/golf-club.jpg", alt: "Aerial view of golf club with some trees aside" },
-            { caption: "Fox Lake", imagePath: "/img/carousel/attraction/fox-lake.jpg", alt: "Aerial view of fox lake" }
+        const itemList: Array<{ caption: string, imagePath: string, alt: string, imageMobileObjectPosition: string }> = [
+            { caption: "Dunes", imagePath: "/img/carousel/attraction/dunes.jpg", alt: "View of dunes with a little wood bridge", imageMobileObjectPosition: "center center" },
+            { caption: "Santa Rosa Beach", imagePath: "/img/carousel/attraction/santa-rosa-beach.jpg", alt: "Aerial view of Santa Rosa Beach", imageMobileObjectPosition: "left center" },
+            { caption: "Highway 30A", imagePath: "/img/carousel/attraction/highway-30a.jpg", alt: "Aerial view of Highway 30A", imageMobileObjectPosition: "center center" },
+            { caption: "Golf Club", imagePath: "/img/carousel/attraction/golf-club.jpg", alt: "Aerial view of golf club with some trees aside", imageMobileObjectPosition: "right center" },
+            { caption: "Fox Lake", imagePath: "/img/carousel/attraction/fox-lake.jpg", alt: "Aerial view of fox lake", imageMobileObjectPosition: "center center" }
         ]
 
         return (
@@ -31,9 +32,15 @@ export default class Attraction extends React.Component<{}, State> {
                         <LocationGalleryItem
                             key={index}
                             state={index == this.state.expandedItemIndex ? "expanded" : "collapsed"}
-                            onClick={() => this.setState({ expandedItemIndex: this.state.expandedItemIndex === index ? null : index })
-                            }>
-                            <Image src={item.imagePath} alt={item.alt} layout="fill" objectFit="cover" objectPosition="left top" />
+                            onClick={() => this.setState({ expandedItemIndex: this.state.expandedItemIndex === index ? null : index })}
+                        >
+                            <Image
+                                src={item.imagePath}
+                                alt={item.alt}
+                                layout="fill"
+                                objectFit="cover"
+                                objectPosition={isDesktop ? "left top" : item.imageMobileObjectPosition}
+                            />
                             <ImageCaption>{item.caption}</ImageCaption>
                         </LocationGalleryItem>
                     )
