@@ -7,6 +7,10 @@ export const MasterplanWrapper = styled.div`
     display: flex;
     flex-direction: column;
     row-gap: 64px;
+
+    ${BREAKPOINTS.upToTablet} {
+        row-gap: 48px;
+    }
 `;
 
 export const MapWrapper = styled.div`
@@ -47,7 +51,7 @@ export const Legend = styled.ul`
 
 export const LegendItem = styled.li`
     ${BREAKPOINTS.upToTablet} {
-        font-size: 0.6rem;
+        font-size: 0.5rem;
     }
 
     &:not(:last-of-type) {
@@ -69,11 +73,11 @@ export const LegendItem = styled.li`
         color: #ffffff;
 
         ${BREAKPOINTS.upToTablet} {
-            font-size: 0.6rem;
-            width: 24px;
-            height: 23px;
-            line-height: 24px;
-            margin-right: 8px;
+            font-size: 0.5rem;
+            width: 20px;
+            height: 19px;
+            line-height: 20px;
+            margin-right: 4px;
         }
     }
 `;
