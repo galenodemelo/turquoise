@@ -1,15 +1,17 @@
 import { horizontalMobileMargin } from "@layouts/FloatingMenu/style";
 import {
+    Section,
     SectionHeading,
     sectionHeadingExtraMargin,
     SectionPadded,
 } from "@layouts/VerticalSwipePage/Section";
 import { BREAKPOINTS, COLORS } from "@styles/globals";
+import { isDesktop } from "react-device-detect";
 import styled from "styled-components";
 import { ImageItemWraperProps } from ".";
 
 export const AmenitiesWrapper = styled.div`
-    ${SectionPadded}
+    ${isDesktop ? SectionPadded : Section}
     padding-right: 0;
     padding-bottom: 0;
     display: flex;
@@ -24,7 +26,7 @@ export const Carousel = styled.div`
     column-gap: 40px;
 
     ${BREAKPOINTS.upToTablet} {
-        padding: 0 ${horizontalMobileMargin} 32px;
+        padding: 0 0 48px;
         flex-direction: column;
     }
 `;
@@ -44,6 +46,8 @@ export const Details = styled.div`
 
 export const DetailsHeading = styled(SectionHeading)`
     margin-left: 0;
+
+    ${!isDesktop ? "padding-top: 8%;" : ""}
 `;
 
 export const AccordionList = styled.div`
@@ -55,12 +59,19 @@ export const AccordionList = styled.div`
     ${BREAKPOINTS.upToTablet} {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        grid-template-rows: auto;
-        row-gap: 16px;
+        grid-template-rows: repeat(4, 1fr);
+        row-gap: 12px;
+        padding: 24px ${horizontalMobileMargin} 0;
     }
 `;
 
 export const Accordion = styled.details`
+    ${BREAKPOINTS.upToTablet} {
+        &:nth-of-type(4) {
+            grid-row: span 2;
+        }
+    }
+
     > summary {
         list-style: none;
     }
@@ -78,7 +89,11 @@ export const AccordionHeader = styled.summary`
     transition: color 0.2s ease;
 
     ${BREAKPOINTS.upToTablet} {
-        font-size: 0.7rem;
+        font-size: 0.6rem;
+        font-weight: normal;
+        line-height: 1.6;
+        text-decoration: underline;
+
         > br {
             display: none;
         }
@@ -110,7 +125,12 @@ export const DetailsFooter = styled.div`
     ${BREAKPOINTS.upToTablet} {
         position: absolute;
         bottom: 16px;
-        font-size: 0.7rem;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        width: 310px;
+        font-size: 0.5rem;
+        box-sizing: border-box;
     }
 `;
 
