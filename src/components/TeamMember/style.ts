@@ -80,6 +80,7 @@ export const Description = styled.p`
     }
 
     ${BREAKPOINTS.upToTablet} {
-        font-size: .8rem;
+        font-size: 0.6rem;
+        line-height: 1.6;
     }
 `;

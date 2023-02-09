@@ -7,6 +7,7 @@ import {
 } from "@layouts/VerticalSwipePage/Section";
 import { dissolveDefaultAnimation } from "@styles/animations";
 import { BREAKPOINTS } from "@styles/globals";
+import { isDesktop } from "react-device-detect";
 import styled from "styled-components";
 
 export const CreativeTeamList = styled.ul`
@@ -21,14 +22,14 @@ export const CreativeTeamList = styled.ul`
     }
 
     ${BREAKPOINTS.upToTablet} {
-        padding: 0 ${horizontalMobileMargin};
-        row-gap: 24px;
+        padding: 0;
+        row-gap: 64px;
         margin-top: 40px;
     }
 
     > li {
         ${dissolveDefaultAnimation}
-        width: 90%;
+        width: ${isDesktop ? "90%" : "100%"};
         max-width: 980px;
 
         ${BREAKPOINTS.upToNotebook} {
