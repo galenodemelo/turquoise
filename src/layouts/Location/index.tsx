@@ -1,7 +1,7 @@
 import AnimateOnActiveComponent from "@layouts/AnimateOnActiveComponent";
 import { SectionHeading } from "@layouts/VerticalSwipePage/Section";
 import LocationMapImage from "./location-map-image";
-import { LocationWrapper, Minimap } from "./style";
+import { LocationMapImageWrapper, LocationWrapper, Minimap } from "./style";
 
 export default class Location extends AnimateOnActiveComponent {
 
@@ -13,17 +13,21 @@ export default class Location extends AnimateOnActiveComponent {
         return (
             <LocationWrapper>
                 {this.wasAnimatedAlready &&
-                    <LocationMapImage
-                        preserveAspectRatio="xMidYMid slice"
-                        style={{
-                            position: "absolute",
-                            top: 0,
-                            left: 0,
-                            height: "100%",
-                            width: "100%",
-                            zIndex: -10
-                        }}
-                    />
+                    <LocationMapImageWrapper className="swiper-zoom-container">
+                        <LocationMapImage
+                            className="swiper-zoom-target"
+                            preserveAspectRatio="xMidYMid slice"
+                            style={{
+                                position: "absolute",
+                                margin: "0 auto",
+                                top: 0,
+                                left: "-2100px",
+                                right: "-2000px",
+                                height: "100%",
+                                zIndex: -10
+                            }}
+                        />
+                    </LocationMapImageWrapper>
                 }
                 <SectionHeading as="h2">Location</SectionHeading>
                 <Minimap src="/img/location-minimap.svg" alt="Minimap with Florida pinpointed" />

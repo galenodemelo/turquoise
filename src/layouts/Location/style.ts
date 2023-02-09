@@ -1,11 +1,19 @@
-import { horizontalMargin, horizontalMobileMargin, verticalMargin } from "@layouts/FloatingMenu/style";
-import { SectionPadded } from "@layouts/VerticalSwipePage/Section";
+import {
+    horizontalMargin,
+    horizontalMobileMargin,
+    verticalMargin,
+} from "@layouts/FloatingMenu/style";
+import { Section, SectionPadded } from "@layouts/VerticalSwipePage/Section";
 import { BREAKPOINTS } from "@styles/globals";
 import styled from "styled-components";
 
 export const LocationWrapper = styled.div`
     ${SectionPadded}
     background-size: cover;
+`;
+
+export const LocationMapImageWrapper = styled.div`
+    ${Section}
 `;
 
 export const Minimap = styled.img`
