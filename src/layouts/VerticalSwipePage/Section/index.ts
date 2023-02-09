@@ -37,6 +37,7 @@ export const SectionHeading = styled.div<{ extraMargin?: boolean }>`
     }
 
     ${BREAKPOINTS.upToTablet} {
-        margin-top: 32px;
+        margin-top: 48px;
+        font-size: 1.2rem;
     }
 `;
