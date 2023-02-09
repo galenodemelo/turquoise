@@ -22,6 +22,7 @@ export const Minimap = styled.img`
     bottom: ${verticalMargin};
     max-width: 225px;
     width: 10%;
+    transform: scale(1) !important;
 
     ${BREAKPOINTS.upToTablet} {
         width: 25%;
