@@ -7,7 +7,7 @@ import { NavButtonIcon, NavButtonLabel } from "./Menu/style";
 export const horizontalMargin = "64px";
 export const verticalMargin = "32px";
 
-export const horizontalMobileMargin = "2%";
+export const horizontalMobileMargin = "32px";
 
 export const LogoWrapper = styled.div`
     text-align: center;
@@ -37,7 +37,7 @@ export const Header = styled.header<FloatingMenuProps>`
     transition: opacity ${SETTINGS.swiper.speedInSeconds}s ease;
 
     ${BREAKPOINTS.upToTablet} {
-        padding: 12px ${horizontalMobileMargin};
+        padding: 12px 16px;
     }
 
     > * {
