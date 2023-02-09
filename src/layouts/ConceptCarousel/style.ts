@@ -1,9 +1,30 @@
+import { horizontalMobileMargin } from "@layouts/FloatingMenu/style";
 import { Section } from "@layouts/VerticalSwipePage/Section";
-import { BREAKPOINTS } from "@styles/globals";
+import { BREAKPOINTS, COLORS } from "@styles/globals";
 import styled from "styled-components";
 
 export const ConceptCarouselWrapper = styled.div`
     ${Section}
+`;
+
+export const SlideTitle = styled.h6<{ color: "white" | "green" }>`
+    display: none;
+
+    ${BREAKPOINTS.upToTablet} {
+        display: block;
+        position: absolute;
+        bottom: 48px;
+        margin: 0 auto;
+        left: 0;
+        right: 0;
+        width: 250px;
+        text-align: center;
+        font-size: 1.2rem;
+        font-weight: 500;
+        line-height: 1.2;
+        color: ${props => props.color === "green" ? COLORS.green : "#ffffff"};
+        box-sizing: border-box;
+    }
 `;
 
 export const BulletPaginationItem = styled.span`
