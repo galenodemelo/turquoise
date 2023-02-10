@@ -1,6 +1,5 @@
 import Image from "next/image";
 import React from "react";
-import { isDesktop } from "react-device-detect";
 import { AttractionWrapper, ImageCaption, LocationGalleryItem } from "./style";
 
 interface State {
@@ -39,7 +38,7 @@ export default class Attraction extends React.Component<{}, State> {
                                 alt={item.alt}
                                 layout="fill"
                                 objectFit="cover"
-                                objectPosition={isDesktop ? "left top" : item.imageMobileObjectPosition}
+                                objectPosition={item.imageMobileObjectPosition}
                             />
                             <ImageCaption>{item.caption}</ImageCaption>
                         </LocationGalleryItem>
