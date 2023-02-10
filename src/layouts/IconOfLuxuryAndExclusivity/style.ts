@@ -13,11 +13,11 @@ export const Bar = styled.div`
 `;
 
 export const Text = styled.div`
-    flex: 1;
+    flex: 1 1 0;
     display: inline-flex;
     flex-direction: column;
     justify-content: center;
-    row-gap: 56px;
+    row-gap: 32px;
     color: #ffffff;
     text-align: center;
 
@@ -53,6 +53,8 @@ export const Text = styled.div`
 export const Icon = styled.div`
     position: relative;
     flex: 1;
+    top: -8px;
+    left: 6px;
 
     ${dissolveDefaultAnimation};
     animation-delay: 2s;
@@ -65,6 +67,11 @@ export const IconOfLuxuryAndExclusivityWrapper = styled.div<AnimateOnActiveCompo
     justify-content: space-evenly;
     align-items: center;
     background-color: ${COLORS.green};
+    row-gap: 56px;
+
+    ${BREAKPOINTS.upToTablet} {
+        row-gap: 40px;
+    }
 
     ${(props) => {
         if (!props.triggeredAnimation) return ``;
