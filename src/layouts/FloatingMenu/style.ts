@@ -36,8 +36,17 @@ export const Header = styled.header<FloatingMenuProps>`
     opacity: ${(props) => (props.visible ? 1 : 0)};
     transition: all ${SETTINGS.swiper.speedInSeconds}s ease;
 
+    > * {
+        flex: 1;
+    }
+
     ${BREAKPOINTS.upToTablet} {
         padding: 12px 16px;
+        justify-content: space-between;
+
+        > * {
+            flex: initial;
+        }
 
         ${(props) => {
             if (props.white) return "";
@@ -47,10 +56,6 @@ export const Header = styled.header<FloatingMenuProps>`
             border-bottom: ${COLORS.green} solid 1px;
         `;
         }}
-    }
-
-    > * {
-        flex: 1;
     }
 
     ${Logo},
