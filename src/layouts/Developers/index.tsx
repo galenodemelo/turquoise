@@ -17,7 +17,7 @@ export default class Developers extends AnimateOnActiveComponent {
                 <DevelopersList>
                     <TeamMember
                         imagePath="/img/team/marco-vazquez.jpg"
-                        name="Marcoz Vazques"
+                        name="Marco Vazquez"
                         position="Bravo America Company"
                         description={"To Investors: unparalleled risk reward; To The Neighborhood: setting the standard and raising the bar; To Clients: exclusivity, one of a kind standard of living; Wrap it all, this is \"Turquoise\"."}
                     />
