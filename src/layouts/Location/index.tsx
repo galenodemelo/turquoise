@@ -16,7 +16,7 @@ export default class Location extends AnimateOnActiveComponent {
                     <LocationMapImageWrapper className="swiper-zoom-container">
                         <LocationMapImage
                             className="swiper-zoom-target"
-                            preserveAspectRatio="xMidYMid slice"
+                            preserveAspectRatio="xMidYMax slice"
                             style={{
                                 position: "absolute",
                                 margin: "0 auto",
