@@ -68,14 +68,14 @@ export const HousesContent = styled.div<AnimateOnActiveComponentProps>`
     flex-direction: column;
     row-gap: 32px;
     align-items: flex-start;
-    width: 275px;
-    margin-right: 20%;
+    width: 450px;
+    margin-right: 10%;
 
     ${BREAKPOINTS.upToTablet} {
         width: 100%;
         margin-right: 0;
-        row-gap: 24px;
-        padding: 8%;
+        row-gap: 16px;
+        padding: 8% 0;
     }
 
     ${SectionHeading} {
