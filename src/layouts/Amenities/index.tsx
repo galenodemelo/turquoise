@@ -26,7 +26,7 @@ export default class Amenities extends React.Component<{}, State> {
             imagePath: "/img/carousel/amenities/clubhouse-pool.jpg"
         },
         {
-            header: "5-Story Observation Tower<br />+ 3.000 ft. of trails",
+            header: "5-Story Sunset Tower<br />+ 3.000 ft. of trails",
             imagePath: "/img/carousel/amenities/5-story-observation-tower.jpg"
         },
         {

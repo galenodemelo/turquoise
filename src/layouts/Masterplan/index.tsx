@@ -17,7 +17,7 @@ export default class Masterplan extends React.Component {
                         <LegendItem>Club House</LegendItem>
                         <LegendItem>Club House Pool</LegendItem>
                         <LegendItem>Playground</LegendItem>
-                        <LegendItem>Observation Tower</LegendItem>
+                        <LegendItem>Sunset Tower</LegendItem>
                         <LegendItem>{"Fire Pit's"}</LegendItem>
                         <LegendItem>Pickcleball</LegendItem>
                         <LegendItem>Walking Trails</LegendItem>
