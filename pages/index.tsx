@@ -1,4 +1,6 @@
 import PageMetadata from "@components/PageMetadata"
+import AllFloorPlans from "@layouts/AllFloorPlans"
+import { AllFloorPlansWrapper } from "@layouts/AllFloorPlans/style"
 import Amenities from "@layouts/Amenities"
 import { AmenitiesWrapper } from "@layouts/Amenities/style"
 import Attraction from "@layouts/Attraction"
@@ -51,7 +53,7 @@ export default class Index extends React.Component<{}, State> {
     }
 
     toggleMenuIfNecessary(activeSlideClassName: DOMTokenList): void {
-        const componentsToHideMenu = [IconOfLuxuryAndExclusivityWrapper]
+        const componentsToHideMenu = [IconOfLuxuryAndExclusivityWrapper, AllFloorPlansWrapper]
         const mustHideMenu = this.matchClassWithActiveClassName(componentsToHideMenu, activeSlideClassName)
 
         this.setState({ menuIsVisible: !mustHideMenu })
@@ -65,7 +67,7 @@ export default class Index extends React.Component<{}, State> {
     }
 
     toggleScrollTipIfNecessary(activeSlideClassName: DOMTokenList): void {
-        const componentsToHideScrollTip = [IconOfLuxuryAndExclusivityWrapper, MasterplanWrapper, AmenitiesWrapper, AttractionWrapper, ContactWrapper]
+        const componentsToHideScrollTip = [IconOfLuxuryAndExclusivityWrapper, MasterplanWrapper, AllFloorPlansWrapper, AmenitiesWrapper, AttractionWrapper, ContactWrapper]
 
         const isPanelWithScrollTipHidden = this.matchClassWithActiveClassName(componentsToHideScrollTip, activeSlideClassName)
         this.setState({ scrollTipIsVisible: !isPanelWithScrollTipHidden })
@@ -112,6 +114,8 @@ export default class Index extends React.Component<{}, State> {
                     <ConceptCarousel />
 
                     <Houses onCtaClick={() => this.setState({ isHouseDetailsActive: true })} />
+                    <AllFloorPlans />
+
                     <Amenities />
                     <Attraction />
                     <CreativeTeam />
