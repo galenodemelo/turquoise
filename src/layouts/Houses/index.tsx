@@ -1,7 +1,7 @@
 import AnimateOnActiveComponent from "@layouts/AnimateOnActiveComponent";
 import { SectionHeading } from "@layouts/VerticalSwipePage/Section";
-import { BREAKPOINTS } from "@styles/globals";
 import Image from "next/image";
+import { isDesktop } from "react-device-detect";
 import { HousesBackground, HousesContent, HousesCTA, HousesWrapper } from "./style";
 
 interface Props {
@@ -18,7 +18,14 @@ export default class Houses extends AnimateOnActiveComponent<Props, {}> {
         return (
             <>
                 <HousesBackground triggeredAnimation={this.wasAnimatedAlready}>
-                    <Image src="/img/background-houses.png" layout="fill" objectFit="contain" objectPosition="left center" alt="Golden key on a gift box" quality={100} />
+                    <Image
+                        src={isDesktop ? "/img/background-houses.png" : "/img/background-houses-mobile.png"}
+                        layout="fill"
+                        objectFit="contain"
+                        objectPosition="left center"
+                        alt="Golden key on a gift box"
+                        quality={100}
+                    />
                 </HousesBackground>
                 <HousesWrapper>
                     <HousesContent triggeredAnimation={this.wasAnimatedAlready}>
