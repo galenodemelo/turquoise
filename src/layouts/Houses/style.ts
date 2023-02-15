@@ -6,7 +6,7 @@ import styled from "styled-components";
 
 export const HousesBackground = styled.div<AnimateOnActiveComponentProps>`
     ${Section}
-    background-color: #f3f0f1;
+    background-color: #ffffff;
 
     ${dissolveDefaultAnimation}
     animation-delay: 1s;
@@ -58,7 +58,7 @@ export const HousesCTA = styled.a`
     }
 
     ${BREAKPOINTS.upToTablet} {
-        font-size: .8rem;
+        font-size: 0.8rem;
         padding: 10px 12px 9px;
     }
 `;
