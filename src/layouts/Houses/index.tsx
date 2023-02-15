@@ -36,7 +36,7 @@ export default class Houses extends AnimateOnActiveComponent<Props, {}> {
                         <p>Boasting a collection of bespoke homes, designed with meticulous attention to detail and crafted to perfection, Turquoise will set a new standard of luxury in scenic 30A.</p>
 
                         <HousesCTA onClick={this.props.onCtaClick}>
-                            Our residences
+                            Show residences
                         </HousesCTA>
                     </HousesContent>
                 </HousesWrapper>

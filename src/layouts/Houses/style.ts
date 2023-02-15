@@ -53,6 +53,17 @@ export const HousesCTA = styled.a`
     transition: background-color 0.2s ease;
     cursor: pointer;
 
+    &::after {
+        display: inline-block;
+        content: "";
+        filter: brightness(0) invert(1);
+        width: 32px;
+        height: 20px;
+        margin: -5px -2px -5px 4px;
+        background: url("/img/ico/arrow-right-2.svg") center center no-repeat transparent;
+        background-size: contain;
+    }
+
     &:hover {
         background-color: ${COLORS.darkGreen};
     }
@@ -60,6 +71,12 @@ export const HousesCTA = styled.a`
     ${BREAKPOINTS.upToTablet} {
         font-size: 0.8rem;
         padding: 10px 12px 9px;
+
+        &::after {
+            width: 16px;
+            height: 12px;
+            margin: -2px 0 -2px 6px;
+        }
     }
 `;
 
