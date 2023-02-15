@@ -14,7 +14,8 @@ export const AerialView = styled(ExternalLink)`
     column-gap: 8px;
     color: ${COLORS.darkGreen};
     line-height: 1;
-    font-size: 1.2rem;
+    font-size: 1rem;
+    padding: 12px 18px 10px;
 
     ${BREAKPOINTS.upToTablet} {
         display: none;

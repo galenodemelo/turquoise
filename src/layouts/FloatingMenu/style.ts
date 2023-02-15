@@ -1,7 +1,7 @@
 import { BREAKPOINTS, COLORS, SETTINGS } from "@styles/globals";
 import styled from "styled-components";
 import { FloatingMenuProps } from ".";
-import { ExtraWrapper } from "./Extra/style";
+import { AerialView, SocialLinkWrapper } from "./Extra/style";
 import { NavButtonIcon, NavButtonLabel } from "./Menu/style";
 
 export const horizontalMargin = "64px";
@@ -61,8 +61,20 @@ export const Header = styled.header<FloatingMenuProps>`
     ${Logo},
     ${NavButtonIcon},
     ${NavButtonLabel},
-    ${ExtraWrapper} {
+    ${SocialLinkWrapper} {
         filter: ${(props) => (props.white ? "brightness(0) invert(1)" : "brightness(1) invert(0)")};
         transition: filter ${SETTINGS.swiper.speedInSeconds}s ease;
+    }
+
+    ${AerialView} {
+        background-color: ${(props) => (props.white ? "#ffffff" : COLORS.darkGreen)};
+        color: ${(props) => (props.white ? COLORS.darkGreen : "#ffffff")};
+        transition: all ${SETTINGS.swiper.speedInSeconds}s ease;
+
+        &::after {
+            transition: filter ${SETTINGS.swiper.speedInSeconds}s ease;
+            filter: ${(props) =>
+                props.white ? "brightness(1) invert(0)" : "brightness(0) invert(1)"};
+        }
     }
 `;
