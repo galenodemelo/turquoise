@@ -76,5 +76,9 @@ export const Header = styled.header<FloatingMenuProps>`
             filter: ${(props) =>
                 props.white ? "brightness(1) invert(0)" : "brightness(0) invert(1)"};
         }
+
+        ${BREAKPOINTS.upToTablet} {
+            display: none;
+        }
     }
 `;

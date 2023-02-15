@@ -7,9 +7,7 @@ export default class Extra extends React.Component {
     render(): JSX.Element {
         return (
             <ExtraWrapper>
-                <AerialView href="https://player.theviewvr.com/?locationId=1298">
-                    Aerial View
-                </AerialView>
+                <AerialView />
 
                 <SocialLinkWrapper>
                     <SocialLink href="https://www.instagram.com/turquoise.homes/">
