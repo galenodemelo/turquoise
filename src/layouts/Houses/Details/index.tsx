@@ -38,21 +38,21 @@ export default class HousesDetails extends React.Component<Props, {}> {
                     zoom={true}
                 >
                     <SwiperSlide>
-                        {this.buildZoomableImage({ src: "/img/carousel/houses/tanneys-design-1.jpg", alt: "Model house by Tanney facade" })}
+                        {this.buildZoomableImage({ src: "/img/carousel/houses/tanneys-design-1.jpg", alt: "Opal 1 house by Tanney facade" })}
 
                         <TopHeader>
-                            <HeaderText>{`Model House - Tanney's design`}</HeaderText>
+                            <HeaderText>{`Opal 1 - Tanney's design`}</HeaderText>
                         </TopHeader>
 
-                        <FloorPlan href="https://www.dropbox.com/s/7bgchy35w5coldr/MARK%20-%20TURQUOISE_MODEL3200A_4-26-22.pdf?dl=0" />
+                        <FloorPlan href="/docs/floor-plan-opal-1.pdf" />
                     </SwiperSlide>
 
                     <SwiperSlide>
                         <SplittedSlide>
-                            {this.buildZoomableImage({ src: "/img/carousel/houses/tanneys-design-2.jpg", alt: "Model house by Tanney pool" })}
+                            {this.buildZoomableImage({ src: "/img/carousel/houses/tanneys-design-2.jpg", alt: "Opal 1 house by Tanney pool" })}
 
                             <RightHeader>
-                                <HeaderText>{`Model House - Tanney's design`}</HeaderText>
+                                <HeaderText>{`Opal 1 - Tanney's design`}</HeaderText>
                             </RightHeader>
                         </SplittedSlide>
                     </SwiperSlide>
@@ -61,10 +61,10 @@ export default class HousesDetails extends React.Component<Props, {}> {
                         {this.buildZoomableImage({ src: "/img/carousel/houses/russells-design-1.jpg", alt: "Model house by Russell facade" })}
 
                         <TopHeader>
-                            <HeaderText>{`Model House - Russell's design`}</HeaderText>
+                            <HeaderText>{`Amber 1 - Russell's design`}</HeaderText>
                         </TopHeader>
 
-                        <FloorPlan href="https://www.dropbox.com/s/lhxujuhqae3fsf6/RUSSELL%20-%20PROTOTYPE%201%204%20BED%20TOWER%2005.17.22.pdf?dl=0" />
+                        <FloorPlan href="/docs/floor-plan-amber-1.pdf" />
                     </SwiperSlide>
 
                     <SwiperSlide>
@@ -72,7 +72,7 @@ export default class HousesDetails extends React.Component<Props, {}> {
                             {this.buildZoomableImage({ src: "/img/carousel/houses/russells-design-2.jpg", alt: "Model house by Russell backyard" })}
 
                             <RightHeader>
-                                <HeaderText>{`Model House - Russell's design`}</HeaderText>
+                                <HeaderText>{`Amber 1 - Russell's design`}</HeaderText>
                             </RightHeader>
                         </SplittedSlide>
                     </SwiperSlide>
@@ -81,17 +81,17 @@ export default class HousesDetails extends React.Component<Props, {}> {
                         {this.buildZoomableImage({ src: "/img/carousel/houses/ricardos-design-1.jpg", alt: "Model house by Ricardo facade" })}
 
                         <TopHeader>
-                            <HeaderText>{`Model House - Ricardo's design`}</HeaderText>
+                            <HeaderText>{`Malachite 1 - Ricardo's design`}</HeaderText>
                         </TopHeader>
 
-                        <FloorPlan href="https://www.dropbox.com/s/twd1uidxqlqx1ke/RICARDO%20-%2001%20MODEL%2001%20OPTION%2001-2.pdf?dl=0" />
+                        <FloorPlan href="/docs/floor-plan-malachite-1.pdf" />
                     </SwiperSlide>
 
                     <SwiperSlide>
                         {this.buildZoomableImage({ src: "/img/carousel/houses/ricardos-design-2.jpg", alt: "Model house by Ricardo pool" })}
 
                         <TopHeader>
-                            <HeaderText>{`Model House - Ricardo's design`}</HeaderText>
+                            <HeaderText>{`Malachite 1 - Ricardo's design`}</HeaderText>
                         </TopHeader>
                     </SwiperSlide>
 
@@ -102,7 +102,7 @@ export default class HousesDetails extends React.Component<Props, {}> {
                             <RightHeader>
                                 <HeaderText>
                                     Living<br />
-                                    {`Model House - Ricardo's design`}
+                                    {`Malachite 1 - Ricardo's design`}
                                 </HeaderText>
                             </RightHeader>
                         </SplittedSlide>
@@ -114,7 +114,7 @@ export default class HousesDetails extends React.Component<Props, {}> {
                         <TopHeader>
                             <HeaderText>
                                 Master ensuite bathroom<br />
-                                {`Model House - Ricardo's design`}
+                                {`Malachite 1 - Ricardo's design`}
                             </HeaderText>
                         </TopHeader>
                     </SwiperSlide>
@@ -126,7 +126,7 @@ export default class HousesDetails extends React.Component<Props, {}> {
                             <RightHeader>
                                 <HeaderText>
                                     Hall<br />
-                                    {`Model House - Ricardo's design`}
+                                    {`Malachite 1 - Ricardo's design`}
                                 </HeaderText>
                             </RightHeader>
                         </SplittedSlide>
@@ -138,7 +138,7 @@ export default class HousesDetails extends React.Component<Props, {}> {
                         <TopHeader>
                             <HeaderText>
                                 Master ensuite<br />
-                                {`Model House - Ricardo's design`}
+                                {`Malachite 1 - Ricardo's design`}
                             </HeaderText>
                         </TopHeader>
                     </SwiperSlide>
