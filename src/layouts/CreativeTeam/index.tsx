@@ -45,6 +45,12 @@ export default class CreativeTeam extends AnimateOnActiveComponent {
                         position="Landscape designer"
                         description="What excites me about the Turquoise Development is that I get the chance to facilitate the team in setting a new standard for a design niche of high-end modern design that has yet to truly enter the current market in the local region. It’s exciting to be able to use past experience to develop something new and unique for a market that is untapped considering this type of development. I always strive to be unique in personal and professional settings. Turquoise is an opportunity for me to be a part of the creation of something unique and special for local residence. I hope that the design and sense of place catches on to continue similar projects for the region in the near future."
                     />
+                    <TeamMember
+                        imagePath="/img/team/carol-farah-and-joana-ribeiro.jpg"
+                        name="Carol Farah and Joana Ribeiro"
+                        position="Interior designers"
+                        description="We are very grateful and excited to participate in the interior design project of this wonderful condominium where classic style meets modern in front of one of the most beautiful beaches in Florida."
+                    />
                 </CreativeTeamList>
             </CreativeTeamWrapper>
         )
