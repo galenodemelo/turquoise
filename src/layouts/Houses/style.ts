@@ -19,6 +19,7 @@ export const HousesBackground = styled.div<AnimateOnActiveComponentProps>`
     }}
 
     ${BREAKPOINTS.upToTablet} {
+        background-color: #f0eeef;
         overflow-x: hidden;
 
         > * {

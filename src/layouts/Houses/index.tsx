@@ -22,7 +22,7 @@ export default class Houses extends AnimateOnActiveComponent<Props, {}> {
                         src={isDesktop ? "/img/background-houses.png" : "/img/background-houses-mobile.png"}
                         layout="fill"
                         objectFit="contain"
-                        objectPosition="left center"
+                        objectPosition={isDesktop ? "left center" : "left bottom"}
                         alt="Golden key on a gift box"
                         quality={100}
                     />
