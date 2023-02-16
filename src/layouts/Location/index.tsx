@@ -1,5 +1,6 @@
 import AnimateOnActiveComponent from "@layouts/AnimateOnActiveComponent";
 import { SectionHeading } from "@layouts/VerticalSwipePage/Section";
+import { isDesktop } from "react-device-detect";
 import LocationMapImage from "./location-map-image";
 import { LocationMapImageWrapper, LocationWrapper, Minimap } from "./style";
 
@@ -16,7 +17,7 @@ export default class Location extends AnimateOnActiveComponent {
                     <LocationMapImageWrapper className="swiper-zoom-container">
                         <LocationMapImage
                             className="swiper-zoom-target"
-                            preserveAspectRatio="xMidYMax slice"
+                            preserveAspectRatio={isDesktop ? "xMidYMax slice" : "xMidYMid slice"}
                             style={{
                                 position: "absolute",
                                 margin: "0 auto",
