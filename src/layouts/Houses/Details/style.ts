@@ -130,45 +130,54 @@ export const FloorPlan = styled(ExternalLink)`
     right: 0;
     bottom: 64px;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
+    flex-direction: column;
     z-index: 10;
-    border-bottom: ${COLORS.green} solid 3px;
-    padding-right: 80px;
-    padding-bottom: 16px;
-    column-gap: 40px;
-    transition: border-bottom-color 0.2s ease;
+    padding: 24px 0 24px 24px;
+    row-gap: 8px;
+    background-color: ${COLORS.green};
+    transition: background-color .5s ease;
+
+    &:hover {
+        background-color: ${COLORS.darkGreen};
+    }
 
     ${BREAKPOINTS.upToTablet} {
-        column-gap: 18px;
-        padding-right: 60px;
         bottom: 24px;
         border-bottom-color: #ffffff;
+
+        &:hover {
+            background-color: initial;
+        }
     }
 
     &::before {
-        content: "";
-        width: 48px;
+        display: inline-flex;
+        align-items: center;
+        width: 100%;
         height: 48px;
-        background: url("/img/ico/floor-plan.svg") center center no-repeat transparent;
+        background: url("/img/ico/floor-plan.svg") left center no-repeat transparent;
         background-size: contain;
+        content: "Floor plan";
+        color: #ffffff;
+        font-size: 1.2rem;
+        font-weight: 500;
+        padding-left: 64px;
+        padding-right: 120px;
 
         ${BREAKPOINTS.upToTablet} {
             font-size: 1rem;
-            width: 40px;
             height: 40px;
+            padding-right: 64px;
         }
     }
 
     &::after {
-        content: "Floor plan";
-        color: #ffffff;
-        font-size: 1rem;
-        font-weight: 500;
+        content: "";
+        width: 100%;
+        border-bottom: #ffffff solid 3px;
     }
-
-    &:hover {
-        border-bottom-color: #ffffff;
-    }
+}
 `;
 
 const SlideControl = styled.button`
