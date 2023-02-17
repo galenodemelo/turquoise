@@ -26,6 +26,19 @@ export const Text = styled.div`
         row-gap: 16px;
     }
 
+    h2 {
+        font-size: 1.8rem;
+        font-weight: 500;
+
+        ${dissolveDefaultAnimation};
+        animation-delay: 1.5s;
+
+        ${BREAKPOINTS.upToTablet} {
+            font-size: 1.4rem;
+            text-align: left;
+        }
+    }
+
     p {
         font-size: 1.2rem;
         line-height: 1.8;
@@ -62,6 +75,7 @@ export const CTA = styled(ExternalLink)`
     }
 
     ${BREAKPOINTS.upToTablet} {
+        margin: initial;
         font-size: 0.8rem;
         padding: 10px 12px 9px;
     }
@@ -88,7 +102,7 @@ export const AllFloorPlansWrapper = styled.div<AnimateOnActiveComponentProps>`
                 flex: 2;
             }
 
-            ${Text} > p,
+            ${Text} > *,
             ${CTA} {
                 animation-play-state: running;
             }

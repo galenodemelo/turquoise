@@ -13,6 +13,8 @@ export default class AllFloorPlans extends AnimateOnActiveComponent {
                 <Bar />
 
                 <Text>
+                    <h2>Experience the extraordinary</h2>
+
                     <p>
                         11 different models designed by renowned architects. <br />
                         Exclusive models available upon request. <br />
