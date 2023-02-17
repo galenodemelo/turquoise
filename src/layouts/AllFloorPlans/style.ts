@@ -20,7 +20,6 @@ export const Text = styled.div`
     row-gap: 32px;
     color: #ffffff;
     text-align: center;
-    width: 450px;
     max-width: 80%;
 
     ${BREAKPOINTS.upToTablet} {
@@ -32,7 +31,7 @@ export const Text = styled.div`
         line-height: 1.8;
 
         ${dissolveDefaultAnimation};
-        animation-delay: 1.5s;
+        animation-delay: 2s;
 
         ${BREAKPOINTS.upToTablet} {
             font-size: 0.8rem;
@@ -50,9 +49,10 @@ export const CTA = styled(ExternalLink)`
     background-color: #ffffff;
     color: ${COLORS.green};
     font-size: 1rem;
-    padding: 14px 16px;
+    padding: 14px 32px;
     transition: background-color 0.2s ease;
     cursor: pointer;
+    margin: 0 auto;
 
     ${dissolveDefaultAnimation};
     animation-delay: 2s;
