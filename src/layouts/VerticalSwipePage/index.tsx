@@ -1,6 +1,6 @@
 import { SETTINGS } from "@styles/globals"
 import React from "react"
-import { HashNavigation, Keyboard, Mousewheel, Swiper as SwiperConfig, Zoom } from 'swiper'
+import { HashNavigation, Keyboard, Mousewheel, Swiper as SwiperConfig } from 'swiper'
 import { Swiper, SwiperSlide } from "swiper/react"
 import "swiper/swiper.min.css"
 import styles from "./style.module.sass"
@@ -14,7 +14,7 @@ export default class VerticalSwipePage extends React.Component<Props, {}> {
 
     constructor(props: Props) {
         super(props)
-        SwiperConfig.use([HashNavigation, Keyboard, Mousewheel, Zoom])
+        SwiperConfig.use([HashNavigation, Keyboard, Mousewheel])
     }
 
     render(): JSX.Element {
@@ -62,7 +62,6 @@ export default class VerticalSwipePage extends React.Component<Props, {}> {
                         });
                     }
                 }}
-                zoom={true}
             >
                 {this.props.children.map((child: JSX.Element, index: number) => {
                     return (

@@ -16,19 +16,6 @@ export const LocationMapImageWrapper = styled.div`
     ${Section}
 `;
 
-export const LocationMapDesktop = styled.svg`
-    ${BREAKPOINTS.upToMonitor} {
-        display: none;
-    }
-`;
-export const LocationMapMobile = styled.svg`
-    display: none;
-
-    ${BREAKPOINTS.upToMonitor} {
-        display: block;
-    }
-`;
-
 export const Minimap = styled.img`
     position: absolute;
     right: ${horizontalMargin};

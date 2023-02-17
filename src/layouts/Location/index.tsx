@@ -1,6 +1,6 @@
 import AnimateOnActiveComponent from "@layouts/AnimateOnActiveComponent";
 import { SectionHeading } from "@layouts/VerticalSwipePage/Section";
-import LocationMapImageDesktop, { LocationMapImageMobile } from "./location-map-image";
+import LocationMapImage from "./location-map-image";
 import { LocationMapImageWrapper, LocationWrapper, Minimap } from "./style";
 
 export default class Location extends AnimateOnActiveComponent {
@@ -13,28 +13,15 @@ export default class Location extends AnimateOnActiveComponent {
         return (
             <LocationWrapper>
                 {this.wasAnimatedAlready &&
-                    <LocationMapImageWrapper className="swiper-zoom-container">
-                        <LocationMapImageDesktop
+                    <LocationMapImageWrapper>
+                        <LocationMapImage
                             className="swiper-zoom-target"
                             style={{
                                 position: "absolute",
-                                margin: "0 auto",
                                 top: 0,
-                                left: "-2100px",
-                                right: "-2000px",
+                                left: 0,
                                 height: "100%",
-                                zIndex: -10
-                            }}
-                        />
-                        <LocationMapImageMobile
-                            className="swiper-zoom-target"
-                            style={{
-                                position: "absolute",
-                                margin: "0 auto",
-                                top: 0,
-                                left: "-2100px",
-                                right: "-2000px",
-                                height: "100%",
+                                width: "100%",
                                 zIndex: -10
                             }}
                         />
