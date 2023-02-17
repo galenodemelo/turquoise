@@ -29,10 +29,12 @@ export default class Houses extends AnimateOnActiveComponent<Props, {}> {
                 </HousesBackground>
                 <HousesWrapper>
                     <HousesContent triggeredAnimation={this.wasAnimatedAlready}>
-                        <SectionHeading extraMargin={false}>Houses</SectionHeading>
-                        <p>7 different models designed by renowned architects.</p>
-                        <p>Exclusive models available upon request.</p>
-                        <p>Sizes from 3,200 to 5,500 sqft.</p>
+                        <SectionHeading extraMargin={false}>
+                            Experience the extraordinary
+                        </SectionHeading>
+                        <p>Contemporary, avant-garde, unlike anything seen before. Coastal living experience reimagined.</p>
+                        <p>Boasting a collection of bespoke homes, designed with meticulous attention to detail and crafted to perfection, Turquoise will set a new standard of luxury in scenic 30A.</p>
+
                         <HousesCTA onClick={this.props.onCtaClick}>
                             Show residences
                         </HousesCTA>
