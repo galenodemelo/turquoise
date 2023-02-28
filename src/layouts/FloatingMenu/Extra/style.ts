@@ -9,7 +9,7 @@ export const ExtraWrapper = styled.div`
 `;
 
 export const AerialView = styled(ExternalLink).attrs({
-    href: "https://player.theviewvr.com/?locationId=1298"
+    href: "https://player.theviewvr.com/?locationId=1672"
 })`
     display: inline-flex;
     align-items: center;
