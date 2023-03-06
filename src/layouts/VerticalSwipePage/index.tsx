@@ -6,7 +6,7 @@ import "swiper/swiper.min.css"
 import styles from "./style.module.sass"
 
 interface Props {
-    children: JSX.Element[]
+    children: Array<any>
     onStartSliding?: (activeSlideClassName: DOMTokenList, activeSlideDataHash: string) => void
 }
 
