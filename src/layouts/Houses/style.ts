@@ -23,8 +23,8 @@ export const HousesBackground = styled.div<AnimateOnActiveComponentProps>`
         overflow-x: hidden;
 
         > * {
-            width: 150% !important;
-            height: 45% !important;
+            width: 140% !important;
+            height: 40% !important;
             inset: auto auto 0 auto !important;
         }
     }
@@ -70,8 +70,8 @@ export const HousesCTA = styled.a`
     }
 
     ${BREAKPOINTS.upToTablet} {
-        font-size: 0.8rem;
-        padding: 10px 12px 9px;
+        font-size: 0.6rem;
+        padding: 8px 12px 7px;
 
         &::after {
             width: 16px;
@@ -93,7 +93,7 @@ export const HousesContent = styled.div<AnimateOnActiveComponentProps>`
         width: 100%;
         margin-right: 0;
         row-gap: 16px;
-        padding: 8% 0;
+        padding: 4% 0;
     }
 
     ${SectionHeading} {
@@ -108,7 +108,7 @@ export const HousesContent = styled.div<AnimateOnActiveComponentProps>`
         color: ${COLORS.darkGreen};
 
         ${BREAKPOINTS.upToTablet} {
-            font-size: 0.7rem;
+            font-size: 0.5rem;
         }
 
         &:nth-of-type(1) {
@@ -118,6 +118,19 @@ export const HousesContent = styled.div<AnimateOnActiveComponentProps>`
             animation-delay: 2.2s;
         }
         &:nth-of-type(3) {
+            animation-delay: 2.6s;
+        }
+        &:nth-of-type(4) {
+            animation-delay: 2.8s;
+        }
+    }
+
+    ${BREAKPOINTS.upToTablet} {
+        > h6 {
+            ${dissolveDefaultAnimation}
+            font-size: .8rem;
+            font-weight: bold;
+            color: ${COLORS.darkGreen};
             animation-delay: 2.4s;
         }
     }

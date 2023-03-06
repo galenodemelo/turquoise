@@ -139,7 +139,7 @@ export default class Index extends React.Component<Props, State> {
 
                     <ConceptCarousel />
 
-                    <Houses onCtaClick={() => this.toggleHouseDetailsPopover(true)} />
+                    <Houses isMobile={this.props.isMobile} onCtaClick={() => this.toggleHouseDetailsPopover(true)} />
 
                     {!this.props.isMobile && <AllFloorPlans />}
 

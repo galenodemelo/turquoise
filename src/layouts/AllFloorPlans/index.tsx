@@ -3,6 +3,8 @@ import { AllFloorPlansWrapper, Bar, CTA, Text } from "./style";
 
 export default class AllFloorPlans extends AnimateOnActiveComponent {
 
+    static readonly MODELS_AND_FLOOR_PLANS_LINK = "https://www.dropbox.com/s/nghmqa5hrs8w68v/Turquouise%20Models%20%26%20Floor%20Plans.pdf?dl=0"
+
     constructor(props: {}) {
         super(props, "AllFloorPlans");
     }
@@ -26,7 +28,7 @@ export default class AllFloorPlans extends AnimateOnActiveComponent {
                         and floor plans.
                     </p>
 
-                    <CTA href="https://www.dropbox.com/s/nghmqa5hrs8w68v/Turquouise%20Models%20%26%20Floor%20Plans.pdf?dl=0">
+                    <CTA href={AllFloorPlans.MODELS_AND_FLOOR_PLANS_LINK}>
                         Models and floor plans
                     </CTA>
                 </Text>
