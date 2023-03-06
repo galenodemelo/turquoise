@@ -2,14 +2,16 @@ import Image from "next/image";
 import React from "react";
 import { Icon, Instruction, RotatePhoneWrapper } from "./style";
 
+export type Orientation = "portrait" | "landscape"
+
 export interface Props {
-    forceOrientation: "portrait" | "landscape"
+    forceOrientation: Orientation;
 }
 
 export default class RotatePhone extends React.Component<Props, {}> {
 
     constructor(props: Props) {
-        super(props)
+        super(props);
     }
 
     render(): JSX.Element {
@@ -22,6 +24,6 @@ export default class RotatePhone extends React.Component<Props, {}> {
                     Rotate the phone
                 </Instruction>
             </RotatePhoneWrapper>
-        )
+        );
     }
 }

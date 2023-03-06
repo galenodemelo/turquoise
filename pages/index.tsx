@@ -1,4 +1,5 @@
 import PageMetadata from "@components/PageMetadata";
+import RotatePhone, { Orientation } from "@components/RotatePhone";
 import AllFloorPlans from "@layouts/AllFloorPlans";
 import { AllFloorPlansWrapper } from "@layouts/AllFloorPlans/style";
 import Amenities from "@layouts/Amenities";
@@ -43,6 +44,8 @@ interface State {
 
     isAmenitiesCarouselActive: boolean;
     isHouseDetailsActive: boolean;
+
+    rotatePhoneOrientation: Orientation | null;
     currentSlideName: string;
 }
 
@@ -57,7 +60,8 @@ export default class Index extends React.Component<Props, State> {
             scrollTipWhite: true,
             isAmenitiesCarouselActive: false,
             isHouseDetailsActive: false,
-            currentSlideName: Home.name
+            currentSlideName: Home.name,
+            rotatePhoneOrientation: props.isMobile ? "portrait" : null
         };
     }
 
@@ -87,6 +91,19 @@ export default class Index extends React.Component<Props, State> {
 
         const isPanelWithWhiteScrollTip = this.matchClassWithActiveClassName(componentToSetScrollTipWhite, activeSlideClassName);
         this.setState({ scrollTipWhite: isPanelWithWhiteScrollTip });
+    }
+
+    toggleRotatePhoneInstructionIfNecessary(): void {
+        if (!this.props.isMobile) return;
+
+        const forceLandscapeOrientation = this.state.rotatePhoneOrientation !== "landscape" && (this.state.isHouseDetailsActive || this.state.isAmenitiesCarouselActive);
+        if (forceLandscapeOrientation) {
+            this.setState({ rotatePhoneOrientation: "landscape" });
+            return;
+        }
+
+        const isPortraitAlready = this.state.rotatePhoneOrientation === "portrait";
+        if (!isPortraitAlready) this.setState({ rotatePhoneOrientation: "portrait" });
     }
 
     matchClassWithActiveClassName(componentList: StyledComponent<any, any, any>[], activeSlideClassName: DOMTokenList): boolean {
@@ -122,21 +139,34 @@ export default class Index extends React.Component<Props, State> {
 
                     <ConceptCarousel />
 
-                    <Houses onCtaClick={() => this.setState({ isHouseDetailsActive: true })} />
+                    <Houses onCtaClick={() => this.toggleHouseDetailsPopover(true)} />
 
                     {!this.props.isMobile && <AllFloorPlans />}
 
-                    <Amenities isMobile={this.props.isMobile} onAmenityClickMobile={() => this.setState({ isAmenitiesCarouselActive: true })} />
+                    <Amenities isMobile={this.props.isMobile} onAmenityClickMobile={() => this.toggleAmenitiesCarousel(true)} />
                     <Attraction />
                     <CreativeTeam />
                     <Developers />
                     <Contact />
                 </VerticalSwipePage>
 
-                <HousesDetails isActive={this.state.isHouseDetailsActive} setIsActive={(active: boolean) => this.setState({ isHouseDetailsActive: active })} />
-                <AmenitiesCarousel isActive={this.state.isAmenitiesCarouselActive} setIsActive={(active: boolean) => this.setState({ isAmenitiesCarouselActive: active })} />
+                <HousesDetails isActive={this.state.isHouseDetailsActive} setIsActive={(active: boolean) => this.toggleHouseDetailsPopover(active)} />
+                <AmenitiesCarousel isActive={this.state.isAmenitiesCarouselActive} setIsActive={(active: boolean) => this.toggleAmenitiesCarousel(active)} />
+                {this.state.rotatePhoneOrientation !== null && <RotatePhone forceOrientation={this.state.rotatePhoneOrientation} />}
             </VerticalSwipePageContext.Provider>
         );
+    }
+
+    toggleHouseDetailsPopover(active: boolean): void {
+        this.setState({ isHouseDetailsActive: active }, () => {
+            this.toggleRotatePhoneInstructionIfNecessary();
+        });
+    }
+
+    toggleAmenitiesCarousel(active: boolean): void {
+        this.setState({ isAmenitiesCarouselActive: active }, () => {
+            this.toggleRotatePhoneInstructionIfNecessary();
+        });
     }
 }
 

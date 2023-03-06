@@ -1,6 +1,5 @@
 import Carousel from "@components/Carousel";
 import Popover from "@components/Popover";
-import RotatePhone from "@components/RotatePhone";
 import React from "react";
 import "swiper/swiper.min.css";
 import { FloorPlan, HeaderText, ImageContent, ImageContentProps, ImageWrapper, RightHeader, SplittedSlide, TopHeader } from "./style";
@@ -118,8 +117,6 @@ export default class HousesDetails extends React.Component<Props, {}> {
                         </TopHeader>
                     </>
                 </Carousel>
-
-                <RotatePhone forceOrientation="landscape" />
             </Popover>
         );
     }

@@ -1,4 +1,3 @@
-import RotatePhone from "@components/RotatePhone";
 import AnimateOnActiveComponent from "@layouts/AnimateOnActiveComponent";
 import { SectionHeading } from "@layouts/VerticalSwipePage/Section";
 import Image from "next/image";
@@ -6,7 +5,7 @@ import { isDesktop } from "react-device-detect";
 import { HousesBackground, HousesContent, HousesCTA, HousesWrapper } from "./style";
 
 interface Props {
-    onCtaClick?: () => void
+    onCtaClick?: () => void;
 }
 
 export default class Houses extends AnimateOnActiveComponent<Props, {}> {
@@ -41,9 +40,7 @@ export default class Houses extends AnimateOnActiveComponent<Props, {}> {
                         </HousesCTA>
                     </HousesContent>
                 </HousesWrapper>
-
-                <RotatePhone forceOrientation="portrait" />
             </>
-        )
+        );
     }
 }

@@ -29,7 +29,7 @@ export const RotatePhoneWrapper = styled.div<RotatePhoneProps>`
     justify-content: center;
     flex-direction: column;
     row-gap: 24px;
-    z-index: 10;
+    z-index: 1000;
 
     ${BREAKPOINTS.upToTablet} and (orientation: landscape) {
         ${props => props.forceOrientation == "portrait" ? "display: flex;" : ""}

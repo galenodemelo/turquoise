@@ -1,10 +1,7 @@
-import Carousel from "@components/Carousel";
-import Popover from "@components/Popover";
-import RotatePhone from "@components/RotatePhone";
 import { SectionHeading } from "@layouts/VerticalSwipePage/Section";
 import Image from "next/image";
 import React from "react";
-import Amenities, { AmenitiesAccordionData } from ".";
+import Amenities from ".";
 import { AmenitiesItem, AmenitiesItemHeader, AmenitiesItemMask, AmenitiesList, AmenitiesWrapper } from "./style-mobile";
 
 export interface Props {
@@ -34,8 +31,6 @@ export default class AmenitiesMobile extends React.Component<Props, {}> {
                             );
                         })}
                     </AmenitiesList>
-
-                    <RotatePhone forceOrientation="portrait" />
                 </AmenitiesWrapper>
             </>
         );
