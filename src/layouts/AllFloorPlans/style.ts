@@ -1,5 +1,4 @@
 import { AnimateOnActiveComponentProps } from "@layouts/AnimateOnActiveComponent";
-import { horizontalMobileMargin } from "@layouts/FloatingMenu/style";
 import { Section } from "@layouts/VerticalSwipePage/Section";
 import { dissolveDefaultAnimation } from "@styles/animations";
 import { BREAKPOINTS, COLORS, ExternalLink } from "@styles/globals";
@@ -89,10 +88,6 @@ export const AllFloorPlansWrapper = styled.div<AnimateOnActiveComponentProps>`
     align-items: center;
     background-color: ${COLORS.green};
     row-gap: 56px;
-
-    ${BREAKPOINTS.upToTablet} {
-        row-gap: 40px;
-    }
 
     ${(props) => {
         if (!props.triggeredAnimation) return ``;
