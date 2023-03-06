@@ -9,6 +9,14 @@ const rotatePhoneAnimation = keyframes`
     100% { transform: rotate(90deg); }
 `;
 
+export const Icon = styled.div``
+
+export const Instruction = styled.div`
+    color: #ffffff;
+    font-weight: 500;
+    font-size: 1rem;
+`
+
 export const RotatePhoneWrapper = styled.div<RotatePhoneProps>`
     display: none;
     position: absolute;
@@ -19,6 +27,8 @@ export const RotatePhoneWrapper = styled.div<RotatePhoneProps>`
     background-color: ${COLORS.darkGreen};
     align-items: center;
     justify-content: center;
+    flex-direction: column;
+    row-gap: 24px;
     z-index: 10;
 
     ${BREAKPOINTS.upToTablet} and (orientation: landscape) {
@@ -29,7 +39,7 @@ export const RotatePhoneWrapper = styled.div<RotatePhoneProps>`
         ${props => props.forceOrientation == "landscape" ? "display: flex;" : ""}
     }
 
-    > * {
+    > ${Icon} {
         animation-name: ${rotatePhoneAnimation};
         animation-duration: 2.5s;
         animation-iteration-count: infinite;
