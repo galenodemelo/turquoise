@@ -31,7 +31,7 @@ export const SectionHeading = styled.div<{ extraMargin?: boolean }>`
     ${(props) => (props.extraMargin === false ? "" : `margin-left: ${sectionHeadingExtraMargin};`)}
 
     ${BREAKPOINTS.upToNotebook} {
-        margin-left: 0;
+        margin-left: 0 !important;
         width: 100%;
         text-align: center;
     }

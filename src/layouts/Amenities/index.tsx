@@ -1,12 +1,13 @@
 import React from "react";
-import { Accordion, AccordionContent, AccordionHeader, AccordionList, AmenitiesWrapper, Carousel, Details, DetailsFooter, DetailsHeading, ImageItem, ImageWrapper } from "./style";
+import AmenitiesDesktop from "./desktop";
+import AmenitiesMobile, { Props as AmenitiesMobileProps} from "./mobile";
 
-interface State {
-    activeIndex: number;
+export interface Props {
+    onAmenityClickMobile: () => void
 }
 
 export interface ImageItemWraperProps {
-    visible: boolean
+    visible: boolean;
 }
 
 export interface AmenitiesAccordionData {
@@ -15,6 +16,7 @@ export interface AmenitiesAccordionData {
     imagePath: string;
 }
 
+export default class Amenities extends React.Component<AmenitiesMobileProps, {}> {
 
     static readonly accordionList: Array<AmenitiesAccordionData> = [
         {
@@ -42,19 +44,17 @@ export interface AmenitiesAccordionData {
             header: "Pickeball court",
             imagePath: "/img/carousel/amenities/pickeball-court.jpg"
         },
-    ]
+    ];
 
-    constructor(props: {}) {
+    constructor(props: AmenitiesMobileProps) {
         super(props)
-        this.state = {
-            activeIndex: 0
-        }
     }
 
     render(): JSX.Element {
         return (
             <>
                 <AmenitiesDesktop />
+                <AmenitiesMobile onAmenityClickMobile={this.props.onAmenityClickMobile} />
             </>
         );
     }

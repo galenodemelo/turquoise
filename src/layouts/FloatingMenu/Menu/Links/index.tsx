@@ -13,17 +13,17 @@ import { isDesktop } from "react-device-detect";
 import { LinkItem, LinkList, LinksClose, LinksWrapper } from "./style";
 
 export interface State {
-    open: boolean
+    open: boolean;
 }
 
 export interface LinkItemData {
-    href: string
-    label: string
+    href: string;
+    label: string;
 }
 
 export default class Links extends React.Component<{}, State> {
 
-    linkItemList: Array<LinkItemData> = [
+    readonly linkItemList: Array<LinkItemData> = [
         { href: Home.name, label: "Home" },
         { href: Location.name, label: "Location" },
         { href: Masterplan.name, label: "Masterplan" },
@@ -33,17 +33,17 @@ export default class Links extends React.Component<{}, State> {
         { href: CreativeTeam.name, label: "Creative Team" },
         { href: Developers.name, label: "Developers" },
         { href: Contact.name, label: "Contact" }
-    ]
+    ];
 
     constructor(props: {}) {
         super(props);
         this.state = {
             open: false
-        }
+        };
     }
 
     setOpen(open: boolean) {
-        this.setState({ open: open })
+        this.setState({ open: open });
     }
 
     render(): JSX.Element {
@@ -57,12 +57,12 @@ export default class Links extends React.Component<{}, State> {
                             <LinkItem href={`#${linkItem.href}`} onClick={() => this.setOpen(false)} key={index}>
                                 {linkItem.label}
                             </LinkItem>
-                        )
+                        );
                     })}
 
                     {!isDesktop && <AerialView />}
                 </LinkList>
             </LinksWrapper>
-        )
+        );
     }
 }
