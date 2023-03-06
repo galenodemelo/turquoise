@@ -1,4 +1,3 @@
-import { horizontalMobileMargin } from "@layouts/FloatingMenu/style";
 import {
     SectionHeading,
     sectionHeadingExtraMargin,
@@ -16,7 +15,7 @@ export const AmenitiesWrapper = styled.div`
     align-items: stretch;
 
     ${BREAKPOINTS.upToTablet} {
-        padding: 0;
+        display: none;
     }
 `;
 
@@ -26,11 +25,6 @@ export const Carousel = styled.div`
     width: 100%;
     padding-left: ${sectionHeadingExtraMargin};
     column-gap: 40px;
-
-    ${BREAKPOINTS.upToTablet} {
-        padding: 0 0 48px;
-        flex-direction: column;
-    }
 `;
 
 export const Details = styled.div`
@@ -39,19 +33,10 @@ export const Details = styled.div`
     justify-content: space-between;
     padding-bottom: ${sectionHeadingExtraMargin};
     flex: 0 0 500px;
-
-    ${BREAKPOINTS.upToTablet} {
-        flex: 0 0 0;
-        padding-bottom: 24px;
-    }
 `;
 
 export const DetailsHeading = styled(SectionHeading)`
     margin-left: 0;
-
-    ${BREAKPOINTS.upToTablet} {
-        padding-top: 8%;
-    }
 `;
 
 export const AccordionList = styled.div`
@@ -59,23 +44,9 @@ export const AccordionList = styled.div`
     flex-direction: column;
     row-gap: 32px;
     padding-top: 32px;
-
-    ${BREAKPOINTS.upToTablet} {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: repeat(4, 1fr);
-        row-gap: 12px;
-        padding: 24px ${horizontalMobileMargin} 0;
-    }
 `;
 
 export const Accordion = styled.details`
-    ${BREAKPOINTS.upToTablet} {
-        &:nth-of-type(4) {
-            grid-row: span 2;
-        }
-    }
-
     > summary {
         list-style: none;
     }
@@ -92,17 +63,6 @@ export const AccordionHeader = styled.summary`
     font-weight: 500;
     transition: color 0.2s ease;
 
-    ${BREAKPOINTS.upToTablet} {
-        font-size: 0.6rem;
-        font-weight: normal;
-        line-height: 1.6;
-        text-decoration: underline;
-
-        > br {
-            display: none;
-        }
-    }
-
     &:hover,
     &[data-state-active="true"] {
         color: ${COLORS.darkGreen};
@@ -114,10 +74,6 @@ export const AccordionContent = styled.p`
     color: ${COLORS.green};
     font-size: 0.8rem;
     line-height: 1.6;
-
-    ${BREAKPOINTS.upToTablet} {
-        display: none;
-    }
 `;
 
 export const DetailsFooter = styled.div`
@@ -125,28 +81,12 @@ export const DetailsFooter = styled.div`
     justify-content: space-between;
     color: ${COLORS.darkGreen};
     font-size: 0.8rem;
-
-    ${BREAKPOINTS.upToTablet} {
-        position: absolute;
-        bottom: 16px;
-        left: 0;
-        right: 0;
-        margin: 0 auto;
-        width: 310px;
-        font-size: 0.5rem;
-        box-sizing: border-box;
-    }
 `;
 
 export const ImageWrapper = styled.div`
     position: relative;
     width: 100%;
     align-self: stretch;
-
-    ${BREAKPOINTS.upToTablet} {
-        height: 100%;
-        flex: 1 1 0;
-    }
 `;
 
 export const ImageItem = styled.img<ImageItemWraperProps>`

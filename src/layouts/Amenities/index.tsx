@@ -9,9 +9,14 @@ export interface ImageItemWraperProps {
     visible: boolean
 }
 
-export default class Amenities extends React.Component<{}, State> {
+export interface AmenitiesAccordionData {
+    header: string;
+    content?: string;
+    imagePath: string;
+}
 
-    accordionList: Array<{ header: string, content?: string, imagePath: string }> = [
+
+    static readonly accordionList: Array<AmenitiesAccordionData> = [
         {
             header: "Entrance",
             imagePath: "/img/carousel/amenities/entrance.jpg"
@@ -48,47 +53,9 @@ export default class Amenities extends React.Component<{}, State> {
 
     render(): JSX.Element {
         return (
-            <AmenitiesWrapper>
-                <Carousel>
-                    <Details>
-                        <DetailsHeading>Amenities</DetailsHeading>
-
-                        <AccordionList>
-                            {this.accordionList.map((item, index) => {
-                                return (
-                                    <Accordion key={index} open={!!item.content}>
-                                        <AccordionHeader
-                                            data-state-active={this.state.activeIndex == index}
-                                            onClick={(event) => {
-                                                event.preventDefault()
-                                                this.setState({ activeIndex: index })
-                                            }}
-                                            dangerouslySetInnerHTML={{__html: item.header}}
-                                        />
-                                        <AccordionContent>
-                                            {item.content}
-                                        </AccordionContent>
-                                    </Accordion>
-                                )
-                            })}
-                        </AccordionList>
-
-                        <DetailsFooter>
-                            <span>No short term rentals</span>
-                            <span>Handicapped accessible</span>
-                        </DetailsFooter>
-                    </Details>
-
-                    <ImageWrapper>
-                        {this.accordionList.map((item, index) => {
-                            return (
-                                <ImageItem src={item.imagePath} alt={item.header} visible={this.state.activeIndex === index} key={index} />
-                            )
-                        })}
-                    </ImageWrapper>
-                </Carousel>
-
-            </AmenitiesWrapper>
-        )
+            <>
+                <AmenitiesDesktop />
+            </>
+        );
     }
 }
