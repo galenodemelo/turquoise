@@ -1,3 +1,4 @@
+import RotatePhone from "@components/RotatePhone";
 import AnimateOnActiveComponent from "@layouts/AnimateOnActiveComponent";
 import { SectionHeading } from "@layouts/VerticalSwipePage/Section";
 import Image from "next/image";
@@ -40,6 +41,8 @@ export default class Houses extends AnimateOnActiveComponent<Props, {}> {
                         </HousesCTA>
                     </HousesContent>
                 </HousesWrapper>
+
+                <RotatePhone forceOrientation="portrait" />
             </>
         )
     }
