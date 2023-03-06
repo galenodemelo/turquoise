@@ -1,9 +1,9 @@
 import React from "react";
 import AmenitiesDesktop from "./desktop";
-import AmenitiesMobile, { Props as AmenitiesMobileProps} from "./mobile";
+import AmenitiesMobile, { Props as AmenitiesMobileProps } from "./mobile";
 
-export interface Props {
-    onAmenityClickMobile: () => void
+interface Props extends AmenitiesMobileProps {
+    isMobile: boolean;
 }
 
 export interface ImageItemWraperProps {
@@ -16,7 +16,7 @@ export interface AmenitiesAccordionData {
     imagePath: string;
 }
 
-export default class Amenities extends React.Component<AmenitiesMobileProps, {}> {
+export default class Amenities extends React.Component<Props, {}> {
 
     static readonly accordionList: Array<AmenitiesAccordionData> = [
         {
@@ -46,16 +46,13 @@ export default class Amenities extends React.Component<AmenitiesMobileProps, {}>
         },
     ];
 
-    constructor(props: AmenitiesMobileProps) {
-        super(props)
+    constructor(props: Props) {
+        super(props);
     }
 
     render(): JSX.Element {
-        return (
-            <>
-                <AmenitiesDesktop />
-                <AmenitiesMobile onAmenityClickMobile={this.props.onAmenityClickMobile} />
-            </>
-        );
+        if (this.props.isMobile) return <AmenitiesMobile onAmenityClickMobile={this.props.onAmenityClickMobile} />;
+
+        return <AmenitiesDesktop />;
     }
 }
