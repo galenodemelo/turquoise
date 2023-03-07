@@ -19,6 +19,7 @@ import Home from "@layouts/Home";
 import { HomeWrapper } from "@layouts/Home/style";
 import Houses from "@layouts/Houses";
 import HousesDetails from "@layouts/Houses/Details";
+import HousesList from "@layouts/Houses/List";
 import IconOfLuxuryAndExclusivity from "@layouts/IconOfLuxuryAndExclusivity";
 import { IconOfLuxuryAndExclusivityWrapper } from "@layouts/IconOfLuxuryAndExclusivity/style";
 import Location from "@layouts/Location";
@@ -142,6 +143,7 @@ export default class Index extends React.Component<Props, State> {
                     <Houses isMobile={this.props.isMobile} onCtaClick={() => this.toggleHouseDetailsPopover(true)} />
 
                     {!this.props.isMobile && <AllFloorPlans />}
+                    {this.props.isMobile && <HousesList onItemClick={() => this.toggleHouseDetailsPopover(true)} />}
 
                     <Amenities isMobile={this.props.isMobile} onAmenityClickMobile={() => this.toggleAmenitiesCarousel(true)} />
                     <Attraction />
