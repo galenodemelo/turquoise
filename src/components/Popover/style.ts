@@ -5,7 +5,6 @@ import styled from "styled-components";
 export const PopoverWrapper = styled.div<{ isActive: boolean }>`
     ${Section}
     z-index: 1000;
-    width: 100%;
     transition: transform 1s ease;
     overflow-x: hidden;
     ${(props) => (props.isActive ? "" : "transform: translateY(100%);")}

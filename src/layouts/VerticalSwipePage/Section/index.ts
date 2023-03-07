@@ -7,14 +7,13 @@ export const Section = css`
     top: 0;
     left: 0;
     width: 100%;
-    min-height: 100vh;
-    max-height: 100%;
+    height: 100%;
+    box-sizing: border-box;
 `;
 
 export const SectionPadded = css`
     ${Section}
     padding: 8% ${horizontalMargin};
-    box-sizing: border-box;
 
     ${BREAKPOINTS.upToTablet} {
         padding: 8% ${horizontalMobileMargin};
