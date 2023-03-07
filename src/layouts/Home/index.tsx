@@ -8,7 +8,6 @@ export default class Home extends React.Component {
         return (
             <HomeWrapper>
                 <BackdropVideo autoPlay={true} muted={true} controls={false} loop={true} playsInline={true}>
-                    <source src="/video/people-on-kayak-intro.webm" type="video/webm" />
                     <source src="/video/people-on-kayak-intro.mp4" type="video/mp4" />
                 </BackdropVideo>
             </HomeWrapper>
