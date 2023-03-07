@@ -18,7 +18,7 @@ import FloatingMenu from "@layouts/FloatingMenu";
 import Home from "@layouts/Home";
 import { HomeWrapper } from "@layouts/Home/style";
 import Houses from "@layouts/Houses";
-import HousesDetails from "@layouts/Houses/Details";
+import HousesDetails, { Designer } from "@layouts/Houses/Details";
 import HousesList from "@layouts/Houses/List";
 import IconOfLuxuryAndExclusivity from "@layouts/IconOfLuxuryAndExclusivity";
 import { IconOfLuxuryAndExclusivityWrapper } from "@layouts/IconOfLuxuryAndExclusivity/style";
@@ -45,6 +45,7 @@ interface State {
 
     isAmenitiesCarouselActive: boolean;
     isHouseDetailsActive: boolean;
+    designerToShow?: Designer
 
     rotatePhoneOrientation: Orientation | null;
     currentSlideName: string;
@@ -143,7 +144,7 @@ export default class Index extends React.Component<Props, State> {
                     <Houses isMobile={this.props.isMobile} onCtaClick={() => this.toggleHouseDetailsPopover(true)} />
 
                     {!this.props.isMobile && <AllFloorPlans />}
-                    {this.props.isMobile && <HousesList onItemClick={() => this.toggleHouseDetailsPopover(true)} />}
+                    {this.props.isMobile && <HousesList onItemClick={(designer?: Designer) => this.toggleHouseDetailsPopover(true, designer)} />}
 
                     <Amenities isMobile={this.props.isMobile} onAmenityClickMobile={() => this.toggleAmenitiesCarousel(true)} />
                     <Attraction />
@@ -159,7 +160,8 @@ export default class Index extends React.Component<Props, State> {
         );
     }
 
-    toggleHouseDetailsPopover(active: boolean): void {
+    toggleHouseDetailsPopover(active: boolean, designer?: Designer): void {
+        this.setState({ designerToShow: designer })
         this.setState({ isHouseDetailsActive: active }, () => {
             this.toggleRotatePhoneInstructionIfNecessary();
         });
