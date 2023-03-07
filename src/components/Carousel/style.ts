@@ -14,6 +14,11 @@ const SlideControl = styled.button`
     cursor: pointer;
     transition: background-position 0.2s ease;
 
+    ${BREAKPOINTS.upToTablet} {
+        height: 32px;
+        width: 16px;
+    }
+
     &[disabled] {
         opacity: 0.5;
         pointer-events: none;

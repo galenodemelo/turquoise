@@ -119,8 +119,8 @@ export const FloorPlan = styled(ExternalLink)`
     }
 
     ${BREAKPOINTS.upToTablet} {
-        bottom: 16px;
-        padding: 16px 0 16px 16px;
+        bottom: 12px;
+        padding: 12px 0 12px 12px;
         border-bottom-color: #ffffff;
 
         &:hover {
@@ -143,10 +143,10 @@ export const FloorPlan = styled(ExternalLink)`
         padding-right: 120px;
 
         ${BREAKPOINTS.upToTablet} {
-            font-size: .8rem;
-            height: 32px;
-            padding-left: 48px;
-            padding-right: 56px;
+            font-size: .5rem;
+            height: 24px;
+            padding-left: 40px;
+            padding-right: 48px;
         }
     }
 
@@ -156,7 +156,7 @@ export const FloorPlan = styled(ExternalLink)`
         border-bottom: #ffffff solid 3px;
 
         ${BREAKPOINTS.upToTablet} {
-            border-bottom-width: 2px;
+            border-bottom-width: 1px;
         }
     }
 }
