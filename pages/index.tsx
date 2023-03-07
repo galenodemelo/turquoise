@@ -45,7 +45,7 @@ interface State {
 
     isAmenitiesCarouselActive: boolean;
     isHouseDetailsActive: boolean;
-    designerToShow?: Designer
+    designerToShow?: Designer;
 
     rotatePhoneOrientation: Orientation | null;
     currentSlideName: string;
@@ -161,16 +161,26 @@ export default class Index extends React.Component<Props, State> {
     }
 
     toggleHouseDetailsPopover(active: boolean, designer?: Designer): void {
-        this.setState({ designerToShow: designer })
+        this.toggleFullscreen(active);
+        this.setState({ designerToShow: designer });
         this.setState({ isHouseDetailsActive: active }, () => {
             this.toggleRotatePhoneInstructionIfNecessary();
         });
     }
 
     toggleAmenitiesCarousel(active: boolean): void {
+        this.toggleFullscreen(active);
         this.setState({ isAmenitiesCarouselActive: active }, () => {
             this.toggleRotatePhoneInstructionIfNecessary();
         });
+    }
+
+    toggleFullscreen(active: boolean): void {
+        if (active) {
+            window.document.documentElement.requestFullscreen();
+        } else {
+            window.document.exitFullscreen();
+        }
     }
 }
 
