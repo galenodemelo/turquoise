@@ -9,7 +9,7 @@ export const ImageWrapper = styled.div`
 `;
 
 export interface ImageContentProps extends ImgHTMLAttributes<HTMLImageElement> {
-    align?: "right"
+    align?: "right";
 }
 
 export const ImageContent = styled.img<ImageContentProps>`
@@ -22,7 +22,7 @@ export const ImageContent = styled.img<ImageContentProps>`
             case "right":
                 return `
                     right: 0;
-                `
+                `;
 
             default:
                 return `
@@ -38,11 +38,6 @@ export const ImageContent = styled.img<ImageContentProps>`
     object-fit: cover;
 
     object-position: ${(props) => (props.align?.length ? props.align : "center center")};
-
-    ${BREAKPOINTS.upToTablet} {
-        height: 60vh;
-        width: auto;
-    }
 `;
 
 export const HeaderText = styled.h6`
@@ -64,7 +59,7 @@ export const TopHeader = styled.div`
     text-align: center;
 
     ${BREAKPOINTS.upToTablet} {
-        padding: 60px ${horizontalMobileMargin} 0;
+        padding: 32px ${horizontalMobileMargin} 0;
         box-sizing: border-box;
     }
 `;
@@ -82,7 +77,6 @@ export const RightHeader = styled.div`
     ${BREAKPOINTS.upToTablet} {
         position: relative;
         text-align: center;
-        top: 90px;
         background: transparent;
     }
 `;
@@ -93,10 +87,6 @@ export const SplittedSlide = styled.div`
     align-items: stretch;
     height: 100%;
 
-    ${BREAKPOINTS.upToTablet} {
-        flex-direction: column-reverse;
-    }
-
     ${ImageWrapper} {
         flex: 3;
         position: relative;
@@ -104,6 +94,10 @@ export const SplittedSlide = styled.div`
 
     ${RightHeader} {
         flex: 2;
+
+        ${BREAKPOINTS.upToTablet} {
+            flex: 1;
+        }
     }
 `;
 
@@ -125,7 +119,8 @@ export const FloorPlan = styled(ExternalLink)`
     }
 
     ${BREAKPOINTS.upToTablet} {
-        bottom: 24px;
+        bottom: 16px;
+        padding: 16px 0 16px 16px;
         border-bottom-color: #ffffff;
 
         &:hover {
@@ -148,9 +143,10 @@ export const FloorPlan = styled(ExternalLink)`
         padding-right: 120px;
 
         ${BREAKPOINTS.upToTablet} {
-            font-size: 1rem;
-            height: 40px;
-            padding-right: 64px;
+            font-size: .8rem;
+            height: 32px;
+            padding-left: 48px;
+            padding-right: 56px;
         }
     }
 
@@ -158,6 +154,10 @@ export const FloorPlan = styled(ExternalLink)`
         content: "";
         width: 100%;
         border-bottom: #ffffff solid 3px;
+
+        ${BREAKPOINTS.upToTablet} {
+            border-bottom-width: 2px;
+        }
     }
 }
 `;
