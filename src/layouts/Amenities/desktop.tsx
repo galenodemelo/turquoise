@@ -1,6 +1,8 @@
+import Carousel from "@components/Carousel";
+import Image from "next/image";
 import React from "react";
-import Amenities, { AmenitiesAccordionData } from "./index";
-import { Accordion, AccordionContent, AccordionHeader, AccordionList, AmenitiesWrapper, Carousel, Details, DetailsFooter, DetailsHeading, ImageItem, ImageWrapper } from "./style-desktop";
+import Amenities from "./index";
+import { AmenitiesWrapper, CarouselItemTitle, CarouselWrapper, ExtraInfo } from "./style-desktop";
 
 export interface State {
     activeIndex: number;
@@ -18,44 +20,27 @@ export default class AmenitiesDesktop extends React.Component<{}, State> {
     render(): JSX.Element {
         return (
             <AmenitiesWrapper>
-                <Carousel>
-                    <Details>
-                        <DetailsHeading>Amenities</DetailsHeading>
-
-                        <AccordionList>
-                            {Amenities.accordionList.map((item, index) => {
-                                return (
-                                    <Accordion key={index} open={!!item.content}>
-                                        <AccordionHeader
-                                            data-state-active={this.state.activeIndex == index}
-                                            onClick={(event) => {
-                                                event.preventDefault();
-                                                this.setState({ activeIndex: index });
-                                            }}
-                                            dangerouslySetInnerHTML={{ __html: item.header }}
-                                        />
-                                        <AccordionContent>
-                                            {item.content}
-                                        </AccordionContent>
-                                    </Accordion>
-                                );
-                            })}
-                        </AccordionList>
-
-                        <DetailsFooter>
-                            <span>No short term rentals</span>
-                            <span>Handicapped accessible</span>
-                        </DetailsFooter>
-                    </Details>
-
-                    <ImageWrapper>
+                <CarouselWrapper>
+                    <Carousel>
                         {Amenities.accordionList.map((item, index) => {
                             return (
-                                <ImageItem src={item.imagePath} alt={item.header} visible={this.state.activeIndex === index} key={index} />
+                                <>
+                                    <Image src={item.imagePath} alt={item.header} layout="fill" key={index} quality={100} objectFit="cover" objectPosition="center center" />
+                                    <CarouselItemTitle>
+                                        <span dangerouslySetInnerHTML={{
+                                            __html: item.header
+                                        }}></span>
+                                    </CarouselItemTitle>
+                                </>
                             );
                         })}
-                    </ImageWrapper>
-                </Carousel>
+                    </Carousel>
+                </CarouselWrapper>
+
+                <ExtraInfo>
+                    <span>No Short Term Rentals</span>
+                    <span>Handicapped Accessible</span>
+                </ExtraInfo>
             </AmenitiesWrapper>
         );
     }

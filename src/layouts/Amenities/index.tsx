@@ -8,10 +8,6 @@ interface Props extends AmenitiesMobileProps {
     isMobile: boolean;
 }
 
-export interface ImageItemWraperProps {
-    visible: boolean;
-}
-
 export interface AmenitiesAccordionData {
     amenity: Amenity
     header: string;

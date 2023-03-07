@@ -42,7 +42,7 @@ export default class Carousel extends React.Component<Props, State> {
                     slidesPerColumn={1}
                     spaceBetween={0}
                     speed={SETTINGS.swiper.speedInMilliseconds}
-                    style={{ height: "100vh", width: "100%" }}
+                    style={{ height: "100%", width: "100%" }}
                     zoom={true}
                 >
                     {this.props.children.map((child: JSX.Element, index: number) => {
