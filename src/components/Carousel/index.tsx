@@ -38,6 +38,8 @@ export default class Carousel extends React.Component<Props, {}> {
                     zoom={true}
                 >
                     {this.props.children.map((child: JSX.Element, index: number) => {
+                        if (!child) return;
+
                         return (
                             <SwiperSlide key={index}>
                                 {child}

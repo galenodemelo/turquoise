@@ -4,9 +4,13 @@ import React from "react";
 import "swiper/swiper.min.css";
 import { FloorPlan, HeaderText, ImageContent, ImageContentProps, ImageWrapper, RightHeader, SplittedSlide, TopHeader } from "./style";
 
+export type Designer = "tanney" | "russell" | "ricardo";
+
 interface Props {
     isActive: boolean;
     setIsActive: (active: boolean) => void;
+    isMobile: boolean;
+    designer?: Designer;
 }
 
 export default class HousesDetails extends React.Component<Props, {}> {
@@ -16,106 +20,166 @@ export default class HousesDetails extends React.Component<Props, {}> {
     }
 
     render(): JSX.Element {
+        const isMobile: boolean = this.props.isMobile;
+        const mustShowTanney = !isMobile || this.props.designer == "tanney";
+        const mustShowRussell = !isMobile || this.props.designer == "russell";
+        const mustShowRicardo = !isMobile || this.props.designer == "ricardo";
+
         return (
             <Popover isActive={this.props.isActive}>
                 <Carousel closeFunction={() => this.props.setIsActive(false)}>
-                    <>
-                        {this.buildZoomableImage({ src: "/img/carousel/houses/tanneys-design-1.jpg", alt: "Opal 1 house by Tanney facade" })}
+                    {mustShowTanney &&
+                        <>
+                            {this.buildZoomableImage({ src: "/img/carousel/houses/tanneys-design-1.jpg", alt: "Opal 1 house by Tanney facade" })}
 
-                        <TopHeader>
-                            <HeaderText>{`Opal 1 - Tanney's design`}</HeaderText>
-                        </TopHeader>
+                            <TopHeader>
+                                <HeaderText>
+                                    {!isMobile
+                                        ? `Opal 1 - Tanney's design`
+                                        : "Facade"
+                                    }
+                                </HeaderText>
+                            </TopHeader>
 
-                        <FloorPlan href="/docs/floor-plan-opal-1.pdf" />
-                    </>
+                            <FloorPlan href="/docs/floor-plan-opal-1.pdf" />
+                        </>
+                    }
 
-                    <SplittedSlide>
-                        {this.buildZoomableImage({ src: "/img/carousel/houses/tanneys-design-2.jpg", alt: "Opal 1 house by Tanney pool" })}
+                    {mustShowTanney &&
+                        <SplittedSlide>
+                            {this.buildZoomableImage({ src: "/img/carousel/houses/tanneys-design-2.jpg", alt: "Opal 1 house by Tanney backyard" })}
 
-                        <RightHeader>
-                            <HeaderText>{`Opal 1 - Tanney's design`}</HeaderText>
-                        </RightHeader>
-                    </SplittedSlide>
+                            <RightHeader>
+                                <HeaderText>
+                                    {!isMobile
+                                        ? `Opal 1 - Tanney's design`
+                                        : "Backyard"
+                                    }
+                                </HeaderText>
+                            </RightHeader>
+                        </SplittedSlide>
+                    }
 
-                    <>
-                        {this.buildZoomableImage({ src: "/img/carousel/houses/russells-design-1.jpg", alt: "Model house by Russell facade" })}
+                    {mustShowRussell &&
+                        <>
+                            {this.buildZoomableImage({ src: "/img/carousel/houses/russells-design-1.jpg", alt: "Amber 1 1 house by Russell facade" })}
 
-                        <TopHeader>
-                            <HeaderText>{`Amber 1 - Russell's design`}</HeaderText>
-                        </TopHeader>
+                            <TopHeader>
+                                <HeaderText>
+                                    {!isMobile
+                                        ? `Amber 1 - Russell's design`
+                                        : "Facade"
+                                    }
+                                </HeaderText>
+                            </TopHeader>
 
-                        <FloorPlan href="/docs/floor-plan-amber-1.pdf" />
-                    </>
+                            <FloorPlan href="/docs/floor-plan-opal-1.pdf" />
+                        </>
+                    }
 
-                    <SplittedSlide>
-                        {this.buildZoomableImage({ src: "/img/carousel/houses/russells-design-2.jpg", alt: "Model house by Russell backyard" })}
+                    {mustShowRussell &&
+                        <SplittedSlide>
+                            {this.buildZoomableImage({ src: "/img/carousel/houses/russells-design-2.jpg", alt: "Opal 1 house by Tanney backyard" })}
 
-                        <RightHeader>
-                            <HeaderText>{`Amber 1 - Russell's design`}</HeaderText>
-                        </RightHeader>
-                    </SplittedSlide>
+                            <RightHeader>
+                                <HeaderText>
+                                    {!isMobile
+                                        ? `Amber 1 - Russell's design`
+                                        : "Backyard"
+                                    }
+                                </HeaderText>
+                            </RightHeader>
+                        </SplittedSlide>
 
-                    <>
-                        {this.buildZoomableImage({ src: "/img/carousel/houses/ricardos-design-1.jpg", alt: "Model house by Ricardo facade" })}
+                    }
 
-                        <TopHeader>
-                            <HeaderText>{`Malachite 1 - Ricardo's design`}</HeaderText>
-                        </TopHeader>
+                    {mustShowRicardo &&
+                        <>
+                            {this.buildZoomableImage({ src: "/img/carousel/houses/ricardos-design-1.jpg", alt: "Model house by Ricardo facade" })}
 
-                        <FloorPlan href="/docs/floor-plan-malachite-1.pdf" />
-                    </>
+                            <TopHeader>
+                                <HeaderText>
+                                    {!isMobile
+                                        ? `Malachite 1 - Ricardo's design`
+                                        : "Facade"
+                                    }
+                                </HeaderText>
+                            </TopHeader>
 
-                    <>
-                        {this.buildZoomableImage({ src: "/img/carousel/houses/ricardos-design-2.jpg", alt: "Model house by Ricardo pool" })}
+                            <FloorPlan href="/docs/floor-plan-malachite-1.pdf" />
+                        </>
+                    }
 
-                        <TopHeader>
-                            <HeaderText>{`Malachite 1 - Ricardo's design`}</HeaderText>
-                        </TopHeader>
-                    </>
+                    {mustShowRicardo &&
+                        <>
+                            {this.buildZoomableImage({ src: "/img/carousel/houses/ricardos-design-2.jpg", alt: "Model house by Ricardo backyard" })}
 
-                    <SplittedSlide>
-                        {this.buildZoomableImage({ src: "/img/carousel/houses/ricardos-design-3.jpg", alt: "Model house's living room by Ricardo" })}
+                            <TopHeader>
+                                <HeaderText>
+                                    {!isMobile
+                                        ? `Malachite 1 - Ricardo's design`
+                                        : "Backyard"
+                                    }
+                                </HeaderText>
+                            </TopHeader>
+                        </>
+                    }
 
-                        <RightHeader>
-                            <HeaderText>
-                                Living<br />
-                                {`Malachite 1 - Ricardo's design`}
-                            </HeaderText>
-                        </RightHeader>
-                    </SplittedSlide>
+                    {mustShowRicardo &&
+                        <SplittedSlide>
+                            {this.buildZoomableImage({ src: "/img/carousel/houses/ricardos-design-3.jpg", alt: "Model house's living room by Ricardo" })}
 
-                    <>
-                        {this.buildZoomableImage({ src: "/img/carousel/houses/ricardos-design-4.jpg", alt: "Model house's bathroom suite by Ricardo" })}
+                            <RightHeader>
+                                <HeaderText dangerouslySetInnerHTML={{
+                                    __html: !isMobile
+                                        ? "Living<br />Malachite 1 - Ricardo's design"
+                                        : "Living"
+                                }} />
+                            </RightHeader>
+                        </SplittedSlide>
+                    }
 
-                        <TopHeader>
-                            <HeaderText>
-                                Master ensuite bathroom<br />
-                                {`Malachite 1 - Ricardo's design`}
-                            </HeaderText>
-                        </TopHeader>
-                    </>
+                    {mustShowRicardo &&
+                        <>
+                            {this.buildZoomableImage({ src: "/img/carousel/houses/ricardos-design-4.jpg", alt: "Model house's bathroom suite by Ricardo" })}
 
-                    <SplittedSlide>
-                        {this.buildZoomableImage({ src: "/img/carousel/houses/ricardos-design-5.jpg", alt: "Model house's hall room by Ricardo" })}
+                            <TopHeader>
+                                <HeaderText dangerouslySetInnerHTML={{
+                                    __html: !isMobile
+                                        ? "Master ensuite bathroom<br />Malachite 1 - Ricardo's design"
+                                        : "Master ensuite bathroom"
+                                }} />
+                            </TopHeader>
+                        </>
+                    }
 
-                        <RightHeader>
-                            <HeaderText>
-                                Hall<br />
-                                {`Malachite 1 - Ricardo's design`}
-                            </HeaderText>
-                        </RightHeader>
-                    </SplittedSlide>
+                    {mustShowRicardo &&
+                        <SplittedSlide>
+                            {this.buildZoomableImage({ src: "/img/carousel/houses/ricardos-design-5.jpg", alt: "Model house's hall room by Ricardo" })}
 
-                    <>
-                        {this.buildZoomableImage({ src: "/img/carousel/houses/ricardos-design-6.jpg", alt: "Model house's suite by Ricardo", align: "right" })}
+                            <RightHeader>
+                                <HeaderText dangerouslySetInnerHTML={{
+                                    __html: !isMobile
+                                        ? "Hall<br />Malachite 1 - Ricardo's design"
+                                        : "Hall"
+                                }} />
+                            </RightHeader>
+                        </SplittedSlide>
+                    }
 
-                        <TopHeader>
-                            <HeaderText>
-                                Master ensuite<br />
-                                {`Malachite 1 - Ricardo's design`}
-                            </HeaderText>
-                        </TopHeader>
-                    </>
+                    {mustShowRicardo &&
+                        <>
+                            {this.buildZoomableImage({ src: "/img/carousel/houses/ricardos-design-6.jpg", alt: "Model house's suite by Ricardo", align: "right" })}
+
+                            <TopHeader>
+                                <HeaderText dangerouslySetInnerHTML={{
+                                    __html: !isMobile
+                                        ? "Master ensuite<br />Malachite 1 - Ricardo's design"
+                                        : "Master ensuite"
+                                }} />
+                            </TopHeader>
+                        </>
+                    }
                 </Carousel>
             </Popover>
         );

@@ -153,7 +153,7 @@ export default class Index extends React.Component<Props, State> {
                     <Contact />
                 </VerticalSwipePage>
 
-                <HousesDetails isActive={this.state.isHouseDetailsActive} setIsActive={(active: boolean) => this.toggleHouseDetailsPopover(active)} />
+                <HousesDetails isMobile={this.props.isMobile} designer={this.state.designerToShow} isActive={this.state.isHouseDetailsActive} setIsActive={(active: boolean) => this.toggleHouseDetailsPopover(active)} />
                 <AmenitiesCarousel isActive={this.state.isAmenitiesCarouselActive} setIsActive={(active: boolean) => this.toggleAmenitiesCarousel(active)} />
                 {this.state.rotatePhoneOrientation !== null && <RotatePhone forceOrientation={this.state.rotatePhoneOrientation} />}
             </VerticalSwipePageContext.Provider>
