@@ -176,6 +176,8 @@ export default class Index extends React.Component<Props, State> {
     }
 
     toggleFullscreen(active: boolean): void {
+        if (this.props.isMobile) return;
+
         if (active) {
             window.document.documentElement.requestFullscreen();
         } else {
