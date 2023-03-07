@@ -33,7 +33,7 @@ export default class HousesList extends React.Component<Props, {}> {
                 {this.housesListItem.map((item, index) => {
                     return (
                         <HousesListItem key={index} onClick={() => this.props.onItemClick(item.designer)}>
-                            <Image src={item.imagePath} layout="fill" alt="House facade" objectFit="cover" />
+                            <Image src={item.imagePath} layout="fill" alt="House facade" objectFit="cover" priority={true} />
                             <DarkGreenMask />
                             <MaskTitle scale={1.3}>
                                 <small>{item.name}</small>

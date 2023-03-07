@@ -25,7 +25,7 @@ export default class AmenitiesMobile extends React.Component<Props, {}> {
                         {Amenities.accordionList.map((item, index) => {
                             return (
                                 <AmenitiesItem key={index} onClick={this.props.onAmenityClickMobile}>
-                                    <Image src={item.imagePath} layout="fill" alt={item.header} objectFit="cover" objectPosition="center center" />
+                                    <Image src={item.imagePath} layout="fill" alt={item.header} objectFit="cover" objectPosition="center center" priority={true} />
                                     <DarkGreenMask />
                                     <MaskTitle dangerouslySetInnerHTML={{ __html: item.header }} />
                                 </AmenitiesItem>
