@@ -7,7 +7,6 @@ import { ButtonClose, SlideControlNext, SlideControlPrevious } from "./style";
 
 interface Props {
     children: Array<any>;
-    closeFunction: () => void;
     getSwiperInstance?: (swiper: SwiperConfig) => void;
 }
 
@@ -23,11 +22,6 @@ export default class Carousel extends React.Component<Props, State> {
     constructor(props: Props) {
         super(props);
         SwiperConfig.use([Keyboard, Navigation, Zoom]);
-    }
-
-    close() {
-        this.props.closeFunction();
-        setTimeout(() => this.state.swiperInstance?.slideTo(0), 2000);
     }
 
     render(): JSX.Element {
@@ -65,8 +59,6 @@ export default class Carousel extends React.Component<Props, State> {
 
                 <SlideControlPrevious ref={this.controlPrevRef} />
                 <SlideControlNext ref={this.controlNextRef} />
-
-                <ButtonClose onClick={() => this.close()} />
             </>
         );
     }

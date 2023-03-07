@@ -1,4 +1,5 @@
 import Carousel from "@components/Carousel";
+import { ButtonClose } from "@components/Carousel/style";
 import Popover from "@components/Popover";
 import Image from "next/image";
 import React from "react";
@@ -31,14 +32,21 @@ export default class AmenitiesCarousel extends React.Component<Props, {}> {
         this.swiperInstance.slideTo(this.getInitialSlide());;
     }
 
+    close() {
+        this.props.setIsActive(false);
+        setTimeout(() => this.swiperInstance?.slideTo(0), 2000);
+    }
+
     render(): JSX.Element {
         return (
             <Popover isActive={this.props.isActive}>
-                <Carousel closeFunction={() => this.props.setIsActive(false)} getSwiperInstance={(swiper: SwiperConfig) => this.swiperInstance = swiper}>
+                <Carousel getSwiperInstance={(swiper: SwiperConfig) => this.swiperInstance = swiper}>
                     {Amenities.accordionList.map((item, index) => {
                         return <Image src={item.imagePath} layout="fill" alt={item.header} objectFit="cover" objectPosition="center center" key={index} />;
                     })}
                 </Carousel>
+
+                <ButtonClose onClick={() => this.close()} />
             </Popover>
         );
     }
