@@ -24,14 +24,14 @@ export default class AmenitiesDesktop extends React.Component<{}, State> {
                     <Carousel>
                         {Amenities.accordionList.map((item, index) => {
                             return (
-                                <>
-                                    <Image src={item.imagePath} alt={item.header} layout="fill" key={index} quality={100} objectFit="cover" objectPosition="center center" priority={true} />
+                                <div key={index}>
+                                    <Image src={item.imagePath} alt={item.header} layout="fill" quality={100} objectFit="cover" objectPosition="center center" priority={true} />
                                     <CarouselItemTitle>
                                         <span dangerouslySetInnerHTML={{
                                             __html: item.header
                                         }}></span>
                                     </CarouselItemTitle>
-                                </>
+                                </div>
                             );
                         })}
                     </Carousel>
