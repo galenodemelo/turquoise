@@ -1,7 +1,7 @@
 import Carousel from "@components/Carousel";
 import Popover from "@components/Popover";
 import React from "react";
-import "swiper/swiper.min.css";
+import { Swiper as SwiperConfig } from "swiper"
 import { FloorPlan, HeaderText, ImageContent, ImageContentProps, ImageWrapper, RightHeader, SplittedSlide, TopHeader } from "./style";
 
 export type Designer = "tanney" | "russell" | "ricardo";
@@ -15,8 +15,15 @@ interface Props {
 
 export default class HousesDetails extends React.Component<Props, {}> {
 
+    swiperInstance?: SwiperConfig;
+
     constructor(props: Props) {
         super(props);
+    }
+
+    close() {
+        this.props.setIsActive(false);
+        setTimeout(() => this.swiperInstance?.slideTo(0), 2000);
     }
 
     render(): JSX.Element {
@@ -26,8 +33,8 @@ export default class HousesDetails extends React.Component<Props, {}> {
         const mustShowRicardo = !isMobile || this.props.designer == "ricardo";
 
         return (
-            <Popover isActive={this.props.isActive}>
-                <Carousel closeFunction={() => this.props.setIsActive(false)}>
+            <Popover isActive={this.props.isActive} closeFunction={() => this.close()}>
+                <Carousel getSwiperInstance={(swiper: SwiperConfig) => this.swiperInstance = swiper}>
                     {mustShowTanney &&
                         <>
                             {this.buildZoomableImage({ src: "/img/carousel/houses/tanneys-design-1.jpg", alt: "Opal 1 house by Tanney facade" })}
