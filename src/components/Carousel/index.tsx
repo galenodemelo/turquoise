@@ -6,11 +6,15 @@ import "swiper/swiper.min.css";
 import { ButtonClose, SlideControlNext, SlideControlPrevious } from "./style";
 
 interface Props {
-    children: JSX.Element[];
+    children: Array<any>;
     closeFunction: () => void;
 }
 
-export default class Carousel extends React.Component<Props, {}> {
+interface State {
+    swiperInstance?: SwiperConfig;
+}
+
+export default class Carousel extends React.Component<Props, State> {
 
     controlPrevRef = React.createRef<HTMLButtonElement>();
     controlNextRef = React.createRef<HTMLButtonElement>();
@@ -18,6 +22,11 @@ export default class Carousel extends React.Component<Props, {}> {
     constructor(props: Props) {
         super(props);
         SwiperConfig.use([Keyboard, Navigation, Zoom]);
+    }
+
+    close() {
+        this.props.closeFunction();
+        setTimeout(() => this.state.swiperInstance?.slideTo(0), 2000);
     }
 
     render(): JSX.Element {
@@ -29,6 +38,7 @@ export default class Carousel extends React.Component<Props, {}> {
                         prevEl: this.controlPrevRef.current,
                         nextEl: this.controlNextRef.current
                     }}
+                    onSwiper={(swiper: SwiperConfig) => this.setState({ swiperInstance: swiper })}
                     simulateTouch={false}
                     slidesPerView={1}
                     slidesPerColumn={1}
@@ -52,7 +62,7 @@ export default class Carousel extends React.Component<Props, {}> {
                 <SlideControlPrevious ref={this.controlPrevRef} />
                 <SlideControlNext ref={this.controlNextRef} />
 
-                <ButtonClose onClick={() => this.props.closeFunction()} />
+                <ButtonClose onClick={() => this.close()} />
             </>
         );
     }
