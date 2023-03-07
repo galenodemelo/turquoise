@@ -2,11 +2,11 @@ import { SectionHeading } from "@layouts/VerticalSwipePage/Section";
 import { DarkGreenMask, MaskTitle } from "@styles/globals";
 import Image from "next/image";
 import React from "react";
-import Amenities from ".";
+import Amenities, { Amenity } from ".";
 import { AmenitiesItem, AmenitiesList, AmenitiesWrapper } from "./style-mobile";
 
 export interface Props {
-    onAmenityClickMobile: () => void;
+    onAmenityClickMobile: (amenity: Amenity) => void;
 }
 
 export default class AmenitiesMobile extends React.Component<Props, {}> {
@@ -24,7 +24,7 @@ export default class AmenitiesMobile extends React.Component<Props, {}> {
                     <AmenitiesList>
                         {Amenities.accordionList.map((item, index) => {
                             return (
-                                <AmenitiesItem key={index} onClick={this.props.onAmenityClickMobile}>
+                                <AmenitiesItem key={index} onClick={() => this.props.onAmenityClickMobile(item.amenity)}>
                                     <Image src={item.imagePath} layout="fill" alt={item.header} objectFit="cover" objectPosition="center center" priority={true} />
                                     <DarkGreenMask />
                                     <MaskTitle dangerouslySetInnerHTML={{ __html: item.header }} />

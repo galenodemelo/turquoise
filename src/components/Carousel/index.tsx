@@ -8,6 +8,7 @@ import { ButtonClose, SlideControlNext, SlideControlPrevious } from "./style";
 interface Props {
     children: Array<any>;
     closeFunction: () => void;
+    getSwiperInstance?: (swiper: SwiperConfig) => void;
 }
 
 interface State {
@@ -38,7 +39,10 @@ export default class Carousel extends React.Component<Props, State> {
                         prevEl: this.controlPrevRef.current,
                         nextEl: this.controlNextRef.current
                     }}
-                    onSwiper={(swiper: SwiperConfig) => this.setState({ swiperInstance: swiper })}
+                    onSwiper={(swiper: SwiperConfig) => {
+                        this.setState({ swiperInstance: swiper });
+                        if (this.props.getSwiperInstance) this.props.getSwiperInstance(swiper);
+                    }}
                     simulateTouch={false}
                     slidesPerView={1}
                     slidesPerColumn={1}

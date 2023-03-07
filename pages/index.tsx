@@ -2,7 +2,7 @@ import PageMetadata from "@components/PageMetadata";
 import RotatePhone, { Orientation } from "@components/RotatePhone";
 import AllFloorPlans from "@layouts/AllFloorPlans";
 import { AllFloorPlansWrapper } from "@layouts/AllFloorPlans/style";
-import Amenities from "@layouts/Amenities";
+import Amenities, { Amenity } from "@layouts/Amenities";
 import AmenitiesCarousel from "@layouts/Amenities/AmenitiesCarousel";
 import { AmenitiesWrapper as AmenitiesWrapperDesktop } from "@layouts/Amenities/style-desktop";
 import { AmenitiesWrapper as AmenitiesWrapperMobile } from "@layouts/Amenities/style-mobile";
@@ -45,7 +45,9 @@ interface State {
 
     isAmenitiesCarouselActive: boolean;
     isHouseDetailsActive: boolean;
+
     designerToShow?: Designer;
+    amenityToShow?: Amenity;
 
     rotatePhoneOrientation: Orientation | null;
     currentSlideName: string;
@@ -146,7 +148,7 @@ export default class Index extends React.Component<Props, State> {
                     {!this.props.isMobile && <AllFloorPlans />}
                     {this.props.isMobile && <HousesList onItemClick={(designer?: Designer) => this.toggleHouseDetailsPopover(true, designer)} />}
 
-                    <Amenities isMobile={this.props.isMobile} onAmenityClickMobile={() => this.toggleAmenitiesCarousel(true)} />
+                    <Amenities isMobile={this.props.isMobile} onAmenityClickMobile={(amenity: Amenity) => this.toggleAmenitiesCarousel(true, amenity)} />
                     <Attraction />
                     <CreativeTeam />
                     <Developers />
@@ -154,7 +156,7 @@ export default class Index extends React.Component<Props, State> {
                 </VerticalSwipePage>
 
                 <HousesDetails isMobile={this.props.isMobile} designer={this.state.designerToShow} isActive={this.state.isHouseDetailsActive} setIsActive={(active: boolean) => this.toggleHouseDetailsPopover(active)} />
-                <AmenitiesCarousel isActive={this.state.isAmenitiesCarouselActive} setIsActive={(active: boolean) => this.toggleAmenitiesCarousel(active)} />
+                <AmenitiesCarousel isActive={this.state.isAmenitiesCarouselActive} amenity={this.state.amenityToShow} setIsActive={(active: boolean) => this.toggleAmenitiesCarousel(active)} />
                 {this.state.rotatePhoneOrientation !== null && <RotatePhone forceOrientation={this.state.rotatePhoneOrientation} />}
             </VerticalSwipePageContext.Provider>
         );
@@ -162,15 +164,20 @@ export default class Index extends React.Component<Props, State> {
 
     toggleHouseDetailsPopover(active: boolean, designer?: Designer): void {
         this.toggleFullscreen(active);
-        this.setState({ designerToShow: designer });
-        this.setState({ isHouseDetailsActive: active }, () => {
+        this.setState({
+            designerToShow: designer,
+            isHouseDetailsActive: active
+        }, () => {
             this.toggleRotatePhoneInstructionIfNecessary();
         });
     }
 
-    toggleAmenitiesCarousel(active: boolean): void {
+    toggleAmenitiesCarousel(active: boolean, amenity?: Amenity): void {
         this.toggleFullscreen(active);
-        this.setState({ isAmenitiesCarouselActive: active }, () => {
+        this.setState({
+            amenityToShow: amenity,
+            isAmenitiesCarouselActive: active
+        }, () => {
             this.toggleRotatePhoneInstructionIfNecessary();
         });
     }
