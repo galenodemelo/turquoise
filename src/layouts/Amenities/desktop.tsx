@@ -1,5 +1,5 @@
 import Carousel from "@components/Carousel";
-import Image from "next/image";
+import { FullSizeCenteredImage } from "@styles/globals";
 import React from "react";
 import Amenities from "./index";
 import { AmenitiesWrapper, CarouselItemTitle, CarouselWrapper, ExtraInfo } from "./style-desktop";
@@ -25,7 +25,7 @@ export default class AmenitiesDesktop extends React.Component<{}, State> {
                         {Amenities.accordionList.map((item, index) => {
                             return (
                                 <div key={index}>
-                                    <Image src={item.imagePath} alt={item.header} layout="fill" quality={100} objectFit="cover" objectPosition="center center" priority={true} />
+                                    <FullSizeCenteredImage src={item.imagePath} alt={item.header} />
                                     <CarouselItemTitle>
                                         <span dangerouslySetInnerHTML={{
                                             __html: item.header

@@ -1,4 +1,4 @@
-import Image from "next/image";
+import { FullSizeCenteredImage } from "@styles/globals";
 import React from "react";
 import { AttractionWrapper, ImageCaption, LocationGalleryItem } from "./style";
 
@@ -40,18 +40,14 @@ export default class Attraction extends React.Component<{}, State> {
                             state={index == this.state.expandedItemIndex ? "expanded" : "collapsed"}
                             onClick={() => this.setState({ expandedItemIndex: this.state.expandedItemIndex === index ? null : index })}
                         >
-                            <Image
-                                src={item.imagePath}
-                                alt={item.alt}
-                                layout="fill"
-                                objectFit="cover"
-                                objectPosition={item.imageMobileObjectPosition}
-                            />
+                            <FullSizeCenteredImage src={item.imagePath} alt={item.alt} style={{
+                                objectPosition: item.imagePosition
+                            }} />
                             <ImageCaption>{item.caption}</ImageCaption>
                         </LocationGalleryItem>
-                    )
+                    );
                 })}
             </AttractionWrapper>
-        )
+        );
     }
 }

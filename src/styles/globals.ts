@@ -49,7 +49,7 @@ export const MaskTitle = styled.h6<{ scale?: number }>`
     height: 100%;
     color: #ffffff;
     font-weight: 500;
-    font-size: ${props => props.scale !== undefined ? (.7 * props.scale).toFixed(2) : .7 }rem;
+    font-size: ${(props) => (props.scale !== undefined ? (0.7 * props.scale).toFixed(2) : 0.7)}rem;
     box-sizing: border-box;
     padding: 8px 8% 0;
 
@@ -64,4 +64,13 @@ export const MaskTitle = styled.h6<{ scale?: number }>`
     > small {
         font-size: 90%;
     }
+`;
+
+export const FullSizeCenteredImage = styled.img`
+    position: absolute;
+    margin: auto;
+    inset: -100vh;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 `;
