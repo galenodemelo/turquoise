@@ -50,6 +50,20 @@ export const CreativeTeamWrapper = styled.div<AnimateOnActiveComponentProps>`
     ${SectionPadded}
     max-height: fit-content;
 
+    &::before {
+        content: "";
+        position: fixed;
+        margin-top: -8%;
+        width: 100%;
+        height: 100px;
+        z-index: 10;
+        background: #fff;
+
+        ${BREAKPOINTS.upToTablet} {
+            display: none;
+        }
+    }
+
     ${SectionHeading} {
         ${dissolveDefaultAnimation}
         animation-delay: 1s;
