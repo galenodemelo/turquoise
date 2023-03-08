@@ -33,6 +33,10 @@ export const DarkGreenMask = styled.div`
     content: "";
     background-color: ${COLORS.darkGreen};
     mix-blend-mode: multiply;
+
+    @supports not (mix-blend-mode: multiply) {
+        opacity: 0.8;
+    }
 `;
 
 export const MaskTitle = styled.h6<{ scale?: number }>`
