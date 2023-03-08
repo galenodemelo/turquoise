@@ -4,6 +4,7 @@ import styled from "styled-components";
 
 export const AmenitiesWrapper = styled.div`
     ${Section}
+    max-height: fit-content;
     display: none;
     align-items: stretch;
     flex-direction: column;
@@ -26,5 +27,6 @@ export const AmenitiesList = styled.ul`
 
 export const AmenitiesItem = styled.li`
     position: relative;
-    flex: 1 1 0;
+    aspect-ratio: 16 / 6;
+    min-height: 125px;
 `;
