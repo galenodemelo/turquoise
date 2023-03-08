@@ -48,6 +48,7 @@ export const CreativeTeamList = styled.ul`
 
 export const CreativeTeamWrapper = styled.div<AnimateOnActiveComponentProps>`
     ${SectionPadded}
+    height: unset;
     max-height: fit-content;
 
     &::before {

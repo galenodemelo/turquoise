@@ -11,6 +11,7 @@ export const ContactWrapper = styled.div`
 
     ${BREAKPOINTS.upToNotebook} {
         row-gap: 40px;
+        height: unset;
         max-height: fit-content;
     }
 `;

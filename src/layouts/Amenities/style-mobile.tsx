@@ -4,6 +4,7 @@ import styled from "styled-components";
 
 export const AmenitiesWrapper = styled.div`
     ${Section}
+    height: unset;
     max-height: fit-content;
     display: none;
     align-items: stretch;
