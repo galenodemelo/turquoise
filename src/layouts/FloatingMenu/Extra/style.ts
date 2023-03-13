@@ -18,7 +18,7 @@ export const AerialView = styled(ExternalLink).attrs({
     padding: 12px 18px 10px;
 
     &::before {
-        content: "Aerial View";
+        content: "Aerial Tour";
         line-height: 1;
         font-size: 1rem;
     }
