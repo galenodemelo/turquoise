@@ -20,7 +20,7 @@ export default class AllFloorPlans extends AnimateOnActiveComponent {
                     <p>
                         11 different models designed by renowned architects. <br />
                         Exclusive models available upon request. <br />
-                        Sizes from 3,200 to 5,500 sqft.
+                        Sizes from 4,700 to 5,500 sqft.
                     </p>
                     <p>
                         Click on the link below to access <br />

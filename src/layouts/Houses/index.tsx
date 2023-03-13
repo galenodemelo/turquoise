@@ -40,7 +40,7 @@ export default class Houses extends AnimateOnActiveComponent<Props, {}> {
                         {this.props.isMobile &&
                             <>
                                 <h6>Experience the extraordinary</h6>
-                                <p>11 different models designed by renowned architects. Exclusive models available upon request. Sizes from 3,200 to 5,500 sqft.</p>
+                                <p>11 different models designed by renowned architects. Exclusive models available upon request. Sizes from 4,700 to 5,500 sqft.</p>
                                 <p>Click on the link below to access all the available house models and floor plans.</p>
                             </>
                         }
