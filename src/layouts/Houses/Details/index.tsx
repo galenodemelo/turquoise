@@ -80,13 +80,13 @@ export default class HousesDetails extends React.Component<Props, {}> {
                                 </HeaderText>
                             </TopHeader>
 
-                            <FloorPlan href="/docs/floor-plan-opal-1.pdf" />
+                            <FloorPlan href="/docs/floor-plan-amber-1.pdf" />
                         </>
                     }
 
                     {mustShowRussell &&
                         <SplittedSlide>
-                            {this.buildZoomableImage({ src: "/img/carousel/houses/russells-design-2.jpg", alt: "Opal 1 house by Tanney backyard" })}
+                            {this.buildZoomableImage({ src: "/img/carousel/houses/russells-design-2.jpg", alt: "Amber 1 house by Tanney backyard" })}
 
                             <RightHeader>
                                 <HeaderText>
