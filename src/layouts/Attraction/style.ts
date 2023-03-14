@@ -30,11 +30,11 @@ export const LocationGalleryItem = styled.li<{ state: "expanded" | "collapsed" }
         mix-blend-mode: hard-light;
         transition: opacity 0.4s ease;
         cursor: pointer;
-        opacity: ${(props) => (props.state === "expanded" ? "0" : "1")};
+        opacity: 0;
     }
 
     &:hover::after {
-        opacity: 0;
+        opacity: ${(props) => (props.state === "expanded" ? "0" : "1")};
     }
 `;
 
