@@ -33,8 +33,10 @@ export const LocationGalleryItem = styled.li<{ state: "expanded" | "collapsed" }
         opacity: 0;
     }
 
-    &:hover::after {
-        opacity: ${(props) => (props.state === "expanded" ? "0" : "1")};
+    ${BREAKPOINTS.desktopOnly} {
+        &:hover::after {
+            opacity: ${(props) => (props.state === "expanded" ? "0" : "1")};
+        }
     }
 `;
 

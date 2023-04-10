@@ -10,6 +10,7 @@ export const BREAKPOINTS = {
     upToTablet: "@media screen and (max-width: 1200px)",
     upToNotebook: "@media screen and (max-width: 1400px)",
     upToMonitor: "@media screen and (max-width: 1660px)",
+    desktopOnly: "@media screen and (min-width: 1400px)"
 };
 
 export const SETTINGS = {
