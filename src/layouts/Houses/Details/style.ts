@@ -2,7 +2,7 @@ import { horizontalMobileMargin } from "@layouts/FloatingMenu/style";
 import { Section } from "@layouts/VerticalSwipePage/Section";
 import { BREAKPOINTS, COLORS, ExternalLink } from "@styles/globals";
 import { ImgHTMLAttributes } from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 export const ImageWrapper = styled.div`
     ${Section}
@@ -101,26 +101,64 @@ export const SplittedSlide = styled.div`
     }
 `;
 
-export const FloorPlan = styled(ExternalLink)`
+export const FloatingCardWrapper = styled.div`
     position: absolute;
     right: 0;
-    bottom: 64px;
+    bottom: 32px;
+    z-index: 10;
+
     display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    row-gap: 32px;
+
+    ${BREAKPOINTS.upToTablet} {
+        row-gap: 12px;
+        bottom: 12px;
+    }
+`
+
+const FloatingCard = css`
+    padding: 24px 0 24px 24px;
+    background-color: ${COLORS.green};
+    transition: background-color 0.5s ease;
+
+    ${BREAKPOINTS.upToTablet} {
+        padding: 12px 0 12px 12px;
+    }
+`;
+
+export const Details = styled.div`
+    ${FloatingCard}
+    display: inline-flex;
+    flex-direction: column;
+    row-gap: 4px;
+    right: 0;
+`;
+
+export const DetailsItem = styled.div`
+    font-family: "Arboria";
+    font-weight: 500;
+    font-size: 1rem;
+    color: #ffffff;
+
+    ${BREAKPOINTS.upToTablet} {
+        font-size: .5rem;
+    }
+`
+
+export const FloorPlan = styled(ExternalLink)`
+    ${FloatingCard}
+    display: inline-flex;
     align-items: flex-start;
     flex-direction: column;
-    z-index: 10;
-    padding: 24px 0 24px 24px;
     row-gap: 8px;
-    background-color: ${COLORS.green};
-    transition: background-color .5s ease;
 
     &:hover {
         background-color: ${COLORS.darkGreen};
     }
 
     ${BREAKPOINTS.upToTablet} {
-        bottom: 12px;
-        padding: 12px 0 12px 12px;
         border-bottom-color: #ffffff;
 
         &:hover {
@@ -137,10 +175,10 @@ export const FloorPlan = styled(ExternalLink)`
         background-size: contain;
         content: "Floor plan";
         color: #ffffff;
-        font-size: 1.2rem;
+        font-size: 1rem;
         font-weight: 500;
-        padding-left: 64px;
-        padding-right: 120px;
+        padding-left: 72px;
+        padding-right: 96px;
 
         ${BREAKPOINTS.upToTablet} {
             font-size: .5rem;

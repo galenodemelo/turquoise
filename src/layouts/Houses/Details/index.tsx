@@ -1,8 +1,8 @@
 import Carousel from "@components/Carousel";
 import Popover from "@components/Popover";
 import React from "react";
-import { Swiper as SwiperConfig } from "swiper"
-import { FloorPlan, HeaderText, ImageContent, ImageContentProps, ImageWrapper, RightHeader, SplittedSlide, TopHeader } from "./style";
+import { Swiper as SwiperConfig } from "swiper";
+import { Details, DetailsItem, FloatingCardWrapper, FloorPlan, HeaderText, ImageContent, ImageContentProps, ImageWrapper, RightHeader, SplittedSlide, TopHeader } from "./style";
 
 export type Designer = "tanney" | "russell" | "ricardo";
 
@@ -48,7 +48,15 @@ export default class HousesDetails extends React.Component<Props, {}> {
                                 </HeaderText>
                             </TopHeader>
 
-                            <FloorPlan href="/docs/floor-plan-opal-1.pdf" />
+                            <FloatingCardWrapper>
+                                <Details>
+                                    <DetailsItem>Total Sqf: 4,934</DetailsItem>
+                                    <DetailsItem>Under AC: 3,187</DetailsItem>
+                                    <DetailsItem>Baths: 4.5</DetailsItem>
+                                    <DetailsItem>Beds: 4</DetailsItem>
+                                </Details>
+                                <FloorPlan href="/docs/floor-plan-opal-1.pdf" />
+                            </FloatingCardWrapper>
                         </>
                     }
 
@@ -80,7 +88,15 @@ export default class HousesDetails extends React.Component<Props, {}> {
                                 </HeaderText>
                             </TopHeader>
 
-                            <FloorPlan href="/docs/floor-plan-amber-1.pdf" />
+                            <FloatingCardWrapper>
+                                <Details>
+                                    <DetailsItem>Total Sqf: 5,634</DetailsItem>
+                                    <DetailsItem>Under AC: 4,064</DetailsItem>
+                                    <DetailsItem>Baths: 5.5</DetailsItem>
+                                    <DetailsItem>Beds: 5</DetailsItem>
+                                </Details>
+                                <FloorPlan href="/docs/floor-plan-amber-1.pdf" />
+                            </FloatingCardWrapper>
                         </>
                     }
 
@@ -113,7 +129,15 @@ export default class HousesDetails extends React.Component<Props, {}> {
                                 </HeaderText>
                             </TopHeader>
 
-                            <FloorPlan href="/docs/floor-plan-malachite-1.pdf" />
+                            <FloatingCardWrapper>
+                                <Details>
+                                    <DetailsItem>Total Sqf: 4,186</DetailsItem>
+                                    <DetailsItem>Under AC: 2,749</DetailsItem>
+                                    <DetailsItem>Baths: 4.5</DetailsItem>
+                                    <DetailsItem>Beds: 4</DetailsItem>
+                                </Details>
+                                <FloorPlan href="/docs/floor-plan-malachite-1.pdf" />
+                            </FloatingCardWrapper>
                         </>
                     }
 
