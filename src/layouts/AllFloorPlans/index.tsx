@@ -3,7 +3,7 @@ import { AllFloorPlansWrapper, Bar, CTA, Text } from "./style";
 
 export default class AllFloorPlans extends AnimateOnActiveComponent {
 
-    static readonly MODELS_AND_FLOOR_PLANS_LINK = "https://www.dropbox.com/s/nghmqa5hrs8w68v/Turquouise%20Models%20%26%20Floor%20Plans.pdf?dl=0"
+    static readonly MODELS_AND_FLOOR_PLANS_LINK = "/docs/floor-plan-all.pdf";
 
     constructor(props: {}) {
         super(props, "AllFloorPlans");
@@ -33,6 +33,6 @@ export default class AllFloorPlans extends AnimateOnActiveComponent {
                     </CTA>
                 </Text>
             </AllFloorPlansWrapper>
-        )
+        );
     }
 }
