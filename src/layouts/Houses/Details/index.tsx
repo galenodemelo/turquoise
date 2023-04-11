@@ -50,10 +50,10 @@ export default class HousesDetails extends React.Component<Props, {}> {
 
                             <FloatingCardWrapper>
                                 <Details>
-                                    <DetailsItem>Total Sqf: 4,934</DetailsItem>
-                                    <DetailsItem>Under AC: 3,187</DetailsItem>
-                                    <DetailsItem>Baths: 4.5</DetailsItem>
+                                    <DetailsItem>Total area: 4,934 sq.ft</DetailsItem>
+                                    <DetailsItem>Under AC: 3,187 sq.ft</DetailsItem>
                                     <DetailsItem>Beds: 4</DetailsItem>
+                                    <DetailsItem>Baths: 4.5</DetailsItem>
                                 </Details>
                                 <FloorPlan href="/docs/floor-plan-opal-1.pdf" />
                             </FloatingCardWrapper>
@@ -90,10 +90,10 @@ export default class HousesDetails extends React.Component<Props, {}> {
 
                             <FloatingCardWrapper>
                                 <Details>
-                                    <DetailsItem>Total Sqf: 5,634</DetailsItem>
-                                    <DetailsItem>Under AC: 4,064</DetailsItem>
-                                    <DetailsItem>Baths: 5.5</DetailsItem>
+                                    <DetailsItem>Total area: 5,634 sq.ft</DetailsItem>
+                                    <DetailsItem>Under AC: 4,064 sq.ft</DetailsItem>
                                     <DetailsItem>Beds: 5</DetailsItem>
+                                    <DetailsItem>Baths: 5.5</DetailsItem>
                                 </Details>
                                 <FloorPlan href="/docs/floor-plan-amber-1.pdf" />
                             </FloatingCardWrapper>
@@ -131,10 +131,10 @@ export default class HousesDetails extends React.Component<Props, {}> {
 
                             <FloatingCardWrapper>
                                 <Details>
-                                    <DetailsItem>Total Sqf: 4,186</DetailsItem>
-                                    <DetailsItem>Under AC: 2,749</DetailsItem>
-                                    <DetailsItem>Baths: 4.5</DetailsItem>
+                                    <DetailsItem>Total area: 4,186 sq.ft</DetailsItem>
+                                    <DetailsItem>Under AC: 2,749 sq.ft</DetailsItem>
                                     <DetailsItem>Beds: 4</DetailsItem>
+                                    <DetailsItem>Baths: 4.5</DetailsItem>
                                 </Details>
                                 <FloorPlan href="/docs/floor-plan-malachite-1.pdf" />
                             </FloatingCardWrapper>
