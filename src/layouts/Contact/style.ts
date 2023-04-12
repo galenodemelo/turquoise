@@ -78,6 +78,7 @@ export const FormField = styled.div`
     > select,
     > select > option {
         font-family: "Arboria";
+        font-weight: 300;
         padding: 8px 16px;
         border: #000000 solid 1px;
         resize: none;
@@ -106,6 +107,7 @@ export const FormRow = styled.div`
 export const FormFootNote = styled.p`
     margin: -0.5rem 0;
     font-family: "Arboria";
+    font-weight: 300;
     font-size: 0.9rem;
 `;
 
@@ -140,6 +142,7 @@ export const CTA = styled.div`
 
 export const CTAHeader = styled.span`
     font-family: "Arboria";
+    font-weight: 300;
     font-size: 1rem;
 `;
 
