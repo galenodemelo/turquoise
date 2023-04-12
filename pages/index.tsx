@@ -84,14 +84,14 @@ export default class Index extends React.Component<Props, State> {
     }
 
     toggleScrollTipIfNecessary(activeSlideClassName: DOMTokenList): void {
-        const componentsToHideScrollTip = [IconOfLuxuryAndExclusivityWrapper, MasterplanWrapper, AllFloorPlansWrapper, AmenitiesWrapperDesktop, AmenitiesWrapperMobile, AttractionWrapper, ContactWrapper];
+        const componentsToHideScrollTip = [AttractionWrapper, ContactWrapper];
 
         const isPanelWithScrollTipHidden = this.matchClassWithActiveClassName(componentsToHideScrollTip, activeSlideClassName);
         this.setState({ scrollTipIsVisible: !isPanelWithScrollTipHidden });
     }
 
     toggleScrollTipWhiteIfNecessary(activeSlideClassName: DOMTokenList): void {
-        const componentToSetScrollTipWhite = [HomeWrapper, IconOfLuxuryAndExclusivityWrapper];
+        const componentToSetScrollTipWhite = [HomeWrapper, IconOfLuxuryAndExclusivityWrapper, AllFloorPlansWrapper];
 
         const isPanelWithWhiteScrollTip = this.matchClassWithActiveClassName(componentToSetScrollTipWhite, activeSlideClassName);
         this.setState({ scrollTipWhite: isPanelWithWhiteScrollTip });

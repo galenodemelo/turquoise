@@ -5,7 +5,7 @@ import { ScrollTipProps } from "./";
 
 export const ScrollTipWrapper = styled.div<ScrollTipProps>`
     position: fixed;
-    left: ${horizontalMargin};
+    left: calc(${horizontalMargin} / 2);
     bottom: ${verticalMargin};
     display: flex;
     flex-direction: column-reverse;
