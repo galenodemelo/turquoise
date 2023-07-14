@@ -1,4 +1,4 @@
-import { AerialView } from "@layouts/FloatingMenu/Extra/style";
+import { AerialView, ExtraLink } from "@layouts/FloatingMenu/Extra/style";
 import { BREAKPOINTS, COLORS } from "@styles/globals";
 import styled from "styled-components";
 
@@ -53,15 +53,32 @@ export const LinkList = styled.nav`
     display: inline-flex;
     justify-self: center;
     flex-direction: column;
+    justify-content: center;
     row-gap: 32px;
+    height: 100%;
 
     ${BREAKPOINTS.upToTablet} {
         row-gap: 24px;
         align-items: flex-end;
 
+        ${ExtraLink} {
+            position: relative;
+            align-self: center;
+            top: 56px;
+            color: #ffffff;
+        }
+
         ${AerialView} {
+            position: relative;
+            align-self: center;
+            top: 56px;
             display: flex;
             background-color: #ffffff;
+            color: ${COLORS.darkGreen};
+
+            &::after {
+                filter: none;
+            }
         }
     }
 `

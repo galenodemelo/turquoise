@@ -3,7 +3,7 @@ import Attraction from "@layouts/Attraction";
 import Contact from "@layouts/Contact";
 import CreativeTeam from "@layouts/CreativeTeam";
 import Developers from "@layouts/Developers";
-import { AerialView } from "@layouts/FloatingMenu/Extra/style";
+import { AerialView, ExtraLink } from "@layouts/FloatingMenu/Extra/style";
 import Home from "@layouts/Home";
 import Houses from "@layouts/Houses";
 import Location from "@layouts/Location";
@@ -60,6 +60,7 @@ export default class Links extends React.Component<{}, State> {
                         );
                     })}
 
+                    {!isDesktop && <ExtraLink />}
                     {!isDesktop && <AerialView />}
                 </LinkList>
             </LinksWrapper>

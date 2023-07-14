@@ -1,7 +1,7 @@
-import { BREAKPOINTS, COLORS, SETTINGS } from "@styles/globals";
+import { BREAKPOINTS, COLORS, ExternalLink, SETTINGS } from "@styles/globals";
 import styled from "styled-components";
 import { FloatingMenuProps } from ".";
-import { AerialView, SocialLinkWrapper } from "./Extra/style";
+import { AerialView, ExtraLink, SocialLinkWrapper } from "./Extra/style";
 import { NavButtonIcon, NavButtonLabel } from "./Menu/style";
 
 export const horizontalMargin = "64px";
@@ -66,6 +66,11 @@ export const Header = styled.header<FloatingMenuProps>`
         transition: filter ${SETTINGS.swiper.speedInSeconds}s ease;
     }
 
+    ${ExtraLink} {
+        color: ${(props) => (props.white ? "#ffffff" : COLORS.darkGreen)};
+        transition: color ${SETTINGS.swiper.speedInSeconds}s ease;
+    }
+
     ${AerialView} {
         background-color: ${(props) => (props.white ? "#ffffff" : COLORS.darkGreen)};
         color: ${(props) => (props.white ? COLORS.darkGreen : "#ffffff")};
@@ -75,10 +80,6 @@ export const Header = styled.header<FloatingMenuProps>`
             transition: filter ${SETTINGS.swiper.speedInSeconds}s ease;
             filter: ${(props) =>
                 props.white ? "brightness(1) invert(0)" : "brightness(0) invert(1)"};
-        }
-
-        ${BREAKPOINTS.upToTablet} {
-            display: none;
         }
     }
 `;

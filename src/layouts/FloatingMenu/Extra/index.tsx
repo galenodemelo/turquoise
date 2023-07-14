@@ -1,13 +1,15 @@
 import Image from "next/image";
 import React from "react";
-import { AerialView, ExtraWrapper, SocialLink, SocialLinkWrapper } from "./style";
+import { isDesktop } from "react-device-detect";
+import { AerialView, ExtraLink, ExtraWrapper, SocialLink, SocialLinkWrapper } from "./style";
 
 export default class Extra extends React.Component {
 
     render(): JSX.Element {
         return (
             <ExtraWrapper>
-                <AerialView />
+                {isDesktop && <ExtraLink />}
+                {isDesktop && <AerialView />}
 
                 <SocialLinkWrapper>
                     <SocialLink href="https://www.instagram.com/turquoise.homes/">
@@ -18,6 +20,6 @@ export default class Extra extends React.Component {
                     </SocialLink>
                 </SocialLinkWrapper>
             </ExtraWrapper>
-        )
+        );
     }
 }

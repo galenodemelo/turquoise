@@ -18,3 +18,18 @@ export const dissolveDefaultAnimation = css`
     animation-fill-mode: forwards;
     animation-play-state: paused;
 `;
+
+export const heartbeat = keyframes`
+    0% {
+        -webkit-transform: scale(1);
+                transform: scale(1);
+    }
+    50% {
+        -webkit-transform: scale(1.1);
+                transform: scale(1.1);
+    }
+    100% {
+        -webkit-transform: scale(1);
+                transform: scale(1);
+    }
+`;

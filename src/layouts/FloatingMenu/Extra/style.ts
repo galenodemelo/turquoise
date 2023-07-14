@@ -1,3 +1,4 @@
+import { heartbeat } from "@styles/animations";
 import { BREAKPOINTS, COLORS, ExternalLink } from "@styles/globals";
 import styled from "styled-components";
 
@@ -8,14 +9,30 @@ export const ExtraWrapper = styled.div`
     justify-content: flex-end;
 `;
 
+export const ExtraLink = styled(ExternalLink).attrs({
+    href: "https://turquoisehomes.site/",
+})`
+    &:before {
+        content: "Last updates";
+        font-weight: bold;
+        color: inherit;
+    }
+
+    animation: ${heartbeat} 0.5s ease-in-out infinite both;
+    font-size: 90%;
+    white-space: nowrap;
+`;
+
 export const AerialView = styled(ExternalLink).attrs({
-    href: "https://player.theviewvr.com/?locationId=1672"
+    href: "https://player.theviewvr.com/?locationId=1672",
 })`
     display: inline-flex;
     align-items: center;
     column-gap: 8px;
     color: ${COLORS.darkGreen};
     padding: 12px 18px 10px;
+    font-size: 90%;
+    white-space: nowrap;
 
     &::before {
         content: "Aerial Tour";
