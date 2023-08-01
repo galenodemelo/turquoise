@@ -116,6 +116,10 @@ export const FormSubmit = styled.button`
     width: 48px;
     height: 48px;
     margin-bottom: 2.2rem;
+
+    &:disabled {
+        transform: size(0.8);
+    }
 `;
 
 const gapBetweenContactInfoItems = "48px";

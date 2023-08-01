@@ -1,60 +1,78 @@
 import { SectionHeading } from "@layouts/VerticalSwipePage/Section";
 import Image from "next/image";
 import React from "react";
+import ReCAPTCHA from "react-google-recaptcha";
 import ApiResponse from "src/libs/ApiResponse";
 import { BrandList, ContactContent, ContactInfo, ContactWrapper, CTA, CTAButton, CTAHeader, Form, FormField, FormFieldList, FormFootNote, FormRow, FormSubmit, Info, InfoFooter, InfoHeader, InfoItem, InfoItemData, InfoItemIcon } from "./style";
 
 interface State {
-    origin: string | null
-    formFilled: boolean
+    origin: string | null;
+    formFilled: boolean;
+    isSubmiting: boolean;
 }
 
 export default class Contact extends React.Component<{}, State> {
+
+    recaptchaReference: React.RefObject<ReCAPTCHA>;
 
     constructor(props: {}) {
         super(props);
         this.state = {
             origin: null,
-            formFilled: false
-        }
+            formFilled: false,
+            isSubmiting: false
+        };
 
-        this.sendContactForm = this.sendContactForm.bind(this)
+        this.recaptchaReference = React.createRef<ReCAPTCHA>();
+        this.sendContactForm = this.sendContactForm.bind(this);
     }
 
     componentDidMount(): void {
-        const formFilledLocalStorage = window.localStorage.getItem("formFilled")
-        if (formFilledLocalStorage) this.setState({ formFilled: formFilledLocalStorage === "true" })
+        const formFilledLocalStorage = window.localStorage.getItem("formFilled");
+        if (formFilledLocalStorage) this.setState({ formFilled: formFilledLocalStorage === "true" });
     }
 
-    sendContactForm(event: React.FormEvent<HTMLFormElement>): void {
-        event.preventDefault()
-        const formElement = event.target as HTMLFormElement
-        const formData: FormData = new FormData(formElement);
+    async sendContactForm(event: React.FormEvent<HTMLFormElement>): Promise<void> {
+        try {
+            this.setState({ isSubmiting: true });
 
-        const action: string | null = formElement.getAttribute("action")
-        const method: string | null = formElement.getAttribute("method")
-        if (!action || !method) throw new Error("Form missing action and/or method")
+            event.preventDefault();
+            const formElement = event.target as HTMLFormElement;
+            const formData: FormData = new FormData(formElement);
 
-        const formDataAsJson: string = JSON.stringify(Object.fromEntries(formData.entries()))
-        fetch(action, {
-            method: method,
-            headers: {
-                "Content-Type": "application/json",
-                "Accept": "application/json"
-            },
-            body: formDataAsJson
-        })
-            .then(response => response.json())
-            .then((response: ApiResponse) => {
-                this.setState({ formFilled: response.success })
-                window.localStorage.setItem("formFilled", response.success.toString())
-                alert(response.message)
-                if (response.success) formElement.reset()
-            })
-            .catch(error => {
-                const message = `An unexpected error ocurred. Please, contact support.\nError: ${error.message}`
-                alert(message)
-            })
+            const action: string | null = formElement.getAttribute("action");
+            const method: string | null = formElement.getAttribute("method");
+            if (!action || !method) throw new Error("Form missing action and/or method");
+
+            const recaptchaToken: string | null = await this.recaptchaReference.current!.executeAsync();
+            if (!recaptchaToken?.length) {
+                alert("Failed to verify ReCAPTCHA. Please, try again");
+                return;
+            }
+            formData.append("recaptchaToken", recaptchaToken);
+
+            const formDataAsJson: string = JSON.stringify(Object.fromEntries(formData.entries()));
+            const response = await fetch(action, {
+                method: method,
+                headers: {
+                    "Content-Type": "application/json",
+                    "Accept": "application/json"
+                },
+                body: formDataAsJson
+            });
+            const responseData: ApiResponse = await response.json() as ApiResponse;
+            this.setState({ formFilled: responseData.success });
+
+            window.localStorage.setItem("formFilled", responseData.success.toString());
+            alert(responseData.message);
+            if (responseData.success) formElement.reset();
+        } catch (error: any) {
+            const message = `An unexpected error ocurred. Please, contact support.\nError: ${error.message}`;
+            alert(message);
+        } finally {
+            this.setState({ isSubmiting: false });
+            this.recaptchaReference.current!.reset();
+        }
     }
 
     render(): JSX.Element {
@@ -93,7 +111,7 @@ export default class Contact extends React.Component<{}, State> {
                                     <select name="origin" id="origin" onChange={(event: React.ChangeEvent<HTMLSelectElement>) => this.setState({ origin: event.target.value })}>
                                         <option value=""></option>
                                         {["A friend", "Realtor", "Instagram", "Facebook", "Other"].map((option: string, index: number) => {
-                                            return <option value={option} key={index}>{option}</option>
+                                            return <option value={option} key={index}>{option}</option>;
                                         })}
                                     </select>
                                     <label htmlFor="origin">How did you meet us?</label>
@@ -118,9 +136,15 @@ export default class Contact extends React.Component<{}, State> {
                             </FormFootNote>
                         </FormFieldList>
 
-                        <FormSubmit>
+                        <FormSubmit disabled={this.state.isSubmiting}>
                             <Image src="/img/ico/send.svg" layout="fill" alt="Click to send the form" objectFit="contain" />
                         </FormSubmit>
+
+                        <ReCAPTCHA
+                            ref={this.recaptchaReference}
+                            size="invisible"
+                            sitekey={process.env.NEXT_PUBLIC_GOOGLE_RECAPTCHA_SITEKEY ?? ""}
+                        />
                     </Form>
 
                     <ContactInfo>
@@ -174,6 +198,6 @@ export default class Contact extends React.Component<{}, State> {
                     </BrandList>
                 </ContactContent>
             </ContactWrapper>
-        )
+        );
     }
 }
